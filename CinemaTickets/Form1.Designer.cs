@@ -85,7 +85,7 @@
             this.menuButton_Search.ForeColor = System.Drawing.Color.White;
             this.menuButton_Search.Location = new System.Drawing.Point(0, 164);
             this.menuButton_Search.Name = "menuButton_Search";
-            this.menuButton_Search.Size = new System.Drawing.Size(214, 40);
+            this.menuButton_Search.Size = new System.Drawing.Size(215, 40);
             this.menuButton_Search.TabIndex = 7;
             this.menuButton_Search.Text = "Поиск";
             this.menuButton_Search.UseVisualStyleBackColor = false;
@@ -122,7 +122,7 @@
             // 
             // menuButton_Films
             // 
-            this.menuButton_Films.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(105)))));
+            this.menuButton_Films.BackColor = System.Drawing.Color.Red;
             this.menuButton_Films.Cursor = System.Windows.Forms.Cursors.Hand;
             this.menuButton_Films.FlatAppearance.BorderSize = 0;
             this.menuButton_Films.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
