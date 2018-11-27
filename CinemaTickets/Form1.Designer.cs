@@ -1,6 +1,6 @@
 ﻿namespace CinemaTickets
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,52 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Panel_MainMenu = new System.Windows.Forms.Panel();
+            this.Panel_LabelInMainMenu = new System.Windows.Forms.Panel();
+            this.Label_TitleMainText = new System.Windows.Forms.Label();
             this.menuButton_Search = new System.Windows.Forms.Button();
             this.menuButton_Exit = new System.Windows.Forms.Button();
             this.menuButton_Statistic = new System.Windows.Forms.Button();
             this.menuButton_Films = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.Panel_Cinema = new System.Windows.Forms.Panel();
+            this.Panel_MainMenu.SuspendLayout();
+            this.Panel_LabelInMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // Panel_MainMenu
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(122)))));
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.menuButton_Search);
-            this.panel1.Controls.Add(this.menuButton_Exit);
-            this.panel1.Controls.Add(this.menuButton_Statistic);
-            this.panel1.Controls.Add(this.menuButton_Films);
-            this.panel1.ForeColor = System.Drawing.Color.Crimson;
-            this.panel1.Location = new System.Drawing.Point(-1, -2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(214, 501);
-            this.panel1.TabIndex = 0;
+            this.Panel_MainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(122)))));
+            this.Panel_MainMenu.Controls.Add(this.Panel_LabelInMainMenu);
+            this.Panel_MainMenu.Controls.Add(this.menuButton_Search);
+            this.Panel_MainMenu.Controls.Add(this.menuButton_Exit);
+            this.Panel_MainMenu.Controls.Add(this.menuButton_Statistic);
+            this.Panel_MainMenu.Controls.Add(this.menuButton_Films);
+            this.Panel_MainMenu.ForeColor = System.Drawing.Color.Crimson;
+            this.Panel_MainMenu.Location = new System.Drawing.Point(-1, -2);
+            this.Panel_MainMenu.Name = "Panel_MainMenu";
+            this.Panel_MainMenu.Size = new System.Drawing.Size(214, 501);
+            this.Panel_MainMenu.TabIndex = 0;
             // 
-            // panel2
+            // Panel_LabelInMainMenu
             // 
-            this.panel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(-1, -1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(214, 79);
-            this.panel2.TabIndex = 9;
+            this.Panel_LabelInMainMenu.BackColor = System.Drawing.Color.Gainsboro;
+            this.Panel_LabelInMainMenu.Controls.Add(this.Label_TitleMainText);
+            this.Panel_LabelInMainMenu.Location = new System.Drawing.Point(-1, -1);
+            this.Panel_LabelInMainMenu.Name = "Panel_LabelInMainMenu";
+            this.Panel_LabelInMainMenu.Size = new System.Drawing.Size(214, 79);
+            this.Panel_LabelInMainMenu.TabIndex = 9;
             // 
-            // label1
+            // Label_TitleMainText
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Righteous", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(23)))), ((int)(((byte)(79)))));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 79);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "CinemaTickets";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label_TitleMainText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
+            this.Label_TitleMainText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Label_TitleMainText.Font = new System.Drawing.Font("Righteous", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_TitleMainText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(23)))), ((int)(((byte)(79)))));
+            this.Label_TitleMainText.Location = new System.Drawing.Point(0, 0);
+            this.Label_TitleMainText.Name = "Label_TitleMainText";
+            this.Label_TitleMainText.Size = new System.Drawing.Size(214, 79);
+            this.Label_TitleMainText.TabIndex = 8;
+            this.Label_TitleMainText.Text = "CinemaTickets";
+            this.Label_TitleMainText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // menuButton_Search
             // 
@@ -122,7 +123,7 @@
             // 
             // menuButton_Films
             // 
-            this.menuButton_Films.BackColor = System.Drawing.Color.Red;
+            this.menuButton_Films.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(105)))));
             this.menuButton_Films.Cursor = System.Windows.Forms.Cursors.Hand;
             this.menuButton_Films.FlatAppearance.BorderSize = 0;
             this.menuButton_Films.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -134,33 +135,43 @@
             this.menuButton_Films.TabIndex = 4;
             this.menuButton_Films.Text = "Фильмы";
             this.menuButton_Films.UseVisualStyleBackColor = false;
+            this.menuButton_Films.Click += new System.EventHandler(this.menuButton_Films_Click);
             // 
-            // Form1
+            // Panel_Cinema
+            // 
+            this.Panel_Cinema.Location = new System.Drawing.Point(212, 0);
+            this.Panel_Cinema.Name = "Panel_Cinema";
+            this.Panel_Cinema.Size = new System.Drawing.Size(707, 498);
+            this.Panel_Cinema.TabIndex = 1;
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 498);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.Panel_Cinema);
+            this.Controls.Add(this.Panel_MainMenu);
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.White;
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.Panel_MainMenu.ResumeLayout(false);
+            this.Panel_LabelInMainMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel Panel_MainMenu;
         private System.Windows.Forms.Button menuButton_Search;
         private System.Windows.Forms.Button menuButton_Exit;
         private System.Windows.Forms.Button menuButton_Statistic;
         private System.Windows.Forms.Button menuButton_Films;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label Label_TitleMainText;
+        private System.Windows.Forms.Panel Panel_LabelInMainMenu;
+        private System.Windows.Forms.Panel Panel_Cinema;
     }
 }
 
