@@ -32,9 +32,9 @@
             this.Panel_LabelInMainMenu = new System.Windows.Forms.Panel();
             this.Label_TitleMainText = new System.Windows.Forms.Label();
             this.MenuButton_Search = new System.Windows.Forms.Button();
-            this.menuButton_Exit = new System.Windows.Forms.Button();
+            this.MenuButton_Exit = new System.Windows.Forms.Button();
             this.MenuButton_StatisticsAndReport = new System.Windows.Forms.Button();
-            this.menuButton_Films = new System.Windows.Forms.Button();
+            this.MenuButton_Films = new System.Windows.Forms.Button();
             this.Panel_Films = new System.Windows.Forms.Panel();
             this.Panel_StatisticsAndReport = new System.Windows.Forms.Panel();
             this.Panel_Search = new System.Windows.Forms.Panel();
@@ -50,9 +50,9 @@
             this.Panel_MainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(122)))));
             this.Panel_MainMenu.Controls.Add(this.Panel_LabelInMainMenu);
             this.Panel_MainMenu.Controls.Add(this.MenuButton_Search);
-            this.Panel_MainMenu.Controls.Add(this.menuButton_Exit);
+            this.Panel_MainMenu.Controls.Add(this.MenuButton_Exit);
             this.Panel_MainMenu.Controls.Add(this.MenuButton_StatisticsAndReport);
-            this.Panel_MainMenu.Controls.Add(this.menuButton_Films);
+            this.Panel_MainMenu.Controls.Add(this.MenuButton_Films);
             this.Panel_MainMenu.ForeColor = System.Drawing.Color.Crimson;
             this.Panel_MainMenu.Location = new System.Drawing.Point(0, 0);
             this.Panel_MainMenu.Name = "Panel_MainMenu";
@@ -77,7 +77,7 @@
             this.Label_TitleMainText.Location = new System.Drawing.Point(0, 0);
             this.Label_TitleMainText.Name = "Label_TitleMainText";
             this.Label_TitleMainText.Size = new System.Drawing.Size(214, 79);
-            this.Label_TitleMainText.TabIndex = 8;
+            this.Label_TitleMainText.TabIndex = 1;
             this.Label_TitleMainText.Text = "CinemaTickets";
             this.Label_TitleMainText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Label_TitleMainText.Click += new System.EventHandler(this.Label_TitleMainText_Click);
@@ -93,26 +93,26 @@
             this.MenuButton_Search.Location = new System.Drawing.Point(0, 164);
             this.MenuButton_Search.Name = "MenuButton_Search";
             this.MenuButton_Search.Size = new System.Drawing.Size(215, 40);
-            this.MenuButton_Search.TabIndex = 7;
+            this.MenuButton_Search.TabIndex = 4;
             this.MenuButton_Search.Text = "Поиск";
             this.MenuButton_Search.UseVisualStyleBackColor = false;
             this.MenuButton_Search.Click += new System.EventHandler(this.MenuButton_Search_Click);
             // 
-            // menuButton_Exit
+            // MenuButton_Exit
             // 
-            this.menuButton_Exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(105)))));
-            this.menuButton_Exit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.menuButton_Exit.FlatAppearance.BorderSize = 0;
-            this.menuButton_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menuButton_Exit.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.menuButton_Exit.ForeColor = System.Drawing.Color.White;
-            this.menuButton_Exit.Location = new System.Drawing.Point(0, 461);
-            this.menuButton_Exit.Name = "menuButton_Exit";
-            this.menuButton_Exit.Size = new System.Drawing.Size(214, 40);
-            this.menuButton_Exit.TabIndex = 6;
-            this.menuButton_Exit.Text = "Выход";
-            this.menuButton_Exit.UseVisualStyleBackColor = false;
-            this.menuButton_Exit.Click += new System.EventHandler(this.MenuButton_Exit_Click);
+            this.MenuButton_Exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(105)))));
+            this.MenuButton_Exit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuButton_Exit.FlatAppearance.BorderSize = 0;
+            this.MenuButton_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MenuButton_Exit.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MenuButton_Exit.ForeColor = System.Drawing.Color.White;
+            this.MenuButton_Exit.Location = new System.Drawing.Point(0, 461);
+            this.MenuButton_Exit.Name = "MenuButton_Exit";
+            this.MenuButton_Exit.Size = new System.Drawing.Size(214, 40);
+            this.MenuButton_Exit.TabIndex = 5;
+            this.MenuButton_Exit.Text = "Выход";
+            this.MenuButton_Exit.UseVisualStyleBackColor = false;
+            this.MenuButton_Exit.Click += new System.EventHandler(this.MenuButton_Exit_Click);
             // 
             // MenuButton_StatisticsAndReport
             // 
@@ -125,26 +125,26 @@
             this.MenuButton_StatisticsAndReport.Location = new System.Drawing.Point(0, 122);
             this.MenuButton_StatisticsAndReport.Name = "MenuButton_StatisticsAndReport";
             this.MenuButton_StatisticsAndReport.Size = new System.Drawing.Size(214, 40);
-            this.MenuButton_StatisticsAndReport.TabIndex = 5;
+            this.MenuButton_StatisticsAndReport.TabIndex = 3;
             this.MenuButton_StatisticsAndReport.Text = "Статистика и отчеты";
             this.MenuButton_StatisticsAndReport.UseVisualStyleBackColor = false;
             this.MenuButton_StatisticsAndReport.Click += new System.EventHandler(this.MenuButton_StatisticsAndReport_Click);
             // 
-            // menuButton_Films
+            // MenuButton_Films
             // 
-            this.menuButton_Films.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(105)))));
-            this.menuButton_Films.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.menuButton_Films.FlatAppearance.BorderSize = 0;
-            this.menuButton_Films.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menuButton_Films.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.menuButton_Films.ForeColor = System.Drawing.Color.White;
-            this.menuButton_Films.Location = new System.Drawing.Point(0, 80);
-            this.menuButton_Films.Name = "menuButton_Films";
-            this.menuButton_Films.Size = new System.Drawing.Size(214, 40);
-            this.menuButton_Films.TabIndex = 4;
-            this.menuButton_Films.Text = "Фильмы";
-            this.menuButton_Films.UseVisualStyleBackColor = false;
-            this.menuButton_Films.Click += new System.EventHandler(this.MenuButton_Films_Click);
+            this.MenuButton_Films.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(105)))));
+            this.MenuButton_Films.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuButton_Films.FlatAppearance.BorderSize = 0;
+            this.MenuButton_Films.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MenuButton_Films.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MenuButton_Films.ForeColor = System.Drawing.Color.White;
+            this.MenuButton_Films.Location = new System.Drawing.Point(0, 80);
+            this.MenuButton_Films.Name = "MenuButton_Films";
+            this.MenuButton_Films.Size = new System.Drawing.Size(214, 40);
+            this.MenuButton_Films.TabIndex = 2;
+            this.MenuButton_Films.Text = "Фильмы";
+            this.MenuButton_Films.UseVisualStyleBackColor = false;
+            this.MenuButton_Films.Click += new System.EventHandler(this.MenuButton_Films_Click);
             // 
             // Panel_Films
             // 
@@ -212,9 +212,9 @@
 
         private System.Windows.Forms.Panel Panel_MainMenu;
         private System.Windows.Forms.Button MenuButton_Search;
-        private System.Windows.Forms.Button menuButton_Exit;
+        private System.Windows.Forms.Button MenuButton_Exit;
         private System.Windows.Forms.Button MenuButton_StatisticsAndReport;
-        private System.Windows.Forms.Button menuButton_Films;
+        private System.Windows.Forms.Button MenuButton_Films;
         private System.Windows.Forms.Label Label_TitleMainText;
         private System.Windows.Forms.Panel Panel_LabelInMainMenu;
         private System.Windows.Forms.Panel Panel_Films;
