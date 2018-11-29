@@ -36,12 +36,18 @@
             this.MenuButton_StatisticsAndReport = new System.Windows.Forms.Button();
             this.MenuButton_Films = new System.Windows.Forms.Button();
             this.Panel_Films = new System.Windows.Forms.Panel();
+            this.Panel_ViewListFilms = new System.Windows.Forms.Panel();
+            this.pictureBox_1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.Panel_StatisticsAndReport = new System.Windows.Forms.Panel();
             this.Panel_Search = new System.Windows.Forms.Panel();
             this.Panel_MainScreen = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.Panel_MainMenu.SuspendLayout();
             this.Panel_LabelInMainMenu.SuspendLayout();
+            this.Panel_Films.SuspendLayout();
+            this.Panel_ViewListFilms.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_1)).BeginInit();
             this.Panel_MainScreen.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +62,7 @@
             this.Panel_MainMenu.ForeColor = System.Drawing.Color.Crimson;
             this.Panel_MainMenu.Location = new System.Drawing.Point(0, 0);
             this.Panel_MainMenu.Name = "Panel_MainMenu";
-            this.Panel_MainMenu.Size = new System.Drawing.Size(215, 500);
+            this.Panel_MainMenu.Size = new System.Drawing.Size(215, 600);
             this.Panel_MainMenu.TabIndex = 0;
             // 
             // Panel_LabelInMainMenu
@@ -92,7 +98,7 @@
             this.MenuButton_Search.ForeColor = System.Drawing.Color.White;
             this.MenuButton_Search.Location = new System.Drawing.Point(0, 164);
             this.MenuButton_Search.Name = "MenuButton_Search";
-            this.MenuButton_Search.Size = new System.Drawing.Size(215, 40);
+            this.MenuButton_Search.Size = new System.Drawing.Size(214, 40);
             this.MenuButton_Search.TabIndex = 4;
             this.MenuButton_Search.Text = "Поиск";
             this.MenuButton_Search.UseVisualStyleBackColor = false;
@@ -106,7 +112,7 @@
             this.MenuButton_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MenuButton_Exit.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MenuButton_Exit.ForeColor = System.Drawing.Color.White;
-            this.MenuButton_Exit.Location = new System.Drawing.Point(0, 461);
+            this.MenuButton_Exit.Location = new System.Drawing.Point(0, 560);
             this.MenuButton_Exit.Name = "MenuButton_Exit";
             this.MenuButton_Exit.Size = new System.Drawing.Size(214, 40);
             this.MenuButton_Exit.TabIndex = 5;
@@ -148,23 +154,51 @@
             // 
             // Panel_Films
             // 
+            this.Panel_Films.Controls.Add(this.Panel_ViewListFilms);
+            this.Panel_Films.Controls.Add(this.label2);
             this.Panel_Films.Location = new System.Drawing.Point(215, 0);
             this.Panel_Films.Name = "Panel_Films";
-            this.Panel_Films.Size = new System.Drawing.Size(710, 500);
+            this.Panel_Films.Size = new System.Drawing.Size(750, 600);
             this.Panel_Films.TabIndex = 1;
+            // 
+            // Panel_ViewListFilms
+            // 
+            this.Panel_ViewListFilms.AutoScroll = true;
+            this.Panel_ViewListFilms.Controls.Add(this.pictureBox_1);
+            this.Panel_ViewListFilms.Location = new System.Drawing.Point(3, 3);
+            this.Panel_ViewListFilms.Name = "Panel_ViewListFilms";
+            this.Panel_ViewListFilms.Size = new System.Drawing.Size(761, 497);
+            this.Panel_ViewListFilms.TabIndex = 9;
+            // 
+            // pictureBox_1
+            // 
+            this.pictureBox_1.Location = new System.Drawing.Point(30, 30);
+            this.pictureBox_1.Name = "pictureBox_1";
+            this.pictureBox_1.Size = new System.Drawing.Size(150, 200);
+            this.pictureBox_1.TabIndex = 0;
+            this.pictureBox_1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(30, 520);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "label2";
             // 
             // Panel_StatisticsAndReport
             // 
             this.Panel_StatisticsAndReport.Location = new System.Drawing.Point(215, 0);
             this.Panel_StatisticsAndReport.Name = "Panel_StatisticsAndReport";
-            this.Panel_StatisticsAndReport.Size = new System.Drawing.Size(710, 500);
+            this.Panel_StatisticsAndReport.Size = new System.Drawing.Size(750, 600);
             this.Panel_StatisticsAndReport.TabIndex = 2;
             // 
             // Panel_Search
             // 
             this.Panel_Search.Location = new System.Drawing.Point(215, 0);
             this.Panel_Search.Name = "Panel_Search";
-            this.Panel_Search.Size = new System.Drawing.Size(710, 500);
+            this.Panel_Search.Size = new System.Drawing.Size(750, 600);
             this.Panel_Search.TabIndex = 3;
             // 
             // Panel_MainScreen
@@ -172,7 +206,7 @@
             this.Panel_MainScreen.Controls.Add(this.label1);
             this.Panel_MainScreen.Location = new System.Drawing.Point(215, 0);
             this.Panel_MainScreen.Name = "Panel_MainScreen";
-            this.Panel_MainScreen.Size = new System.Drawing.Size(710, 500);
+            this.Panel_MainScreen.Size = new System.Drawing.Size(750, 600);
             this.Panel_MainScreen.TabIndex = 4;
             // 
             // label1
@@ -188,7 +222,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 500);
+            this.ClientSize = new System.Drawing.Size(965, 600);
             this.ControlBox = false;
             this.Controls.Add(this.Panel_MainMenu);
             this.Controls.Add(this.Panel_Films);
@@ -202,6 +236,10 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Panel_MainMenu.ResumeLayout(false);
             this.Panel_LabelInMainMenu.ResumeLayout(false);
+            this.Panel_Films.ResumeLayout(false);
+            this.Panel_Films.PerformLayout();
+            this.Panel_ViewListFilms.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_1)).EndInit();
             this.Panel_MainScreen.ResumeLayout(false);
             this.Panel_MainScreen.PerformLayout();
             this.ResumeLayout(false);
@@ -222,6 +260,9 @@
         private System.Windows.Forms.Panel Panel_Search;
         private System.Windows.Forms.Panel Panel_MainScreen;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel Panel_ViewListFilms;
+        private System.Windows.Forms.PictureBox pictureBox_1;
     }
 }
 
