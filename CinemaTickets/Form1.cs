@@ -8,8 +8,9 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Text;
-using sqlConnection;
+using dbCinemaTickets;
 using System.Collections;
+using System.Data.SqlClient;
 
 
 
@@ -23,13 +24,14 @@ namespace CinemaTickets
     public partial class MainForm : MetroForm
     {
         // => Fields
-        private readonly My_SqlConnection objConnection;    // Object for work with library Sql
+        private readonly CinemaTickets_functionality db;    // Object for work with CinemaTickets db
         private List<Panel> list_panel;                     // List panel for content 
         private List<Button> list_buttonInLeftMenu;         // List buttons in left menu
         private List<short> settings;                       // List settings                
-        private List<object>[] list_FilmsData;              // List Object Films data. Every element contain full information about film.
         private List<PictureBox> list_PictureBox;           // -
-        private List<Label> list_Label;                     // -
+        private List<Label> list_Label_FilmName;            // -
+        private List<Label> list_Label_AgeLimit;            // -
+        private List<Label> list_Label_LengthFilm;          // -
 
 
 
@@ -38,53 +40,44 @@ namespace CinemaTickets
         public MainForm()
         {
             InitializeComponent();
-            objConnection = new My_SqlConnection();
-            List_panel = new List<Panel>() { Panel_MainScreen, Panel_Films, Panel_Search, Panel_StatisticsAndReport };
-            List_buttonInLeftMenu = new List<Button>() { MenuButton_Films, MenuButton_StatisticsAndReport, MenuButton_Search, MenuButton_Exit };
-            Settings = new List<short>() {16};
-            List_FilmsData = new List<object>[] {
-                new List<object>(),
-                new List<object>(),
-                new List<object>(),
-                new List<object>(),
-                new List<object>(),
-                new List<object>(),
-                new List<object>(),
-                new List<object>(),
-                new List<object>()
-            };
-            List_PictureBox = new List<PictureBox>();
-            List_Label = new List<Label>();
-            Set_Settings();
+            db = new CinemaTickets_functionality();
+            list_panel = new List<Panel>() { Panel_MainScreen, Panel_Films, Panel_Search, Panel_StatisticsAndReport };
+            list_buttonInLeftMenu = new List<Button>() { MenuButton_Films, MenuButton_StatisticsAndReport, MenuButton_Search, MenuButton_Exit };
+            settings = new List<short>() {20};
+            list_PictureBox = new List<PictureBox>();
+            list_Label_FilmName = new List<Label>();
+            list_Label_AgeLimit = new List<Label>();
+            list_Label_LengthFilm = new List<Label>();
         }
-
-
-
-
-
-        // => Properties
-        public My_SqlConnection                             ObjConnection => objConnection;
-        public List<Panel> List_panel                       { get; set; }
-        public List<Button> List_buttonInLeftMenu           { get; set; }
-        public List<short> Settings                         { get; set; }
-        public List<object>[] List_FilmsData                { get; set; }
-        public List<PictureBox> List_PictureBox             { get; set; }
-        public List<Label> List_Label                       { get; set; }
 
 
 
 
 
         // => Methods
-        private void Set_Settings()                         // Set sttings
+        private void Form1_Load(object sender, EventArgs e) // Form load 
         {
-            for (int i = 0; i <= Settings[0]; i++)
-            {
-                List_PictureBox.Add(new PictureBox());
-                List_Label.Add(new Label());
-            }
+            // SET SETTINGS
+            Set_Settings();
         }
-        private void Set_StyleButton(List<Button> e)        // Set style for list buttons
+        private void Set_Settings()                         // Set sttings 
+        {
+            for (int i = 0; i <= settings[0]; i++)
+            {
+                list_PictureBox.Add(new PictureBox());
+                list_Label_FilmName.Add(new Label());
+                list_Label_AgeLimit.Add(new Label());
+                list_Label_LengthFilm.Add(new Label());
+            }
+
+            // SET STYLE FOR LEFT MENU BUTTON
+            Set_StyleButton(list_buttonInLeftMenu);
+            // SHOW MAIN SCREEN
+            Set_Visible(Panel_MainScreen);
+            // SET Style Films List
+            Set_StyleFilmsList();
+        }
+        private void Set_StyleButton(List<Button> e)        // Set style for list buttons 
         {
             foreach (Button element in e)
             {
@@ -93,26 +86,12 @@ namespace CinemaTickets
                 element.Font = new Font("MS Reference Sans Serif", 8, FontStyle.Regular);
             }
         }
-        private void Set_StyleButton(Button e)              // Set style for one button
+        private void Set_Visible(Panel e1, Button e2)       // Set visible for panel 
         {
-            e.ForeColor = Color.FromArgb(255, 255, 255);
-            e.BackColor = Color.FromArgb(57, 57, 108);
-            e.Font = new Font("MS Reference Sans Serif", 8, FontStyle.Regular);
-        }
-        private void Set_Visible(Panel e1, Button e2)       // Set visible for panel and change color active button
-        {
-            switch (e1.Name) {
-                case "Panel_Films":
-                    Set_PropertyListFilms();
-                    break;
-                default:
-                    break;
-            }
-
-            foreach(Panel element in List_panel)
+            foreach(Panel element in list_panel)
                 element.Visible = (element == e1) ? true : false;
 
-            foreach (Button element in List_buttonInLeftMenu)
+            foreach (Button element in list_buttonInLeftMenu)
             {
                  if (element == e2)
                 {
@@ -123,50 +102,81 @@ namespace CinemaTickets
                     element.Controls.Clear();
             }
         }
-        private void Set_Visible(Panel e)                   // Set visible for panel
+        private void Set_Visible(Panel e)                   // Set visible for panel 
         {
-            foreach (Panel element in List_panel)
+            foreach (Panel element in list_panel)
                 element.Visible = (element == e) ? true : false;
 
-            foreach (Button element in List_buttonInLeftMenu)
+            foreach (Button element in list_buttonInLeftMenu)
                 element.Controls.Clear();
         }
-        private void Set_PropertyListFilms()                // Function Panel_Films
+        private void Set_StyleFilmsList()                   // Set location and style for elements Films 
         {
-            if (List_PictureBox[0].Height == 50)
+            short x = 30, y = 30;
+            for (short i = 0; i < settings[0];)
             {
-                MessageBox.Show("Уже показанно!");
-                short x = 30, y = 30;
-                for(short i = 0; i < Settings[0];)
-                {
-                    List_PictureBox[i].BackColor = Color.FromArgb(225, 225, 225);
-                    List_PictureBox[i].Location = new Point(x, y);
-                    List_PictureBox[i].Height = 200;
-                    List_PictureBox[i].Width = 150;
+                list_PictureBox[i].BackColor = Color.FromArgb(225, 225, 225);
+                list_PictureBox[i].Height = 200;
+                list_PictureBox[i].Width = 150;
+                list_PictureBox[i].Location = new Point(x, y);
 
-                    List_Label[i].Location = new Point(x, y + 200);
-                    List_Label[i].Text = "[Film name]";
-                    List_Label[i].ForeColor = Color.FromArgb(0, 0, 0);
-                    List_Label[i].BackColor = Color.FromArgb(0, 0, 0, 0);
-                    List_Label[i].Width = 150;
-                    List_Label[i].Height = 30;
-                    List_Label[i].TextAlign = ContentAlignment.MiddleCenter;
-                    Panel_ViewListFilms.Controls.Add(List_Label[i]);
-                    Panel_ViewListFilms.Controls.Add(List_PictureBox[i]);
+                list_Label_FilmName[i].Text = "[Film name]";
+                list_Label_FilmName[i].ForeColor = Color.FromArgb(0, 0, 0);
+                list_Label_FilmName[i].BackColor = Color.FromArgb(5, 0, 0, 0);
+                list_Label_FilmName[i].Width = 150;
+                list_Label_FilmName[i].Height = 30;
+                list_Label_FilmName[i].TextAlign = ContentAlignment.MiddleCenter;
+                list_Label_FilmName[i].Location = new Point(x, y + 200);
 
-                    x += 180;
-                    i++;
-                    if (i % 4 == 0) { y += 250; x = 30; } 
-                }
+                list_Label_AgeLimit[i].Text = "18+";
+                list_Label_AgeLimit[i].ForeColor = Color.FromArgb(0, 0, 0);
+                list_Label_AgeLimit[i].BackColor = Color.FromArgb(40, 0, 0, 0);
+                list_Label_AgeLimit[i].Width = 35;
+                list_Label_AgeLimit[i].Height = 20;
+                list_Label_AgeLimit[i].TextAlign = ContentAlignment.MiddleCenter;
+                list_Label_AgeLimit[i].Location = new Point(x, y);
+
+                list_Label_LengthFilm[i].Text = "124 min.";
+                list_Label_LengthFilm[i].ForeColor = Color.FromArgb(0, 0, 0);
+                list_Label_LengthFilm[i].BackColor = Color.FromArgb(40, 0, 0, 0);
+                list_Label_LengthFilm[i].Width = 50;
+                list_Label_LengthFilm[i].Height = 20;
+                list_Label_LengthFilm[i].TextAlign = ContentAlignment.MiddleCenter;
+                list_Label_LengthFilm[i].Location = new Point(x + list_Label_FilmName[i].Width - list_Label_LengthFilm[i].Width, y);
+                
+                x += 180;
+                i++;
+                if (i % 4 == 0) { y += 250; x = 30; }
             }
+            
+            foreach (object e in db.GetFullListOfGener())
+                ComboBox_Gener.Items.Add(e);
+            ComboBox_Gener.SelectedIndex = 0;
+            ComboBox_Year.SelectedIndex = 0;
+            Button_SearchFilms_Back.Visible = Button_SearchFilms_Next.Visible = Label_PageInfo.Visible = false;
+            Button_SearchFilms.Width = 437;
         }
-        private void Form1_Load(object sender, EventArgs e) // Form load
+        private void LoadFilmsTo_Panel_Films()              // Function Panel_Films 
         {
-            // SET STYLE FOR LEFT MENU BUTTON
-            Set_StyleButton(List_buttonInLeftMenu);
-            // SHOW MAIN SCREEN
-            Set_Visible(Panel_MainScreen);
+            MessageBox.Show("Успешно"); // - DEGUB HELP (REMOVE THIS LINE)
+             
+            List<List<object>> queryRes = db.FindFilmsByTwoFilters();
+
+            for (short i = 0; i < settings[0];)
+            {
+                Panel_ViewListFilms.Controls.Add(list_Label_AgeLimit[i]);
+                Panel_ViewListFilms.Controls.Add(list_Label_LengthFilm[i]);
+                Panel_ViewListFilms.Controls.Add(list_Label_FilmName[i]);
+                Panel_ViewListFilms.Controls.Add(list_PictureBox[i]);
+                i++;
+            }
+
+                MessageBox.Show(queryRes[0][1].ToString());
+            Button_SearchFilms_Back.Visible = Button_SearchFilms_Next.Visible = Label_PageInfo.Visible = true;
+            Button_SearchFilms.Width = 162;
+            MainTitle_Panel_Films.Visible = false;
         }
+
         /* Action with elements in left menu:
          * 1. Label  [CinemaTickets] -> [Panel_MainScreen]
          * 2. Button [Фильмы] -> [Panel_Films]
@@ -175,9 +185,12 @@ namespace CinemaTickets
          * 5. Button [Выход] -> Close();
          */
         private void Label_TitleMainText_Click(object sender, EventArgs e)              => Set_Visible(Panel_MainScreen);
+
         private void MenuButton_Films_Click(object sender, EventArgs e)                 => Set_Visible(Panel_Films, MenuButton_Films);
+        private void Button_SearchFilms_Click(object sender, EventArgs e)               => LoadFilmsTo_Panel_Films();
         private void MenuButton_StatisticsAndReport_Click(object sender, EventArgs e)   => Set_Visible(Panel_StatisticsAndReport, MenuButton_StatisticsAndReport);
         private void MenuButton_Search_Click(object sender, EventArgs e)                => Set_Visible(Panel_Search, MenuButton_Search);
         private void MenuButton_Exit_Click(object sender, EventArgs e)                  => Close();
+
     }
 }

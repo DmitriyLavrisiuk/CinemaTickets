@@ -1,8 +1,10 @@
 ﻿/************************/
 /*   Создание таблиц    */
 /************************/
--- Create database Cinema
-use Cinema
+GO
+--DROP DATABASE IF EXISTS Cinema
+--CREATE DATABASE Cinema
+USE Cinema
 
 GO
 drop table if exists Films_gener;
@@ -26,7 +28,7 @@ CREATE TABLE Films (
 	film_length_min								decimal(3) not null,
 	film_price_ticket							decimal(3) not null,
 	film_photo									varchar(100) not null,
-	film_description							varchar(200) not null,
+	film_description							varchar(1000) not null,
 	film_slogan									varchar(100) not null)
 alter table Films add
 	Constraint csPK1							primary key(id),

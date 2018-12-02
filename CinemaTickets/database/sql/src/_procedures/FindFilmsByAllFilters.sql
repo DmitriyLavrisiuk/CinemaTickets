@@ -1,11 +1,11 @@
-﻿-- 1. Отображение списка фильмов c применением фильтров всех видов
+﻿-- Процедура для поиска фильмов по 14 параметрам
 -- EXAMPLE
--- EXEC FindFilmsWithFilters @production_to_search = "КНР,СССР,Россия"
+-- EXEC FindFilmsByAllFilters @production_to_search = "КНР,СССР,Россия"
 
 GO
-DROP PROC if exists FindFilmsWithFilters
+DROP PROC if exists FindFilmsByAllFilters
 GO
-CREATE PROC FindFilmsWithFilters
+CREATE PROC FindFilmsByAllFilters
 	@count_films_on_page int = 20,
 	@page_number int = 1,
 	@year_from int = NULL,

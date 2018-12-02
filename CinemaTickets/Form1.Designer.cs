@@ -36,8 +36,14 @@
             this.MenuButton_StatisticsAndReport = new System.Windows.Forms.Button();
             this.MenuButton_Films = new System.Windows.Forms.Button();
             this.Panel_Films = new System.Windows.Forms.Panel();
+            this.Label_PageInfo = new MetroFramework.Controls.MetroLabel();
+            this.Button_SearchFilms_Next = new MetroFramework.Controls.MetroButton();
+            this.Button_SearchFilms_Back = new MetroFramework.Controls.MetroButton();
+            this.ComboBox_Year = new MetroFramework.Controls.MetroComboBox();
+            this.Button_SearchFilms = new MetroFramework.Controls.MetroButton();
+            this.ComboBox_Gener = new MetroFramework.Controls.MetroComboBox();
             this.Panel_ViewListFilms = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.MainTitle_Panel_Films = new MetroFramework.Controls.MetroLabel();
             this.Panel_StatisticsAndReport = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.Panel_Search = new System.Windows.Forms.Panel();
@@ -47,6 +53,7 @@
             this.Panel_MainMenu.SuspendLayout();
             this.Panel_LabelInMainMenu.SuspendLayout();
             this.Panel_Films.SuspendLayout();
+            this.Panel_ViewListFilms.SuspendLayout();
             this.Panel_StatisticsAndReport.SuspendLayout();
             this.Panel_Search.SuspendLayout();
             this.Panel_MainScreen.SuspendLayout();
@@ -156,31 +163,108 @@
             // 
             // Panel_Films
             // 
+            this.Panel_Films.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.Panel_Films.Controls.Add(this.Label_PageInfo);
+            this.Panel_Films.Controls.Add(this.Button_SearchFilms_Next);
+            this.Panel_Films.Controls.Add(this.Button_SearchFilms_Back);
+            this.Panel_Films.Controls.Add(this.ComboBox_Year);
+            this.Panel_Films.Controls.Add(this.Button_SearchFilms);
+            this.Panel_Films.Controls.Add(this.ComboBox_Gener);
             this.Panel_Films.Controls.Add(this.Panel_ViewListFilms);
-            this.Panel_Films.Controls.Add(this.label2);
             this.Panel_Films.Location = new System.Drawing.Point(215, 0);
             this.Panel_Films.Name = "Panel_Films";
             this.Panel_Films.Size = new System.Drawing.Size(750, 600);
             this.Panel_Films.TabIndex = 1;
             // 
+            // Label_PageInfo
+            // 
+            this.Label_PageInfo.BackColor = System.Drawing.Color.Gainsboro;
+            this.Label_PageInfo.CausesValidation = false;
+            this.Label_PageInfo.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.Label_PageInfo.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.Label_PageInfo.Location = new System.Drawing.Point(648, 550);
+            this.Label_PageInfo.Name = "Label_PageInfo";
+            this.Label_PageInfo.Size = new System.Drawing.Size(79, 29);
+            this.Label_PageInfo.TabIndex = 6;
+            this.Label_PageInfo.Text = "Стр [?/?]";
+            this.Label_PageInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Button_SearchFilms_Next
+            // 
+            this.Button_SearchFilms_Next.Location = new System.Drawing.Point(553, 550);
+            this.Button_SearchFilms_Next.Name = "Button_SearchFilms_Next";
+            this.Button_SearchFilms_Next.Size = new System.Drawing.Size(89, 29);
+            this.Button_SearchFilms_Next.TabIndex = 5;
+            this.Button_SearchFilms_Next.Text = "Вперед";
+            // 
+            // Button_SearchFilms_Back
+            // 
+            this.Button_SearchFilms_Back.Location = new System.Drawing.Point(458, 550);
+            this.Button_SearchFilms_Back.Name = "Button_SearchFilms_Back";
+            this.Button_SearchFilms_Back.Size = new System.Drawing.Size(89, 29);
+            this.Button_SearchFilms_Back.TabIndex = 4;
+            this.Button_SearchFilms_Back.Text = "Назад";
+            // 
+            // ComboBox_Year
+            // 
+            this.ComboBox_Year.FormattingEnabled = true;
+            this.ComboBox_Year.ItemHeight = 23;
+            this.ComboBox_Year.Items.AddRange(new object[] {
+            "Все года",
+            "2018",
+            "2017",
+            "2016",
+            "2015",
+            "2014",
+            "2013",
+            "2012",
+            "Более поздние"});
+            this.ComboBox_Year.Location = new System.Drawing.Point(163, 550);
+            this.ComboBox_Year.Name = "ComboBox_Year";
+            this.ComboBox_Year.Size = new System.Drawing.Size(121, 29);
+            this.ComboBox_Year.TabIndex = 2;
+            // 
+            // Button_SearchFilms
+            // 
+            this.Button_SearchFilms.Location = new System.Drawing.Point(290, 550);
+            this.Button_SearchFilms.Name = "Button_SearchFilms";
+            this.Button_SearchFilms.Size = new System.Drawing.Size(162, 29);
+            this.Button_SearchFilms.TabIndex = 3;
+            this.Button_SearchFilms.Text = "Искать";
+            this.Button_SearchFilms.Click += new System.EventHandler(this.Button_SearchFilms_Click);
+            // 
+            // ComboBox_Gener
+            // 
+            this.ComboBox_Gener.FormattingEnabled = true;
+            this.ComboBox_Gener.ItemHeight = 23;
+            this.ComboBox_Gener.Items.AddRange(new object[] {
+            "Все жанры"});
+            this.ComboBox_Gener.Location = new System.Drawing.Point(19, 550);
+            this.ComboBox_Gener.Name = "ComboBox_Gener";
+            this.ComboBox_Gener.Size = new System.Drawing.Size(138, 29);
+            this.ComboBox_Gener.TabIndex = 1;
+            // 
             // Panel_ViewListFilms
             // 
             this.Panel_ViewListFilms.AutoScroll = true;
-            this.Panel_ViewListFilms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
+            this.Panel_ViewListFilms.BackColor = System.Drawing.Color.White;
+            this.Panel_ViewListFilms.Controls.Add(this.MainTitle_Panel_Films);
             this.Panel_ViewListFilms.Location = new System.Drawing.Point(0, 0);
             this.Panel_ViewListFilms.Name = "Panel_ViewListFilms";
-            this.Panel_ViewListFilms.Padding = new System.Windows.Forms.Padding(0, 0, 0, 30);
-            this.Panel_ViewListFilms.Size = new System.Drawing.Size(770, 490);
+            this.Panel_ViewListFilms.Padding = new System.Windows.Forms.Padding(0, 0, 0, 440);
+            this.Panel_ViewListFilms.Size = new System.Drawing.Size(770, 530);
             this.Panel_ViewListFilms.TabIndex = 9;
             // 
-            // label2
+            // MainTitle_Panel_Films
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 520);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Результатов найдено: ";
+            this.MainTitle_Panel_Films.Cursor = System.Windows.Forms.Cursors.Help;
+            this.MainTitle_Panel_Films.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.MainTitle_Panel_Films.Location = new System.Drawing.Point(1, 1);
+            this.MainTitle_Panel_Films.Name = "MainTitle_Panel_Films";
+            this.MainTitle_Panel_Films.Size = new System.Drawing.Size(768, 528);
+            this.MainTitle_Panel_Films.TabIndex = 0;
+            this.MainTitle_Panel_Films.Text = "Для просмотра подходящих вам результатов выберите жанр и год ниже.";
+            this.MainTitle_Panel_Films.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Panel_StatisticsAndReport
             // 
@@ -252,7 +336,7 @@
             this.Panel_MainMenu.ResumeLayout(false);
             this.Panel_LabelInMainMenu.ResumeLayout(false);
             this.Panel_Films.ResumeLayout(false);
-            this.Panel_Films.PerformLayout();
+            this.Panel_ViewListFilms.ResumeLayout(false);
             this.Panel_StatisticsAndReport.ResumeLayout(false);
             this.Panel_StatisticsAndReport.PerformLayout();
             this.Panel_Search.ResumeLayout(false);
@@ -277,10 +361,16 @@
         private System.Windows.Forms.Panel Panel_Search;
         private System.Windows.Forms.Panel Panel_MainScreen;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel Panel_ViewListFilms;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private MetroFramework.Controls.MetroComboBox ComboBox_Gener;
+        private MetroFramework.Controls.MetroComboBox ComboBox_Year;
+        private MetroFramework.Controls.MetroButton Button_SearchFilms;
+        private MetroFramework.Controls.MetroButton Button_SearchFilms_Next;
+        private MetroFramework.Controls.MetroButton Button_SearchFilms_Back;
+        private MetroFramework.Controls.MetroLabel Label_PageInfo;
+        private MetroFramework.Controls.MetroLabel MainTitle_Panel_Films;
     }
 }
 

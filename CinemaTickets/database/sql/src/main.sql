@@ -17,4 +17,6 @@ GO
 
 -- PROCEDURES
 GO
-:r _procedures/FindFilmsWithFilters.sql
+:r _procedures/FindFilmsByAllFilters.sql
+:r _procedures/FindFilmsByTwoFilters.sql
+:r _procedures/GetFullListOfGener.sql
