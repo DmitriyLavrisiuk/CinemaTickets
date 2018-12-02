@@ -1,9 +1,10 @@
 /************************/
 /*   Создание таблиц    */
 /************************/
---Create database Cinema
+-- Create database Cinema
 use Cinema
 
+GO
 drop table if exists Films_gener;
 drop table if exists Gener;
 drop table if exists Films_production;
@@ -14,8 +15,8 @@ drop table if exists Tickets;
 drop table if exists Sessions_list;
 drop table if exists Films;
 drop table if exists Halls;
-	
-	
+GO
+
 -- Список фильмов
 CREATE TABLE Films (
 	id											decimal(6) identity(1,1) not null,
@@ -136,3 +137,4 @@ CREATE TABLE Tickets (
 alter table Tickets add
 	Constraint csPK10							primary key(id),
 	Constraint csFK_id_session					foreign key(id_session) references Sessions_list(id) on delete cascade
+GO

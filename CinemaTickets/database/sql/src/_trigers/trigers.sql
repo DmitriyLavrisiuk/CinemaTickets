@@ -1,7 +1,7 @@
-/************************/
-/*       Триггеры       */
-/************************/
-
+/*************************/
+/*       Triggers       */
+/***********************/
+GO
 DROP TRIGGER if exists Tickets_INSERT
 GO
 CREATE TRIGGER Tickets_INSERT ON Tickets
@@ -38,5 +38,5 @@ END
 UPDATE Tickets 
 SET date_time_session = @date_session, price = (@price_ticket_film * @multiplier), unique_id_tickets = CONVERT(varchar, RAND()*10000+@id) + CONVERT(varchar, RAND()*10000+@id) + CONVERT(varchar, RAND()*10000+@id) + CONVERT(varchar, RAND()*@id)
 WHERE id = @id
-
+GO
 

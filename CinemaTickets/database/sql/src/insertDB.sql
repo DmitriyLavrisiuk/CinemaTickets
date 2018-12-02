@@ -1,3 +1,4 @@
+GO
 BEGIN TRY
 	BEGIN TRAN
 
@@ -28,7 +29,6 @@ BEGIN TRY
 	INSERT INTO Place_type (place_name, place_multiplier) VALUES
 		('Standart', 1), ('Comfort', 1.2), ('Luxury', 1.5);
 
-
 	INSERT INTO Films (film_name, film_year, film_length_min, film_price_ticket, film_photo, film_description, film_slogan) VALUES
 		('Мстители 1', 2014, 114, 10, 'logoFilm.png', 'Описание фильма Мстители - Война бесконечности', 'Слоган 1'),
 		('Астрал', 2015, 109, 8, 'logoFilm2.png', 'Описание фильма Астрал', 'Слоган 2'),
@@ -37,10 +37,11 @@ BEGIN TRY
 		('Мстители - Война бесконечности', 2018, 120, 15, 'logoFilm5.png', 'Описание фильма Мстители - Война бесконечности', 'Цвет настроение синий');
 
 	INSERT INTO Films_gener (id_film, id_gener) VALUES
-		(1, 2), (1, 3), (2, 9), (3, 4), (4, 3), (5, 1);
+		(1, 2), (1, 3), (2, 9), (3, 4), (4, 4), (4, 3), (5, 1);
 
 	INSERT INTO Films_production (id_film, id_country) VALUES
-		(1, 6), (2, 2), (3, 4), (4, 3), (5, 1);
+		(1, 1), (2, 11), (3, 3), (4, 1), (5, 2),
+		(1, 2), (2, 12), (3, 4), (4, 2), (5, 3);
 
 	INSERT INTO Sessions_list (id_film, id_hall, date_time_session) VALUES
 		(1, 1, '2018-01-01 10:55:00'),
@@ -63,3 +64,4 @@ BEGIN CATCH
 	ROLLBACK TRAN
 	RAISERROR('Error in Transaction!',14,1)
 END CATCH
+GO

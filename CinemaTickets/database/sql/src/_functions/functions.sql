@@ -1,5 +1,5 @@
 /********************************/
-/*           Функции           */
+/*           Functions         */
 /******************************/
 
 GO
@@ -19,7 +19,7 @@ CREATE FUNCTION GetStrTable (@param varchar(max)) RETURNS TABLE AS
           FROM   Numbers
           WHERE  Number <= len(',' + @param + ',') - 1
             AND  substring(',' + @param + ',', Number, 1) = ',')
-
+GO
 --DECLARE @t table(Value varchar(max)) 
 --INSERT INTO @t(Value) (select * from GetStrTable('Country7,Country2,Country4'))
 --SELECT * FROM @t

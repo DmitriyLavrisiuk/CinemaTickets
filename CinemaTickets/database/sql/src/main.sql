@@ -1,17 +1,20 @@
 
 -- Create DB and TABLES
+GO
 :r createDB.sql
 
 -- Insert values in TABLES
+GO
 :r insertDB.sql
 
 -- TRIGERS
+GO
 :r _trigers/trigers.sql
 
 -- FUNCTIONS
+GO
 :r _functions/functions.sql
 
 -- PROCEDURES
-:r _procedures/procedures.sql
-
-EXEC Show_Films_With_Filters 100,NULL,2014,2018,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'ASC'
+GO
+:r _procedures/FindFilmsWithFilters.sql
