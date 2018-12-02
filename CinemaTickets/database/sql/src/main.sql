@@ -1,4 +1,4 @@
-
+﻿
 -- Create DB and TABLES
 GO
 :r createDB.sql

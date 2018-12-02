@@ -1,4 +1,4 @@
-/*************************/
+ï»¿/*************************/
 /*       Triggers       */
 /***********************/
 GO
@@ -8,12 +8,12 @@ CREATE TRIGGER Tickets_INSERT ON Tickets
 AFTER INSERT, UPDATE AS
 
 DECLARE @id					decimal(3, 0),	/* ID */
-		@id_session			decimal(3, 0),	/* ID ñåàíñà */
-		@number_place		decimal(3, 0),	/* Íîìåð ìåñòà */
-		@price_ticket_film	decimal(3, 0),	/* Áàçîâàÿ öåíà áèëåòà çà ôèëüì */
-		@hall_places_count	decimal(3, 0),	/* Êîëè÷åñòâî ìåñò â çàëå */
-		@multiplier			float,			/* Ìíîæèòåëü äëÿ ðàñ÷åòà ñòîèìîñòè áèëåòà èñõîäÿ èç ìåñòà */
-		@date_session		datetime		/* Äàòà ñåàíñà */
+		@id_session			decimal(3, 0),	/* ID ÑÐµÐ°Ð½ÑÐ° */
+		@number_place		decimal(3, 0),	/* ÐÐ¾Ð¼ÐµÑ€ Ð¼ÐµÑÑ‚Ð° */
+		@price_ticket_film	decimal(3, 0),	/* Ð‘Ð°Ð·Ð¾Ð²Ð°Ñ Ñ†ÐµÐ½Ð° Ð±Ð¸Ð»ÐµÑ‚Ð° Ð·Ð° Ñ„Ð¸Ð»ÑŒÐ¼ */
+		@hall_places_count	decimal(3, 0),	/* ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¼ÐµÑÑ‚ Ð² Ð·Ð°Ð»Ðµ */
+		@multiplier			float,			/* ÐœÐ½Ð¾Ð¶Ð¸Ñ‚ÐµÐ»ÑŒ Ð´Ð»Ñ Ñ€Ð°ÑÑ‡ÐµÑ‚Ð° ÑÑ‚Ð¾Ð¸Ð¼Ð¾ÑÑ‚Ð¸ Ð±Ð¸Ð»ÐµÑ‚Ð° Ð¸ÑÑ…Ð¾Ð´Ñ Ð¸Ð· Ð¼ÐµÑÑ‚Ð° */
+		@date_session		datetime		/* Ð”Ð°Ñ‚Ð° ÑÐµÐ°Ð½ÑÐ° */
 
 SET @id						= (SELECT id FROM INSERTED)
 SET @id_session				= (SELECT id_session FROM INSERTED)
@@ -26,13 +26,13 @@ SET @date_session			= (SELECT date_time_session FROM Sessions_list WHERE id = @i
 IF (@number_place > @hall_places_count OR @number_place <= 0)
 	BEGIN
 	ROLLBACK TRAN
-	PRINT 'Ìåñòî ñ òàêèì id íå íàéäåíî!'
+	PRINT 'ÐœÐµÑÑ‚Ð¾ Ñ Ñ‚Ð°ÐºÐ¸Ð¼ id Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð¾!'
 END
 
 IF ((SELECT count(id) FROM Tickets WHERE id_session = @id_session AND number_place = @number_place AND date_time_session = @date_session) != 0)
 	BEGIN
 	ROLLBACK TRAN
-	PRINT 'Ìåñòî óæå çàíÿòî!'
+	PRINT 'ÐœÐµÑÑ‚Ð¾ ÑƒÐ¶Ðµ Ð·Ð°Ð½ÑÑ‚Ð¾!'
 END
 
 UPDATE Tickets 

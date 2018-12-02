@@ -1,6 +1,6 @@
--- 1. Отображение списка фильмов c применением фильтров всех видов
+п»ї-- 1. РћС‚РѕР±СЂР°Р¶РµРЅРёРµ СЃРїРёСЃРєР° С„РёР»СЊРјРѕРІ c РїСЂРёРјРµРЅРµРЅРёРµРј С„РёР»СЊС‚СЂРѕРІ РІСЃРµС… РІРёРґРѕРІ
 -- EXAMPLE
--- EXEC FindFilmsWithFilters @production_to_search = "КНР,СССР,Россия"
+-- EXEC FindFilmsWithFilters @production_to_search = "РљРќР ,РЎРЎРЎР ,Р РѕСЃСЃРёСЏ"
 
 GO
 DROP PROC if exists FindFilmsWithFilters

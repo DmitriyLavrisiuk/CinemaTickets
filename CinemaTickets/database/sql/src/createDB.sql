@@ -1,5 +1,5 @@
-/************************/
-/*   Создание таблиц    */
+п»ї/************************/
+/*   РЎРѕР·РґР°РЅРёРµ С‚Р°Р±Р»РёС†    */
 /************************/
 -- Create database Cinema
 use Cinema
@@ -17,7 +17,7 @@ drop table if exists Films;
 drop table if exists Halls;
 GO
 
--- Список фильмов
+-- РЎРїРёСЃРѕРє С„РёР»СЊРјРѕРІ
 CREATE TABLE Films (
 	id											decimal(6) identity(1,1) not null,
 	film_name									varchar(60) not null,
@@ -41,7 +41,7 @@ alter table Films add
 	Constraint csCheck_film_price_ticket		check (film_price_ticket Between 0 and 500)
 
 
--- Производство
+-- РџСЂРѕРёР·РІРѕРґСЃС‚РІРѕ
 CREATE TABLE Production (
 	id_country									decimal(4) identity(1,1) not null,
 	country_name								varchar(25) not null)
@@ -50,7 +50,7 @@ alter table Production add
 	Constraint csDefault_country_name			default '-' for country_name;
 
 
--- Фильм Производство
+-- Р¤РёР»СЊРј РџСЂРѕРёР·РІРѕРґСЃС‚РІРѕ
 CREATE TABLE Films_production (
 	id											decimal(6) identity(1,1) not null,
 	id_film										decimal(6) not null,
@@ -61,7 +61,7 @@ alter table Films_production add
 	Constraint csFK_id_country					foreign key(id_country) references Production(id_country) on delete cascade
 
 
--- Типы жанров
+-- РўРёРїС‹ Р¶Р°РЅСЂРѕРІ
 CREATE TABLE Gener (
 	id_gener									decimal(2) identity(1,1) not null,
 	gener_name									varchar(20) not null)
@@ -70,7 +70,7 @@ alter table Gener add
 	Constraint csDefault_gener_name				default '-' for gener_name
 
 
--- Жанр фильма
+-- Р–Р°РЅСЂ С„РёР»СЊРјР°
 CREATE TABLE Films_gener (
 	id											decimal(6) identity(1,1) not null,
 	id_film										decimal(6) not null,
@@ -81,7 +81,7 @@ alter table Films_gener add
 	Constraint csFK_id_gener					foreign key(id_gener) references Gener(id_gener) on delete cascade
 
 
--- Залы
+-- Р—Р°Р»С‹
 CREATE TABLE Halls (
 	id											decimal(2) identity(1,1) not null,
 	hall_name									varchar(20) not null,
@@ -90,7 +90,7 @@ alter table Halls add
 	Constraint csPK9							primary key(id)
 
 
--- Типы места
+-- РўРёРїС‹ РјРµСЃС‚Р°
 CREATE TABLE Place_type (
 	id_place									decimal(1) identity(1,1) not null,
 	place_name									varchar(20) not null,
@@ -99,7 +99,7 @@ alter table Place_type add
 	Constraint csPK7							primary key(id_place)
 
 
--- Зал_Тип
+-- Р—Р°Р»_РўРёРї
 CREATE TABLE Hall_type (
 	id											decimal(2) identity(1,1) not null,
 	id_hall										decimal(2) not null,
@@ -114,7 +114,7 @@ alter table Hall_type add
 	Constraint csCH_place_to					check(place_to > place_from)
 
 
--- Список сеансов
+-- РЎРїРёСЃРѕРє СЃРµР°РЅСЃРѕРІ
 CREATE TABLE Sessions_list (
 	id											decimal(6) identity(1,1) not null,
 	id_film										decimal(6) not null,
@@ -126,7 +126,7 @@ alter table Sessions_list add
 	Constraint csFK_id_hall6					foreign key(id_hall) references Halls(id) on delete cascade
 
 
--- Билеты
+-- Р‘РёР»РµС‚С‹
 CREATE TABLE Tickets (
 	id											int identity(1,1) not null,
 	id_session									decimal(6) not null,
