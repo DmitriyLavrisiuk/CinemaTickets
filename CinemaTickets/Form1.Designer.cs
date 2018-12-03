@@ -192,6 +192,7 @@
             // 
             // Button_SearchFilms_Next
             // 
+            this.Button_SearchFilms_Next.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Button_SearchFilms_Next.Location = new System.Drawing.Point(553, 550);
             this.Button_SearchFilms_Next.Name = "Button_SearchFilms_Next";
             this.Button_SearchFilms_Next.Size = new System.Drawing.Size(89, 29);
@@ -200,6 +201,7 @@
             // 
             // Button_SearchFilms_Back
             // 
+            this.Button_SearchFilms_Back.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Button_SearchFilms_Back.Location = new System.Drawing.Point(458, 550);
             this.Button_SearchFilms_Back.Name = "Button_SearchFilms_Back";
             this.Button_SearchFilms_Back.Size = new System.Drawing.Size(89, 29);
@@ -211,7 +213,7 @@
             this.ComboBox_Year.FormattingEnabled = true;
             this.ComboBox_Year.ItemHeight = 23;
             this.ComboBox_Year.Items.AddRange(new object[] {
-            "Все",
+            "Все года",
             "Самые новые",
             "2016 - 2018",
             "2012 - 2016",
@@ -228,6 +230,7 @@
             // 
             // Button_SearchFilms
             // 
+            this.Button_SearchFilms.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Button_SearchFilms.Location = new System.Drawing.Point(290, 550);
             this.Button_SearchFilms.Name = "Button_SearchFilms";
             this.Button_SearchFilms.Size = new System.Drawing.Size(162, 29);

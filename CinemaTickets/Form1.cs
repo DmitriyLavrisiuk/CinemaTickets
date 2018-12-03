@@ -16,6 +16,7 @@ using System.Data.SqlClient;
 
 // setting - Set DEFAULT settings for the application
 // Settings[0] - Count pictureBox in list_pictureBoxViewFilms
+// Доделать пагинацию и сделать переключение по страницам, а так же проявлять длительность фильма по наведению на PictureBox
 
 
 
@@ -119,6 +120,7 @@ namespace CinemaTickets
                 list_PictureBox[i].Height = 200;
                 list_PictureBox[i].Width = 150;
                 list_PictureBox[i].Location = new Point(x, y);
+                list_PictureBox[i].SizeMode = PictureBoxSizeMode.StretchImage;
 
                 list_Label_FilmName[i].Text = "[Film name]";
                 list_Label_FilmName[i].ForeColor = Color.FromArgb(0, 0, 0);
@@ -157,7 +159,6 @@ namespace CinemaTickets
                 x += 180;
                 i++;
                 if (i % 4 == 0) { y += 250; x = 30; }
-                
             }
             
             foreach (object e in db.GetFullListOfGener())
@@ -211,6 +212,5 @@ namespace CinemaTickets
         private void MenuButton_StatisticsAndReport_Click(object sender, EventArgs e)   => Set_Visible(Panel_StatisticsAndReport, MenuButton_StatisticsAndReport);
         private void MenuButton_Search_Click(object sender, EventArgs e)                => Set_Visible(Panel_Search, MenuButton_Search);
         private void MenuButton_Exit_Click(object sender, EventArgs e)                  => Close();
-
     }
 }
