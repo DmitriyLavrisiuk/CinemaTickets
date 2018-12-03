@@ -45,11 +45,11 @@
             this.Panel_ViewListFilms = new System.Windows.Forms.Panel();
             this.MainTitle_Panel_Films = new MetroFramework.Controls.MetroLabel();
             this.Panel_StatisticsAndReport = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.Label_Title_Panel_StatisticsAndReport = new MetroFramework.Controls.MetroLabel();
             this.Panel_Search = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.Label_Title_Panel_Search = new MetroFramework.Controls.MetroLabel();
             this.Panel_MainScreen = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Label_Title_Panel_MainScreen = new MetroFramework.Controls.MetroLabel();
             this.Panel_MainMenu.SuspendLayout();
             this.Panel_LabelInMainMenu.SuspendLayout();
             this.Panel_Films.SuspendLayout();
@@ -171,6 +171,7 @@
             this.Panel_Films.Controls.Add(this.Button_SearchFilms);
             this.Panel_Films.Controls.Add(this.ComboBox_Gener);
             this.Panel_Films.Controls.Add(this.Panel_ViewListFilms);
+            this.Panel_Films.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Panel_Films.Location = new System.Drawing.Point(215, 0);
             this.Panel_Films.Name = "Panel_Films";
             this.Panel_Films.Size = new System.Drawing.Size(750, 600);
@@ -210,14 +211,15 @@
             this.ComboBox_Year.FormattingEnabled = true;
             this.ComboBox_Year.ItemHeight = 23;
             this.ComboBox_Year.Items.AddRange(new object[] {
-            "Все года",
-            "2018",
-            "2017",
-            "2016",
-            "2015",
-            "2014",
-            "2013",
-            "2012",
+            "Все",
+            "Самые новые",
+            "2016 - 2018",
+            "2012 - 2016",
+            "2008 - 2012",
+            "2006 - 2008",
+            "2002 - 2006",
+            "2000 - 2002",
+            "1990 - 2000",
             "Более поздние"});
             this.ComboBox_Year.Location = new System.Drawing.Point(163, 550);
             this.ComboBox_Year.Name = "ComboBox_Year";
@@ -249,6 +251,7 @@
             this.Panel_ViewListFilms.AutoScroll = true;
             this.Panel_ViewListFilms.BackColor = System.Drawing.Color.White;
             this.Panel_ViewListFilms.Controls.Add(this.MainTitle_Panel_Films);
+            this.Panel_ViewListFilms.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Panel_ViewListFilms.Location = new System.Drawing.Point(0, 0);
             this.Panel_ViewListFilms.Name = "Panel_ViewListFilms";
             this.Panel_ViewListFilms.Padding = new System.Windows.Forms.Padding(0, 0, 0, 440);
@@ -268,54 +271,60 @@
             // 
             // Panel_StatisticsAndReport
             // 
-            this.Panel_StatisticsAndReport.Controls.Add(this.label4);
+            this.Panel_StatisticsAndReport.Controls.Add(this.Label_Title_Panel_StatisticsAndReport);
             this.Panel_StatisticsAndReport.Location = new System.Drawing.Point(215, 0);
             this.Panel_StatisticsAndReport.Name = "Panel_StatisticsAndReport";
             this.Panel_StatisticsAndReport.Size = new System.Drawing.Size(750, 600);
             this.Panel_StatisticsAndReport.TabIndex = 2;
             // 
-            // label4
+            // Label_Title_Panel_StatisticsAndReport
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Panel StatisticsAndReport";
+            this.Label_Title_Panel_StatisticsAndReport.Cursor = System.Windows.Forms.Cursors.Help;
+            this.Label_Title_Panel_StatisticsAndReport.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_Title_Panel_StatisticsAndReport.Location = new System.Drawing.Point(0, 0);
+            this.Label_Title_Panel_StatisticsAndReport.Name = "Label_Title_Panel_StatisticsAndReport";
+            this.Label_Title_Panel_StatisticsAndReport.Size = new System.Drawing.Size(750, 79);
+            this.Label_Title_Panel_StatisticsAndReport.TabIndex = 2;
+            this.Label_Title_Panel_StatisticsAndReport.Text = "Статистика и отчеты";
+            this.Label_Title_Panel_StatisticsAndReport.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Panel_Search
             // 
-            this.Panel_Search.Controls.Add(this.label3);
+            this.Panel_Search.Controls.Add(this.Label_Title_Panel_Search);
             this.Panel_Search.Location = new System.Drawing.Point(215, 0);
             this.Panel_Search.Name = "Panel_Search";
             this.Panel_Search.Size = new System.Drawing.Size(750, 600);
             this.Panel_Search.TabIndex = 3;
             // 
-            // label3
+            // Label_Title_Panel_Search
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 36);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Panel Search";
+            this.Label_Title_Panel_Search.Cursor = System.Windows.Forms.Cursors.Help;
+            this.Label_Title_Panel_Search.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_Title_Panel_Search.Location = new System.Drawing.Point(0, 0);
+            this.Label_Title_Panel_Search.Name = "Label_Title_Panel_Search";
+            this.Label_Title_Panel_Search.Size = new System.Drawing.Size(750, 79);
+            this.Label_Title_Panel_Search.TabIndex = 1;
+            this.Label_Title_Panel_Search.Text = "Поиск";
+            this.Label_Title_Panel_Search.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Panel_MainScreen
             // 
-            this.Panel_MainScreen.Controls.Add(this.label1);
+            this.Panel_MainScreen.Controls.Add(this.Label_Title_Panel_MainScreen);
             this.Panel_MainScreen.Location = new System.Drawing.Point(215, 0);
             this.Panel_MainScreen.Name = "Panel_MainScreen";
             this.Panel_MainScreen.Size = new System.Drawing.Size(750, 600);
             this.Panel_MainScreen.TabIndex = 4;
             // 
-            // label1
+            // Label_Title_Panel_MainScreen
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Main screen";
+            this.Label_Title_Panel_MainScreen.Cursor = System.Windows.Forms.Cursors.Help;
+            this.Label_Title_Panel_MainScreen.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_Title_Panel_MainScreen.Location = new System.Drawing.Point(0, 0);
+            this.Label_Title_Panel_MainScreen.Name = "Label_Title_Panel_MainScreen";
+            this.Label_Title_Panel_MainScreen.Size = new System.Drawing.Size(750, 79);
+            this.Label_Title_Panel_MainScreen.TabIndex = 2;
+            this.Label_Title_Panel_MainScreen.Text = "CinemaTickets - покупай быстро и четко!";
+            this.Label_Title_Panel_MainScreen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -338,11 +347,8 @@
             this.Panel_Films.ResumeLayout(false);
             this.Panel_ViewListFilms.ResumeLayout(false);
             this.Panel_StatisticsAndReport.ResumeLayout(false);
-            this.Panel_StatisticsAndReport.PerformLayout();
             this.Panel_Search.ResumeLayout(false);
-            this.Panel_Search.PerformLayout();
             this.Panel_MainScreen.ResumeLayout(false);
-            this.Panel_MainScreen.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -360,10 +366,7 @@
         private System.Windows.Forms.Panel Panel_StatisticsAndReport;
         private System.Windows.Forms.Panel Panel_Search;
         private System.Windows.Forms.Panel Panel_MainScreen;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel Panel_ViewListFilms;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private MetroFramework.Controls.MetroComboBox ComboBox_Gener;
         private MetroFramework.Controls.MetroComboBox ComboBox_Year;
         private MetroFramework.Controls.MetroButton Button_SearchFilms;
@@ -371,6 +374,9 @@
         private MetroFramework.Controls.MetroButton Button_SearchFilms_Back;
         private MetroFramework.Controls.MetroLabel Label_PageInfo;
         private MetroFramework.Controls.MetroLabel MainTitle_Panel_Films;
+        private MetroFramework.Controls.MetroLabel Label_Title_Panel_Search;
+        private MetroFramework.Controls.MetroLabel Label_Title_Panel_StatisticsAndReport;
+        private MetroFramework.Controls.MetroLabel Label_Title_Panel_MainScreen;
     }
 }
 

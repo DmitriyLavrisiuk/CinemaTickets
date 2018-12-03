@@ -83,7 +83,7 @@ namespace CinemaTickets
             {
                 element.ForeColor = Color.FromArgb(255, 255, 255);
                 element.BackColor = Color.FromArgb(57, 57, 108);
-                element.Font = new Font("MS Reference Sans Serif", 8, FontStyle.Regular);
+                element.Font = new Font("Open sans", 9, FontStyle.Regular);
             }
         }
         private void Set_Visible(Panel e1, Button e2)       // Set visible for panel 
@@ -122,31 +122,42 @@ namespace CinemaTickets
 
                 list_Label_FilmName[i].Text = "[Film name]";
                 list_Label_FilmName[i].ForeColor = Color.FromArgb(0, 0, 0);
-                list_Label_FilmName[i].BackColor = Color.FromArgb(5, 0, 0, 0);
+                list_Label_FilmName[i].BackColor = Color.FromArgb(1, 0, 0, 0);
                 list_Label_FilmName[i].Width = 150;
                 list_Label_FilmName[i].Height = 30;
+                list_Label_FilmName[i].Font = new Font("Roboto", 9, FontStyle.Regular);
                 list_Label_FilmName[i].TextAlign = ContentAlignment.MiddleCenter;
                 list_Label_FilmName[i].Location = new Point(x, y + 200);
 
                 list_Label_AgeLimit[i].Text = "18+";
-                list_Label_AgeLimit[i].ForeColor = Color.FromArgb(0, 0, 0);
-                list_Label_AgeLimit[i].BackColor = Color.FromArgb(40, 0, 0, 0);
+                list_Label_AgeLimit[i].ForeColor = Color.FromArgb(255, 255, 255);
+                list_Label_AgeLimit[i].BackColor = Color.FromArgb(236, 23, 79);
                 list_Label_AgeLimit[i].Width = 35;
                 list_Label_AgeLimit[i].Height = 20;
+                list_Label_AgeLimit[i].Font = new Font("Righteous", 8);
                 list_Label_AgeLimit[i].TextAlign = ContentAlignment.MiddleCenter;
-                list_Label_AgeLimit[i].Location = new Point(x, y);
+                list_Label_AgeLimit[i].Location = new Point(x-2, y-2);
 
                 list_Label_LengthFilm[i].Text = "124 min.";
-                list_Label_LengthFilm[i].ForeColor = Color.FromArgb(0, 0, 0);
-                list_Label_LengthFilm[i].BackColor = Color.FromArgb(40, 0, 0, 0);
+                list_Label_LengthFilm[i].ForeColor = Color.FromArgb(255, 255, 255);
+                list_Label_LengthFilm[i].BackColor = Color.FromArgb(236, 23, 79);
                 list_Label_LengthFilm[i].Width = 50;
                 list_Label_LengthFilm[i].Height = 20;
+                list_Label_LengthFilm[i].Font = new Font("Righteous", 8);
                 list_Label_LengthFilm[i].TextAlign = ContentAlignment.MiddleCenter;
-                list_Label_LengthFilm[i].Location = new Point(x + list_Label_FilmName[i].Width - list_Label_LengthFilm[i].Width, y);
+                list_Label_LengthFilm[i].Location = new Point(x + list_PictureBox[i].Width - list_Label_LengthFilm[i].Width+2, y + list_PictureBox[i].Height - list_Label_LengthFilm[i].Height + 2);
+                
+                list_Label_AgeLimit[i].Visible = list_Label_LengthFilm[i].Visible = list_Label_FilmName[i].Visible = list_PictureBox[i].Visible = false;
+
+                Panel_ViewListFilms.Controls.Add(list_Label_LengthFilm[i]);
+                Panel_ViewListFilms.Controls.Add(list_Label_AgeLimit[i]);
+                Panel_ViewListFilms.Controls.Add(list_PictureBox[i]);
+                Panel_ViewListFilms.Controls.Add(list_Label_FilmName[i]);
                 
                 x += 180;
                 i++;
                 if (i % 4 == 0) { y += 250; x = 30; }
+                
             }
             
             foreach (object e in db.GetFullListOfGener())
@@ -157,24 +168,33 @@ namespace CinemaTickets
             Button_SearchFilms.Width = 437;
         }
         private void LoadFilmsTo_Panel_Films()              // Function Panel_Films 
-        {
-            MessageBox.Show("Успешно"); // - DEGUB HELP (REMOVE THIS LINE)
-             
-            List<List<object>> queryRes = db.FindFilmsByTwoFilters();
-
-            for (short i = 0; i < settings[0];)
+        {    
+            List<List<object>> queryRes = db.FindFilmsByTwoFilters(settings[0], 1,ComboBox_Gener.SelectedItem.ToString(), ComboBox_Year.SelectedItem.ToString());
+            for (short i = 0; i < settings[0]; i++)
             {
-                Panel_ViewListFilms.Controls.Add(list_Label_AgeLimit[i]);
-                Panel_ViewListFilms.Controls.Add(list_Label_LengthFilm[i]);
-                Panel_ViewListFilms.Controls.Add(list_Label_FilmName[i]);
-                Panel_ViewListFilms.Controls.Add(list_PictureBox[i]);
-                i++;
+                if(i < queryRes.Count) {
+                    list_Label_FilmName[i].Text = queryRes[i][1].ToString();
+                    list_Label_AgeLimit[i].Text = queryRes[i][2].ToString() + "+";
+                    list_Label_LengthFilm[i].Text = queryRes[i][3].ToString() + " min.";
+                    list_PictureBox[i].ImageLocation = queryRes[i][4].ToString();
+                    list_Label_AgeLimit[i].Visible = list_Label_LengthFilm[i].Visible = list_Label_FilmName[i].Visible = list_PictureBox[i].Visible = true;
+                }
+                else {
+                    list_Label_AgeLimit[i].Visible = list_Label_LengthFilm[i].Visible = list_Label_FilmName[i].Visible = list_PictureBox[i].Visible = false;
+                }
             }
 
-                MessageBox.Show(queryRes[0][1].ToString());
-            Button_SearchFilms_Back.Visible = Button_SearchFilms_Next.Visible = Label_PageInfo.Visible = true;
-            Button_SearchFilms.Width = 162;
-            MainTitle_Panel_Films.Visible = false;
+            if(queryRes.Count != 0) {
+                Button_SearchFilms_Back.Visible = Button_SearchFilms_Next.Visible = Label_PageInfo.Visible = true;
+                Button_SearchFilms.Width = 162;
+                MainTitle_Panel_Films.Visible = false;
+            }
+            else {
+                Button_SearchFilms_Back.Visible = Button_SearchFilms_Next.Visible = Label_PageInfo.Visible = false;
+                Button_SearchFilms.Width = 437;
+                MainTitle_Panel_Films.Text = "По вашему запросу ничего не найдено :(";
+                MainTitle_Panel_Films.Visible = true;
+            }
         }
 
         /* Action with elements in left menu:
