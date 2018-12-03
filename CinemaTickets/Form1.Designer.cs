@@ -36,7 +36,6 @@
             this.MenuButton_StatisticsAndReport = new System.Windows.Forms.Button();
             this.MenuButton_Films = new System.Windows.Forms.Button();
             this.Panel_Films = new System.Windows.Forms.Panel();
-            this.Label_PageInfo = new MetroFramework.Controls.MetroLabel();
             this.Button_SearchFilms_Next = new MetroFramework.Controls.MetroButton();
             this.Button_SearchFilms_Back = new MetroFramework.Controls.MetroButton();
             this.ComboBox_Year = new MetroFramework.Controls.MetroComboBox();
@@ -50,6 +49,7 @@
             this.Label_Title_Panel_Search = new MetroFramework.Controls.MetroLabel();
             this.Panel_MainScreen = new System.Windows.Forms.Panel();
             this.Label_Title_Panel_MainScreen = new MetroFramework.Controls.MetroLabel();
+            this.Label_NumberPage = new MetroFramework.Controls.MetroLabel();
             this.Panel_MainMenu.SuspendLayout();
             this.Panel_LabelInMainMenu.SuspendLayout();
             this.Panel_Films.SuspendLayout();
@@ -164,7 +164,7 @@
             // Panel_Films
             // 
             this.Panel_Films.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.Panel_Films.Controls.Add(this.Label_PageInfo);
+            this.Panel_Films.Controls.Add(this.Label_NumberPage);
             this.Panel_Films.Controls.Add(this.Button_SearchFilms_Next);
             this.Panel_Films.Controls.Add(this.Button_SearchFilms_Back);
             this.Panel_Films.Controls.Add(this.ComboBox_Year);
@@ -177,39 +177,29 @@
             this.Panel_Films.Size = new System.Drawing.Size(750, 600);
             this.Panel_Films.TabIndex = 1;
             // 
-            // Label_PageInfo
-            // 
-            this.Label_PageInfo.BackColor = System.Drawing.Color.Gainsboro;
-            this.Label_PageInfo.CausesValidation = false;
-            this.Label_PageInfo.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.Label_PageInfo.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.Label_PageInfo.Location = new System.Drawing.Point(648, 550);
-            this.Label_PageInfo.Name = "Label_PageInfo";
-            this.Label_PageInfo.Size = new System.Drawing.Size(79, 29);
-            this.Label_PageInfo.TabIndex = 6;
-            this.Label_PageInfo.Text = "Стр [?/?]";
-            this.Label_PageInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Button_SearchFilms_Next
             // 
             this.Button_SearchFilms_Next.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button_SearchFilms_Next.Location = new System.Drawing.Point(553, 550);
+            this.Button_SearchFilms_Next.Location = new System.Drawing.Point(561, 550);
             this.Button_SearchFilms_Next.Name = "Button_SearchFilms_Next";
-            this.Button_SearchFilms_Next.Size = new System.Drawing.Size(89, 29);
+            this.Button_SearchFilms_Next.Size = new System.Drawing.Size(85, 29);
             this.Button_SearchFilms_Next.TabIndex = 5;
             this.Button_SearchFilms_Next.Text = "Вперед";
+            this.Button_SearchFilms_Next.Click += new System.EventHandler(this.Button_SearchFilms_Next_Click);
             // 
             // Button_SearchFilms_Back
             // 
             this.Button_SearchFilms_Back.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button_SearchFilms_Back.Location = new System.Drawing.Point(458, 550);
+            this.Button_SearchFilms_Back.Location = new System.Drawing.Point(470, 550);
             this.Button_SearchFilms_Back.Name = "Button_SearchFilms_Back";
-            this.Button_SearchFilms_Back.Size = new System.Drawing.Size(89, 29);
+            this.Button_SearchFilms_Back.Size = new System.Drawing.Size(85, 29);
             this.Button_SearchFilms_Back.TabIndex = 4;
             this.Button_SearchFilms_Back.Text = "Назад";
+            this.Button_SearchFilms_Back.Click += new System.EventHandler(this.Button_SearchFilms_Back_Click);
             // 
             // ComboBox_Year
             // 
+            this.ComboBox_Year.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ComboBox_Year.FormattingEnabled = true;
             this.ComboBox_Year.ItemHeight = 23;
             this.ComboBox_Year.Items.AddRange(new object[] {
@@ -233,13 +223,14 @@
             this.Button_SearchFilms.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Button_SearchFilms.Location = new System.Drawing.Point(290, 550);
             this.Button_SearchFilms.Name = "Button_SearchFilms";
-            this.Button_SearchFilms.Size = new System.Drawing.Size(162, 29);
+            this.Button_SearchFilms.Size = new System.Drawing.Size(174, 29);
             this.Button_SearchFilms.TabIndex = 3;
             this.Button_SearchFilms.Text = "Искать";
             this.Button_SearchFilms.Click += new System.EventHandler(this.Button_SearchFilms_Click);
             // 
             // ComboBox_Gener
             // 
+            this.ComboBox_Gener.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ComboBox_Gener.FormattingEnabled = true;
             this.ComboBox_Gener.ItemHeight = 23;
             this.ComboBox_Gener.Items.AddRange(new object[] {
@@ -329,6 +320,19 @@
             this.Label_Title_Panel_MainScreen.Text = "CinemaTickets - покупай быстро и четко!";
             this.Label_Title_Panel_MainScreen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Label_NumberPage
+            // 
+            this.Label_NumberPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Label_NumberPage.Cursor = System.Windows.Forms.Cursors.Help;
+            this.Label_NumberPage.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.Label_NumberPage.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Label_NumberPage.Location = new System.Drawing.Point(652, 550);
+            this.Label_NumberPage.Name = "Label_NumberPage";
+            this.Label_NumberPage.Size = new System.Drawing.Size(82, 29);
+            this.Label_NumberPage.TabIndex = 10;
+            this.Label_NumberPage.Text = "1 из 3";
+            this.Label_NumberPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,11 +379,11 @@
         private MetroFramework.Controls.MetroButton Button_SearchFilms;
         private MetroFramework.Controls.MetroButton Button_SearchFilms_Next;
         private MetroFramework.Controls.MetroButton Button_SearchFilms_Back;
-        private MetroFramework.Controls.MetroLabel Label_PageInfo;
         private MetroFramework.Controls.MetroLabel MainTitle_Panel_Films;
         private MetroFramework.Controls.MetroLabel Label_Title_Panel_Search;
         private MetroFramework.Controls.MetroLabel Label_Title_Panel_StatisticsAndReport;
         private MetroFramework.Controls.MetroLabel Label_Title_Panel_MainScreen;
+        private MetroFramework.Controls.MetroLabel Label_NumberPage;
     }
 }
 
