@@ -1,12 +1,12 @@
 ﻿-- Процедура для поиска фильмов по 3 параметрам
 -- EXAMPLE
--- EXEC FindFilmsByFilters_3 @count_films_on_page = 8, @page_number = 3
+-- EXEC findFilmsByFilters_3 @count_films_on_page = 8, @page_number = 3
 
 
 GO
-DROP PROC if exists FindFilmsByFilters_3
+DROP PROC if exists findFilmsByFilters_3
 GO
-CREATE PROC FindFilmsByFilters_3
+CREATE PROC findFilmsByFilters_3
 	@count_films_on_page int = 20,
 	@page_number int = 1,
 	@year_from int = NULL,

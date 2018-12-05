@@ -1,11 +1,11 @@
 ﻿-- Процедура для поиска фильмов по 14 параметрам
 -- EXAMPLE
--- EXEC FindFilmsByAllFilters @production_to_search = "КНР,СССР,Россия"
+-- EXEC findFilmsByAllFilters @production_to_search = "КНР,СССР,Россия"
 
 GO
-DROP PROC if exists FindFilmsByAllFilters
+DROP PROC if exists findFilmsByAllFilters
 GO
-CREATE PROC FindFilmsByAllFilters
+CREATE PROC findFilmsByAllFilters
 	@count_films_on_page int = 20,
 	@page_number int = 1,
 	@year_from int = NULL,

@@ -26,14 +26,11 @@ namespace CinemaTickets
         private List<Button> listButtonInLeftMenu; 
         // List settings 
         private List<short> settings;                
-        // List pictureBox for film 
+        // List for film 
         private List<PictureBox> listPictureBox; 
-        // List label for film name
         private List<Label> listLabelFilmName; 
-        // List label for film age limit
         private List<Label> listLabelAgeLimit; 
-        // List label for length film
-        private List<Label> listLabelLengthFilm; 
+        private List<Label> listLabelLengthFilm;
 
         public MainForm()
         {
@@ -44,21 +41,26 @@ namespace CinemaTickets
             listLabelAgeLimit = new List<Label>();
             listLabelLengthFilm = new List<Label>();
             settings = new List<short>() {
-                20, 1
+                4, 1
             };
-            listPanel = new List<Panel>() {
+            listPanel = new List<Panel>()
+            {
                 panelMainScreen, panelFilms, panelSearch,
-                panelStatisticsAndReports, panelAdd, panelReturnTickets
+                panelStatisticsAndReports, panelAdd, searchTicket
             };
-            listPanelAddData = new List<Panel>() {
+            listPanelAddData = new List<Panel>()
+            {
                 panelAddFilms, panelAddSessions, panelAddGeners,
                 panelAddProductionCountries
             };
-            listButtonInLeftMenu = new List<Button>() {
+            listButtonInLeftMenu = new List<Button>()
+            {
                 menuButtonFilms, menuButtonStatisticsAndReports,
                 menuButtonSearch, menuButtonAdd, menuButtonExit,
                 menuButtonReturnTickets
             };
+            panelSearch.Controls.Add(ticketPanel);
+            panelSearch.Controls.Remove(ticketPanel);
 
         }
         // CallBakc function atfer Form load
@@ -81,8 +83,8 @@ namespace CinemaTickets
             setStyleButton(listButtonInLeftMenu);
             // SHOW MAIN SCREEN
             setVisible(panelMainScreen);
-            // SET Style Films List
-            setStyleFilmsList();
+            // Set style for elements
+            setStyleForElements();
         }
         // Set style for list buttons
         private void setStyleButton(List<Button> e)
@@ -135,7 +137,7 @@ namespace CinemaTickets
 
         }
         // Set location and style for elements Films
-        private void setStyleFilmsList()
+        private void setStyleForElements()
         {
             short x = 30, y = 30;
             for (short i = 0; i < settings[0];)
@@ -171,9 +173,12 @@ namespace CinemaTickets
                 listLabelLengthFilm[i].Height = 20;
                 listLabelLengthFilm[i].Font = new Font("Righteous", 8);
                 listLabelLengthFilm[i].TextAlign = ContentAlignment.MiddleCenter;
-                listLabelLengthFilm[i].Location = new Point(x + listPictureBox[i].Width - listLabelLengthFilm[i].Width + 2, y + listPictureBox[i].Height - listLabelLengthFilm[i].Height + 2);
+                listLabelLengthFilm[i].Location = new Point(x +
+                listPictureBox[i].Width - listLabelLengthFilm[i].Width + 2, y +
+                listPictureBox[i].Height - listLabelLengthFilm[i].Height + 2);
 
-                listLabelAgeLimit[i].Visible = listLabelLengthFilm[i].Visible = listLabelFilmName[i].Visible = listPictureBox[i].Visible = false;
+                listLabelAgeLimit[i].Visible = listLabelLengthFilm[i].Visible =
+                listLabelFilmName[i].Visible = listPictureBox[i].Visible = false;
 
                 panelViewListFilms.Controls.Add(listLabelLengthFilm[i]);
                 panelViewListFilms.Controls.Add(listLabelAgeLimit[i]);
@@ -187,16 +192,56 @@ namespace CinemaTickets
                     x = 30;
                 }
             }
-
-            foreach (object e in objectDataBase.GetFullListOfGener()) {
+            foreach (object e in objectDataBase.getFullListOfGener()) {
                 comboBoxGener.Items.Add(e);
             }
-            comboBoxGener.SelectedIndex = 0;
-            comboBoxYear.SelectedIndex = 0;
-            buttonSearchFilmsBack.Visible = buttonSearchFilmsNext.Visible = labelNumberPage.Visible = false;
+            comboBoxGener.SelectedIndex = comboBoxYear.SelectedIndex = 0;
+            buttonSearchFilmsBack.Visible = buttonSearchFilmsNext.Visible =
+                labelNumberPage.Visible = false;
             buttonSearchFilms.Width = 437;
+            
+        }
+        private void toggleHelper(bool state)
+        {
+            labelHelperDescription.Visible = (state) ? true : false;
+        }
+        private void drawTicket(object name, object date, object hall, object numbePlace, object price, object uid, object ageLimit, object length, object image, Panel namePanel, short x, short y)
+        {
+            ticketNameFilm.Text = name.ToString();
+            ticketDate.Text = date.ToString();
+            ticketHall.Text = hall.ToString() + " зал.";
+            ticketPlace.Text = numbePlace.ToString();
+            ticketPrice.Text = price.ToString() + " руб.";
+            ticketUID.Text = "UID: " + uid.ToString();
+            ticketAgeLimit.Text = ageLimit.ToString() + "+";
+            ticketLength.Text = length.ToString() + "min.";
+            ticketLength.Location = new Point(ticketPanel.Width - ticketLength.Width - 1, ticketPanel.Height - ticketLength.Height - 1);
+            ticketImage.ImageLocation = image.ToString();
+            ticketPanel.Location = new Point(x, y);
+            namePanel.Controls.Add(ticketPanel);
+            ticketPanel.Visible = true;
+        }
+        private void searchTicketUID()
+        {
+            List<object> result = objectDataBase.getAllInformationAboutTicketByUID(textBoxUID.Text);
+            if (result.Count != 0)
+            {
+                drawTicket(result[0], result[1], result[2], result[3], result[4], result[5], result[6], result[7], result[8], panelReturnTicket, 185, 95);
+                panelReturnTicket.Visible = true;
+            }
+            else
+            {
+                panelReturnTicket.Visible = false;
+                MessageBox.Show("Билет с таким UID не найден.");
+            }
+        }
+        private void returnTicketUID()
+        {
+            List<object> result = objectDataBase.returnTicket(textBoxUID.Text);
+            MessageBox.Show(result[0].ToString());
 
         }
+        
         // Function Panel_Films
         private void loadFilmsToPanelFilms(short pageAct)
         {
@@ -207,7 +252,7 @@ namespace CinemaTickets
                 case -1: settings[1] -= 1; break;
             }
 
-            List<List<object>> queryRes = objectDataBase.FindFilmsByFilters_3(settings[0], settings[1], comboBoxGener.SelectedItem.ToString(), comboBoxYear.SelectedItem.ToString());
+            List<List<object>> queryRes = objectDataBase.findFilmsByFilters_3(settings[0], settings[1], comboBoxGener.SelectedItem.ToString(), comboBoxYear.SelectedItem.ToString());
 
             for (short i = 0; i < settings[0]; i++)
             {
@@ -250,27 +295,38 @@ namespace CinemaTickets
             }
 
         }
+        
         // Panel TitleMainText
         private void labelTitleMainText_Click(object sender, EventArgs e) => setVisible(panelMainScreen);
+        
         // Panel Films
         private void menuButtonFilms_Click(object sender, EventArgs e) => setVisible(panelFilms, menuButtonFilms);
         private void buttonSearchFilms_Click(object sender, EventArgs e) => loadFilmsToPanelFilms(0);
         private void buttonSearchFilmsBack_Click(object sender, EventArgs e) => loadFilmsToPanelFilms(-1);
         private void buttonSearchFilmsNext_Click(object sender, EventArgs e) => loadFilmsToPanelFilms(1);
+        
         // Panel StatisticsAndReport
         private void menuButtonStatisticsAndReport_Click(object sender, EventArgs e) => setVisible(panelStatisticsAndReports, menuButtonStatisticsAndReports);
+        
         // Panel Search
         private void menuButtonSearch_Click(object sender, EventArgs e) => setVisible(panelSearch, menuButtonSearch);
+        
+        // Panel return ticket
+        private void menuButtonReturnTickets_Click(object sender, EventArgs e) => setVisible(searchTicket, menuButtonReturnTickets);
+        private void buttonSearchTicketUID_Click(object sender, EventArgs e) => searchTicketUID();
+        private void buttonReturnTicketUID_Click(object sender, EventArgs e) => returnTicketUID();
+        private void labelHelper_MouseHover(object sender, EventArgs e) => toggleHelper(true);
+        private void labelHelper_MouseLeave(object sender, EventArgs e) => toggleHelper(false);
+        
         // Panel Add new data
         private void menuButtonAdd_Click(object sender, EventArgs e) => setVisible(panelAdd, menuButtonAdd);
-        private void menuButtonReturnTickets_Click(object sender, EventArgs e) => setVisible(panelReturnTickets, menuButtonReturnTickets);
         private void buttonAddFilm_Click(object sender, EventArgs e) => setVisiblePanelAdd(panelAddFilms);
         private void buttonAddSession_Click(object sender, EventArgs e) => setVisiblePanelAdd(panelAddSessions);
         private void buttonAddGener_Click(object sender, EventArgs e) => setVisiblePanelAdd(panelAddGeners);
         private void buttonAddProductionCountries_Click(object sender, EventArgs e) => setVisiblePanelAdd(panelAddProductionCountries);
+        
         // Button Exit
         private void menuButton_Exit_Click(object sender, EventArgs e) => Close();
-
     }
 
 }

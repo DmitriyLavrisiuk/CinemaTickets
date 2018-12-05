@@ -17,7 +17,9 @@ GO
 
 -- PROCEDURES
 GO
-:r _procedures/GetFullListOfGener.sql
-:r _procedures/FindFilmsByFilters_3.sql
-:r _procedures/CountResultFindFilmsByFilters_3.sql
-:r _procedures/FindFilmsByAllFilters.sql
+:r _procedures/getFullListOfGener.sql
+:r _procedures/findFilmsByFilters_3.sql
+:r _procedures/countResultFindFilmsByFilters_3.sql
+:r _procedures/findFilmsByAllFilters.sql
+:r _procedures/getAllInformationAboutTicketByUID.sql
+:r _procedures/returnTicket.sql

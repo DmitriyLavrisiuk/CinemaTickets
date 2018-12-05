@@ -1,12 +1,12 @@
 ﻿-- Процедура для поиска фильмов по 3 параметрам
 -- EXAMPLE
--- EXEC CountResultFindFilmsByFilters_3 @gener_to_search = "Ужасы,Фантастические"
+-- EXEC countResultFindFilmsByFilters_3 @gener_to_search = "Ужасы,Фантастические"
 
 
 GO
-DROP PROC if exists CountResultFindFilmsByFilters_3
+DROP PROC if exists countResultFindFilmsByFilters_3
 GO
-CREATE PROC CountResultFindFilmsByFilters_3
+CREATE PROC countResultFindFilmsByFilters_3
 	@year_from int = NULL,
 	@year_to int = NULL,
 	@gener_to_search varchar(256) = NULL

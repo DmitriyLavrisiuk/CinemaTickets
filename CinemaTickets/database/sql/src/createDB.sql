@@ -121,7 +121,7 @@ CREATE TABLE Sessions_list (
 	id											decimal(6) identity(1,1) not null,
 	id_film										decimal(6) not null,
 	id_hall										decimal(2),
-	date_time_session							DATETIME not null)
+	date_time_session							smalldatetime not null)
 alter table Sessions_list add
 	Constraint csPK6							primary key(id),
 	Constraint csFK_id_film6					foreign key(id_film) references Films(id) on delete cascade,
@@ -133,7 +133,7 @@ CREATE TABLE Tickets (
 	id											int identity(1,1) not null,
 	id_session									decimal(6) not null,
 	number_place								decimal(3) not null,
-	date_time_session							datetime default null,
+	date_time_session							smalldatetime default null,
 	price										float default null,
 	unique_id_tickets							varchar(35) default null)
 alter table Tickets add
