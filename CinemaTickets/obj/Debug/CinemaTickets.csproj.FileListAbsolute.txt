@@ -4,10 +4,12 @@ C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\bin\Debug\CinemaTickets.
 C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\bin\Debug\MetroFramework.dll
 C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\bin\Debug\MetroFramework.Fonts.dll
 C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.csprojAssemblyReference.cache
-C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.Form1.resources
 C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.Properties.Resources.resources
 C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.csproj.GenerateResource.cache
 C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.csproj.CoreCompileInputs.cache
 C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.csproj.CopyComplete
 C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.exe
 C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.pdb
+C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.MainForm.resources
+C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\bin\Debug\dbCinemaTickets.dll
+C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\bin\Debug\dbCinemaTickets.pdb

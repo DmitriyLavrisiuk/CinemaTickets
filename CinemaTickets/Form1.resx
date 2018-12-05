@@ -117,4 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelHelperDescription.Text" xml:space="preserve">
+    <value>Возврат билета осуществляется по UID коду билета.
+Для возврата билета укажите UID код, находящийся на билете в поле выше, на который Вы хотите оформить возврат.
+Примечание: Оформление воврата осуществляется не менее чем за 1 час до начала сеанса.</value>
+  </data>
 </root>
