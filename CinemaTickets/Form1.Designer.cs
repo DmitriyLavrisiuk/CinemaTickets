@@ -847,12 +847,12 @@
             this.ClientSize = new System.Drawing.Size(965, 600);
             this.ControlBox = false;
             this.Controls.Add(this.panelMainMenu);
-            this.Controls.Add(this.searchTicket);
             this.Controls.Add(this.panelSearch);
             this.Controls.Add(this.panelMainScreen);
             this.Controls.Add(this.panelStatisticsAndReports);
             this.Controls.Add(this.panelFilms);
             this.Controls.Add(this.panelAdd);
+            this.Controls.Add(this.searchTicket);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Resizable = false;
