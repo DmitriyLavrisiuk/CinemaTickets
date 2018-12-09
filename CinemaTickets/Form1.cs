@@ -66,6 +66,8 @@ namespace CinemaTickets
         // CallBakc function atfer Form load
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "cinemaDataSet.Films". При необходимости она может быть перемещена или удалена.
+            this.filmsTableAdapter.Fill(this.cinemaDataSet.Films);
             // Set settings
             setSettings();
         }
@@ -327,6 +329,14 @@ namespace CinemaTickets
         
         // Button Exit
         private void menuButton_Exit_Click(object sender, EventArgs e) => Close();
+
+        private void filmsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.filmsBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.cinemaDataSet);
+
+        }
     }
 
 }
