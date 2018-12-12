@@ -66,6 +66,22 @@ namespace CinemaTickets
         // CallBakc function atfer Form load
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "cinemaDataSet.Films_production". При необходимости она может быть перемещена или удалена.
+            this.films_productionTableAdapter.Fill(this.cinemaDataSet.Films_production);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "cinemaDataSet.Films_gener". При необходимости она может быть перемещена или удалена.
+            this.films_generTableAdapter.Fill(this.cinemaDataSet.Films_gener);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "cinemaDataSet.Gener". При необходимости она может быть перемещена или удалена.
+            this.generTableAdapter.Fill(this.cinemaDataSet.Gener);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "cinemaDataSet.Sessions_list". При необходимости она может быть перемещена или удалена.
+            this.sessions_listTableAdapter.Fill(this.cinemaDataSet.Sessions_list);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "cinemaDataSet.Sessions_list". При необходимости она может быть перемещена или удалена.
+            this.sessions_listTableAdapter.Fill(this.cinemaDataSet.Sessions_list);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "cinemaDataSet.Sessions_list". При необходимости она может быть перемещена или удалена.
+            this.sessions_listTableAdapter.Fill(this.cinemaDataSet.Sessions_list);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "cinemaDataSet.Production". При необходимости она может быть перемещена или удалена.
+            this.productionTableAdapter.Fill(this.cinemaDataSet.Production);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "cinemaDataSet.Production". При необходимости она может быть перемещена или удалена.
+            this.productionTableAdapter.Fill(this.cinemaDataSet.Production);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "cinemaDataSet.Films". При необходимости она может быть перемещена или удалена.
             this.filmsTableAdapter.Fill(this.cinemaDataSet.Films);
             // Set settings
@@ -335,7 +351,41 @@ namespace CinemaTickets
             this.Validate();
             this.filmsBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.cinemaDataSet);
+        }
 
+        private void productionBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.productionBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.cinemaDataSet);
+        }
+
+        private void sessions_listBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.sessions_listBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.cinemaDataSet);
+        }
+
+        private void generBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.generBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.cinemaDataSet);
+        }
+
+        private void films_generBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.films_generBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.cinemaDataSet);
+        }
+
+        private void films_productionBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.films_productionBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.cinemaDataSet);
         }
     }
 
