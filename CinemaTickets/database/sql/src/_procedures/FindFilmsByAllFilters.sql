@@ -58,7 +58,6 @@ AS
 		AND (@length_to IS NULL OR Films.film_length_min <= @length_to)
 		AND (@price_ticket_from IS NULL OR Films.film_price_ticket >= @price_ticket_from)
 		AND (@price_ticket_to IS NULL OR Films.film_price_ticket <= @price_ticket_to)
-		AND (@price_ticket_to IS NULL OR Films.film_price_ticket <= @price_ticket_to)
 		AND (@description_words IS NULL OR Films.film_description like @description_words)
 		AND (@slogan_words IS NULL OR Films.film_description like @slogan_words)
 		AND (@gener_to_search IS NULL OR Gener.gener_name in ((SELECT value FROM @g)))

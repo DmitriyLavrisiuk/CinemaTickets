@@ -20,9 +20,9 @@ namespace CinemaTickets {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("CinemaDataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("MainCinemaDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class CinemaDataSet1 : global::System.Data.DataSet {
+    public partial class MainCinemaDataSet : global::System.Data.DataSet {
         
         private FilmsDataTable tableFilms;
         
@@ -82,7 +82,7 @@ namespace CinemaTickets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public CinemaDataSet1() {
+        public MainCinemaDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -93,7 +93,7 @@ namespace CinemaTickets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected CinemaDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected MainCinemaDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -400,7 +400,7 @@ namespace CinemaTickets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            CinemaDataSet1 cln = ((CinemaDataSet1)(base.Clone()));
+            MainCinemaDataSet cln = ((MainCinemaDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -634,9 +634,9 @@ namespace CinemaTickets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "CinemaDataSet1";
+            this.DataSetName = "MainCinemaDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/CinemaDataSet1.xsd";
+            this.Namespace = "http://tempuri.org/MainCinemaDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableFilms = new FilmsDataTable();
@@ -832,7 +832,7 @@ namespace CinemaTickets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            CinemaDataSet1 ds = new CinemaDataSet1();
+            MainCinemaDataSet ds = new MainCinemaDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -1257,7 +1257,7 @@ namespace CinemaTickets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CinemaDataSet1 ds = new CinemaDataSet1();
+                MainCinemaDataSet ds = new MainCinemaDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1555,7 +1555,7 @@ namespace CinemaTickets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CinemaDataSet1 ds = new CinemaDataSet1();
+                MainCinemaDataSet ds = new MainCinemaDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1853,7 +1853,7 @@ namespace CinemaTickets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CinemaDataSet1 ds = new CinemaDataSet1();
+                MainCinemaDataSet ds = new MainCinemaDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2131,7 +2131,7 @@ namespace CinemaTickets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CinemaDataSet1 ds = new CinemaDataSet1();
+                MainCinemaDataSet ds = new MainCinemaDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2459,7 +2459,7 @@ namespace CinemaTickets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CinemaDataSet1 ds = new CinemaDataSet1();
+                MainCinemaDataSet ds = new MainCinemaDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2752,7 +2752,7 @@ namespace CinemaTickets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CinemaDataSet1 ds = new CinemaDataSet1();
+                MainCinemaDataSet ds = new MainCinemaDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3004,7 +3004,7 @@ namespace CinemaTickets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CinemaDataSet1 ds = new CinemaDataSet1();
+                MainCinemaDataSet ds = new MainCinemaDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3297,7 +3297,7 @@ namespace CinemaTickets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CinemaDataSet1 ds = new CinemaDataSet1();
+                MainCinemaDataSet ds = new MainCinemaDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3575,7 +3575,7 @@ namespace CinemaTickets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CinemaDataSet1 ds = new CinemaDataSet1();
+                MainCinemaDataSet ds = new MainCinemaDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3887,7 +3887,7 @@ namespace CinemaTickets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CinemaDataSet1 ds = new CinemaDataSet1();
+                MainCinemaDataSet ds = new MainCinemaDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4225,7 +4225,7 @@ namespace CinemaTickets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CinemaDataSet1 ds = new CinemaDataSet1();
+                MainCinemaDataSet ds = new MainCinemaDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4473,7 +4473,7 @@ namespace CinemaTickets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CinemaDataSet1 ds = new CinemaDataSet1();
+                MainCinemaDataSet ds = new MainCinemaDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4857,7 +4857,7 @@ namespace CinemaTickets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CinemaDataSet1 ds = new CinemaDataSet1();
+                MainCinemaDataSet ds = new MainCinemaDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5179,7 +5179,7 @@ namespace CinemaTickets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CinemaDataSet1 ds = new CinemaDataSet1();
+                MainCinemaDataSet ds = new MainCinemaDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5547,7 +5547,7 @@ namespace CinemaTickets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CinemaDataSet1 ds = new CinemaDataSet1();
+                MainCinemaDataSet ds = new MainCinemaDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5796,7 +5796,7 @@ namespace CinemaTickets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CinemaDataSet1 ds = new CinemaDataSet1();
+                MainCinemaDataSet ds = new MainCinemaDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6045,7 +6045,7 @@ namespace CinemaTickets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CinemaDataSet1 ds = new CinemaDataSet1();
+                MainCinemaDataSet ds = new MainCinemaDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6294,7 +6294,7 @@ namespace CinemaTickets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CinemaDataSet1 ds = new CinemaDataSet1();
+                MainCinemaDataSet ds = new MainCinemaDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -8356,7 +8356,7 @@ namespace CinemaTickets {
         }
     }
 }
-namespace CinemaTickets.CinemaDataSet1TableAdapters {
+namespace CinemaTickets.MainCinemaDataSetTableAdapters {
     
     
     /// <summary>
@@ -8545,7 +8545,7 @@ SELECT id, film_name, film_year, film_age_limit, film_length_min, film_price_tic
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8563,7 +8563,7 @@ SELECT id, film_name, film_year, film_age_limit, film_length_min, film_price_tic
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CinemaDataSet1.FilmsDataTable dataTable) {
+        public virtual int Fill(MainCinemaDataSet.FilmsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8576,9 +8576,9 @@ SELECT id, film_name, film_year, film_age_limit, film_length_min, film_price_tic
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CinemaDataSet1.FilmsDataTable GetData() {
+        public virtual MainCinemaDataSet.FilmsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CinemaDataSet1.FilmsDataTable dataTable = new CinemaDataSet1.FilmsDataTable();
+            MainCinemaDataSet.FilmsDataTable dataTable = new MainCinemaDataSet.FilmsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8586,14 +8586,14 @@ SELECT id, film_name, film_year, film_age_limit, film_length_min, film_price_tic
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1.FilmsDataTable dataTable) {
+        public virtual int Update(MainCinemaDataSet.FilmsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1 dataSet) {
+        public virtual int Update(MainCinemaDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Films");
         }
         
@@ -8994,7 +8994,7 @@ SELECT id, film_name, film_year, film_age_limit, film_length_min, film_price_tic
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9011,7 +9011,7 @@ SELECT id, film_name, film_year, film_age_limit, film_length_min, film_price_tic
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CinemaDataSet1.Films_generDataTable dataTable) {
+        public virtual int Fill(MainCinemaDataSet.Films_generDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9024,9 +9024,9 @@ SELECT id, film_name, film_year, film_age_limit, film_length_min, film_price_tic
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CinemaDataSet1.Films_generDataTable GetData() {
+        public virtual MainCinemaDataSet.Films_generDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CinemaDataSet1.Films_generDataTable dataTable = new CinemaDataSet1.Films_generDataTable();
+            MainCinemaDataSet.Films_generDataTable dataTable = new MainCinemaDataSet.Films_generDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9034,14 +9034,14 @@ SELECT id, film_name, film_year, film_age_limit, film_length_min, film_price_tic
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1.Films_generDataTable dataTable) {
+        public virtual int Update(MainCinemaDataSet.Films_generDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1 dataSet) {
+        public virtual int Update(MainCinemaDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Films_gener");
         }
         
@@ -9301,7 +9301,7 @@ SELECT id, id_film, id_country FROM Films_production WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9318,7 +9318,7 @@ SELECT id, id_film, id_country FROM Films_production WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CinemaDataSet1.Films_productionDataTable dataTable) {
+        public virtual int Fill(MainCinemaDataSet.Films_productionDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9331,9 +9331,9 @@ SELECT id, id_film, id_country FROM Films_production WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CinemaDataSet1.Films_productionDataTable GetData() {
+        public virtual MainCinemaDataSet.Films_productionDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CinemaDataSet1.Films_productionDataTable dataTable = new CinemaDataSet1.Films_productionDataTable();
+            MainCinemaDataSet.Films_productionDataTable dataTable = new MainCinemaDataSet.Films_productionDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9341,14 +9341,14 @@ SELECT id, id_film, id_country FROM Films_production WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1.Films_productionDataTable dataTable) {
+        public virtual int Update(MainCinemaDataSet.Films_productionDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1 dataSet) {
+        public virtual int Update(MainCinemaDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Films_production");
         }
         
@@ -9603,7 +9603,7 @@ SELECT id, id_film, id_country FROM Films_production WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9620,7 +9620,7 @@ SELECT id, id_film, id_country FROM Films_production WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CinemaDataSet1.GenerDataTable dataTable) {
+        public virtual int Fill(MainCinemaDataSet.GenerDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9633,9 +9633,9 @@ SELECT id, id_film, id_country FROM Films_production WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CinemaDataSet1.GenerDataTable GetData() {
+        public virtual MainCinemaDataSet.GenerDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CinemaDataSet1.GenerDataTable dataTable = new CinemaDataSet1.GenerDataTable();
+            MainCinemaDataSet.GenerDataTable dataTable = new MainCinemaDataSet.GenerDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9643,14 +9643,14 @@ SELECT id, id_film, id_country FROM Films_production WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1.GenerDataTable dataTable) {
+        public virtual int Update(MainCinemaDataSet.GenerDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1 dataSet) {
+        public virtual int Update(MainCinemaDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Gener");
         }
         
@@ -9937,7 +9937,7 @@ SELECT id, id_hall, id_type, place_from, place_to FROM Hall_type WHERE (id = @id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9954,7 +9954,7 @@ SELECT id, id_hall, id_type, place_from, place_to FROM Hall_type WHERE (id = @id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CinemaDataSet1.Hall_typeDataTable dataTable) {
+        public virtual int Fill(MainCinemaDataSet.Hall_typeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9967,9 +9967,9 @@ SELECT id, id_hall, id_type, place_from, place_to FROM Hall_type WHERE (id = @id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CinemaDataSet1.Hall_typeDataTable GetData() {
+        public virtual MainCinemaDataSet.Hall_typeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CinemaDataSet1.Hall_typeDataTable dataTable = new CinemaDataSet1.Hall_typeDataTable();
+            MainCinemaDataSet.Hall_typeDataTable dataTable = new MainCinemaDataSet.Hall_typeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9977,14 +9977,14 @@ SELECT id, id_hall, id_type, place_from, place_to FROM Hall_type WHERE (id = @id
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1.Hall_typeDataTable dataTable) {
+        public virtual int Update(MainCinemaDataSet.Hall_typeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1 dataSet) {
+        public virtual int Update(MainCinemaDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Hall_type");
         }
         
@@ -10252,7 +10252,7 @@ SELECT id, hall_name, hall_places_count FROM Halls WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10269,7 +10269,7 @@ SELECT id, hall_name, hall_places_count FROM Halls WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CinemaDataSet1.HallsDataTable dataTable) {
+        public virtual int Fill(MainCinemaDataSet.HallsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10282,9 +10282,9 @@ SELECT id, hall_name, hall_places_count FROM Halls WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CinemaDataSet1.HallsDataTable GetData() {
+        public virtual MainCinemaDataSet.HallsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CinemaDataSet1.HallsDataTable dataTable = new CinemaDataSet1.HallsDataTable();
+            MainCinemaDataSet.HallsDataTable dataTable = new MainCinemaDataSet.HallsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10292,14 +10292,14 @@ SELECT id, hall_name, hall_places_count FROM Halls WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1.HallsDataTable dataTable) {
+        public virtual int Update(MainCinemaDataSet.HallsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1 dataSet) {
+        public virtual int Update(MainCinemaDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Halls");
         }
         
@@ -10554,7 +10554,7 @@ SELECT id, hall_name, hall_places_count FROM Halls WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10571,7 +10571,7 @@ SELECT id, hall_name, hall_places_count FROM Halls WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CinemaDataSet1.NumbersDataTable dataTable) {
+        public virtual int Fill(MainCinemaDataSet.NumbersDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10584,9 +10584,9 @@ SELECT id, hall_name, hall_places_count FROM Halls WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CinemaDataSet1.NumbersDataTable GetData() {
+        public virtual MainCinemaDataSet.NumbersDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CinemaDataSet1.NumbersDataTable dataTable = new CinemaDataSet1.NumbersDataTable();
+            MainCinemaDataSet.NumbersDataTable dataTable = new MainCinemaDataSet.NumbersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10594,14 +10594,14 @@ SELECT id, hall_name, hall_places_count FROM Halls WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1.NumbersDataTable dataTable) {
+        public virtual int Update(MainCinemaDataSet.NumbersDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1 dataSet) {
+        public virtual int Update(MainCinemaDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Numbers");
         }
         
@@ -10801,7 +10801,7 @@ SELECT id_place, place_name, place_multiplier FROM Place_type WHERE (id_place = 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10818,7 +10818,7 @@ SELECT id_place, place_name, place_multiplier FROM Place_type WHERE (id_place = 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CinemaDataSet1.Place_typeDataTable dataTable) {
+        public virtual int Fill(MainCinemaDataSet.Place_typeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10831,9 +10831,9 @@ SELECT id_place, place_name, place_multiplier FROM Place_type WHERE (id_place = 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CinemaDataSet1.Place_typeDataTable GetData() {
+        public virtual MainCinemaDataSet.Place_typeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CinemaDataSet1.Place_typeDataTable dataTable = new CinemaDataSet1.Place_typeDataTable();
+            MainCinemaDataSet.Place_typeDataTable dataTable = new MainCinemaDataSet.Place_typeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10841,14 +10841,14 @@ SELECT id_place, place_name, place_multiplier FROM Place_type WHERE (id_place = 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1.Place_typeDataTable dataTable) {
+        public virtual int Update(MainCinemaDataSet.Place_typeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1 dataSet) {
+        public virtual int Update(MainCinemaDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Place_type");
         }
         
@@ -11123,7 +11123,7 @@ SELECT id_place, place_name, place_multiplier FROM Place_type WHERE (id_place = 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11140,7 +11140,7 @@ SELECT id_place, place_name, place_multiplier FROM Place_type WHERE (id_place = 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CinemaDataSet1.ProductionDataTable dataTable) {
+        public virtual int Fill(MainCinemaDataSet.ProductionDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11153,9 +11153,9 @@ SELECT id_place, place_name, place_multiplier FROM Place_type WHERE (id_place = 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CinemaDataSet1.ProductionDataTable GetData() {
+        public virtual MainCinemaDataSet.ProductionDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CinemaDataSet1.ProductionDataTable dataTable = new CinemaDataSet1.ProductionDataTable();
+            MainCinemaDataSet.ProductionDataTable dataTable = new MainCinemaDataSet.ProductionDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11163,14 +11163,14 @@ SELECT id_place, place_name, place_multiplier FROM Place_type WHERE (id_place = 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1.ProductionDataTable dataTable) {
+        public virtual int Update(MainCinemaDataSet.ProductionDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1 dataSet) {
+        public virtual int Update(MainCinemaDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Production");
         }
         
@@ -11454,7 +11454,7 @@ SELECT id, id_film, id_hall, date_time_session FROM Sessions_list WHERE (id = @i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11471,7 +11471,7 @@ SELECT id, id_film, id_hall, date_time_session FROM Sessions_list WHERE (id = @i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CinemaDataSet1.Sessions_listDataTable dataTable) {
+        public virtual int Fill(MainCinemaDataSet.Sessions_listDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11484,9 +11484,9 @@ SELECT id, id_film, id_hall, date_time_session FROM Sessions_list WHERE (id = @i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CinemaDataSet1.Sessions_listDataTable GetData() {
+        public virtual MainCinemaDataSet.Sessions_listDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CinemaDataSet1.Sessions_listDataTable dataTable = new CinemaDataSet1.Sessions_listDataTable();
+            MainCinemaDataSet.Sessions_listDataTable dataTable = new MainCinemaDataSet.Sessions_listDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11494,14 +11494,14 @@ SELECT id, id_film, id_hall, date_time_session FROM Sessions_list WHERE (id = @i
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1.Sessions_listDataTable dataTable) {
+        public virtual int Update(MainCinemaDataSet.Sessions_listDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1 dataSet) {
+        public virtual int Update(MainCinemaDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Sessions_list");
         }
         
@@ -11808,7 +11808,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11826,7 +11826,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CinemaDataSet1.TicketsDataTable dataTable) {
+        public virtual int Fill(MainCinemaDataSet.TicketsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11839,9 +11839,9 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CinemaDataSet1.TicketsDataTable GetData() {
+        public virtual MainCinemaDataSet.TicketsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CinemaDataSet1.TicketsDataTable dataTable = new CinemaDataSet1.TicketsDataTable();
+            MainCinemaDataSet.TicketsDataTable dataTable = new MainCinemaDataSet.TicketsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11849,14 +11849,14 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1.TicketsDataTable dataTable) {
+        public virtual int Update(MainCinemaDataSet.TicketsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CinemaDataSet1 dataSet) {
+        public virtual int Update(MainCinemaDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Tickets");
         }
         
@@ -12171,7 +12171,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12192,7 +12192,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CinemaDataSet1.countResultFindFilmsByFilters_3DataTable dataTable, global::System.Nullable<int> year_from, global::System.Nullable<int> year_to, string gener_to_search) {
+        public virtual int Fill(MainCinemaDataSet.countResultFindFilmsByFilters_3DataTable dataTable, global::System.Nullable<int> year_from, global::System.Nullable<int> year_to, string gener_to_search) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((year_from.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(year_from.Value));
@@ -12223,7 +12223,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CinemaDataSet1.countResultFindFilmsByFilters_3DataTable GetData(global::System.Nullable<int> year_from, global::System.Nullable<int> year_to, string gener_to_search) {
+        public virtual MainCinemaDataSet.countResultFindFilmsByFilters_3DataTable GetData(global::System.Nullable<int> year_from, global::System.Nullable<int> year_to, string gener_to_search) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((year_from.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(year_from.Value));
@@ -12243,7 +12243,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
             else {
                 this.Adapter.SelectCommand.Parameters[3].Value = ((string)(gener_to_search));
             }
-            CinemaDataSet1.countResultFindFilmsByFilters_3DataTable dataTable = new CinemaDataSet1.countResultFindFilmsByFilters_3DataTable();
+            MainCinemaDataSet.countResultFindFilmsByFilters_3DataTable dataTable = new MainCinemaDataSet.countResultFindFilmsByFilters_3DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -12386,7 +12386,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12418,7 +12418,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CinemaDataSet1.findFilmsByAllFiltersDataTable dataTable, global::System.Nullable<int> count_films_on_page, global::System.Nullable<int> page_number, global::System.Nullable<int> year_from, global::System.Nullable<int> year_to, global::System.Nullable<int> age_limit_from, global::System.Nullable<int> age_limit_to, global::System.Nullable<int> length_from, global::System.Nullable<int> length_to, global::System.Nullable<int> price_ticket_from, global::System.Nullable<int> price_ticket_to, string description_words, string slogan_words, string gener_to_search, string production_to_search) {
+        public virtual int Fill(MainCinemaDataSet.findFilmsByAllFiltersDataTable dataTable, global::System.Nullable<int> count_films_on_page, global::System.Nullable<int> page_number, global::System.Nullable<int> year_from, global::System.Nullable<int> year_to, global::System.Nullable<int> age_limit_from, global::System.Nullable<int> age_limit_to, global::System.Nullable<int> length_from, global::System.Nullable<int> length_to, global::System.Nullable<int> price_ticket_from, global::System.Nullable<int> price_ticket_to, string description_words, string slogan_words, string gener_to_search, string production_to_search) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((count_films_on_page.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(count_films_on_page.Value));
@@ -12515,7 +12515,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CinemaDataSet1.findFilmsByAllFiltersDataTable GetData(global::System.Nullable<int> count_films_on_page, global::System.Nullable<int> page_number, global::System.Nullable<int> year_from, global::System.Nullable<int> year_to, global::System.Nullable<int> age_limit_from, global::System.Nullable<int> age_limit_to, global::System.Nullable<int> length_from, global::System.Nullable<int> length_to, global::System.Nullable<int> price_ticket_from, global::System.Nullable<int> price_ticket_to, string description_words, string slogan_words, string gener_to_search, string production_to_search) {
+        public virtual MainCinemaDataSet.findFilmsByAllFiltersDataTable GetData(global::System.Nullable<int> count_films_on_page, global::System.Nullable<int> page_number, global::System.Nullable<int> year_from, global::System.Nullable<int> year_to, global::System.Nullable<int> age_limit_from, global::System.Nullable<int> age_limit_to, global::System.Nullable<int> length_from, global::System.Nullable<int> length_to, global::System.Nullable<int> price_ticket_from, global::System.Nullable<int> price_ticket_to, string description_words, string slogan_words, string gener_to_search, string production_to_search) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((count_films_on_page.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(count_films_on_page.Value));
@@ -12601,7 +12601,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
             else {
                 this.Adapter.SelectCommand.Parameters[14].Value = ((string)(production_to_search));
             }
-            CinemaDataSet1.findFilmsByAllFiltersDataTable dataTable = new CinemaDataSet1.findFilmsByAllFiltersDataTable();
+            MainCinemaDataSet.findFilmsByAllFiltersDataTable dataTable = new MainCinemaDataSet.findFilmsByAllFiltersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -12740,7 +12740,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12763,7 +12763,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CinemaDataSet1.findFilmsByFilters_3DataTable dataTable, global::System.Nullable<int> count_films_on_page, global::System.Nullable<int> page_number, global::System.Nullable<int> year_from, global::System.Nullable<int> year_to, string gener_to_search) {
+        public virtual int Fill(MainCinemaDataSet.findFilmsByFilters_3DataTable dataTable, global::System.Nullable<int> count_films_on_page, global::System.Nullable<int> page_number, global::System.Nullable<int> year_from, global::System.Nullable<int> year_to, string gener_to_search) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((count_films_on_page.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(count_films_on_page.Value));
@@ -12806,7 +12806,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CinemaDataSet1.findFilmsByFilters_3DataTable GetData(global::System.Nullable<int> count_films_on_page, global::System.Nullable<int> page_number, global::System.Nullable<int> year_from, global::System.Nullable<int> year_to, string gener_to_search) {
+        public virtual MainCinemaDataSet.findFilmsByFilters_3DataTable GetData(global::System.Nullable<int> count_films_on_page, global::System.Nullable<int> page_number, global::System.Nullable<int> year_from, global::System.Nullable<int> year_to, string gener_to_search) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((count_films_on_page.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(count_films_on_page.Value));
@@ -12838,7 +12838,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
             else {
                 this.Adapter.SelectCommand.Parameters[5].Value = ((string)(gener_to_search));
             }
-            CinemaDataSet1.findFilmsByFilters_3DataTable dataTable = new CinemaDataSet1.findFilmsByFilters_3DataTable();
+            MainCinemaDataSet.findFilmsByFilters_3DataTable dataTable = new MainCinemaDataSet.findFilmsByFilters_3DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -12981,7 +12981,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13000,7 +13000,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CinemaDataSet1.getAllInformationAboutTicketByUIDDataTable dataTable, string unique_id_tickets) {
+        public virtual int Fill(MainCinemaDataSet.getAllInformationAboutTicketByUIDDataTable dataTable, string unique_id_tickets) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((unique_id_tickets == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -13019,7 +13019,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CinemaDataSet1.getAllInformationAboutTicketByUIDDataTable GetData(string unique_id_tickets) {
+        public virtual MainCinemaDataSet.getAllInformationAboutTicketByUIDDataTable GetData(string unique_id_tickets) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((unique_id_tickets == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -13027,7 +13027,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(unique_id_tickets));
             }
-            CinemaDataSet1.getAllInformationAboutTicketByUIDDataTable dataTable = new CinemaDataSet1.getAllInformationAboutTicketByUIDDataTable();
+            MainCinemaDataSet.getAllInformationAboutTicketByUIDDataTable dataTable = new MainCinemaDataSet.getAllInformationAboutTicketByUIDDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -13162,7 +13162,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13180,7 +13180,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CinemaDataSet1.getFullListOfGenerDataTable dataTable) {
+        public virtual int Fill(MainCinemaDataSet.getFullListOfGenerDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -13193,9 +13193,9 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CinemaDataSet1.getFullListOfGenerDataTable GetData() {
+        public virtual MainCinemaDataSet.getFullListOfGenerDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CinemaDataSet1.getFullListOfGenerDataTable dataTable = new CinemaDataSet1.getFullListOfGenerDataTable();
+            MainCinemaDataSet.getFullListOfGenerDataTable dataTable = new MainCinemaDataSet.getFullListOfGenerDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -13330,7 +13330,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13349,7 +13349,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CinemaDataSet1.returnTicketDataTable dataTable, string unique_id_tickets) {
+        public virtual int Fill(MainCinemaDataSet.returnTicketDataTable dataTable, string unique_id_tickets) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((unique_id_tickets == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -13368,7 +13368,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CinemaDataSet1.returnTicketDataTable GetData(string unique_id_tickets) {
+        public virtual MainCinemaDataSet.returnTicketDataTable GetData(string unique_id_tickets) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((unique_id_tickets == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -13376,7 +13376,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(unique_id_tickets));
             }
-            CinemaDataSet1.returnTicketDataTable dataTable = new CinemaDataSet1.returnTicketDataTable();
+            MainCinemaDataSet.returnTicketDataTable dataTable = new MainCinemaDataSet.returnTicketDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -13511,7 +13511,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13529,7 +13529,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CinemaDataSet1.GetStrTableDataTable dataTable, string param) {
+        public virtual int Fill(MainCinemaDataSet.GetStrTableDataTable dataTable, string param) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((param == null)) {
                 throw new global::System.ArgumentNullException("param");
@@ -13548,7 +13548,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CinemaDataSet1.GetStrTableDataTable GetData(string param) {
+        public virtual MainCinemaDataSet.GetStrTableDataTable GetData(string param) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((param == null)) {
                 throw new global::System.ArgumentNullException("param");
@@ -13556,7 +13556,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(param));
             }
-            CinemaDataSet1.GetStrTableDataTable dataTable = new CinemaDataSet1.GetStrTableDataTable();
+            MainCinemaDataSet.GetStrTableDataTable dataTable = new MainCinemaDataSet.GetStrTableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -13883,7 +13883,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(CinemaDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(MainCinemaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._filmsTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Films.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -13992,7 +13992,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(CinemaDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(MainCinemaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._filmsTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Films.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -14090,7 +14090,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(CinemaDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(MainCinemaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._hall_typeTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Hall_type.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -14212,7 +14212,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(CinemaDataSet1 dataSet) {
+        public virtual int UpdateAll(MainCinemaDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

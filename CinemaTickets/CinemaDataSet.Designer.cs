@@ -8545,7 +8545,7 @@ SELECT id, film_name, film_year, film_age_limit, film_length_min, film_price_tic
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8994,7 +8994,7 @@ SELECT id, film_name, film_year, film_age_limit, film_length_min, film_price_tic
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9301,7 +9301,7 @@ SELECT id, id_film, id_country FROM Films_production WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9603,7 +9603,7 @@ SELECT id, id_film, id_country FROM Films_production WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9937,7 +9937,7 @@ SELECT id, id_hall, id_type, place_from, place_to FROM Hall_type WHERE (id = @id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10252,7 +10252,7 @@ SELECT id, hall_name, hall_places_count FROM Halls WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10554,7 +10554,7 @@ SELECT id, hall_name, hall_places_count FROM Halls WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10801,7 +10801,7 @@ SELECT id_place, place_name, place_multiplier FROM Place_type WHERE (id_place = 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11123,7 +11123,7 @@ SELECT id_place, place_name, place_multiplier FROM Place_type WHERE (id_place = 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11454,7 +11454,7 @@ SELECT id, id_film, id_hall, date_time_session FROM Sessions_list WHERE (id = @i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11808,7 +11808,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12171,7 +12171,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12386,7 +12386,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12740,7 +12740,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12981,7 +12981,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13162,7 +13162,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13330,7 +13330,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13511,7 +13511,7 @@ SELECT id, id_session, number_place, date_time_session, price, unique_id_tickets
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.CinemaConnectionString;
+            this._connection.ConnectionString = global::CinemaTickets.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -1,6 +1,6 @@
 ﻿-- Процедура для поиска фильмов по 3 параметрам
 -- EXAMPLE
--- EXEC findFilmsByFilters_3 @count_films_on_page = 8, @page_number = 3
+-- EXEC findFilmsByFilters_3 @count_films_on_page = 3, @page_number = 5
 
 
 GO

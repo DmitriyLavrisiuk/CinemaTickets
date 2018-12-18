@@ -41,17 +41,12 @@ namespace CinemaTickets
             listLabelAgeLimit = new List<Label>();
             listLabelLengthFilm = new List<Label>();
             settings = new List<short>() {
-                4, 1
+                10, 1
             };
             listPanel = new List<Panel>()
             {
                 panelMainScreen, panelFilms, panelSearch,
                 panelStatisticsAndReports, panelAdd, searchTicket
-            };
-            listPanelAddData = new List<Panel>()
-            {
-                panelAddFilms, panelAddSessions, panelAddGeners,
-                panelAddProductionCountries
             };
             listButtonInLeftMenu = new List<Button>()
             {
@@ -66,24 +61,6 @@ namespace CinemaTickets
         // CallBakc function atfer Form load
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "cinemaDataSet.Films_production". При необходимости она может быть перемещена или удалена.
-            this.films_productionTableAdapter.Fill(this.cinemaDataSet.Films_production);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "cinemaDataSet.Films_gener". При необходимости она может быть перемещена или удалена.
-            this.films_generTableAdapter.Fill(this.cinemaDataSet.Films_gener);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "cinemaDataSet.Gener". При необходимости она может быть перемещена или удалена.
-            this.generTableAdapter.Fill(this.cinemaDataSet.Gener);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "cinemaDataSet.Sessions_list". При необходимости она может быть перемещена или удалена.
-            this.sessions_listTableAdapter.Fill(this.cinemaDataSet.Sessions_list);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "cinemaDataSet.Sessions_list". При необходимости она может быть перемещена или удалена.
-            this.sessions_listTableAdapter.Fill(this.cinemaDataSet.Sessions_list);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "cinemaDataSet.Sessions_list". При необходимости она может быть перемещена или удалена.
-            this.sessions_listTableAdapter.Fill(this.cinemaDataSet.Sessions_list);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "cinemaDataSet.Production". При необходимости она может быть перемещена или удалена.
-            this.productionTableAdapter.Fill(this.cinemaDataSet.Production);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "cinemaDataSet.Production". При необходимости она может быть перемещена или удалена.
-            this.productionTableAdapter.Fill(this.cinemaDataSet.Production);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "cinemaDataSet.Films". При необходимости она может быть перемещена или удалена.
-            this.filmsTableAdapter.Fill(this.cinemaDataSet.Films);
             // Set settings
             setSettings();
         }
@@ -271,10 +248,10 @@ namespace CinemaTickets
             }
 
             List<List<object>> queryRes = objectDataBase.findFilmsByFilters_3(settings[0], settings[1], comboBoxGener.SelectedItem.ToString(), comboBoxYear.SelectedItem.ToString());
-
+            
             for (short i = 0; i < settings[0]; i++)
             {
-                if (i < queryRes.Count-1)
+                if (i < queryRes.Count - 1)
                 {
                     listLabelFilmName[i].Text = queryRes[i][1].ToString();
                     listLabelAgeLimit[i].Text = queryRes[i][2].ToString() + "+";
@@ -286,25 +263,29 @@ namespace CinemaTickets
                 }
             }
 
-            if (Convert.ToInt32(queryRes[queryRes.Count - 1][0]) <= settings[0] * settings[1])
+            if (Convert.ToInt32(queryRes[queryRes.Count - 1][0]) / settings[0] <= 1)
+            {
+                buttonSearchFilmsNext.Enabled = false;
+                buttonSearchFilmsBack.Enabled = false;
+            }
+            else if (settings[1] >= Convert.ToInt32(queryRes[queryRes.Count - 1][0]) / settings[0])
             {
                 buttonSearchFilmsNext.Enabled = false;
                 buttonSearchFilmsBack.Enabled = true;
-            } else if (Convert.ToInt32(queryRes[queryRes.Count - 1][0]) >= settings[0] * settings[1] && settings[1] == 1) {
+            }
+            else
+            {
                 buttonSearchFilmsNext.Enabled = true;
                 buttonSearchFilmsBack.Enabled = false;
-            } else {
-                buttonSearchFilmsNext.Enabled = true;
-                buttonSearchFilmsBack.Enabled = true;
             }
-
-
+            
             if (queryRes.Count-1 != 0)
             {
                 buttonSearchFilmsBack.Visible = buttonSearchFilmsNext.Visible = labelNumberPage.Visible = true;
                 buttonSearchFilms.Width = 174;
                 titlePanelFilms.Visible = false;
-                labelNumberPage.Text = settings[1] + " из " + Convert.ToInt32(queryRes[queryRes.Count - 1][0]) / settings[0];
+                int buf = (Convert.ToInt32(queryRes[queryRes.Count - 1][0]) / settings[0] == 0) ? 1 : Convert.ToInt32(queryRes[queryRes.Count - 1][0]) / settings[0];
+                labelNumberPage.Text = settings[1] + " из " + buf.ToString();
             } else {
                 buttonSearchFilmsBack.Visible = buttonSearchFilmsNext.Visible = labelNumberPage.Visible = false;
                 buttonSearchFilms.Width = 437;
@@ -338,55 +319,39 @@ namespace CinemaTickets
         
         // Panel Add new data
         private void menuButtonAdd_Click(object sender, EventArgs e) => setVisible(panelAdd, menuButtonAdd);
-        private void buttonAddFilm_Click(object sender, EventArgs e) => setVisiblePanelAdd(panelAddFilms);
-        private void buttonAddSession_Click(object sender, EventArgs e) => setVisiblePanelAdd(panelAddSessions);
-        private void buttonAddGener_Click(object sender, EventArgs e) => setVisiblePanelAdd(panelAddGeners);
-        private void buttonAddProductionCountries_Click(object sender, EventArgs e) => setVisiblePanelAdd(panelAddProductionCountries);
-        
+        private void buttonAddFilm_Click(object sender, EventArgs e) {
+            AddFilms newForm = new AddFilms();
+            newForm.Show();
+        }
+        private void buttonAddSession_Click(object sender, EventArgs e) {
+            AddSessions newForm = new AddSessions();
+            newForm.Show();
+        }
+        private void buttonAddGener_Click(object sender, EventArgs e) {
+            AddGeners newForm = new AddGeners();
+            newForm.Show();
+        }
+        private void buttonAddProductionCountries_Click(object sender, EventArgs e) {
+            AddProductionCountries newForm = new AddProductionCountries();
+            newForm.Show();
+        }
+        private void buttonAddHalls_Click(object sender, EventArgs e) {
+            AddHalls newForm = new AddHalls();
+            newForm.Show();
+        }
+        private void buttonAddGenerToFilm_Click(object sender, EventArgs e)
+        {
+            AddGenersToFilm newForm = new AddGenersToFilm();
+            newForm.Show();
+        }
+        private void buttonAddProductionCountriesToFilm_Click(object sender, EventArgs e)
+        {
+            AddProductionCountriesToFilm newForm = new AddProductionCountriesToFilm();
+            newForm.Show();
+        }
+
         // Button Exit
         private void menuButton_Exit_Click(object sender, EventArgs e) => Close();
-
-        private void filmsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.filmsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.cinemaDataSet);
-        }
-
-        private void productionBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.productionBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.cinemaDataSet);
-        }
-
-        private void sessions_listBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.sessions_listBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.cinemaDataSet);
-        }
-
-        private void generBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.generBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.cinemaDataSet);
-        }
-
-        private void films_generBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.films_generBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.cinemaDataSet);
-        }
-
-        private void films_productionBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.films_productionBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.cinemaDataSet);
-        }
     }
 
 }
