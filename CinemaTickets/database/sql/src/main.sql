@@ -16,8 +16,9 @@ GO
 :r _functions/functions.sql
 
 -- PROCEDURES
-GO
+
 :r _procedures/getFullListOfGener.sql
+:r _procedures/GetFullListOfProductionCountries.sql
 :r _procedures/findFilmsByFilters_3.sql
 :r _procedures/countResultFindFilmsByFilters_3.sql
 :r _procedures/findFilmsByAllFilters.sql

@@ -189,10 +189,17 @@ namespace CinemaTickets
             }
             foreach (object e in objectDataBase.getFullListOfGener()) {
                 comboBoxGener.Items.Add(e);
+                filter_comboBoxGener.Items.Add(e);
             }
-            comboBoxGener.SelectedIndex = comboBoxYear.SelectedIndex = 0;
-            buttonSearchFilmsBack.Visible = buttonSearchFilmsNext.Visible =
-                labelNumberPage.Visible = false;
+            foreach (object e in objectDataBase.GetFullListOfProductionCountries())
+            {
+                filter_comboBoxCountry.Items.Add(e);
+            }
+            comboBoxGener.SelectedIndex = comboBoxYear.SelectedIndex =
+            filter_comboBoxCountry.SelectedIndex = filter_comboBoxYear.SelectedIndex =
+            filter_comboBoxAgeLimite.SelectedIndex = filter_comboBoxAgeLength.SelectedIndex =
+            filter_comboBoxPrice.SelectedIndex = filter_comboBoxGener.SelectedIndex = 0;
+            buttonSearchFilmsBack.Visible = buttonSearchFilmsNext.Visible = labelNumberPage.Visible = false;
             buttonSearchFilms.Width = 437;
             
         }
@@ -310,7 +317,7 @@ namespace CinemaTickets
         // Panel Search
         private void menuButtonSearch_Click(object sender, EventArgs e) => setVisible(panelSearch, menuButtonSearch);
         private void metroButton2_Click(object sender, EventArgs e) => PanelSearchFilters.Visible = true;
-        private void metroLabel13_Click(object sender, EventArgs e) => PanelSearchFilters.Visible = false;
+        private void filter_labelClose_Click(object sender, EventArgs e) => PanelSearchFilters.Visible = false;
         
         // Panel return ticket
         private void menuButtonReturnTickets_Click(object sender, EventArgs e) => setVisible(searchTicket, menuButtonReturnTickets);
