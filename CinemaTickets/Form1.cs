@@ -309,6 +309,8 @@ namespace CinemaTickets
         
         // Panel Search
         private void menuButtonSearch_Click(object sender, EventArgs e) => setVisible(panelSearch, menuButtonSearch);
+        private void metroButton2_Click(object sender, EventArgs e) => PanelSearchFilters.Visible = true;
+        private void metroLabel13_Click(object sender, EventArgs e) => PanelSearchFilters.Visible = false;
         
         // Panel return ticket
         private void menuButtonReturnTickets_Click(object sender, EventArgs e) => setVisible(searchTicket, menuButtonReturnTickets);
