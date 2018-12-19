@@ -17,7 +17,8 @@ GO
 
 -- PROCEDURES
 
-:r _procedures/FindFilmsBy3Filters.sql
+:r _procedures/FindAllFilms.sql
+--:r _procedures/FindFilmsBy3Filters.sql
 :r _procedures/FindFilmsByAllFilters.sql
 :r _procedures/GetCountFilmsBy3Filters.sql
 :r _procedures/GetCountFilmsByAllFilters.sql

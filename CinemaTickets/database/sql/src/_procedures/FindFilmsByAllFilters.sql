@@ -73,5 +73,5 @@ AS
 		Films.film_photo,
 		Films.film_description,
 		Films.film_slogan
-	ORDER BY id DESC
+	ORDER BY id ASC
 GO

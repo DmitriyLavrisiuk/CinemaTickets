@@ -40,5 +40,5 @@ AS
 		Films.film_age_limit,
 		Films.film_length_min,
 		Films.film_photo
-	ORDER BY id DESC
+	ORDER BY id ASC
 GO

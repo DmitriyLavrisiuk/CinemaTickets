@@ -41,20 +41,15 @@
             this.labelNumberPage = new MetroFramework.Controls.MetroLabel();
             this.buttonSearchFilmsNext = new MetroFramework.Controls.MetroButton();
             this.buttonSearchFilmsBack = new MetroFramework.Controls.MetroButton();
-            this.comboBoxYear = new MetroFramework.Controls.MetroComboBox();
             this.buttonSearchFilms = new MetroFramework.Controls.MetroButton();
-            this.comboBoxGener = new MetroFramework.Controls.MetroComboBox();
             this.panelViewListFilms = new System.Windows.Forms.Panel();
             this.titlePanelFilms = new MetroFramework.Controls.MetroLabel();
             this.panelStatisticsAndReports = new System.Windows.Forms.Panel();
             this.titlePanelStatisticsAndReports = new MetroFramework.Controls.MetroLabel();
             this.panelSearch = new System.Windows.Forms.Panel();
-            this.labelPageNumber = new MetroFramework.Controls.MetroLabel();
-            this.buttonNextPage = new MetroFramework.Controls.MetroButton();
-            this.buttonBackPage = new MetroFramework.Controls.MetroButton();
-            this.buttonShowFilters = new MetroFramework.Controls.MetroButton();
-            this.panelViewSearch = new System.Windows.Forms.Panel();
             this.PanelSearchFilters = new System.Windows.Forms.Panel();
+            this.checkBoxAutoHide = new MetroFramework.Controls.MetroCheckBox();
+            this.buttonSearchByAllFilters = new MetroFramework.Controls.MetroButton();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.filter_comboBoxLength = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
@@ -62,7 +57,6 @@
             this.filter_comboBoxAgeLimite = new MetroFramework.Controls.MetroComboBox();
             this.filter_comboBoxYear = new MetroFramework.Controls.MetroComboBox();
             this.filter_labelClose = new MetroFramework.Controls.MetroLabel();
-            this.buttonSearchByAllFilters = new MetroFramework.Controls.MetroButton();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.filter_comboBoxPrice = new MetroFramework.Controls.MetroComboBox();
             this.filter_comboBoxCountry = new MetroFramework.Controls.MetroComboBox();
@@ -73,6 +67,12 @@
             this.filter_textBoxSlogan = new System.Windows.Forms.TextBox();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.filter_textBoxDescription = new System.Windows.Forms.TextBox();
+            this.labelCountResults = new MetroFramework.Controls.MetroLabel();
+            this.labelPageNumber = new MetroFramework.Controls.MetroLabel();
+            this.buttonNextPage = new MetroFramework.Controls.MetroButton();
+            this.buttonBackPage = new MetroFramework.Controls.MetroButton();
+            this.buttonShowFilters = new MetroFramework.Controls.MetroButton();
+            this.panelViewSearch = new System.Windows.Forms.Panel();
             this.titlePanelSearch = new MetroFramework.Controls.MetroLabel();
             this.panelMainScreen = new System.Windows.Forms.Panel();
             this.titlePanelMainScreen = new MetroFramework.Controls.MetroLabel();
@@ -116,8 +116,8 @@
             this.panelViewListFilms.SuspendLayout();
             this.panelStatisticsAndReports.SuspendLayout();
             this.panelSearch.SuspendLayout();
-            this.panelViewSearch.SuspendLayout();
             this.PanelSearchFilters.SuspendLayout();
+            this.panelViewSearch.SuspendLayout();
             this.panelMainScreen.SuspendLayout();
             this.panelAdd.SuspendLayout();
             this.searchTicket.SuspendLayout();
@@ -258,9 +258,7 @@
             this.panelFilms.Controls.Add(this.labelNumberPage);
             this.panelFilms.Controls.Add(this.buttonSearchFilmsNext);
             this.panelFilms.Controls.Add(this.buttonSearchFilmsBack);
-            this.panelFilms.Controls.Add(this.comboBoxYear);
             this.panelFilms.Controls.Add(this.buttonSearchFilms);
-            this.panelFilms.Controls.Add(this.comboBoxGener);
             this.panelFilms.Controls.Add(this.panelViewListFilms);
             this.panelFilms.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelFilms.Location = new System.Drawing.Point(215, 0);
@@ -301,48 +299,15 @@
             this.buttonSearchFilmsBack.Text = "Назад";
             this.buttonSearchFilmsBack.Click += new System.EventHandler(this.buttonSearchFilmsBack_Click);
             // 
-            // comboBoxYear
-            // 
-            this.comboBoxYear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxYear.FormattingEnabled = true;
-            this.comboBoxYear.ItemHeight = 23;
-            this.comboBoxYear.Items.AddRange(new object[] {
-            "Все года",
-            "Самые новые",
-            "2016 - 2018",
-            "2012 - 2016",
-            "2008 - 2012",
-            "2006 - 2008",
-            "2002 - 2006",
-            "2000 - 2002",
-            "1990 - 2000",
-            "Более поздние"});
-            this.comboBoxYear.Location = new System.Drawing.Point(163, 550);
-            this.comboBoxYear.Name = "comboBoxYear";
-            this.comboBoxYear.Size = new System.Drawing.Size(121, 29);
-            this.comboBoxYear.TabIndex = 2;
-            // 
             // buttonSearchFilms
             // 
             this.buttonSearchFilms.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSearchFilms.Location = new System.Drawing.Point(290, 550);
+            this.buttonSearchFilms.Location = new System.Drawing.Point(19, 550);
             this.buttonSearchFilms.Name = "buttonSearchFilms";
-            this.buttonSearchFilms.Size = new System.Drawing.Size(174, 29);
+            this.buttonSearchFilms.Size = new System.Drawing.Size(445, 29);
             this.buttonSearchFilms.TabIndex = 3;
             this.buttonSearchFilms.Text = "Искать";
             this.buttonSearchFilms.Click += new System.EventHandler(this.buttonSearchFilms_Click);
-            // 
-            // comboBoxGener
-            // 
-            this.comboBoxGener.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxGener.FormattingEnabled = true;
-            this.comboBoxGener.ItemHeight = 23;
-            this.comboBoxGener.Items.AddRange(new object[] {
-            "Все жанры"});
-            this.comboBoxGener.Location = new System.Drawing.Point(19, 550);
-            this.comboBoxGener.Name = "comboBoxGener";
-            this.comboBoxGener.Size = new System.Drawing.Size(138, 29);
-            this.comboBoxGener.TabIndex = 1;
             // 
             // panelViewListFilms
             // 
@@ -393,6 +358,7 @@
             // panelSearch
             // 
             this.panelSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.panelSearch.Controls.Add(this.PanelSearchFilters);
             this.panelSearch.Controls.Add(this.labelPageNumber);
             this.panelSearch.Controls.Add(this.buttonNextPage);
             this.panelSearch.Controls.Add(this.buttonBackPage);
@@ -403,65 +369,12 @@
             this.panelSearch.Size = new System.Drawing.Size(750, 600);
             this.panelSearch.TabIndex = 3;
             // 
-            // labelPageNumber
-            // 
-            this.labelPageNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelPageNumber.Cursor = System.Windows.Forms.Cursors.Help;
-            this.labelPageNumber.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.labelPageNumber.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.labelPageNumber.Location = new System.Drawing.Point(652, 550);
-            this.labelPageNumber.Name = "labelPageNumber";
-            this.labelPageNumber.Size = new System.Drawing.Size(82, 29);
-            this.labelPageNumber.TabIndex = 52;
-            this.labelPageNumber.Text = "1 из 3";
-            this.labelPageNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelPageNumber.Visible = false;
-            // 
-            // buttonNextPage
-            // 
-            this.buttonNextPage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonNextPage.Location = new System.Drawing.Point(381, 550);
-            this.buttonNextPage.Name = "buttonNextPage";
-            this.buttonNextPage.Size = new System.Drawing.Size(265, 29);
-            this.buttonNextPage.TabIndex = 51;
-            this.buttonNextPage.Text = "Вперед";
-            this.buttonNextPage.Visible = false;
-            this.buttonNextPage.Click += new System.EventHandler(this.buttonNextPage_Click);
-            // 
-            // buttonBackPage
-            // 
-            this.buttonBackPage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonBackPage.Location = new System.Drawing.Point(110, 550);
-            this.buttonBackPage.Name = "buttonBackPage";
-            this.buttonBackPage.Size = new System.Drawing.Size(265, 29);
-            this.buttonBackPage.TabIndex = 50;
-            this.buttonBackPage.Text = "Назад";
-            this.buttonBackPage.Visible = false;
-            this.buttonBackPage.Click += new System.EventHandler(this.buttonBackPage_Click);
-            // 
-            // buttonShowFilters
-            // 
-            this.buttonShowFilters.Location = new System.Drawing.Point(19, 550);
-            this.buttonShowFilters.Name = "buttonShowFilters";
-            this.buttonShowFilters.Size = new System.Drawing.Size(85, 29);
-            this.buttonShowFilters.TabIndex = 49;
-            this.buttonShowFilters.Text = "Фильтры";
-            this.buttonShowFilters.Click += new System.EventHandler(this.buttonShowFilters_Click);
-            // 
-            // panelViewSearch
-            // 
-            this.panelViewSearch.BackColor = System.Drawing.Color.White;
-            this.panelViewSearch.Controls.Add(this.PanelSearchFilters);
-            this.panelViewSearch.Controls.Add(this.titlePanelSearch);
-            this.panelViewSearch.Location = new System.Drawing.Point(0, 0);
-            this.panelViewSearch.Name = "panelViewSearch";
-            this.panelViewSearch.Size = new System.Drawing.Size(748, 530);
-            this.panelViewSearch.TabIndex = 53;
-            // 
             // PanelSearchFilters
             // 
             this.PanelSearchFilters.BackColor = System.Drawing.Color.WhiteSmoke;
             this.PanelSearchFilters.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PanelSearchFilters.Controls.Add(this.checkBoxAutoHide);
+            this.PanelSearchFilters.Controls.Add(this.buttonSearchByAllFilters);
             this.PanelSearchFilters.Controls.Add(this.metroLabel6);
             this.PanelSearchFilters.Controls.Add(this.filter_comboBoxLength);
             this.PanelSearchFilters.Controls.Add(this.metroLabel9);
@@ -469,7 +382,6 @@
             this.PanelSearchFilters.Controls.Add(this.filter_comboBoxAgeLimite);
             this.PanelSearchFilters.Controls.Add(this.filter_comboBoxYear);
             this.PanelSearchFilters.Controls.Add(this.filter_labelClose);
-            this.PanelSearchFilters.Controls.Add(this.buttonSearchByAllFilters);
             this.PanelSearchFilters.Controls.Add(this.metroLabel7);
             this.PanelSearchFilters.Controls.Add(this.filter_comboBoxPrice);
             this.PanelSearchFilters.Controls.Add(this.filter_comboBoxCountry);
@@ -480,11 +392,35 @@
             this.PanelSearchFilters.Controls.Add(this.filter_textBoxSlogan);
             this.PanelSearchFilters.Controls.Add(this.metroLabel11);
             this.PanelSearchFilters.Controls.Add(this.filter_textBoxDescription);
-            this.PanelSearchFilters.Location = new System.Drawing.Point(-1, 310);
+            this.PanelSearchFilters.Controls.Add(this.labelCountResults);
+            this.PanelSearchFilters.Location = new System.Drawing.Point(0, 310);
             this.PanelSearchFilters.Name = "PanelSearchFilters";
-            this.PanelSearchFilters.Size = new System.Drawing.Size(752, 220);
+            this.PanelSearchFilters.Size = new System.Drawing.Size(750, 220);
             this.PanelSearchFilters.TabIndex = 18;
             this.PanelSearchFilters.Visible = false;
+            // 
+            // checkBoxAutoHide
+            // 
+            this.checkBoxAutoHide.AutoSize = true;
+            this.checkBoxAutoHide.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.checkBoxAutoHide.Checked = true;
+            this.checkBoxAutoHide.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxAutoHide.CustomBackground = true;
+            this.checkBoxAutoHide.Location = new System.Drawing.Point(47, 194);
+            this.checkBoxAutoHide.Name = "checkBoxAutoHide";
+            this.checkBoxAutoHide.Size = new System.Drawing.Size(206, 15);
+            this.checkBoxAutoHide.TabIndex = 56;
+            this.checkBoxAutoHide.Text = "Автоматическое скрытие панели";
+            this.checkBoxAutoHide.UseVisualStyleBackColor = false;
+            // 
+            // buttonSearchByAllFilters
+            // 
+            this.buttonSearchByAllFilters.Location = new System.Drawing.Point(47, 155);
+            this.buttonSearchByAllFilters.Name = "buttonSearchByAllFilters";
+            this.buttonSearchByAllFilters.Size = new System.Drawing.Size(659, 29);
+            this.buttonSearchByAllFilters.TabIndex = 47;
+            this.buttonSearchByAllFilters.Text = "Поиск";
+            this.buttonSearchByAllFilters.Click += new System.EventHandler(this.buttonSearchByAllFilters_Click);
             // 
             // metroLabel6
             // 
@@ -606,15 +542,6 @@
             this.filter_labelClose.Text = "×";
             this.filter_labelClose.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.filter_labelClose.Click += new System.EventHandler(this.filter_labelClose_Click);
-            // 
-            // buttonSearchByAllFilters
-            // 
-            this.buttonSearchByAllFilters.Location = new System.Drawing.Point(47, 155);
-            this.buttonSearchByAllFilters.Name = "buttonSearchByAllFilters";
-            this.buttonSearchByAllFilters.Size = new System.Drawing.Size(659, 29);
-            this.buttonSearchByAllFilters.TabIndex = 47;
-            this.buttonSearchByAllFilters.Text = "Поиск";
-            this.buttonSearchByAllFilters.Click += new System.EventHandler(this.buttonSearchByAllFilters_Click);
             // 
             // metroLabel7
             // 
@@ -753,14 +680,83 @@
             this.filter_textBoxDescription.Size = new System.Drawing.Size(161, 29);
             this.filter_textBoxDescription.TabIndex = 44;
             // 
+            // labelCountResults
+            // 
+            this.labelCountResults.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.labelCountResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelCountResults.Cursor = System.Windows.Forms.Cursors.Help;
+            this.labelCountResults.CustomBackground = true;
+            this.labelCountResults.CustomForeColor = true;
+            this.labelCountResults.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.labelCountResults.ForeColor = System.Drawing.Color.Black;
+            this.labelCountResults.Location = new System.Drawing.Point(546, 155);
+            this.labelCountResults.Name = "labelCountResults";
+            this.labelCountResults.Size = new System.Drawing.Size(160, 29);
+            this.labelCountResults.TabIndex = 55;
+            this.labelCountResults.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelPageNumber
+            // 
+            this.labelPageNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelPageNumber.Cursor = System.Windows.Forms.Cursors.Help;
+            this.labelPageNumber.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.labelPageNumber.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.labelPageNumber.Location = new System.Drawing.Point(652, 550);
+            this.labelPageNumber.Name = "labelPageNumber";
+            this.labelPageNumber.Size = new System.Drawing.Size(82, 29);
+            this.labelPageNumber.TabIndex = 52;
+            this.labelPageNumber.Text = "1 из 3";
+            this.labelPageNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelPageNumber.Visible = false;
+            // 
+            // buttonNextPage
+            // 
+            this.buttonNextPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonNextPage.Location = new System.Drawing.Point(381, 550);
+            this.buttonNextPage.Name = "buttonNextPage";
+            this.buttonNextPage.Size = new System.Drawing.Size(265, 29);
+            this.buttonNextPage.TabIndex = 51;
+            this.buttonNextPage.Text = "Вперед";
+            this.buttonNextPage.Visible = false;
+            this.buttonNextPage.Click += new System.EventHandler(this.buttonNextPage_Click);
+            // 
+            // buttonBackPage
+            // 
+            this.buttonBackPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonBackPage.Location = new System.Drawing.Point(110, 550);
+            this.buttonBackPage.Name = "buttonBackPage";
+            this.buttonBackPage.Size = new System.Drawing.Size(265, 29);
+            this.buttonBackPage.TabIndex = 50;
+            this.buttonBackPage.Text = "Назад";
+            this.buttonBackPage.Visible = false;
+            this.buttonBackPage.Click += new System.EventHandler(this.buttonBackPage_Click);
+            // 
+            // buttonShowFilters
+            // 
+            this.buttonShowFilters.Location = new System.Drawing.Point(19, 550);
+            this.buttonShowFilters.Name = "buttonShowFilters";
+            this.buttonShowFilters.Size = new System.Drawing.Size(85, 29);
+            this.buttonShowFilters.TabIndex = 49;
+            this.buttonShowFilters.Text = "Фильтры";
+            this.buttonShowFilters.Click += new System.EventHandler(this.buttonShowFilters_Click);
+            // 
+            // panelViewSearch
+            // 
+            this.panelViewSearch.AutoScroll = true;
+            this.panelViewSearch.BackColor = System.Drawing.Color.White;
+            this.panelViewSearch.Controls.Add(this.titlePanelSearch);
+            this.panelViewSearch.Location = new System.Drawing.Point(0, 0);
+            this.panelViewSearch.Name = "panelViewSearch";
+            this.panelViewSearch.Size = new System.Drawing.Size(770, 530);
+            this.panelViewSearch.TabIndex = 53;
+            // 
             // titlePanelSearch
             // 
             this.titlePanelSearch.Cursor = System.Windows.Forms.Cursors.Help;
-            this.titlePanelSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.titlePanelSearch.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.titlePanelSearch.Location = new System.Drawing.Point(0, 0);
             this.titlePanelSearch.Name = "titlePanelSearch";
-            this.titlePanelSearch.Size = new System.Drawing.Size(748, 530);
+            this.titlePanelSearch.Size = new System.Drawing.Size(750, 530);
             this.titlePanelSearch.TabIndex = 1;
             this.titlePanelSearch.Text = "Для просмотра подходящих вам результатов \r\nвыберите интересующие вас фильтры ниже" +
     ".";
@@ -1232,9 +1228,9 @@
             this.panelViewListFilms.ResumeLayout(false);
             this.panelStatisticsAndReports.ResumeLayout(false);
             this.panelSearch.ResumeLayout(false);
-            this.panelViewSearch.ResumeLayout(false);
             this.PanelSearchFilters.ResumeLayout(false);
             this.PanelSearchFilters.PerformLayout();
+            this.panelViewSearch.ResumeLayout(false);
             this.panelMainScreen.ResumeLayout(false);
             this.panelAdd.ResumeLayout(false);
             this.searchTicket.ResumeLayout(false);
@@ -1260,7 +1256,6 @@
         private System.Windows.Forms.Panel panelSearch;
         private System.Windows.Forms.Panel panelMainScreen;
         private System.Windows.Forms.Panel panelViewListFilms;
-        private MetroFramework.Controls.MetroComboBox comboBoxYear;
         private MetroFramework.Controls.MetroLabel titlePanelStatisticsAndReports;
         private MetroFramework.Controls.MetroLabel titlePanelMainScreen;
         private System.Windows.Forms.Button menuButtonAdd;
@@ -1305,7 +1300,6 @@
         private MetroFramework.Controls.MetroButton buttonSearchFilmsNext;
         private MetroFramework.Controls.MetroButton buttonSearchFilmsBack;
         private MetroFramework.Controls.MetroButton buttonSearchFilms;
-        private MetroFramework.Controls.MetroComboBox comboBoxGener;
         private MetroFramework.Controls.MetroLabel titlePanelSearch;
         private MetroFramework.Controls.MetroLabel labelPageNumber;
         private MetroFramework.Controls.MetroButton buttonNextPage;
@@ -1331,6 +1325,8 @@
         private System.Windows.Forms.TextBox filter_textBoxSlogan;
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private System.Windows.Forms.TextBox filter_textBoxDescription;
+        private MetroFramework.Controls.MetroLabel labelCountResults;
+        private MetroFramework.Controls.MetroCheckBox checkBoxAutoHide;
     }
 }
 
