@@ -41,7 +41,13 @@ namespace CinemaTickets
             listLabelAgeLimit = new List<Label>();
             listLabelLengthFilm = new List<Label>();
             settings = new List<short>() {
-                10, 1
+            /*
+             * settings[0] - Количество записей на странице "Фильмы"
+             * settings[1] - Номер страницы результата запроса "Фильмы"
+             * settings[2] - Количество записей на странице "Поиск"
+             * settings[3] - Номер страницы результата запроса "Поиск"
+             */
+                1, 1, 1, 1
             };
             listPanel = new List<Panel>()
             {
@@ -187,7 +193,7 @@ namespace CinemaTickets
                     x = 30;
                 }
             }
-            foreach (object e in objectDataBase.getFullListOfGener()) {
+            foreach (object e in objectDataBase.GetFullListOfGener()) {
                 comboBoxGener.Items.Add(e);
                 filter_comboBoxGener.Items.Add(e);
             }
@@ -197,7 +203,7 @@ namespace CinemaTickets
             }
             comboBoxGener.SelectedIndex = comboBoxYear.SelectedIndex =
             filter_comboBoxCountry.SelectedIndex = filter_comboBoxYear.SelectedIndex =
-            filter_comboBoxAgeLimite.SelectedIndex = filter_comboBoxAgeLength.SelectedIndex =
+            filter_comboBoxAgeLimite.SelectedIndex = filter_comboBoxLength.SelectedIndex =
             filter_comboBoxPrice.SelectedIndex = filter_comboBoxGener.SelectedIndex = 0;
             buttonSearchFilmsBack.Visible = buttonSearchFilmsNext.Visible = labelNumberPage.Visible = false;
             buttonSearchFilms.Width = 437;
@@ -225,7 +231,7 @@ namespace CinemaTickets
         }
         private void searchTicketUID()
         {
-            List<object> result = objectDataBase.getAllInformationAboutTicketByUID(textBoxUID.Text);
+            List<object> result = objectDataBase.GetAllInformationAboutTicketByUID(textBoxUID.Text);
             if (result.Count != 0)
             {
                 drawTicket(result[0], result[1], result[2], result[3], result[4], result[5], result[6], result[7], result[8], panelReturnTicket, 185, 95);
@@ -239,7 +245,7 @@ namespace CinemaTickets
         }
         private void returnTicketUID()
         {
-            List<object> result = objectDataBase.returnTicket(textBoxUID.Text);
+            List<object> result = objectDataBase.ReturnTicket(textBoxUID.Text);
             MessageBox.Show(result[0].ToString());
 
         }
@@ -254,7 +260,7 @@ namespace CinemaTickets
                 case -1: settings[1] -= 1; break;
             }
 
-            List<List<object>> queryRes = objectDataBase.findFilmsByFilters_3(settings[0], settings[1], comboBoxGener.SelectedItem.ToString(), comboBoxYear.SelectedItem.ToString());
+            List<List<object>> queryRes = objectDataBase.FindFilmsBy3Filters(settings[0], settings[1], comboBoxGener.SelectedItem.ToString(), comboBoxYear.SelectedItem.ToString());
             
             for (short i = 0; i < settings[0]; i++)
             {
@@ -316,9 +322,82 @@ namespace CinemaTickets
         
         // Panel Search
         private void menuButtonSearch_Click(object sender, EventArgs e) => setVisible(panelSearch, menuButtonSearch);
-        private void metroButton2_Click(object sender, EventArgs e) => PanelSearchFilters.Visible = true;
+        private void buttonShowFilters_Click(object sender, EventArgs e) => PanelSearchFilters.Visible = true;
         private void filter_labelClose_Click(object sender, EventArgs e) => PanelSearchFilters.Visible = false;
-        
+        private void loadFilmsToPanelSearchFilms(short pageAct)
+        {
+            switch (pageAct)
+            {
+                case 0: settings[3] = 1; break;
+                case 1: settings[3] += 1; break;
+                case -1: settings[3] -= 1; break;
+            }
+
+            List<List<object>> queryRes = objectDataBase.FindFilmsByAllFilters(
+                settings[2],
+                settings[3],
+                filter_comboBoxYear.SelectedItem.ToString(),
+                filter_comboBoxAgeLimite.SelectedItem.ToString(),
+                filter_comboBoxLength.SelectedItem.ToString(),
+                filter_comboBoxPrice.SelectedItem.ToString(),
+                filter_textBoxDescription.Text,
+                filter_textBoxSlogan.Text,
+                filter_comboBoxGener.SelectedItem.ToString(),
+                filter_comboBoxCountry.SelectedItem.ToString());
+
+            MessageBox.Show(queryRes.Count().ToString());
+
+            //for (short i = 0; i < settings[2]; i++)
+            //{
+            //    if (i < queryRes.Count - 1)
+            //    {
+            //        listLabelFilmName[i].Text = queryRes[i][1].ToString();
+            //        listLabelAgeLimit[i].Text = queryRes[i][2].ToString() + "+";
+            //        listLabelLengthFilm[i].Text = queryRes[i][3].ToString() + " min.";
+            //        listPictureBox[i].ImageLocation = queryRes[i][4].ToString();
+            //        listLabelAgeLimit[i].Visible = listLabelLengthFilm[i].Visible = listLabelFilmName[i].Visible = listPictureBox[i].Visible = true;
+            //    }
+            //    else
+            //    {
+            //        listLabelAgeLimit[i].Visible = listLabelLengthFilm[i].Visible = listLabelFilmName[i].Visible = listPictureBox[i].Visible = false;
+            //    }
+            //}
+
+            if (Convert.ToInt32(queryRes[queryRes.Count - 1][0]) / settings[2] <= 1)
+            {
+                buttonNextPage.Enabled = false;
+                buttonBackPage.Enabled = false;
+            }
+            else if (settings[3] >= Convert.ToInt32(queryRes[queryRes.Count - 1][0]) / settings[2])
+            {
+                buttonNextPage.Enabled = false;
+                buttonBackPage.Enabled = true;
+            }
+            else
+            {
+                buttonNextPage.Enabled = true;
+                buttonBackPage.Enabled = false;
+            }
+
+            if (queryRes.Count - 1 != 0)
+            {
+                buttonBackPage.Visible = buttonNextPage.Visible = labelPageNumber.Visible = true;
+                titlePanelSearch.Visible = false;
+                int buf = (Convert.ToInt32(queryRes[queryRes.Count - 1][0]) / settings[2] == 0) ? 1 : Convert.ToInt32(queryRes[queryRes.Count - 1][0]) / settings[2];
+                labelPageNumber.Text = settings[3] + " из " + buf.ToString();
+            }
+            else
+            {
+                buttonBackPage.Visible = buttonNextPage.Visible = labelPageNumber.Visible = false;
+                titlePanelSearch.Text = "По вашему запросу ничего не найдено :(";
+                titlePanelSearch.Visible = true;
+            }
+
+        }
+        private void buttonSearchByAllFilters_Click(object sender, EventArgs e) => loadFilmsToPanelSearchFilms(0);
+        private void buttonBackPage_Click(object sender, EventArgs e) => loadFilmsToPanelSearchFilms(-1);
+        private void buttonNextPage_Click(object sender, EventArgs e) => loadFilmsToPanelSearchFilms(1);
+
         // Panel return ticket
         private void menuButtonReturnTickets_Click(object sender, EventArgs e) => setVisible(searchTicket, menuButtonReturnTickets);
         private void buttonSearchTicketUID_Click(object sender, EventArgs e) => searchTicketUID();
@@ -361,6 +440,7 @@ namespace CinemaTickets
 
         // Button Exit
         private void menuButton_Exit_Click(object sender, EventArgs e) => Close();
+
     }
 
 }

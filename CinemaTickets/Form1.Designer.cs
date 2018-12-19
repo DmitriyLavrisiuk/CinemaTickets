@@ -49,15 +49,22 @@
             this.panelStatisticsAndReports = new System.Windows.Forms.Panel();
             this.titlePanelStatisticsAndReports = new MetroFramework.Controls.MetroLabel();
             this.panelSearch = new System.Windows.Forms.Panel();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.labelPageNumber = new MetroFramework.Controls.MetroLabel();
+            this.buttonNextPage = new MetroFramework.Controls.MetroButton();
+            this.buttonBackPage = new MetroFramework.Controls.MetroButton();
+            this.buttonShowFilters = new MetroFramework.Controls.MetroButton();
+            this.panelViewSearch = new System.Windows.Forms.Panel();
             this.PanelSearchFilters = new System.Windows.Forms.Panel();
-            this.filter_labelClose = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.ButtonSearchByAllFilters = new MetroFramework.Controls.MetroButton();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.filter_comboBoxLength = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
-            this.filter_comboBoxPrice = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.filter_comboBoxAgeLimite = new MetroFramework.Controls.MetroComboBox();
+            this.filter_comboBoxYear = new MetroFramework.Controls.MetroComboBox();
+            this.filter_labelClose = new MetroFramework.Controls.MetroLabel();
+            this.buttonSearchByAllFilters = new MetroFramework.Controls.MetroButton();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.filter_comboBoxPrice = new MetroFramework.Controls.MetroComboBox();
             this.filter_comboBoxCountry = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
@@ -104,14 +111,12 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.titlePanelReturnTickets = new MetroFramework.Controls.MetroLabel();
             this.textBoxUID = new System.Windows.Forms.TextBox();
-            this.filter_comboBoxYear = new MetroFramework.Controls.MetroComboBox();
-            this.filter_comboBoxAgeLimite = new MetroFramework.Controls.MetroComboBox();
-            this.filter_comboBoxAgeLength = new MetroFramework.Controls.MetroComboBox();
             this.panelMainMenu.SuspendLayout();
             this.panelFilms.SuspendLayout();
             this.panelViewListFilms.SuspendLayout();
             this.panelStatisticsAndReports.SuspendLayout();
             this.panelSearch.SuspendLayout();
+            this.panelViewSearch.SuspendLayout();
             this.PanelSearchFilters.SuspendLayout();
             this.panelMainScreen.SuspendLayout();
             this.panelAdd.SuspendLayout();
@@ -387,36 +392,84 @@
             // 
             // panelSearch
             // 
-            this.panelSearch.BackColor = System.Drawing.Color.White;
-            this.panelSearch.Controls.Add(this.metroButton2);
-            this.panelSearch.Controls.Add(this.PanelSearchFilters);
-            this.panelSearch.Controls.Add(this.titlePanelSearch);
+            this.panelSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.panelSearch.Controls.Add(this.labelPageNumber);
+            this.panelSearch.Controls.Add(this.buttonNextPage);
+            this.panelSearch.Controls.Add(this.buttonBackPage);
+            this.panelSearch.Controls.Add(this.buttonShowFilters);
+            this.panelSearch.Controls.Add(this.panelViewSearch);
             this.panelSearch.Location = new System.Drawing.Point(215, 0);
             this.panelSearch.Name = "panelSearch";
             this.panelSearch.Size = new System.Drawing.Size(750, 600);
             this.panelSearch.TabIndex = 3;
             // 
-            // metroButton2
+            // labelPageNumber
             // 
-            this.metroButton2.Location = new System.Drawing.Point(666, 3);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(81, 29);
-            this.metroButton2.TabIndex = 48;
-            this.metroButton2.Text = "Фильтры";
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            this.labelPageNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelPageNumber.Cursor = System.Windows.Forms.Cursors.Help;
+            this.labelPageNumber.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.labelPageNumber.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.labelPageNumber.Location = new System.Drawing.Point(652, 550);
+            this.labelPageNumber.Name = "labelPageNumber";
+            this.labelPageNumber.Size = new System.Drawing.Size(82, 29);
+            this.labelPageNumber.TabIndex = 52;
+            this.labelPageNumber.Text = "1 из 3";
+            this.labelPageNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelPageNumber.Visible = false;
+            // 
+            // buttonNextPage
+            // 
+            this.buttonNextPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonNextPage.Location = new System.Drawing.Point(381, 550);
+            this.buttonNextPage.Name = "buttonNextPage";
+            this.buttonNextPage.Size = new System.Drawing.Size(265, 29);
+            this.buttonNextPage.TabIndex = 51;
+            this.buttonNextPage.Text = "Вперед";
+            this.buttonNextPage.Visible = false;
+            this.buttonNextPage.Click += new System.EventHandler(this.buttonNextPage_Click);
+            // 
+            // buttonBackPage
+            // 
+            this.buttonBackPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonBackPage.Location = new System.Drawing.Point(110, 550);
+            this.buttonBackPage.Name = "buttonBackPage";
+            this.buttonBackPage.Size = new System.Drawing.Size(265, 29);
+            this.buttonBackPage.TabIndex = 50;
+            this.buttonBackPage.Text = "Назад";
+            this.buttonBackPage.Visible = false;
+            this.buttonBackPage.Click += new System.EventHandler(this.buttonBackPage_Click);
+            // 
+            // buttonShowFilters
+            // 
+            this.buttonShowFilters.Location = new System.Drawing.Point(19, 550);
+            this.buttonShowFilters.Name = "buttonShowFilters";
+            this.buttonShowFilters.Size = new System.Drawing.Size(85, 29);
+            this.buttonShowFilters.TabIndex = 49;
+            this.buttonShowFilters.Text = "Фильтры";
+            this.buttonShowFilters.Click += new System.EventHandler(this.buttonShowFilters_Click);
+            // 
+            // panelViewSearch
+            // 
+            this.panelViewSearch.BackColor = System.Drawing.Color.White;
+            this.panelViewSearch.Controls.Add(this.PanelSearchFilters);
+            this.panelViewSearch.Controls.Add(this.titlePanelSearch);
+            this.panelViewSearch.Location = new System.Drawing.Point(0, 0);
+            this.panelViewSearch.Name = "panelViewSearch";
+            this.panelViewSearch.Size = new System.Drawing.Size(748, 530);
+            this.panelViewSearch.TabIndex = 53;
             // 
             // PanelSearchFilters
             // 
             this.PanelSearchFilters.BackColor = System.Drawing.Color.WhiteSmoke;
             this.PanelSearchFilters.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PanelSearchFilters.Controls.Add(this.metroLabel6);
-            this.PanelSearchFilters.Controls.Add(this.filter_comboBoxAgeLength);
+            this.PanelSearchFilters.Controls.Add(this.filter_comboBoxLength);
             this.PanelSearchFilters.Controls.Add(this.metroLabel9);
             this.PanelSearchFilters.Controls.Add(this.metroLabel5);
             this.PanelSearchFilters.Controls.Add(this.filter_comboBoxAgeLimite);
             this.PanelSearchFilters.Controls.Add(this.filter_comboBoxYear);
             this.PanelSearchFilters.Controls.Add(this.filter_labelClose);
-            this.PanelSearchFilters.Controls.Add(this.ButtonSearchByAllFilters);
+            this.PanelSearchFilters.Controls.Add(this.buttonSearchByAllFilters);
             this.PanelSearchFilters.Controls.Add(this.metroLabel7);
             this.PanelSearchFilters.Controls.Add(this.filter_comboBoxPrice);
             this.PanelSearchFilters.Controls.Add(this.filter_comboBoxCountry);
@@ -427,11 +480,115 @@
             this.PanelSearchFilters.Controls.Add(this.filter_textBoxSlogan);
             this.PanelSearchFilters.Controls.Add(this.metroLabel11);
             this.PanelSearchFilters.Controls.Add(this.filter_textBoxDescription);
-            this.PanelSearchFilters.Location = new System.Drawing.Point(-1, 381);
+            this.PanelSearchFilters.Location = new System.Drawing.Point(-1, 310);
             this.PanelSearchFilters.Name = "PanelSearchFilters";
             this.PanelSearchFilters.Size = new System.Drawing.Size(752, 220);
             this.PanelSearchFilters.TabIndex = 18;
             this.PanelSearchFilters.Visible = false;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroLabel6.Cursor = System.Windows.Forms.Cursors.Help;
+            this.metroLabel6.CustomBackground = true;
+            this.metroLabel6.CustomForeColor = true;
+            this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel6.ForeColor = System.Drawing.Color.Black;
+            this.metroLabel6.Location = new System.Drawing.Point(380, 42);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(160, 21);
+            this.metroLabel6.TabIndex = 33;
+            this.metroLabel6.Text = "Продолжительность (min.)";
+            this.metroLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // filter_comboBoxLength
+            // 
+            this.filter_comboBoxLength.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.filter_comboBoxLength.FormattingEnabled = true;
+            this.filter_comboBoxLength.ItemHeight = 23;
+            this.filter_comboBoxLength.Items.AddRange(new object[] {
+            "Любая",
+            "До 1 ч.",
+            "1 - 2 ч.",
+            "2 - 3 ч.",
+            "Более 3 ч."});
+            this.filter_comboBoxLength.Location = new System.Drawing.Point(380, 62);
+            this.filter_comboBoxLength.Name = "filter_comboBoxLength";
+            this.filter_comboBoxLength.Size = new System.Drawing.Size(160, 29);
+            this.filter_comboBoxLength.TabIndex = 54;
+            // 
+            // metroLabel9
+            // 
+            this.metroLabel9.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroLabel9.Cursor = System.Windows.Forms.Cursors.Help;
+            this.metroLabel9.CustomBackground = true;
+            this.metroLabel9.CustomForeColor = true;
+            this.metroLabel9.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel9.ForeColor = System.Drawing.Color.Black;
+            this.metroLabel9.Location = new System.Drawing.Point(214, 42);
+            this.metroLabel9.Name = "metroLabel9";
+            this.metroLabel9.Size = new System.Drawing.Size(160, 21);
+            this.metroLabel9.TabIndex = 30;
+            this.metroLabel9.Text = "Возрастной лимит";
+            this.metroLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroLabel5.Cursor = System.Windows.Forms.Cursors.Help;
+            this.metroLabel5.CustomBackground = true;
+            this.metroLabel5.CustomForeColor = true;
+            this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel5.ForeColor = System.Drawing.Color.Black;
+            this.metroLabel5.Location = new System.Drawing.Point(47, 42);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(161, 21);
+            this.metroLabel5.TabIndex = 19;
+            this.metroLabel5.Text = "Год";
+            this.metroLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // filter_comboBoxAgeLimite
+            // 
+            this.filter_comboBoxAgeLimite.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.filter_comboBoxAgeLimite.FormattingEnabled = true;
+            this.filter_comboBoxAgeLimite.ItemHeight = 23;
+            this.filter_comboBoxAgeLimite.Items.AddRange(new object[] {
+            "Без ограничений",
+            "0",
+            "6",
+            "12",
+            "14",
+            "16",
+            "18",
+            "21"});
+            this.filter_comboBoxAgeLimite.Location = new System.Drawing.Point(214, 62);
+            this.filter_comboBoxAgeLimite.Name = "filter_comboBoxAgeLimite";
+            this.filter_comboBoxAgeLimite.Size = new System.Drawing.Size(160, 29);
+            this.filter_comboBoxAgeLimite.TabIndex = 53;
+            // 
+            // filter_comboBoxYear
+            // 
+            this.filter_comboBoxYear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.filter_comboBoxYear.FormattingEnabled = true;
+            this.filter_comboBoxYear.ItemHeight = 23;
+            this.filter_comboBoxYear.Items.AddRange(new object[] {
+            "Все года",
+            "Самые новые",
+            "2016 - 2018",
+            "2012 - 2016",
+            "2008 - 2012",
+            "2006 - 2008",
+            "2002 - 2006",
+            "2000 - 2002",
+            "1990 - 2000",
+            "Более поздние"});
+            this.filter_comboBoxYear.Location = new System.Drawing.Point(47, 62);
+            this.filter_comboBoxYear.Name = "filter_comboBoxYear";
+            this.filter_comboBoxYear.Size = new System.Drawing.Size(161, 29);
+            this.filter_comboBoxYear.TabIndex = 52;
             // 
             // filter_labelClose
             // 
@@ -450,29 +607,14 @@
             this.filter_labelClose.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.filter_labelClose.Click += new System.EventHandler(this.filter_labelClose_Click);
             // 
-            // metroLabel6
+            // buttonSearchByAllFilters
             // 
-            this.metroLabel6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.metroLabel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroLabel6.Cursor = System.Windows.Forms.Cursors.Help;
-            this.metroLabel6.CustomBackground = true;
-            this.metroLabel6.CustomForeColor = true;
-            this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel6.ForeColor = System.Drawing.Color.Black;
-            this.metroLabel6.Location = new System.Drawing.Point(380, 42);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(160, 21);
-            this.metroLabel6.TabIndex = 33;
-            this.metroLabel6.Text = "Продолжительность (min.)";
-            this.metroLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ButtonSearchByAllFilters
-            // 
-            this.ButtonSearchByAllFilters.Location = new System.Drawing.Point(47, 155);
-            this.ButtonSearchByAllFilters.Name = "ButtonSearchByAllFilters";
-            this.ButtonSearchByAllFilters.Size = new System.Drawing.Size(659, 29);
-            this.ButtonSearchByAllFilters.TabIndex = 47;
-            this.ButtonSearchByAllFilters.Text = "Поиск";
+            this.buttonSearchByAllFilters.Location = new System.Drawing.Point(47, 155);
+            this.buttonSearchByAllFilters.Name = "buttonSearchByAllFilters";
+            this.buttonSearchByAllFilters.Size = new System.Drawing.Size(659, 29);
+            this.buttonSearchByAllFilters.TabIndex = 47;
+            this.buttonSearchByAllFilters.Text = "Поиск";
+            this.buttonSearchByAllFilters.Click += new System.EventHandler(this.buttonSearchByAllFilters_Click);
             // 
             // metroLabel7
             // 
@@ -490,22 +632,6 @@
             this.metroLabel7.Text = "Цена билета";
             this.metroLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // metroLabel9
-            // 
-            this.metroLabel9.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.metroLabel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroLabel9.Cursor = System.Windows.Forms.Cursors.Help;
-            this.metroLabel9.CustomBackground = true;
-            this.metroLabel9.CustomForeColor = true;
-            this.metroLabel9.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel9.ForeColor = System.Drawing.Color.Black;
-            this.metroLabel9.Location = new System.Drawing.Point(214, 42);
-            this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(160, 21);
-            this.metroLabel9.TabIndex = 30;
-            this.metroLabel9.Text = "Возрастной лимит";
-            this.metroLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // filter_comboBoxPrice
             // 
             this.filter_comboBoxPrice.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -520,22 +646,6 @@
             this.filter_comboBoxPrice.Name = "filter_comboBoxPrice";
             this.filter_comboBoxPrice.Size = new System.Drawing.Size(160, 29);
             this.filter_comboBoxPrice.TabIndex = 35;
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.metroLabel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroLabel5.Cursor = System.Windows.Forms.Cursors.Help;
-            this.metroLabel5.CustomBackground = true;
-            this.metroLabel5.CustomForeColor = true;
-            this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel5.ForeColor = System.Drawing.Color.Black;
-            this.metroLabel5.Location = new System.Drawing.Point(47, 42);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(161, 21);
-            this.metroLabel5.TabIndex = 19;
-            this.metroLabel5.Text = "Год";
-            this.metroLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // filter_comboBoxCountry
             // 
@@ -612,6 +722,7 @@
             // filter_textBoxSlogan
             // 
             this.filter_textBoxSlogan.Location = new System.Drawing.Point(214, 119);
+            this.filter_textBoxSlogan.MaxLength = 35;
             this.filter_textBoxSlogan.Multiline = true;
             this.filter_textBoxSlogan.Name = "filter_textBoxSlogan";
             this.filter_textBoxSlogan.Size = new System.Drawing.Size(160, 29);
@@ -636,6 +747,7 @@
             // filter_textBoxDescription
             // 
             this.filter_textBoxDescription.Location = new System.Drawing.Point(47, 119);
+            this.filter_textBoxDescription.MaxLength = 35;
             this.filter_textBoxDescription.Multiline = true;
             this.filter_textBoxDescription.Name = "filter_textBoxDescription";
             this.filter_textBoxDescription.Size = new System.Drawing.Size(161, 29);
@@ -648,7 +760,7 @@
             this.titlePanelSearch.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.titlePanelSearch.Location = new System.Drawing.Point(0, 0);
             this.titlePanelSearch.Name = "titlePanelSearch";
-            this.titlePanelSearch.Size = new System.Drawing.Size(750, 600);
+            this.titlePanelSearch.Size = new System.Drawing.Size(748, 530);
             this.titlePanelSearch.TabIndex = 1;
             this.titlePanelSearch.Text = "Для просмотра подходящих вам результатов \r\nвыберите интересующие вас фильтры ниже" +
     ".";
@@ -1097,62 +1209,6 @@
             this.textBoxUID.TabIndex = 3;
             this.textBoxUID.Tag = "";
             // 
-            // filter_comboBoxYear
-            // 
-            this.filter_comboBoxYear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.filter_comboBoxYear.FormattingEnabled = true;
-            this.filter_comboBoxYear.ItemHeight = 23;
-            this.filter_comboBoxYear.Items.AddRange(new object[] {
-            "Все года",
-            "Самые новые",
-            "2016 - 2018",
-            "2012 - 2016",
-            "2008 - 2012",
-            "2006 - 2008",
-            "2002 - 2006",
-            "2000 - 2002",
-            "1990 - 2000",
-            "Более поздние"});
-            this.filter_comboBoxYear.Location = new System.Drawing.Point(47, 62);
-            this.filter_comboBoxYear.Name = "filter_comboBoxYear";
-            this.filter_comboBoxYear.Size = new System.Drawing.Size(161, 29);
-            this.filter_comboBoxYear.TabIndex = 52;
-            // 
-            // filter_comboBoxAgeLimite
-            // 
-            this.filter_comboBoxAgeLimite.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.filter_comboBoxAgeLimite.FormattingEnabled = true;
-            this.filter_comboBoxAgeLimite.ItemHeight = 23;
-            this.filter_comboBoxAgeLimite.Items.AddRange(new object[] {
-            "Без ограничений",
-            "0+",
-            "6+",
-            "12+",
-            "14+",
-            "16+",
-            "18+",
-            "21+"});
-            this.filter_comboBoxAgeLimite.Location = new System.Drawing.Point(214, 62);
-            this.filter_comboBoxAgeLimite.Name = "filter_comboBoxAgeLimite";
-            this.filter_comboBoxAgeLimite.Size = new System.Drawing.Size(160, 29);
-            this.filter_comboBoxAgeLimite.TabIndex = 53;
-            // 
-            // filter_comboBoxAgeLength
-            // 
-            this.filter_comboBoxAgeLength.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.filter_comboBoxAgeLength.FormattingEnabled = true;
-            this.filter_comboBoxAgeLength.ItemHeight = 23;
-            this.filter_comboBoxAgeLength.Items.AddRange(new object[] {
-            "Любая",
-            "До 1 ч.",
-            "1 - 2 ч.",
-            "2 - 3 ч.",
-            "Более 3 ч."});
-            this.filter_comboBoxAgeLength.Location = new System.Drawing.Point(380, 62);
-            this.filter_comboBoxAgeLength.Name = "filter_comboBoxAgeLength";
-            this.filter_comboBoxAgeLength.Size = new System.Drawing.Size(160, 29);
-            this.filter_comboBoxAgeLength.TabIndex = 54;
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1176,6 +1232,7 @@
             this.panelViewListFilms.ResumeLayout(false);
             this.panelStatisticsAndReports.ResumeLayout(false);
             this.panelSearch.ResumeLayout(false);
+            this.panelViewSearch.ResumeLayout(false);
             this.PanelSearchFilters.ResumeLayout(false);
             this.PanelSearchFilters.PerformLayout();
             this.panelMainScreen.ResumeLayout(false);
@@ -1244,32 +1301,36 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel titlePanelFilms;
-        private System.Windows.Forms.Panel PanelSearchFilters;
         private MetroFramework.Controls.MetroLabel labelNumberPage;
         private MetroFramework.Controls.MetroButton buttonSearchFilmsNext;
         private MetroFramework.Controls.MetroButton buttonSearchFilmsBack;
         private MetroFramework.Controls.MetroButton buttonSearchFilms;
         private MetroFramework.Controls.MetroComboBox comboBoxGener;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroLabel metroLabel9;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
-        private MetroFramework.Controls.MetroLabel metroLabel7;
-        private MetroFramework.Controls.MetroComboBox filter_comboBoxPrice;
-        private System.Windows.Forms.TextBox filter_textBoxDescription;
-        private System.Windows.Forms.TextBox filter_textBoxSlogan;
-        private MetroFramework.Controls.MetroLabel metroLabel10;
-        private MetroFramework.Controls.MetroComboBox filter_comboBoxGener;
-        private MetroFramework.Controls.MetroLabel metroLabel11;
-        private MetroFramework.Controls.MetroButton ButtonSearchByAllFilters;
-        private MetroFramework.Controls.MetroComboBox filter_comboBoxCountry;
-        private MetroFramework.Controls.MetroLabel metroLabel12;
-        private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroLabel titlePanelSearch;
-        private MetroFramework.Controls.MetroLabel filter_labelClose;
-        private MetroFramework.Controls.MetroComboBox filter_comboBoxAgeLength;
+        private MetroFramework.Controls.MetroLabel labelPageNumber;
+        private MetroFramework.Controls.MetroButton buttonNextPage;
+        private MetroFramework.Controls.MetroButton buttonBackPage;
+        private MetroFramework.Controls.MetroButton buttonShowFilters;
+        private System.Windows.Forms.Panel panelViewSearch;
+        private System.Windows.Forms.Panel PanelSearchFilters;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroComboBox filter_comboBoxLength;
+        private MetroFramework.Controls.MetroLabel metroLabel9;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroComboBox filter_comboBoxAgeLimite;
         private MetroFramework.Controls.MetroComboBox filter_comboBoxYear;
+        private MetroFramework.Controls.MetroLabel filter_labelClose;
+        private MetroFramework.Controls.MetroButton buttonSearchByAllFilters;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroComboBox filter_comboBoxPrice;
+        private MetroFramework.Controls.MetroComboBox filter_comboBoxCountry;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private MetroFramework.Controls.MetroLabel metroLabel12;
+        private MetroFramework.Controls.MetroLabel metroLabel10;
+        private MetroFramework.Controls.MetroComboBox filter_comboBoxGener;
+        private System.Windows.Forms.TextBox filter_textBoxSlogan;
+        private MetroFramework.Controls.MetroLabel metroLabel11;
+        private System.Windows.Forms.TextBox filter_textBoxDescription;
     }
 }
 

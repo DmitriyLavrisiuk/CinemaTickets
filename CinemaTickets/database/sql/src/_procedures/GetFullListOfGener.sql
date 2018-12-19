@@ -1,11 +1,11 @@
 ﻿-- Получение спсика всех жанров
 -- EXAMPLE
--- EXEC getFullListGener
+-- EXEC GetFullListGener
 
 GO
-DROP PROC if exists getFullListOfGener
+DROP PROC if exists GetFullListGener
 GO
-CREATE PROC getFullListOfGener
+CREATE PROC GetFullListGener
 AS
 	SELECT Gener.gener_name FROM Gener
 GO

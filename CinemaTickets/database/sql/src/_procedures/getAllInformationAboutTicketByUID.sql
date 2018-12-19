@@ -1,12 +1,12 @@
 ﻿-- Процедура возврата билета обратно в кассу
 -- EXAMPLE
--- EXEC getAllInformationAboutTicketByUID @unique_id_tickets = "4061.951035.518764.383.72146"
+-- EXEC GetAllInformationAboutTicketByUID @unique_id_tickets = "4061.951035.518764.383.72146"
 
 
 GO
-DROP PROC if exists getAllInformationAboutTicketByUID
+DROP PROC if exists GetAllInformationAboutTicketByUID
 GO
-CREATE PROC getAllInformationAboutTicketByUID
+CREATE PROC GetAllInformationAboutTicketByUID
 	@unique_id_tickets varchar(35)
 AS
 	SELECT

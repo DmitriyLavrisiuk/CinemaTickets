@@ -1,13 +1,13 @@
 ﻿-- Процедура возврата билета обратно в кассу
 -- EXAMPLE
--- EXEC returnTicket @unique_id_tickets = '9762.269218.13254.521.59163'
+-- EXEC ReturnTicket @unique_id_tickets = '9762.269218.13254.521.59163'
 -- INSERT INTO Tickets (id_session, number_place) VALUES (3, 39);
 
 
 GO
-DROP PROC if exists returnTicket
+DROP PROC if exists ReturnTicket
 GO
-CREATE PROC returnTicket
+CREATE PROC ReturnTicket
 	@unique_id_tickets varchar(35)
 AS
 	-- Получение времени сеанса с Tickets
