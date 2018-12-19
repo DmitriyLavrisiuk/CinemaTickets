@@ -13,3 +13,10 @@ C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.
 C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.MainForm.resources
 C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\bin\Debug\dbCinemaTickets.dll
 C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\bin\Debug\dbCinemaTickets.pdb
+C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.AddFilms.resources
+C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.AddGeners.resources
+C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.AddGenersToFilm.resources
+C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.AddSessions.resources
+C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.AddProductionCountriesToFilm.resources
+C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.AddProductionCountries.resources
+C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.AddHalls.resources

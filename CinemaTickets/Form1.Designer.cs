@@ -41,30 +41,53 @@
             this.labelNumberPage = new MetroFramework.Controls.MetroLabel();
             this.buttonSearchFilmsNext = new MetroFramework.Controls.MetroButton();
             this.buttonSearchFilmsBack = new MetroFramework.Controls.MetroButton();
-            this.comboBoxYear = new MetroFramework.Controls.MetroComboBox();
             this.buttonSearchFilms = new MetroFramework.Controls.MetroButton();
-            this.comboBoxGener = new MetroFramework.Controls.MetroComboBox();
             this.panelViewListFilms = new System.Windows.Forms.Panel();
             this.titlePanelFilms = new MetroFramework.Controls.MetroLabel();
             this.panelStatisticsAndReports = new System.Windows.Forms.Panel();
             this.titlePanelStatisticsAndReports = new MetroFramework.Controls.MetroLabel();
             this.panelSearch = new System.Windows.Forms.Panel();
+            this.PanelSearchFilters = new System.Windows.Forms.Panel();
+            this.checkBoxAutoHide = new MetroFramework.Controls.MetroCheckBox();
+            this.buttonSearchByAllFilters = new MetroFramework.Controls.MetroButton();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.filter_comboBoxLength = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.filter_comboBoxAgeLimite = new MetroFramework.Controls.MetroComboBox();
+            this.filter_comboBoxYear = new MetroFramework.Controls.MetroComboBox();
+            this.filter_labelClose = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.filter_comboBoxPrice = new MetroFramework.Controls.MetroComboBox();
+            this.filter_comboBoxCountry = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.filter_comboBoxGener = new MetroFramework.Controls.MetroComboBox();
+            this.filter_textBoxSlogan = new System.Windows.Forms.TextBox();
+            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
+            this.filter_textBoxDescription = new System.Windows.Forms.TextBox();
+            this.labelCountResults = new MetroFramework.Controls.MetroLabel();
+            this.labelPageNumber = new MetroFramework.Controls.MetroLabel();
+            this.buttonNextPage = new MetroFramework.Controls.MetroButton();
+            this.buttonBackPage = new MetroFramework.Controls.MetroButton();
+            this.buttonShowFilters = new MetroFramework.Controls.MetroButton();
+            this.panelViewSearch = new System.Windows.Forms.Panel();
             this.titlePanelSearch = new MetroFramework.Controls.MetroLabel();
             this.panelMainScreen = new System.Windows.Forms.Panel();
             this.titlePanelMainScreen = new MetroFramework.Controls.MetroLabel();
             this.panelAdd = new System.Windows.Forms.Panel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.buttonAddProductionCountriesToFilm = new MetroFramework.Controls.MetroButton();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.buttonAddGenerToFilm = new MetroFramework.Controls.MetroButton();
+            this.buttonAddHalls = new MetroFramework.Controls.MetroButton();
+            this.titlePanelAddProductionCountries = new MetroFramework.Controls.MetroLabel();
             this.buttonAddProductionCountries = new MetroFramework.Controls.MetroButton();
             this.buttonAddGener = new MetroFramework.Controls.MetroButton();
             this.buttonAddSession = new MetroFramework.Controls.MetroButton();
             this.buttonAddFilm = new MetroFramework.Controls.MetroButton();
-            this.panelAddFilms = new System.Windows.Forms.Panel();
-            this.titlePanelAddFilms = new MetroFramework.Controls.MetroLabel();
-            this.panelAddProductionCountries = new System.Windows.Forms.Panel();
-            this.titlePanelAddProductionCountries = new MetroFramework.Controls.MetroLabel();
-            this.panelAddSessions = new System.Windows.Forms.Panel();
-            this.titlePanelAddSessions = new MetroFramework.Controls.MetroLabel();
-            this.panelAddGeners = new System.Windows.Forms.Panel();
-            this.titlePanelAddGeners = new MetroFramework.Controls.MetroLabel();
             this.searchTicket = new System.Windows.Forms.Panel();
             this.panelReturnTicket = new System.Windows.Forms.Panel();
             this.buttonReturnTicketUID = new MetroFramework.Controls.MetroButton();
@@ -93,12 +116,10 @@
             this.panelViewListFilms.SuspendLayout();
             this.panelStatisticsAndReports.SuspendLayout();
             this.panelSearch.SuspendLayout();
+            this.PanelSearchFilters.SuspendLayout();
+            this.panelViewSearch.SuspendLayout();
             this.panelMainScreen.SuspendLayout();
             this.panelAdd.SuspendLayout();
-            this.panelAddFilms.SuspendLayout();
-            this.panelAddProductionCountries.SuspendLayout();
-            this.panelAddSessions.SuspendLayout();
-            this.panelAddGeners.SuspendLayout();
             this.searchTicket.SuspendLayout();
             this.panelReturnTicket.SuspendLayout();
             this.ticketPanel.SuspendLayout();
@@ -125,7 +146,7 @@
             // 
             this.labelTitleMainText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
             this.labelTitleMainText.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelTitleMainText.Font = new System.Drawing.Font("Righteous", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitleMainText.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitleMainText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(23)))), ((int)(((byte)(79)))));
             this.labelTitleMainText.Location = new System.Drawing.Point(0, 0);
             this.labelTitleMainText.Name = "labelTitleMainText";
@@ -237,11 +258,9 @@
             this.panelFilms.Controls.Add(this.labelNumberPage);
             this.panelFilms.Controls.Add(this.buttonSearchFilmsNext);
             this.panelFilms.Controls.Add(this.buttonSearchFilmsBack);
-            this.panelFilms.Controls.Add(this.comboBoxYear);
             this.panelFilms.Controls.Add(this.buttonSearchFilms);
-            this.panelFilms.Controls.Add(this.comboBoxGener);
             this.panelFilms.Controls.Add(this.panelViewListFilms);
-            this.panelFilms.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelFilms.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelFilms.Location = new System.Drawing.Point(215, 0);
             this.panelFilms.Name = "panelFilms";
             this.panelFilms.Size = new System.Drawing.Size(750, 600);
@@ -280,55 +299,22 @@
             this.buttonSearchFilmsBack.Text = "Назад";
             this.buttonSearchFilmsBack.Click += new System.EventHandler(this.buttonSearchFilmsBack_Click);
             // 
-            // comboBoxYear
-            // 
-            this.comboBoxYear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxYear.FormattingEnabled = true;
-            this.comboBoxYear.ItemHeight = 23;
-            this.comboBoxYear.Items.AddRange(new object[] {
-            "Все года",
-            "Самые новые",
-            "2016 - 2018",
-            "2012 - 2016",
-            "2008 - 2012",
-            "2006 - 2008",
-            "2002 - 2006",
-            "2000 - 2002",
-            "1990 - 2000",
-            "Более поздние"});
-            this.comboBoxYear.Location = new System.Drawing.Point(163, 550);
-            this.comboBoxYear.Name = "comboBoxYear";
-            this.comboBoxYear.Size = new System.Drawing.Size(121, 29);
-            this.comboBoxYear.TabIndex = 2;
-            // 
             // buttonSearchFilms
             // 
             this.buttonSearchFilms.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSearchFilms.Location = new System.Drawing.Point(290, 550);
+            this.buttonSearchFilms.Location = new System.Drawing.Point(19, 550);
             this.buttonSearchFilms.Name = "buttonSearchFilms";
-            this.buttonSearchFilms.Size = new System.Drawing.Size(174, 29);
+            this.buttonSearchFilms.Size = new System.Drawing.Size(445, 29);
             this.buttonSearchFilms.TabIndex = 3;
             this.buttonSearchFilms.Text = "Искать";
             this.buttonSearchFilms.Click += new System.EventHandler(this.buttonSearchFilms_Click);
-            // 
-            // comboBoxGener
-            // 
-            this.comboBoxGener.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxGener.FormattingEnabled = true;
-            this.comboBoxGener.ItemHeight = 23;
-            this.comboBoxGener.Items.AddRange(new object[] {
-            "Все жанры"});
-            this.comboBoxGener.Location = new System.Drawing.Point(19, 550);
-            this.comboBoxGener.Name = "comboBoxGener";
-            this.comboBoxGener.Size = new System.Drawing.Size(138, 29);
-            this.comboBoxGener.TabIndex = 1;
             // 
             // panelViewListFilms
             // 
             this.panelViewListFilms.AutoScroll = true;
             this.panelViewListFilms.BackColor = System.Drawing.Color.White;
             this.panelViewListFilms.Controls.Add(this.titlePanelFilms);
-            this.panelViewListFilms.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.panelViewListFilms.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panelViewListFilms.Location = new System.Drawing.Point(0, 0);
             this.panelViewListFilms.Name = "panelViewListFilms";
             this.panelViewListFilms.Padding = new System.Windows.Forms.Padding(0, 0, 0, 440);
@@ -341,7 +327,7 @@
             this.titlePanelFilms.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.titlePanelFilms.Location = new System.Drawing.Point(1, 1);
             this.titlePanelFilms.Name = "titlePanelFilms";
-            this.titlePanelFilms.Size = new System.Drawing.Size(768, 528);
+            this.titlePanelFilms.Size = new System.Drawing.Size(748, 528);
             this.titlePanelFilms.TabIndex = 0;
             this.titlePanelFilms.Text = "Для просмотра подходящих вам результатов выберите жанр и год ниже.";
             this.titlePanelFilms.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -356,12 +342,12 @@
             // 
             // titlePanelStatisticsAndReports
             // 
-            this.titlePanelStatisticsAndReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(122)))));
+            this.titlePanelStatisticsAndReports.BackColor = System.Drawing.Color.White;
             this.titlePanelStatisticsAndReports.Cursor = System.Windows.Forms.Cursors.Help;
             this.titlePanelStatisticsAndReports.CustomBackground = true;
             this.titlePanelStatisticsAndReports.CustomForeColor = true;
             this.titlePanelStatisticsAndReports.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.titlePanelStatisticsAndReports.ForeColor = System.Drawing.Color.White;
+            this.titlePanelStatisticsAndReports.ForeColor = System.Drawing.Color.Black;
             this.titlePanelStatisticsAndReports.Location = new System.Drawing.Point(0, 0);
             this.titlePanelStatisticsAndReports.Name = "titlePanelStatisticsAndReports";
             this.titlePanelStatisticsAndReports.Size = new System.Drawing.Size(750, 77);
@@ -371,25 +357,409 @@
             // 
             // panelSearch
             // 
-            this.panelSearch.Controls.Add(this.titlePanelSearch);
+            this.panelSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.panelSearch.Controls.Add(this.PanelSearchFilters);
+            this.panelSearch.Controls.Add(this.labelPageNumber);
+            this.panelSearch.Controls.Add(this.buttonNextPage);
+            this.panelSearch.Controls.Add(this.buttonBackPage);
+            this.panelSearch.Controls.Add(this.buttonShowFilters);
+            this.panelSearch.Controls.Add(this.panelViewSearch);
             this.panelSearch.Location = new System.Drawing.Point(215, 0);
             this.panelSearch.Name = "panelSearch";
             this.panelSearch.Size = new System.Drawing.Size(750, 600);
             this.panelSearch.TabIndex = 3;
             // 
+            // PanelSearchFilters
+            // 
+            this.PanelSearchFilters.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PanelSearchFilters.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PanelSearchFilters.Controls.Add(this.checkBoxAutoHide);
+            this.PanelSearchFilters.Controls.Add(this.buttonSearchByAllFilters);
+            this.PanelSearchFilters.Controls.Add(this.metroLabel6);
+            this.PanelSearchFilters.Controls.Add(this.filter_comboBoxLength);
+            this.PanelSearchFilters.Controls.Add(this.metroLabel9);
+            this.PanelSearchFilters.Controls.Add(this.metroLabel5);
+            this.PanelSearchFilters.Controls.Add(this.filter_comboBoxAgeLimite);
+            this.PanelSearchFilters.Controls.Add(this.filter_comboBoxYear);
+            this.PanelSearchFilters.Controls.Add(this.filter_labelClose);
+            this.PanelSearchFilters.Controls.Add(this.metroLabel7);
+            this.PanelSearchFilters.Controls.Add(this.filter_comboBoxPrice);
+            this.PanelSearchFilters.Controls.Add(this.filter_comboBoxCountry);
+            this.PanelSearchFilters.Controls.Add(this.metroLabel8);
+            this.PanelSearchFilters.Controls.Add(this.metroLabel12);
+            this.PanelSearchFilters.Controls.Add(this.metroLabel10);
+            this.PanelSearchFilters.Controls.Add(this.filter_comboBoxGener);
+            this.PanelSearchFilters.Controls.Add(this.filter_textBoxSlogan);
+            this.PanelSearchFilters.Controls.Add(this.metroLabel11);
+            this.PanelSearchFilters.Controls.Add(this.filter_textBoxDescription);
+            this.PanelSearchFilters.Controls.Add(this.labelCountResults);
+            this.PanelSearchFilters.Location = new System.Drawing.Point(0, 310);
+            this.PanelSearchFilters.Name = "PanelSearchFilters";
+            this.PanelSearchFilters.Size = new System.Drawing.Size(750, 220);
+            this.PanelSearchFilters.TabIndex = 18;
+            this.PanelSearchFilters.Visible = false;
+            // 
+            // checkBoxAutoHide
+            // 
+            this.checkBoxAutoHide.AutoSize = true;
+            this.checkBoxAutoHide.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.checkBoxAutoHide.Checked = true;
+            this.checkBoxAutoHide.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxAutoHide.CustomBackground = true;
+            this.checkBoxAutoHide.Location = new System.Drawing.Point(47, 194);
+            this.checkBoxAutoHide.Name = "checkBoxAutoHide";
+            this.checkBoxAutoHide.Size = new System.Drawing.Size(206, 15);
+            this.checkBoxAutoHide.TabIndex = 56;
+            this.checkBoxAutoHide.Text = "Автоматическое скрытие панели";
+            this.checkBoxAutoHide.UseVisualStyleBackColor = false;
+            // 
+            // buttonSearchByAllFilters
+            // 
+            this.buttonSearchByAllFilters.Location = new System.Drawing.Point(47, 155);
+            this.buttonSearchByAllFilters.Name = "buttonSearchByAllFilters";
+            this.buttonSearchByAllFilters.Size = new System.Drawing.Size(659, 29);
+            this.buttonSearchByAllFilters.TabIndex = 47;
+            this.buttonSearchByAllFilters.Text = "Поиск";
+            this.buttonSearchByAllFilters.Click += new System.EventHandler(this.buttonSearchByAllFilters_Click);
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroLabel6.Cursor = System.Windows.Forms.Cursors.Help;
+            this.metroLabel6.CustomBackground = true;
+            this.metroLabel6.CustomForeColor = true;
+            this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel6.ForeColor = System.Drawing.Color.Black;
+            this.metroLabel6.Location = new System.Drawing.Point(380, 42);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(160, 21);
+            this.metroLabel6.TabIndex = 33;
+            this.metroLabel6.Text = "Продолжительность (min.)";
+            this.metroLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // filter_comboBoxLength
+            // 
+            this.filter_comboBoxLength.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.filter_comboBoxLength.FormattingEnabled = true;
+            this.filter_comboBoxLength.ItemHeight = 23;
+            this.filter_comboBoxLength.Items.AddRange(new object[] {
+            "Любая",
+            "До 1 ч.",
+            "1 - 2 ч.",
+            "2 - 3 ч.",
+            "Более 3 ч."});
+            this.filter_comboBoxLength.Location = new System.Drawing.Point(380, 62);
+            this.filter_comboBoxLength.Name = "filter_comboBoxLength";
+            this.filter_comboBoxLength.Size = new System.Drawing.Size(160, 29);
+            this.filter_comboBoxLength.TabIndex = 54;
+            // 
+            // metroLabel9
+            // 
+            this.metroLabel9.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroLabel9.Cursor = System.Windows.Forms.Cursors.Help;
+            this.metroLabel9.CustomBackground = true;
+            this.metroLabel9.CustomForeColor = true;
+            this.metroLabel9.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel9.ForeColor = System.Drawing.Color.Black;
+            this.metroLabel9.Location = new System.Drawing.Point(214, 42);
+            this.metroLabel9.Name = "metroLabel9";
+            this.metroLabel9.Size = new System.Drawing.Size(160, 21);
+            this.metroLabel9.TabIndex = 30;
+            this.metroLabel9.Text = "Возрастной лимит";
+            this.metroLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroLabel5.Cursor = System.Windows.Forms.Cursors.Help;
+            this.metroLabel5.CustomBackground = true;
+            this.metroLabel5.CustomForeColor = true;
+            this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel5.ForeColor = System.Drawing.Color.Black;
+            this.metroLabel5.Location = new System.Drawing.Point(47, 42);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(161, 21);
+            this.metroLabel5.TabIndex = 19;
+            this.metroLabel5.Text = "Год";
+            this.metroLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // filter_comboBoxAgeLimite
+            // 
+            this.filter_comboBoxAgeLimite.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.filter_comboBoxAgeLimite.FormattingEnabled = true;
+            this.filter_comboBoxAgeLimite.ItemHeight = 23;
+            this.filter_comboBoxAgeLimite.Items.AddRange(new object[] {
+            "Без ограничений",
+            "0",
+            "6",
+            "12",
+            "14",
+            "16",
+            "18",
+            "21"});
+            this.filter_comboBoxAgeLimite.Location = new System.Drawing.Point(214, 62);
+            this.filter_comboBoxAgeLimite.Name = "filter_comboBoxAgeLimite";
+            this.filter_comboBoxAgeLimite.Size = new System.Drawing.Size(160, 29);
+            this.filter_comboBoxAgeLimite.TabIndex = 53;
+            // 
+            // filter_comboBoxYear
+            // 
+            this.filter_comboBoxYear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.filter_comboBoxYear.FormattingEnabled = true;
+            this.filter_comboBoxYear.ItemHeight = 23;
+            this.filter_comboBoxYear.Items.AddRange(new object[] {
+            "Все года",
+            "Самые новые",
+            "2016 - 2018",
+            "2012 - 2016",
+            "2008 - 2012",
+            "2006 - 2008",
+            "2002 - 2006",
+            "2000 - 2002",
+            "1990 - 2000",
+            "Более поздние"});
+            this.filter_comboBoxYear.Location = new System.Drawing.Point(47, 62);
+            this.filter_comboBoxYear.Name = "filter_comboBoxYear";
+            this.filter_comboBoxYear.Size = new System.Drawing.Size(161, 29);
+            this.filter_comboBoxYear.TabIndex = 52;
+            // 
+            // filter_labelClose
+            // 
+            this.filter_labelClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.filter_labelClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.filter_labelClose.CustomBackground = true;
+            this.filter_labelClose.CustomForeColor = true;
+            this.filter_labelClose.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.filter_labelClose.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.filter_labelClose.ForeColor = System.Drawing.Color.White;
+            this.filter_labelClose.Location = new System.Drawing.Point(713, 0);
+            this.filter_labelClose.Name = "filter_labelClose";
+            this.filter_labelClose.Size = new System.Drawing.Size(37, 29);
+            this.filter_labelClose.TabIndex = 51;
+            this.filter_labelClose.Text = "×";
+            this.filter_labelClose.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.filter_labelClose.Click += new System.EventHandler(this.filter_labelClose_Click);
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroLabel7.Cursor = System.Windows.Forms.Cursors.Help;
+            this.metroLabel7.CustomBackground = true;
+            this.metroLabel7.CustomForeColor = true;
+            this.metroLabel7.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel7.ForeColor = System.Drawing.Color.Black;
+            this.metroLabel7.Location = new System.Drawing.Point(546, 42);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(160, 21);
+            this.metroLabel7.TabIndex = 36;
+            this.metroLabel7.Text = "Цена билета";
+            this.metroLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // filter_comboBoxPrice
+            // 
+            this.filter_comboBoxPrice.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.filter_comboBoxPrice.FormattingEnabled = true;
+            this.filter_comboBoxPrice.ItemHeight = 23;
+            this.filter_comboBoxPrice.Items.AddRange(new object[] {
+            "Любая",
+            "До 10 руб.",
+            "10 - 20 руб.",
+            "Более 20 руб."});
+            this.filter_comboBoxPrice.Location = new System.Drawing.Point(546, 62);
+            this.filter_comboBoxPrice.Name = "filter_comboBoxPrice";
+            this.filter_comboBoxPrice.Size = new System.Drawing.Size(160, 29);
+            this.filter_comboBoxPrice.TabIndex = 35;
+            // 
+            // filter_comboBoxCountry
+            // 
+            this.filter_comboBoxCountry.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.filter_comboBoxCountry.FormattingEnabled = true;
+            this.filter_comboBoxCountry.ItemHeight = 23;
+            this.filter_comboBoxCountry.Items.AddRange(new object[] {
+            "Все страны"});
+            this.filter_comboBoxCountry.Location = new System.Drawing.Point(546, 119);
+            this.filter_comboBoxCountry.Name = "filter_comboBoxCountry";
+            this.filter_comboBoxCountry.Size = new System.Drawing.Size(160, 29);
+            this.filter_comboBoxCountry.TabIndex = 48;
+            // 
+            // metroLabel8
+            // 
+            this.metroLabel8.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroLabel8.Cursor = System.Windows.Forms.Cursors.Help;
+            this.metroLabel8.CustomBackground = true;
+            this.metroLabel8.CustomForeColor = true;
+            this.metroLabel8.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel8.ForeColor = System.Drawing.Color.Black;
+            this.metroLabel8.Location = new System.Drawing.Point(47, 99);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(161, 21);
+            this.metroLabel8.TabIndex = 38;
+            this.metroLabel8.Text = "Описание";
+            this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroLabel12
+            // 
+            this.metroLabel12.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroLabel12.Cursor = System.Windows.Forms.Cursors.Help;
+            this.metroLabel12.CustomBackground = true;
+            this.metroLabel12.CustomForeColor = true;
+            this.metroLabel12.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel12.ForeColor = System.Drawing.Color.Black;
+            this.metroLabel12.Location = new System.Drawing.Point(546, 99);
+            this.metroLabel12.Name = "metroLabel12";
+            this.metroLabel12.Size = new System.Drawing.Size(160, 21);
+            this.metroLabel12.TabIndex = 47;
+            this.metroLabel12.Text = "Страна производства";
+            this.metroLabel12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroLabel10
+            // 
+            this.metroLabel10.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroLabel10.Cursor = System.Windows.Forms.Cursors.Help;
+            this.metroLabel10.CustomBackground = true;
+            this.metroLabel10.CustomForeColor = true;
+            this.metroLabel10.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel10.ForeColor = System.Drawing.Color.Black;
+            this.metroLabel10.Location = new System.Drawing.Point(214, 99);
+            this.metroLabel10.Name = "metroLabel10";
+            this.metroLabel10.Size = new System.Drawing.Size(160, 21);
+            this.metroLabel10.TabIndex = 40;
+            this.metroLabel10.Text = "Слоган";
+            this.metroLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // filter_comboBoxGener
+            // 
+            this.filter_comboBoxGener.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.filter_comboBoxGener.FormattingEnabled = true;
+            this.filter_comboBoxGener.ItemHeight = 23;
+            this.filter_comboBoxGener.Items.AddRange(new object[] {
+            "Все жанры"});
+            this.filter_comboBoxGener.Location = new System.Drawing.Point(380, 119);
+            this.filter_comboBoxGener.Name = "filter_comboBoxGener";
+            this.filter_comboBoxGener.Size = new System.Drawing.Size(160, 29);
+            this.filter_comboBoxGener.TabIndex = 46;
+            // 
+            // filter_textBoxSlogan
+            // 
+            this.filter_textBoxSlogan.Location = new System.Drawing.Point(214, 119);
+            this.filter_textBoxSlogan.MaxLength = 35;
+            this.filter_textBoxSlogan.Multiline = true;
+            this.filter_textBoxSlogan.Name = "filter_textBoxSlogan";
+            this.filter_textBoxSlogan.Size = new System.Drawing.Size(160, 29);
+            this.filter_textBoxSlogan.TabIndex = 43;
+            // 
+            // metroLabel11
+            // 
+            this.metroLabel11.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroLabel11.Cursor = System.Windows.Forms.Cursors.Help;
+            this.metroLabel11.CustomBackground = true;
+            this.metroLabel11.CustomForeColor = true;
+            this.metroLabel11.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel11.ForeColor = System.Drawing.Color.Black;
+            this.metroLabel11.Location = new System.Drawing.Point(380, 99);
+            this.metroLabel11.Name = "metroLabel11";
+            this.metroLabel11.Size = new System.Drawing.Size(160, 21);
+            this.metroLabel11.TabIndex = 45;
+            this.metroLabel11.Text = "Жанр";
+            this.metroLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // filter_textBoxDescription
+            // 
+            this.filter_textBoxDescription.Location = new System.Drawing.Point(47, 119);
+            this.filter_textBoxDescription.MaxLength = 35;
+            this.filter_textBoxDescription.Multiline = true;
+            this.filter_textBoxDescription.Name = "filter_textBoxDescription";
+            this.filter_textBoxDescription.Size = new System.Drawing.Size(161, 29);
+            this.filter_textBoxDescription.TabIndex = 44;
+            // 
+            // labelCountResults
+            // 
+            this.labelCountResults.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.labelCountResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelCountResults.Cursor = System.Windows.Forms.Cursors.Help;
+            this.labelCountResults.CustomBackground = true;
+            this.labelCountResults.CustomForeColor = true;
+            this.labelCountResults.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.labelCountResults.ForeColor = System.Drawing.Color.Black;
+            this.labelCountResults.Location = new System.Drawing.Point(546, 155);
+            this.labelCountResults.Name = "labelCountResults";
+            this.labelCountResults.Size = new System.Drawing.Size(160, 29);
+            this.labelCountResults.TabIndex = 55;
+            this.labelCountResults.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelPageNumber
+            // 
+            this.labelPageNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelPageNumber.Cursor = System.Windows.Forms.Cursors.Help;
+            this.labelPageNumber.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.labelPageNumber.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.labelPageNumber.Location = new System.Drawing.Point(652, 550);
+            this.labelPageNumber.Name = "labelPageNumber";
+            this.labelPageNumber.Size = new System.Drawing.Size(82, 29);
+            this.labelPageNumber.TabIndex = 52;
+            this.labelPageNumber.Text = "1 из 3";
+            this.labelPageNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelPageNumber.Visible = false;
+            // 
+            // buttonNextPage
+            // 
+            this.buttonNextPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonNextPage.Location = new System.Drawing.Point(381, 550);
+            this.buttonNextPage.Name = "buttonNextPage";
+            this.buttonNextPage.Size = new System.Drawing.Size(265, 29);
+            this.buttonNextPage.TabIndex = 51;
+            this.buttonNextPage.Text = "Вперед";
+            this.buttonNextPage.Visible = false;
+            this.buttonNextPage.Click += new System.EventHandler(this.buttonNextPage_Click);
+            // 
+            // buttonBackPage
+            // 
+            this.buttonBackPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonBackPage.Location = new System.Drawing.Point(110, 550);
+            this.buttonBackPage.Name = "buttonBackPage";
+            this.buttonBackPage.Size = new System.Drawing.Size(265, 29);
+            this.buttonBackPage.TabIndex = 50;
+            this.buttonBackPage.Text = "Назад";
+            this.buttonBackPage.Visible = false;
+            this.buttonBackPage.Click += new System.EventHandler(this.buttonBackPage_Click);
+            // 
+            // buttonShowFilters
+            // 
+            this.buttonShowFilters.Location = new System.Drawing.Point(19, 550);
+            this.buttonShowFilters.Name = "buttonShowFilters";
+            this.buttonShowFilters.Size = new System.Drawing.Size(85, 29);
+            this.buttonShowFilters.TabIndex = 49;
+            this.buttonShowFilters.Text = "Фильтры";
+            this.buttonShowFilters.Click += new System.EventHandler(this.buttonShowFilters_Click);
+            // 
+            // panelViewSearch
+            // 
+            this.panelViewSearch.AutoScroll = true;
+            this.panelViewSearch.BackColor = System.Drawing.Color.White;
+            this.panelViewSearch.Controls.Add(this.titlePanelSearch);
+            this.panelViewSearch.Location = new System.Drawing.Point(0, 0);
+            this.panelViewSearch.Name = "panelViewSearch";
+            this.panelViewSearch.Size = new System.Drawing.Size(770, 530);
+            this.panelViewSearch.TabIndex = 53;
+            // 
             // titlePanelSearch
             // 
-            this.titlePanelSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(122)))));
             this.titlePanelSearch.Cursor = System.Windows.Forms.Cursors.Help;
-            this.titlePanelSearch.CustomBackground = true;
-            this.titlePanelSearch.CustomForeColor = true;
             this.titlePanelSearch.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.titlePanelSearch.ForeColor = System.Drawing.Color.White;
             this.titlePanelSearch.Location = new System.Drawing.Point(0, 0);
             this.titlePanelSearch.Name = "titlePanelSearch";
-            this.titlePanelSearch.Size = new System.Drawing.Size(750, 77);
+            this.titlePanelSearch.Size = new System.Drawing.Size(750, 530);
             this.titlePanelSearch.TabIndex = 1;
-            this.titlePanelSearch.Text = "Поиск";
+            this.titlePanelSearch.Text = "Для просмотра подходящих вам результатов \r\nвыберите интересующие вас фильтры ниже" +
+    ".";
             this.titlePanelSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelMainScreen
@@ -402,12 +772,12 @@
             // 
             // titlePanelMainScreen
             // 
-            this.titlePanelMainScreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(122)))));
+            this.titlePanelMainScreen.BackColor = System.Drawing.Color.White;
             this.titlePanelMainScreen.Cursor = System.Windows.Forms.Cursors.Help;
             this.titlePanelMainScreen.CustomBackground = true;
             this.titlePanelMainScreen.CustomForeColor = true;
             this.titlePanelMainScreen.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.titlePanelMainScreen.ForeColor = System.Drawing.Color.White;
+            this.titlePanelMainScreen.ForeColor = System.Drawing.Color.Black;
             this.titlePanelMainScreen.Location = new System.Drawing.Point(0, 0);
             this.titlePanelMainScreen.Name = "titlePanelMainScreen";
             this.titlePanelMainScreen.Size = new System.Drawing.Size(750, 77);
@@ -417,158 +787,152 @@
             // 
             // panelAdd
             // 
-            this.panelAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.panelAdd.BackColor = System.Drawing.Color.White;
+            this.panelAdd.Controls.Add(this.metroLabel4);
+            this.panelAdd.Controls.Add(this.metroLabel3);
+            this.panelAdd.Controls.Add(this.buttonAddProductionCountriesToFilm);
+            this.panelAdd.Controls.Add(this.metroLabel1);
+            this.panelAdd.Controls.Add(this.buttonAddGenerToFilm);
+            this.panelAdd.Controls.Add(this.buttonAddHalls);
+            this.panelAdd.Controls.Add(this.titlePanelAddProductionCountries);
             this.panelAdd.Controls.Add(this.buttonAddProductionCountries);
             this.panelAdd.Controls.Add(this.buttonAddGener);
             this.panelAdd.Controls.Add(this.buttonAddSession);
             this.panelAdd.Controls.Add(this.buttonAddFilm);
-            this.panelAdd.Controls.Add(this.panelAddFilms);
-            this.panelAdd.Controls.Add(this.panelAddProductionCountries);
-            this.panelAdd.Controls.Add(this.panelAddSessions);
-            this.panelAdd.Controls.Add(this.panelAddGeners);
             this.panelAdd.Location = new System.Drawing.Point(215, 0);
             this.panelAdd.Name = "panelAdd";
             this.panelAdd.Size = new System.Drawing.Size(750, 600);
             this.panelAdd.TabIndex = 5;
             // 
+            // metroLabel4
+            // 
+            this.metroLabel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel4.Cursor = System.Windows.Forms.Cursors.Help;
+            this.metroLabel4.CustomBackground = true;
+            this.metroLabel4.CustomForeColor = true;
+            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel4.ForeColor = System.Drawing.Color.DimGray;
+            this.metroLabel4.Location = new System.Drawing.Point(225, 300);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(289, 31);
+            this.metroLabel4.TabIndex = 17;
+            this.metroLabel4.Text = "Сеансы / Залы и типы мест";
+            this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel3.Cursor = System.Windows.Forms.Cursors.Help;
+            this.metroLabel3.CustomBackground = true;
+            this.metroLabel3.CustomForeColor = true;
+            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel3.ForeColor = System.Drawing.Color.DimGray;
+            this.metroLabel3.Location = new System.Drawing.Point(225, 399);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(289, 31);
+            this.metroLabel3.TabIndex = 16;
+            this.metroLabel3.Text = "Жанры / Страны производителей";
+            this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // buttonAddProductionCountriesToFilm
+            // 
+            this.buttonAddProductionCountriesToFilm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddProductionCountriesToFilm.Location = new System.Drawing.Point(225, 237);
+            this.buttonAddProductionCountriesToFilm.Name = "buttonAddProductionCountriesToFilm";
+            this.buttonAddProductionCountriesToFilm.Size = new System.Drawing.Size(289, 29);
+            this.buttonAddProductionCountriesToFilm.TabIndex = 15;
+            this.buttonAddProductionCountriesToFilm.Text = "Добавить страну производства";
+            this.buttonAddProductionCountriesToFilm.Click += new System.EventHandler(this.buttonAddProductionCountriesToFilm_Click);
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroLabel1.Cursor = System.Windows.Forms.Cursors.Help;
+            this.metroLabel1.CustomBackground = true;
+            this.metroLabel1.CustomForeColor = true;
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel1.ForeColor = System.Drawing.Color.DimGray;
+            this.metroLabel1.Location = new System.Drawing.Point(225, 165);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(289, 31);
+            this.metroLabel1.TabIndex = 14;
+            this.metroLabel1.Text = "Фильмы";
+            this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // buttonAddGenerToFilm
+            // 
+            this.buttonAddGenerToFilm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddGenerToFilm.Location = new System.Drawing.Point(369, 203);
+            this.buttonAddGenerToFilm.Name = "buttonAddGenerToFilm";
+            this.buttonAddGenerToFilm.Size = new System.Drawing.Size(145, 29);
+            this.buttonAddGenerToFilm.TabIndex = 13;
+            this.buttonAddGenerToFilm.Text = "Добавить жанр";
+            this.buttonAddGenerToFilm.Click += new System.EventHandler(this.buttonAddGenerToFilm_Click);
+            // 
+            // buttonAddHalls
+            // 
+            this.buttonAddHalls.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddHalls.Location = new System.Drawing.Point(346, 338);
+            this.buttonAddHalls.Name = "buttonAddHalls";
+            this.buttonAddHalls.Size = new System.Drawing.Size(168, 29);
+            this.buttonAddHalls.TabIndex = 12;
+            this.buttonAddHalls.Text = "Залы и типы мест";
+            this.buttonAddHalls.Click += new System.EventHandler(this.buttonAddHalls_Click);
+            // 
+            // titlePanelAddProductionCountries
+            // 
+            this.titlePanelAddProductionCountries.BackColor = System.Drawing.Color.White;
+            this.titlePanelAddProductionCountries.Cursor = System.Windows.Forms.Cursors.Help;
+            this.titlePanelAddProductionCountries.CustomBackground = true;
+            this.titlePanelAddProductionCountries.CustomForeColor = true;
+            this.titlePanelAddProductionCountries.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.titlePanelAddProductionCountries.ForeColor = System.Drawing.Color.Black;
+            this.titlePanelAddProductionCountries.Location = new System.Drawing.Point(0, 0);
+            this.titlePanelAddProductionCountries.Name = "titlePanelAddProductionCountries";
+            this.titlePanelAddProductionCountries.Size = new System.Drawing.Size(750, 77);
+            this.titlePanelAddProductionCountries.TabIndex = 11;
+            this.titlePanelAddProductionCountries.Text = "Добавление и редактирование данных";
+            this.titlePanelAddProductionCountries.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // buttonAddProductionCountries
             // 
             this.buttonAddProductionCountries.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAddProductionCountries.Location = new System.Drawing.Point(523, 550);
+            this.buttonAddProductionCountries.Location = new System.Drawing.Point(346, 437);
             this.buttonAddProductionCountries.Name = "buttonAddProductionCountries";
-            this.buttonAddProductionCountries.Size = new System.Drawing.Size(205, 29);
+            this.buttonAddProductionCountries.Size = new System.Drawing.Size(168, 29);
             this.buttonAddProductionCountries.TabIndex = 10;
-            this.buttonAddProductionCountries.Text = "Страну производителя";
+            this.buttonAddProductionCountries.Text = "Страны производителей";
             this.buttonAddProductionCountries.Click += new System.EventHandler(this.buttonAddProductionCountries_Click);
             // 
             // buttonAddGener
             // 
             this.buttonAddGener.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAddGener.Location = new System.Drawing.Point(356, 550);
+            this.buttonAddGener.Location = new System.Drawing.Point(225, 437);
             this.buttonAddGener.Name = "buttonAddGener";
-            this.buttonAddGener.Size = new System.Drawing.Size(161, 29);
+            this.buttonAddGener.Size = new System.Drawing.Size(115, 29);
             this.buttonAddGener.TabIndex = 9;
-            this.buttonAddGener.Text = "Жанр";
+            this.buttonAddGener.Text = "Жанры";
             this.buttonAddGener.Click += new System.EventHandler(this.buttonAddGener_Click);
             // 
             // buttonAddSession
             // 
             this.buttonAddSession.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAddSession.Location = new System.Drawing.Point(189, 550);
+            this.buttonAddSession.Location = new System.Drawing.Point(225, 338);
             this.buttonAddSession.Name = "buttonAddSession";
-            this.buttonAddSession.Size = new System.Drawing.Size(161, 29);
+            this.buttonAddSession.Size = new System.Drawing.Size(115, 29);
             this.buttonAddSession.TabIndex = 8;
-            this.buttonAddSession.Text = "Сеанс";
+            this.buttonAddSession.Text = "Сеансы";
             this.buttonAddSession.Click += new System.EventHandler(this.buttonAddSession_Click);
             // 
             // buttonAddFilm
             // 
             this.buttonAddFilm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAddFilm.Location = new System.Drawing.Point(22, 550);
+            this.buttonAddFilm.Location = new System.Drawing.Point(225, 203);
             this.buttonAddFilm.Name = "buttonAddFilm";
-            this.buttonAddFilm.Size = new System.Drawing.Size(161, 29);
+            this.buttonAddFilm.Size = new System.Drawing.Size(138, 29);
             this.buttonAddFilm.TabIndex = 7;
-            this.buttonAddFilm.Text = "Фильм";
+            this.buttonAddFilm.Text = "Добавить фильм";
             this.buttonAddFilm.Click += new System.EventHandler(this.buttonAddFilm_Click);
-            // 
-            // panelAddFilms
-            // 
-            this.panelAddFilms.BackColor = System.Drawing.Color.White;
-            this.panelAddFilms.Controls.Add(this.titlePanelAddFilms);
-            this.panelAddFilms.Location = new System.Drawing.Point(0, 0);
-            this.panelAddFilms.Name = "panelAddFilms";
-            this.panelAddFilms.Size = new System.Drawing.Size(750, 528);
-            this.panelAddFilms.TabIndex = 6;
-            // 
-            // titlePanelAddFilms
-            // 
-            this.titlePanelAddFilms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(122)))));
-            this.titlePanelAddFilms.Cursor = System.Windows.Forms.Cursors.Help;
-            this.titlePanelAddFilms.CustomBackground = true;
-            this.titlePanelAddFilms.CustomForeColor = true;
-            this.titlePanelAddFilms.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.titlePanelAddFilms.ForeColor = System.Drawing.Color.White;
-            this.titlePanelAddFilms.Location = new System.Drawing.Point(0, 0);
-            this.titlePanelAddFilms.Name = "titlePanelAddFilms";
-            this.titlePanelAddFilms.Size = new System.Drawing.Size(750, 77);
-            this.titlePanelAddFilms.TabIndex = 1;
-            this.titlePanelAddFilms.Text = "Добавление фильмов";
-            this.titlePanelAddFilms.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panelAddProductionCountries
-            // 
-            this.panelAddProductionCountries.BackColor = System.Drawing.Color.White;
-            this.panelAddProductionCountries.Controls.Add(this.titlePanelAddProductionCountries);
-            this.panelAddProductionCountries.Location = new System.Drawing.Point(0, 0);
-            this.panelAddProductionCountries.Name = "panelAddProductionCountries";
-            this.panelAddProductionCountries.Size = new System.Drawing.Size(750, 528);
-            this.panelAddProductionCountries.TabIndex = 13;
-            this.panelAddProductionCountries.Visible = false;
-            // 
-            // titlePanelAddProductionCountries
-            // 
-            this.titlePanelAddProductionCountries.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(122)))));
-            this.titlePanelAddProductionCountries.Cursor = System.Windows.Forms.Cursors.Help;
-            this.titlePanelAddProductionCountries.CustomBackground = true;
-            this.titlePanelAddProductionCountries.CustomForeColor = true;
-            this.titlePanelAddProductionCountries.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.titlePanelAddProductionCountries.ForeColor = System.Drawing.Color.White;
-            this.titlePanelAddProductionCountries.Location = new System.Drawing.Point(0, 0);
-            this.titlePanelAddProductionCountries.Name = "titlePanelAddProductionCountries";
-            this.titlePanelAddProductionCountries.Size = new System.Drawing.Size(750, 77);
-            this.titlePanelAddProductionCountries.TabIndex = 1;
-            this.titlePanelAddProductionCountries.Text = "Добавление стран производителей";
-            this.titlePanelAddProductionCountries.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panelAddSessions
-            // 
-            this.panelAddSessions.BackColor = System.Drawing.Color.White;
-            this.panelAddSessions.Controls.Add(this.titlePanelAddSessions);
-            this.panelAddSessions.Location = new System.Drawing.Point(0, 0);
-            this.panelAddSessions.Name = "panelAddSessions";
-            this.panelAddSessions.Size = new System.Drawing.Size(750, 528);
-            this.panelAddSessions.TabIndex = 12;
-            this.panelAddSessions.Visible = false;
-            // 
-            // titlePanelAddSessions
-            // 
-            this.titlePanelAddSessions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(122)))));
-            this.titlePanelAddSessions.Cursor = System.Windows.Forms.Cursors.Help;
-            this.titlePanelAddSessions.CustomBackground = true;
-            this.titlePanelAddSessions.CustomForeColor = true;
-            this.titlePanelAddSessions.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.titlePanelAddSessions.ForeColor = System.Drawing.Color.White;
-            this.titlePanelAddSessions.Location = new System.Drawing.Point(0, 0);
-            this.titlePanelAddSessions.Name = "titlePanelAddSessions";
-            this.titlePanelAddSessions.Size = new System.Drawing.Size(750, 77);
-            this.titlePanelAddSessions.TabIndex = 1;
-            this.titlePanelAddSessions.Text = "Добавление сеансов";
-            this.titlePanelAddSessions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panelAddGeners
-            // 
-            this.panelAddGeners.BackColor = System.Drawing.Color.White;
-            this.panelAddGeners.Controls.Add(this.titlePanelAddGeners);
-            this.panelAddGeners.Location = new System.Drawing.Point(0, 0);
-            this.panelAddGeners.Name = "panelAddGeners";
-            this.panelAddGeners.Size = new System.Drawing.Size(750, 528);
-            this.panelAddGeners.TabIndex = 11;
-            this.panelAddGeners.Visible = false;
-            // 
-            // titlePanelAddGeners
-            // 
-            this.titlePanelAddGeners.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(122)))));
-            this.titlePanelAddGeners.Cursor = System.Windows.Forms.Cursors.Help;
-            this.titlePanelAddGeners.CustomBackground = true;
-            this.titlePanelAddGeners.CustomForeColor = true;
-            this.titlePanelAddGeners.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.titlePanelAddGeners.ForeColor = System.Drawing.Color.White;
-            this.titlePanelAddGeners.Location = new System.Drawing.Point(0, 0);
-            this.titlePanelAddGeners.Name = "titlePanelAddGeners";
-            this.titlePanelAddGeners.Size = new System.Drawing.Size(750, 77);
-            this.titlePanelAddGeners.TabIndex = 1;
-            this.titlePanelAddGeners.Text = "Добавление жанров";
-            this.titlePanelAddGeners.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // searchTicket
             // 
@@ -633,11 +997,11 @@
             // 
             this.ticketLength.AutoSize = true;
             this.ticketLength.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(23)))), ((int)(((byte)(79)))));
-            this.ticketLength.Font = new System.Drawing.Font("Righteous", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ticketLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ticketLength.ForeColor = System.Drawing.Color.White;
             this.ticketLength.Location = new System.Drawing.Point(317, 181);
             this.ticketLength.Name = "ticketLength";
-            this.ticketLength.Size = new System.Drawing.Size(67, 17);
+            this.ticketLength.Size = new System.Drawing.Size(68, 16);
             this.ticketLength.TabIndex = 12;
             this.ticketLength.Text = "[Num]min.";
             // 
@@ -645,11 +1009,11 @@
             // 
             this.ticketAgeLimit.AutoSize = true;
             this.ticketAgeLimit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(23)))), ((int)(((byte)(79)))));
-            this.ticketAgeLimit.Font = new System.Drawing.Font("Righteous", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ticketAgeLimit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ticketAgeLimit.ForeColor = System.Drawing.Color.White;
             this.ticketAgeLimit.Location = new System.Drawing.Point(237, 2);
             this.ticketAgeLimit.Name = "ticketAgeLimit";
-            this.ticketAgeLimit.Size = new System.Drawing.Size(50, 17);
+            this.ticketAgeLimit.Size = new System.Drawing.Size(51, 16);
             this.ticketAgeLimit.TabIndex = 11;
             this.ticketAgeLimit.Text = "[Num]+";
             // 
@@ -818,12 +1182,12 @@
             // 
             // titlePanelReturnTickets
             // 
-            this.titlePanelReturnTickets.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(122)))));
+            this.titlePanelReturnTickets.BackColor = System.Drawing.Color.White;
             this.titlePanelReturnTickets.Cursor = System.Windows.Forms.Cursors.Help;
             this.titlePanelReturnTickets.CustomBackground = true;
             this.titlePanelReturnTickets.CustomForeColor = true;
             this.titlePanelReturnTickets.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.titlePanelReturnTickets.ForeColor = System.Drawing.Color.White;
+            this.titlePanelReturnTickets.ForeColor = System.Drawing.Color.Black;
             this.titlePanelReturnTickets.Location = new System.Drawing.Point(0, 0);
             this.titlePanelReturnTickets.Name = "titlePanelReturnTickets";
             this.titlePanelReturnTickets.Size = new System.Drawing.Size(750, 77);
@@ -847,12 +1211,12 @@
             this.ClientSize = new System.Drawing.Size(965, 600);
             this.ControlBox = false;
             this.Controls.Add(this.panelMainMenu);
-            this.Controls.Add(this.searchTicket);
             this.Controls.Add(this.panelSearch);
             this.Controls.Add(this.panelMainScreen);
             this.Controls.Add(this.panelStatisticsAndReports);
             this.Controls.Add(this.panelFilms);
             this.Controls.Add(this.panelAdd);
+            this.Controls.Add(this.searchTicket);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Resizable = false;
@@ -864,12 +1228,11 @@
             this.panelViewListFilms.ResumeLayout(false);
             this.panelStatisticsAndReports.ResumeLayout(false);
             this.panelSearch.ResumeLayout(false);
+            this.PanelSearchFilters.ResumeLayout(false);
+            this.PanelSearchFilters.PerformLayout();
+            this.panelViewSearch.ResumeLayout(false);
             this.panelMainScreen.ResumeLayout(false);
             this.panelAdd.ResumeLayout(false);
-            this.panelAddFilms.ResumeLayout(false);
-            this.panelAddProductionCountries.ResumeLayout(false);
-            this.panelAddSessions.ResumeLayout(false);
-            this.panelAddGeners.ResumeLayout(false);
             this.searchTicket.ResumeLayout(false);
             this.searchTicket.PerformLayout();
             this.panelReturnTicket.ResumeLayout(false);
@@ -893,30 +1256,14 @@
         private System.Windows.Forms.Panel panelSearch;
         private System.Windows.Forms.Panel panelMainScreen;
         private System.Windows.Forms.Panel panelViewListFilms;
-        private MetroFramework.Controls.MetroComboBox comboBoxGener;
-        private MetroFramework.Controls.MetroComboBox comboBoxYear;
-        private MetroFramework.Controls.MetroButton buttonSearchFilms;
-        private MetroFramework.Controls.MetroButton buttonSearchFilmsNext;
-        private MetroFramework.Controls.MetroButton buttonSearchFilmsBack;
-        private MetroFramework.Controls.MetroLabel titlePanelFilms;
-        private MetroFramework.Controls.MetroLabel titlePanelSearch;
         private MetroFramework.Controls.MetroLabel titlePanelStatisticsAndReports;
         private MetroFramework.Controls.MetroLabel titlePanelMainScreen;
-        private MetroFramework.Controls.MetroLabel labelNumberPage;
         private System.Windows.Forms.Button menuButtonAdd;
         private System.Windows.Forms.Panel panelAdd;
-        private System.Windows.Forms.Panel panelAddFilms;
-        private MetroFramework.Controls.MetroLabel titlePanelAddFilms;
         private MetroFramework.Controls.MetroButton buttonAddProductionCountries;
         private MetroFramework.Controls.MetroButton buttonAddGener;
         private MetroFramework.Controls.MetroButton buttonAddSession;
         private MetroFramework.Controls.MetroButton buttonAddFilm;
-        private System.Windows.Forms.Panel panelAddGeners;
-        private MetroFramework.Controls.MetroLabel titlePanelAddGeners;
-        private System.Windows.Forms.Panel panelAddSessions;
-        private MetroFramework.Controls.MetroLabel titlePanelAddSessions;
-        private System.Windows.Forms.Panel panelAddProductionCountries;
-        private MetroFramework.Controls.MetroLabel titlePanelAddProductionCountries;
         private System.Windows.Forms.Button menuButtonReturnTickets;
         private System.Windows.Forms.Panel searchTicket;
         private MetroFramework.Controls.MetroLabel titlePanelReturnTickets;
@@ -941,6 +1288,45 @@
         private MetroFramework.Controls.MetroLabel labelHelper;
         private System.Windows.Forms.Panel panelReturnTicket;
         private MetroFramework.Controls.MetroButton buttonReturnTicketUID;
+        private MetroFramework.Controls.MetroButton buttonAddHalls;
+        private MetroFramework.Controls.MetroLabel titlePanelAddProductionCountries;
+        private MetroFramework.Controls.MetroButton buttonAddGenerToFilm;
+        private MetroFramework.Controls.MetroButton buttonAddProductionCountriesToFilm;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel titlePanelFilms;
+        private MetroFramework.Controls.MetroLabel labelNumberPage;
+        private MetroFramework.Controls.MetroButton buttonSearchFilmsNext;
+        private MetroFramework.Controls.MetroButton buttonSearchFilmsBack;
+        private MetroFramework.Controls.MetroButton buttonSearchFilms;
+        private MetroFramework.Controls.MetroLabel titlePanelSearch;
+        private MetroFramework.Controls.MetroLabel labelPageNumber;
+        private MetroFramework.Controls.MetroButton buttonNextPage;
+        private MetroFramework.Controls.MetroButton buttonBackPage;
+        private MetroFramework.Controls.MetroButton buttonShowFilters;
+        private System.Windows.Forms.Panel panelViewSearch;
+        private System.Windows.Forms.Panel PanelSearchFilters;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroComboBox filter_comboBoxLength;
+        private MetroFramework.Controls.MetroLabel metroLabel9;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroComboBox filter_comboBoxAgeLimite;
+        private MetroFramework.Controls.MetroComboBox filter_comboBoxYear;
+        private MetroFramework.Controls.MetroLabel filter_labelClose;
+        private MetroFramework.Controls.MetroButton buttonSearchByAllFilters;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroComboBox filter_comboBoxPrice;
+        private MetroFramework.Controls.MetroComboBox filter_comboBoxCountry;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private MetroFramework.Controls.MetroLabel metroLabel12;
+        private MetroFramework.Controls.MetroLabel metroLabel10;
+        private MetroFramework.Controls.MetroComboBox filter_comboBoxGener;
+        private System.Windows.Forms.TextBox filter_textBoxSlogan;
+        private MetroFramework.Controls.MetroLabel metroLabel11;
+        private System.Windows.Forms.TextBox filter_textBoxDescription;
+        private MetroFramework.Controls.MetroLabel labelCountResults;
+        private MetroFramework.Controls.MetroCheckBox checkBoxAutoHide;
     }
 }
 

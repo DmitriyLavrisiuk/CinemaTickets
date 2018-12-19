@@ -16,10 +16,13 @@ GO
 :r _functions/functions.sql
 
 -- PROCEDURES
-GO
-:r _procedures/getFullListOfGener.sql
-:r _procedures/findFilmsByFilters_3.sql
-:r _procedures/countResultFindFilmsByFilters_3.sql
-:r _procedures/findFilmsByAllFilters.sql
-:r _procedures/getAllInformationAboutTicketByUID.sql
-:r _procedures/returnTicket.sql
+
+:r _procedures/FindAllFilms.sql
+--:r _procedures/FindFilmsBy3Filters.sql
+:r _procedures/FindFilmsByAllFilters.sql
+:r _procedures/GetCountFilmsBy3Filters.sql
+:r _procedures/GetCountFilmsByAllFilters.sql
+:r _procedures/GetAllInformationAboutTicketByUID.sql
+:r _procedures/GetFullListOfGener.sql
+:r _procedures/GetFullListOfProductionCountries.sql
+:r _procedures/ReturnTicket.sql

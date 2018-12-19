@@ -59,6 +59,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddFilms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddFilms.Designer.cs">
+      <DependentUpon>AddFilms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddGeners.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddGeners.Designer.cs">
+      <DependentUpon>AddGeners.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddGenersToFilm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddGenersToFilm.Designer.cs">
+      <DependentUpon>AddGenersToFilm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddHalls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddHalls.Designer.cs">
+      <DependentUpon>AddHalls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddProductionCountries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProductionCountries.Designer.cs">
+      <DependentUpon>AddProductionCountries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddProductionCountriesToFilm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProductionCountriesToFilm.Designer.cs">
+      <DependentUpon>AddProductionCountriesToFilm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddSessions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSessions.Designer.cs">
+      <DependentUpon>AddSessions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CinemaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CinemaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +114,27 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddFilms.resx">
+      <DependentUpon>AddFilms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddGeners.resx">
+      <DependentUpon>AddGeners.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddGenersToFilm.resx">
+      <DependentUpon>AddGenersToFilm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddHalls.resx">
+      <DependentUpon>AddHalls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddProductionCountries.resx">
+      <DependentUpon>AddProductionCountries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddProductionCountriesToFilm.resx">
+      <DependentUpon>AddProductionCountriesToFilm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSessions.resx">
+      <DependentUpon>AddSessions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -79,6 +147,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="CinemaDataSet.xsc">
+      <DependentUpon>CinemaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CinemaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CinemaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CinemaDataSet.xss">
+      <DependentUpon>CinemaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
