@@ -1,12 +1,12 @@
 ﻿-- Процедура для поиска фильмов по 14 параметрам
 -- EXAMPLE
--- EXEC FindFilmsByAllFilters @production_to_search = "КНР,СССР,Россия"
+-- EXEC FindFilmsByAllFilters
 
 GO
 DROP PROC if exists FindFilmsByAllFilters
 GO
 CREATE PROC FindFilmsByAllFilters
-	@count_films_on_page int = 20,
+	@count_films_on_page int = 5,
 	@page_number int = 1,
 	@year_from int = NULL,
 	@year_to int = NULL,
@@ -33,6 +33,38 @@ AS
 		INSERT INTO @p(Value) (select * from GetStrTable(@production_to_search))
 	END
 
+	DECLARE @countFilms int = (
+		SELECT
+			COUNT(Films.id)
+		FROM Films
+		JOIN Films_gener ON Films.id = Films_gener.id_film
+		JOIN Gener ON Films_gener.id_gener = Gener.id_gener
+		JOIN Films_production ON Films.id = Films_production.id_film
+		JOIN Production ON Films_production.id_country = Production.id_country
+		WHERE
+			(@year_from IS NULL OR Films.film_year >= @year_from)
+			AND (@year_to IS NULL OR Films.film_year <= @year_to)
+			AND (@age_limit_from IS NULL OR Films.film_age_limit >= @age_limit_from)
+			AND (@age_limit_to IS NULL OR Films.film_age_limit >= @age_limit_to)
+			AND (@length_from IS NULL OR Films.film_length_min >= @length_from)
+			AND (@length_to IS NULL OR Films.film_length_min <= @length_to)
+			AND (@price_ticket_from IS NULL OR Films.film_price_ticket >= @price_ticket_from)
+			AND (@price_ticket_to IS NULL OR Films.film_price_ticket <= @price_ticket_to)
+			AND (@description_words IS NULL OR Films.film_description like @description_words)
+			AND (@slogan_words IS NULL OR Films.film_description like @slogan_words)
+			AND (@gener_to_search IS NULL OR Gener.gener_name in ((SELECT value FROM @g)))
+			AND (@production_to_search IS NULL OR Production.country_name in ((SELECT value FROM @p)))
+	)
+
+	if(@page_number = 1)
+		BEGIN
+			SET @page_number = 0
+		END
+	ELSE
+		BEGIN
+			SET @page_number -= 1 
+		END
+
 	SELECT
 		Films.id,
 		Films.film_name,
@@ -49,9 +81,7 @@ AS
 	JOIN Films_production ON Films.id = Films_production.id_film
 	JOIN Production ON Films_production.id_country = Production.id_country
 	WHERE
-		Films.id > ((@count_films_on_page * @page_number) - @count_films_on_page)
-		AND Films.id <= ((@count_films_on_page * @page_number))
-		AND (@year_from IS NULL OR Films.film_year >= @year_from)
+		(@year_from IS NULL OR Films.film_year >= @year_from)
 		AND (@year_to IS NULL OR Films.film_year <= @year_to)
 		AND (@age_limit_from IS NULL OR Films.film_age_limit >= @age_limit_from)
 		AND (@age_limit_to IS NULL OR Films.film_age_limit >= @age_limit_to)
@@ -73,5 +103,6 @@ AS
 		Films.film_photo,
 		Films.film_description,
 		Films.film_slogan
-	ORDER BY id ASC
+	ORDER BY id DESC
+	OFFSET @page_number * @count_films_on_page ROW FETCH NEXT @count_films_on_page ROWS ONLY;
 GO
