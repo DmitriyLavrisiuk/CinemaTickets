@@ -59,7 +59,7 @@ BEGIN TRY
 
 		/* Films_production */
 		INSERT INTO Films_production (id_film, id_country) VALUES
-		(1,1), (2,4), (3,2), (4,5), (5,4), (6,1), (7,2), (8,2), (9,2), (10,2),
+		(1,1), (2,4), (3,2), (3,3), (4,5), (5,4), (6,1), (7,2), (8,2), (9,2), (10,2),
 		(11,2), (12,2);
 		PRINT 'INSERT INTO Films_gener'
 

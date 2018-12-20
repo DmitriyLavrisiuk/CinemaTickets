@@ -38,7 +38,10 @@ namespace CinemaTickets
         private List<Label> listLabelPriceFilmSearch;
         private List<Label> listLabelDescriptionFilmSearch;
         private List<Label> listLabelSloganFilmSearch;
-        
+        private List<Label> listLabelGenersFilmSearch;
+        private List<Label> listLabelProductionCountriesFilmSearch;
+
+
         public MainForm()
         {
             InitializeComponent();
@@ -56,6 +59,8 @@ namespace CinemaTickets
             listLabelPriceFilmSearch = new List<Label>();
             listLabelDescriptionFilmSearch = new List<Label>();
             listLabelSloganFilmSearch = new List<Label>();
+            listLabelGenersFilmSearch = new List<Label>();
+            listLabelProductionCountriesFilmSearch = new List<Label>();
 
             settings = new List<short>() {
             /*
@@ -64,7 +69,7 @@ namespace CinemaTickets
              * settings[2] - Количество записей на странице "Поиск"
              * settings[3] - Номер страницы результата запроса "Поиск"
              */
-                8, 1, 5, 1
+                8, 1, 2, 1
             };
             listPanel = new List<Panel>()
             {
@@ -108,6 +113,8 @@ namespace CinemaTickets
                 listLabelPriceFilmSearch.Add(new Label());
                 listLabelDescriptionFilmSearch.Add(new Label());
                 listLabelSloganFilmSearch.Add(new Label());
+                listLabelGenersFilmSearch.Add(new Label());
+                listLabelProductionCountriesFilmSearch.Add(new Label());
             }
             // SET STYLE FOR LEFT MENU BUTTON
             setStyleButton(listButtonInLeftMenu);
@@ -123,7 +130,7 @@ namespace CinemaTickets
             {
                 element.ForeColor = Color.FromArgb(255, 255, 255);
                 element.BackColor = Color.FromArgb(57, 57, 108);
-                element.Font = new Font("Open sans", 9, FontStyle.Regular);
+                element.Font = new Font("Arial", 9, FontStyle.Regular);
             }
 
         }
@@ -177,7 +184,7 @@ namespace CinemaTickets
                 listLabelFilmName[i].BackColor = Color.FromArgb(1, 0, 0, 0);
                 listLabelFilmName[i].Width = 150;
                 listLabelFilmName[i].Height = 30;
-                listLabelFilmName[i].Font = new Font("Roboto", 9, FontStyle.Regular);
+                listLabelFilmName[i].Font = new Font("Arial", 9, FontStyle.Regular);
                 listLabelFilmName[i].TextAlign = ContentAlignment.MiddleCenter;
                 listLabelFilmName[i].Location = new Point(x, y + 200);
 
@@ -186,7 +193,7 @@ namespace CinemaTickets
                 listLabelAgeLimit[i].BackColor = Color.FromArgb(236, 23, 79);
                 listLabelAgeLimit[i].Width = 35;
                 listLabelAgeLimit[i].Height = 20;
-                listLabelAgeLimit[i].Font = new Font("Righteous", 8);
+                listLabelAgeLimit[i].Font = new Font("Arial", 8);
                 listLabelAgeLimit[i].TextAlign = ContentAlignment.MiddleCenter;
                 listLabelAgeLimit[i].Location = new Point(x - 2, y - 2);
 
@@ -195,7 +202,7 @@ namespace CinemaTickets
                 listLabelLengthFilm[i].BackColor = Color.FromArgb(236, 23, 79);
                 listLabelLengthFilm[i].Width = 50;
                 listLabelLengthFilm[i].Height = 20;
-                listLabelLengthFilm[i].Font = new Font("Righteous", 8);
+                listLabelLengthFilm[i].Font = new Font("Arial", 8);
                 listLabelLengthFilm[i].TextAlign = ContentAlignment.MiddleCenter;
                 listLabelLengthFilm[i].Location = new Point(x +
                 listPictureBox[i].Width - listLabelLengthFilm[i].Width + 2, y +
@@ -223,28 +230,33 @@ namespace CinemaTickets
             y = 30;
             for (short i = 0; i < settings[2];)
             {
+                listLabelSloganFilmSearch[i].Font =
+                listLabelPriceFilmSearch[i].Font =
+                listLabelYearFilmSearch[i].Font =
+                listLabelGenersFilmSearch[i].Font =
+                listLabelProductionCountriesFilmSearch[i].Font = new Font("Arial", 8, FontStyle.Regular);
+
+                listLabelNameFilmSearch[i].TextAlign =
+                listLabelSloganFilmSearch[i].TextAlign =
+                listLabelPriceFilmSearch[i].TextAlign =
+                listLabelDescriptionFilmSearch[i].TextAlign =
+                listLabelYearFilmSearch[i].TextAlign =
+                listLabelGenersFilmSearch[i].TextAlign =
+                listLabelProductionCountriesFilmSearch[i].TextAlign = ContentAlignment.MiddleLeft;
+
                 listPictureBoxFilmsSearch[i].BackColor = Color.FromArgb(225, 225, 225);
                 listPictureBoxFilmsSearch[i].Height = 200;
                 listPictureBoxFilmsSearch[i].Width = 150;
                 listPictureBoxFilmsSearch[i].Location = new Point(x, y);
                 listPictureBoxFilmsSearch[i].SizeMode = PictureBoxSizeMode.StretchImage;
                 listPictureBoxFilmsSearch[i].BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-
-                listLabelNameFilmSearch[i].Text = "[Film name]";
-                listLabelNameFilmSearch[i].ForeColor = Color.FromArgb(0, 0, 0);
-                listLabelNameFilmSearch[i].BackColor = Color.FromArgb(1, 0, 0, 0);
-                listLabelNameFilmSearch[i].Width = 400;
-                listLabelNameFilmSearch[i].Height = 30;
-                listLabelNameFilmSearch[i].Font = new Font("Roboto", 9, FontStyle.Bold);
-                listLabelNameFilmSearch[i].TextAlign = ContentAlignment.MiddleLeft;
-                listLabelNameFilmSearch[i].Location = new Point(x + listPictureBoxFilmsSearch[i].Width + 15, y);
-
+                
                 listLabelAgeLimitFilmSearch[i].Text = "18+";
                 listLabelAgeLimitFilmSearch[i].ForeColor = Color.FromArgb(255, 255, 255);
                 listLabelAgeLimitFilmSearch[i].BackColor = Color.FromArgb(236, 23, 79);
                 listLabelAgeLimitFilmSearch[i].Width = 35;
                 listLabelAgeLimitFilmSearch[i].Height = 20;
-                listLabelAgeLimitFilmSearch[i].Font = new Font("Righteous", 8);
+                listLabelAgeLimitFilmSearch[i].Font = new Font("Arial", 8);
                 listLabelAgeLimitFilmSearch[i].TextAlign = ContentAlignment.MiddleCenter;
                 listLabelAgeLimitFilmSearch[i].Location = new Point(x -2 , y +
                 listPictureBoxFilmsSearch[i].Height - listLabelAgeLimitFilmSearch[i].Height + 2);
@@ -254,35 +266,76 @@ namespace CinemaTickets
                 listLabelLengthFilmSearch[i].BackColor = Color.FromArgb(236, 23, 79);
                 listLabelLengthFilmSearch[i].Width = 50;
                 listLabelLengthFilmSearch[i].Height = 20;
-                listLabelLengthFilmSearch[i].Font = new Font("Righteous", 8);
+                listLabelLengthFilmSearch[i].Font = new Font("Arial", 8);
                 listLabelLengthFilmSearch[i].TextAlign = ContentAlignment.MiddleCenter;
                 listLabelLengthFilmSearch[i].Location = new Point(x +
                 listPictureBoxFilmsSearch[i].Width - listLabelLengthFilmSearch[i].Width + 2, y +
                 listPictureBoxFilmsSearch[i].Height - listLabelLengthFilmSearch[i].Height + 2);
+                
+                listLabelNameFilmSearch[i].Text = "[Film name]";
+                listLabelNameFilmSearch[i].ForeColor = Color.FromArgb(0, 0, 0);
+                listLabelNameFilmSearch[i].BackColor = Color.FromArgb(1, 0, 0, 0);
+                listLabelNameFilmSearch[i].Size = new Size(400, 15);
+                listLabelNameFilmSearch[i].Font = new Font("Arial", 10, FontStyle.Bold);
+                listLabelNameFilmSearch[i].Location = new Point(x + 
+                listPictureBoxFilmsSearch[i].Width + 15, y);
+                
+                listLabelSloganFilmSearch[i].Size = new Size(400, 13);
+                listLabelSloganFilmSearch[i].Location = new Point(x + 
+                listPictureBoxFilmsSearch[i].Width + 15, y + listLabelLengthFilmSearch[i].Height + 8);
 
+                listLabelYearFilmSearch[i].Size = new Size(400, 13);
+                listLabelYearFilmSearch[i].Location = new Point(x + 
+                listPictureBoxFilmsSearch[i].Width + 15, y + listLabelSloganFilmSearch[i].Height + 30);
+                
+                listLabelProductionCountriesFilmSearch[i].Size = new Size(400, 13);
+                listLabelProductionCountriesFilmSearch[i].TextAlign = ContentAlignment.MiddleLeft;
+                listLabelProductionCountriesFilmSearch[i].Location = new Point(x + 
+                listPictureBoxFilmsSearch[i].Width + 15, y + listLabelYearFilmSearch[i].Height + 45);
+
+                listLabelGenersFilmSearch[i].Size = new Size(400, 13);
+                listLabelGenersFilmSearch[i].Location = new Point(x + 
+                listPictureBoxFilmsSearch[i].Width + 15, y + listLabelProductionCountriesFilmSearch[i].Height + 60);
+
+                listLabelPriceFilmSearch[i].ForeColor = Color.FromArgb(0, 0, 0);
+                listLabelPriceFilmSearch[i].BackColor = Color.FromArgb(245, 245, 245);
+                listLabelPriceFilmSearch[i].Size = new Size(listPictureBoxFilmsSearch[i].Width, 30);
+                listLabelPriceFilmSearch[i].Location = new Point(x, y + listPictureBoxFilmsSearch[i].Height);
+                listLabelPriceFilmSearch[i].Font = new Font("Arial", 8, FontStyle.Underline);
+                listLabelPriceFilmSearch[i].TextAlign = ContentAlignment.MiddleCenter;
+
+                listLabelDescriptionFilmSearch[i].Size = new Size(500, 150);
+                listLabelDescriptionFilmSearch[i].TextAlign = ContentAlignment.TopLeft;
+                listLabelDescriptionFilmSearch[i].Location = new Point(x +
+                listPictureBoxFilmsSearch[i].Width + 15, y + listLabelGenersFilmSearch[i].Height + 75);
+                
                 listPictureBoxFilmsSearch[i].Visible =
                 listLabelNameFilmSearch[i].Visible =
-                listLabelYearFilmSearch[i].Visible =
+                listLabelSloganFilmSearch[i].Visible =
                 listLabelAgeLimitFilmSearch[i].Visible =
                 listLabelPriceFilmSearch[i].Visible =
                 listLabelDescriptionFilmSearch[i].Visible =
-                listLabelSloganFilmSearch[i].Visible =
-                listLabelLengthFilmSearch[i].Visible = false;
-
-                panelViewSearch.Controls.Add(listLabelYearFilmSearch[i]);
+                listLabelYearFilmSearch[i].Visible =
+                listLabelLengthFilmSearch[i].Visible =
+                listLabelGenersFilmSearch[i].Visible =
+                listLabelProductionCountriesFilmSearch[i].Visible = false;
+                
                 panelViewSearch.Controls.Add(listLabelAgeLimitFilmSearch[i]);
+                panelViewSearch.Controls.Add(listLabelLengthFilmSearch[i]);
+                panelViewSearch.Controls.Add(listPictureBoxFilmsSearch[i]);
+                panelViewSearch.Controls.Add(listLabelNameFilmSearch[i]);
+                panelViewSearch.Controls.Add(listLabelYearFilmSearch[i]);
+                panelViewSearch.Controls.Add(listLabelSloganFilmSearch[i]);
+                panelViewSearch.Controls.Add(listLabelProductionCountriesFilmSearch[i]);
+                panelViewSearch.Controls.Add(listLabelGenersFilmSearch[i]);
                 panelViewSearch.Controls.Add(listLabelPriceFilmSearch[i]);
                 panelViewSearch.Controls.Add(listLabelDescriptionFilmSearch[i]);
-                panelViewSearch.Controls.Add(listLabelSloganFilmSearch[i]);
-                panelViewSearch.Controls.Add(listLabelLengthFilmSearch[i]);
-                panelViewSearch.Controls.Add(listLabelNameFilmSearch[i]);
-                panelViewSearch.Controls.Add(listPictureBoxFilmsSearch[i]);
-                
+
                 i++;
                 y += 270;
             }
 
-            foreach (object e in objectDataBase.GetFullListOfGener()) {
+            foreach (object e in objectDataBase.GetFullListOfGeners()) {
                 filter_comboBoxGener.Items.Add(e);
             }
             foreach (object e in objectDataBase.GetFullListOfProductionCountries()) {
@@ -461,6 +514,12 @@ namespace CinemaTickets
                     listLabelAgeLimitFilmSearch[i].Text = queryRes[i][3].ToString() + "+";
                     listLabelLengthFilmSearch[i].Text = queryRes[i][4].ToString() + " min.";
                     listPictureBoxFilmsSearch[i].ImageLocation = queryRes[i][6].ToString();
+                    listLabelYearFilmSearch[i].Text = "Год: " + queryRes[i][2].ToString();
+                    listLabelPriceFilmSearch[i].Text = "Цена: от " + queryRes[i][5].ToString() + " рублей.";
+                    listLabelSloganFilmSearch[i].Text = "Слоган: " + queryRes[i][8].ToString();
+                    listLabelDescriptionFilmSearch[i].Text = "Описание: " + queryRes[i][7].ToString();
+                    listLabelProductionCountriesFilmSearch[i].Text = "Производство: " + queryRes[i][9].ToString();
+                    listLabelGenersFilmSearch[i].Text = "Жанр: " + queryRes[i][10].ToString();
 
                     listPictureBoxFilmsSearch[i].Visible =
                     listLabelNameFilmSearch[i].Visible =
@@ -469,7 +528,9 @@ namespace CinemaTickets
                     listLabelPriceFilmSearch[i].Visible =
                     listLabelDescriptionFilmSearch[i].Visible =
                     listLabelSloganFilmSearch[i].Visible =
-                    listLabelLengthFilmSearch[i].Visible = true;
+                    listLabelLengthFilmSearch[i].Visible =
+                    listLabelGenersFilmSearch[i].Visible =
+                    listLabelProductionCountriesFilmSearch[i].Visible = true;
                 }
                 else
                 {
@@ -480,7 +541,9 @@ namespace CinemaTickets
                     listLabelPriceFilmSearch[i].Visible =
                     listLabelDescriptionFilmSearch[i].Visible =
                     listLabelSloganFilmSearch[i].Visible =
-                    listLabelLengthFilmSearch[i].Visible = false;
+                    listLabelLengthFilmSearch[i].Visible =
+                    listLabelGenersFilmSearch[i].Visible =
+                    listLabelProductionCountriesFilmSearch[i].Visible = false;
                 }
 
                 //panelViewSearch.Controls.Add(listLabelYearFilmSearch[i]);
@@ -497,6 +560,8 @@ namespace CinemaTickets
 		        result[i][6] - Films.film_photo
 		        result[i][7] - Films.film_description
 		        result[i][8] - Films.film_slogan
+		        result[i][9][i] - Production.country_name
+		        result[i][10][i] - Gener.gener_name
                 */
             }
 

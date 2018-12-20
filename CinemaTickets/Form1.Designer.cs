@@ -318,7 +318,7 @@
             this.panelViewListFilms.Location = new System.Drawing.Point(0, 0);
             this.panelViewListFilms.Name = "panelViewListFilms";
             this.panelViewListFilms.Padding = new System.Windows.Forms.Padding(0, 0, 0, 440);
-            this.panelViewListFilms.Size = new System.Drawing.Size(770, 530);
+            this.panelViewListFilms.Size = new System.Drawing.Size(763, 530);
             this.panelViewListFilms.TabIndex = 9;
             // 
             // titlePanelFilms
@@ -747,7 +747,7 @@
             this.panelViewSearch.Controls.Add(this.titlePanelSearch);
             this.panelViewSearch.Location = new System.Drawing.Point(0, 0);
             this.panelViewSearch.Name = "panelViewSearch";
-            this.panelViewSearch.Size = new System.Drawing.Size(770, 530);
+            this.panelViewSearch.Size = new System.Drawing.Size(763, 530);
             this.panelViewSearch.TabIndex = 53;
             // 
             // titlePanelSearch
@@ -1211,12 +1211,12 @@
             this.ClientSize = new System.Drawing.Size(965, 600);
             this.ControlBox = false;
             this.Controls.Add(this.panelMainMenu);
-            this.Controls.Add(this.panelSearch);
-            this.Controls.Add(this.panelMainScreen);
-            this.Controls.Add(this.panelStatisticsAndReports);
             this.Controls.Add(this.panelFilms);
             this.Controls.Add(this.panelAdd);
             this.Controls.Add(this.searchTicket);
+            this.Controls.Add(this.panelSearch);
+            this.Controls.Add(this.panelMainScreen);
+            this.Controls.Add(this.panelStatisticsAndReports);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Resizable = false;
