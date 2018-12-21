@@ -44,6 +44,7 @@ namespace CinemaTickets
             listNumberPlaces;
         private List<List<object>> bufferArray;
         private List<List<object>> placesType;
+        private int activeIndexFromBuffer;
 
         public MainForm()
         {
@@ -180,7 +181,6 @@ namespace CinemaTickets
             {
                 listPictureBox.Add(new PictureBox());
                 listPictureBox[i].Click += new EventHandler(listPictureBox_Click);
-                //((listPictureBox[i])e).Name = (listPictureBox_Click)
                 listLabelFilmName.Add(new Label());
                 listLabelAgeLimit.Add(new Label());
                 listLabelLengthFilm.Add(new Label());
@@ -198,6 +198,11 @@ namespace CinemaTickets
                 listLabelSloganFilmSearch.Add(new Label());
                 listLabelGenersFilmSearch.Add(new Label());
                 listLabelProductionCountriesFilmSearch.Add(new Label());
+            }
+
+            foreach (Label element in listNumberPlaces)
+            {
+                element.Click += new EventHandler(listNumberPlaces_Click);
             }
 
             // SET STYLE FOR LEFT MENU BUTTON
@@ -612,7 +617,7 @@ namespace CinemaTickets
                 comboBoxSessionList.Items.Clear();
                 foreach (List<object> element in result)
                 {
-                    comboBoxSessionList.Items.Add("Зал #" + element[0].ToString() + " Дата: " + element[1].ToString());
+                    comboBoxSessionList.Items.Add("Зал " + element[0].ToString() + "   |   " + element[1].ToString());
                     bufferArray.Add(new List<object>() { element[0], element[1], element[2] });
                 }
                 comboBoxSessionList.SelectedIndex = 0;
@@ -622,21 +627,19 @@ namespace CinemaTickets
                 MessageBox.Show("Сеансов на данный фильм нет!");
             }
         }
-
         private void comboBoxSessionList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "Сеанс #" + bufferArray[(sender as ComboBox).SelectedIndex][0] + 
-                " Дата: " + bufferArray[(sender as ComboBox).SelectedIndex][1]
-            );
+            //"Сеанс #" + bufferArray[(sender as ComboBox).SelectedIndex][0] + 
+            //" Дата: " + bufferArray[(sender as ComboBox).SelectedIndex][1]
 
+            activeIndexFromBuffer = (sender as ComboBox).SelectedIndex;
             placesType.Clear();
             placesType = objectDataBase.GetAllTypesPlacesInHall(
-                Convert.ToInt32(bufferArray[(sender as ComboBox).SelectedIndex][0])
+                Convert.ToInt32(bufferArray[activeIndexFromBuffer][0])
             );
 
             List<object> tickets = objectDataBase.GetAllTicketFromSessionById(
-                Convert.ToInt32(bufferArray[(sender as ComboBox).SelectedIndex][2])
+                Convert.ToInt32(bufferArray[activeIndexFromBuffer][2])
             );
 
             foreach (Label element in listNumberPlaces)
@@ -648,6 +651,8 @@ namespace CinemaTickets
                 placesType[i][3] - place_to
                 */
                 element.ForeColor = Color.FromArgb(255, 255, 255);
+                element.Enabled = true;
+                element.Cursor = Cursors.Hand;
 
                 int buf = Convert.ToInt32(element.Text);
 
@@ -661,22 +666,33 @@ namespace CinemaTickets
                 {
                     element.BackColor = Color.FromArgb(142, 69, 173);
                 }
-                else {
+                else
+                {
                     element.BackColor = Color.FromArgb(231, 69, 50);
                 }
-                
-                foreach(object element2 in tickets)
+
+                foreach (object element2 in tickets)
                 {
-                    if(Convert.ToInt32(element2) == buf)
+                    if (Convert.ToInt32(element2) == buf)
                     {
                         element.Enabled = false;
-                        element.Text = "×";
+                        element.Cursor = Cursors.No;
                     }
                 }
 
             }
 
             panelWrapperListPlaces.Visible = true;
+        }
+        private void listNumberPlaces_Click(object sender, EventArgs e)
+        {
+            if ((sender as Label).Enabled)
+            {
+                MessageBox.Show("Вы можете приобрести билет на данное место: "
+                    + (sender as Label).Text
+                    + " Сеанс: " + bufferArray[activeIndexFromBuffer][2].ToString()
+                );
+            }
         }
 
         // Panel StatisticsAndReport
@@ -810,6 +826,7 @@ namespace CinemaTickets
         private void menuButtonReturnTickets_Click(object sender, EventArgs e) => setVisible(searchTicket, menuButtonReturnTickets);
         private void buttonSearchTicketUID_Click(object sender, EventArgs e) => searchTicketUID();
         private void buttonReturnTicketUID_Click(object sender, EventArgs e) => returnTicketUID();
+
         private void labelHelper_MouseHover(object sender, EventArgs e) => toggleHelper(true);
         private void labelHelper_MouseLeave(object sender, EventArgs e) => toggleHelper(false);
 
