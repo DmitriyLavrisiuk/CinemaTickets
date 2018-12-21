@@ -14,15 +14,15 @@ AS
 	DECLARE @datetimeOnTicket smalldatetime = (SELECT date_time_session FROM Tickets WHERE unique_id_tickets = @unique_id_tickets) 
 	-- Получение времени сеанса с Sessions_list
 	DECLARE @datetimeOnSession smalldatetime = (
-	SELECT
-		Sessions_list.date_time_session
-	FROM Tickets
-	JOIN Sessions_list ON Tickets.date_time_session = Sessions_list.date_time_session
-	JOIN Films ON Sessions_list.id_film = Films.id
-	WHERE 
-		unique_id_tickets = @unique_id_tickets
-	GROUP BY
-		Sessions_list.date_time_session
+		SELECT
+			Sessions_list.date_time_session
+		FROM Tickets
+		JOIN Sessions_list ON Tickets.date_time_session = Sessions_list.date_time_session
+		JOIN Films ON Sessions_list.id_film = Films.id
+		WHERE 
+			unique_id_tickets = @unique_id_tickets
+		GROUP BY
+			Sessions_list.date_time_session
 	)
 
 	IF(@datetimeOnTicket IS NOT NULL AND @datetimeOnSession IS NOT NULL)

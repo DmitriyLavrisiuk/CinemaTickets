@@ -33,3 +33,8 @@ GO
 :r _procedures/GetAllInformationAboutTicketByUID.sql
 -- RETURN TICKET
 :r _procedures/ReturnTicket.sql
+-- GET FULL LIST OF SESSION FROM FILM BY FILM.ID
+:r _procedures/FindSessionsFromFilmById.sql
+-- GET ALL TYPES OF PLACES FROM HALL BY ID HALL
+:r _procedures/GetAllTypesPlacesInHall.sql
+:r _procedures/GetAllTicketFromSessionById.sql
