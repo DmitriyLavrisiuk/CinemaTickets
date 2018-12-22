@@ -38,3 +38,7 @@ GO
 -- GET ALL TYPES OF PLACES FROM HALL BY ID HALL
 :r _procedures/GetAllTypesPlacesInHall.sql
 :r _procedures/GetAllTicketFromSessionById.sql
+-- GENERATE TICKET
+:r _procedures/GenerateTicket.sql
+-- BUY TICKET
+:r _procedures/BuyTicket.sql

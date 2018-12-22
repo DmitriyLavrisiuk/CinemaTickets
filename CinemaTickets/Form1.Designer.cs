@@ -39,6 +39,19 @@
             this.menuButtonFilms = new System.Windows.Forms.Button();
             this.panelFilms = new System.Windows.Forms.Panel();
             this.panelBuyTicket = new System.Windows.Forms.Panel();
+            this.reserveTicketPanel = new System.Windows.Forms.Panel();
+            this.reserveTicketLength = new System.Windows.Forms.Label();
+            this.reserveTicketAgeLimit = new System.Windows.Forms.Label();
+            this.reserveTicketPrice = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.reserveTicketPlace = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.reserveTicketHall = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.reserveTicketDate = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.reserveTicketImage = new System.Windows.Forms.PictureBox();
+            this.reserveTicketNameFilm = new System.Windows.Forms.Label();
             this.buttonClosePanelBuyTicket = new MetroFramework.Controls.MetroButton();
             this.comboBoxSessionList = new MetroFramework.Controls.MetroComboBox();
             this.panelWrapperListPlaces = new System.Windows.Forms.Panel();
@@ -177,9 +190,12 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.titlePanelReturnTickets = new MetroFramework.Controls.MetroLabel();
             this.textBoxUID = new System.Windows.Forms.TextBox();
+            this.buttonBuyTicket = new MetroFramework.Controls.MetroButton();
             this.panelMainMenu.SuspendLayout();
             this.panelFilms.SuspendLayout();
             this.panelBuyTicket.SuspendLayout();
+            this.reserveTicketPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reserveTicketImage)).BeginInit();
             this.panelWrapperListPlaces.SuspendLayout();
             this.panelViewListFilms.SuspendLayout();
             this.panelStatisticsAndReports.SuspendLayout();
@@ -338,6 +354,8 @@
             // panelBuyTicket
             // 
             this.panelBuyTicket.BackColor = System.Drawing.Color.White;
+            this.panelBuyTicket.Controls.Add(this.buttonBuyTicket);
+            this.panelBuyTicket.Controls.Add(this.reserveTicketPanel);
             this.panelBuyTicket.Controls.Add(this.buttonClosePanelBuyTicket);
             this.panelBuyTicket.Controls.Add(this.comboBoxSessionList);
             this.panelBuyTicket.Controls.Add(this.panelWrapperListPlaces);
@@ -347,12 +365,158 @@
             this.panelBuyTicket.TabIndex = 11;
             this.panelBuyTicket.Visible = false;
             // 
+            // reserveTicketPanel
+            // 
+            this.reserveTicketPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.reserveTicketPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.reserveTicketPanel.Controls.Add(this.reserveTicketLength);
+            this.reserveTicketPanel.Controls.Add(this.reserveTicketAgeLimit);
+            this.reserveTicketPanel.Controls.Add(this.reserveTicketPrice);
+            this.reserveTicketPanel.Controls.Add(this.label8);
+            this.reserveTicketPanel.Controls.Add(this.reserveTicketPlace);
+            this.reserveTicketPanel.Controls.Add(this.label11);
+            this.reserveTicketPanel.Controls.Add(this.reserveTicketHall);
+            this.reserveTicketPanel.Controls.Add(this.label13);
+            this.reserveTicketPanel.Controls.Add(this.reserveTicketDate);
+            this.reserveTicketPanel.Controls.Add(this.label15);
+            this.reserveTicketPanel.Controls.Add(this.reserveTicketImage);
+            this.reserveTicketPanel.Controls.Add(this.reserveTicketNameFilm);
+            this.reserveTicketPanel.Location = new System.Drawing.Point(181, 320);
+            this.reserveTicketPanel.Name = "reserveTicketPanel";
+            this.reserveTicketPanel.Size = new System.Drawing.Size(385, 200);
+            this.reserveTicketPanel.TabIndex = 8;
+            this.reserveTicketPanel.Visible = false;
+            // 
+            // reserveTicketLength
+            // 
+            this.reserveTicketLength.AutoSize = true;
+            this.reserveTicketLength.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(23)))), ((int)(((byte)(79)))));
+            this.reserveTicketLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reserveTicketLength.ForeColor = System.Drawing.Color.White;
+            this.reserveTicketLength.Location = new System.Drawing.Point(317, 181);
+            this.reserveTicketLength.Name = "reserveTicketLength";
+            this.reserveTicketLength.Size = new System.Drawing.Size(68, 16);
+            this.reserveTicketLength.TabIndex = 12;
+            this.reserveTicketLength.Text = "[Num]min.";
+            // 
+            // reserveTicketAgeLimit
+            // 
+            this.reserveTicketAgeLimit.AutoSize = true;
+            this.reserveTicketAgeLimit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(23)))), ((int)(((byte)(79)))));
+            this.reserveTicketAgeLimit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reserveTicketAgeLimit.ForeColor = System.Drawing.Color.White;
+            this.reserveTicketAgeLimit.Location = new System.Drawing.Point(237, 2);
+            this.reserveTicketAgeLimit.Name = "reserveTicketAgeLimit";
+            this.reserveTicketAgeLimit.Size = new System.Drawing.Size(51, 16);
+            this.reserveTicketAgeLimit.TabIndex = 11;
+            this.reserveTicketAgeLimit.Text = "[Num]+";
+            // 
+            // reserveTicketPrice
+            // 
+            this.reserveTicketPrice.AutoSize = true;
+            this.reserveTicketPrice.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.reserveTicketPrice.Location = new System.Drawing.Point(71, 137);
+            this.reserveTicketPrice.Name = "reserveTicketPrice";
+            this.reserveTicketPrice.Size = new System.Drawing.Size(84, 16);
+            this.reserveTicketPrice.TabIndex = 9;
+            this.reserveTicketPrice.Text = "[Цена] руб.";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(17, 137);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(46, 17);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Цена:";
+            // 
+            // reserveTicketPlace
+            // 
+            this.reserveTicketPlace.AutoSize = true;
+            this.reserveTicketPlace.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.reserveTicketPlace.Location = new System.Drawing.Point(71, 107);
+            this.reserveTicketPlace.Name = "reserveTicketPlace";
+            this.reserveTicketPlace.Size = new System.Drawing.Size(106, 16);
+            this.reserveTicketPlace.TabIndex = 7;
+            this.reserveTicketPlace.Text = "[Номер места]";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(17, 107);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 17);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Место:";
+            // 
+            // reserveTicketHall
+            // 
+            this.reserveTicketHall.AutoSize = true;
+            this.reserveTicketHall.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.reserveTicketHall.Location = new System.Drawing.Point(71, 77);
+            this.reserveTicketHall.Name = "reserveTicketHall";
+            this.reserveTicketHall.Size = new System.Drawing.Size(60, 16);
+            this.reserveTicketHall.TabIndex = 5;
+            this.reserveTicketHall.Text = "[Номер]";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Location = new System.Drawing.Point(17, 77);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(54, 17);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "Зал №:";
+            // 
+            // reserveTicketDate
+            // 
+            this.reserveTicketDate.AutoSize = true;
+            this.reserveTicketDate.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.reserveTicketDate.Location = new System.Drawing.Point(71, 48);
+            this.reserveTicketDate.Name = "reserveTicketDate";
+            this.reserveTicketDate.Size = new System.Drawing.Size(51, 16);
+            this.reserveTicketDate.TabIndex = 3;
+            this.reserveTicketDate.Text = "[Дата]";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label15.Location = new System.Drawing.Point(17, 47);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(45, 17);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Дата:";
+            // 
+            // reserveTicketImage
+            // 
+            this.reserveTicketImage.ImageLocation = "images/2/logo.jpg";
+            this.reserveTicketImage.Location = new System.Drawing.Point(235, 0);
+            this.reserveTicketImage.Name = "reserveTicketImage";
+            this.reserveTicketImage.Size = new System.Drawing.Size(150, 200);
+            this.reserveTicketImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.reserveTicketImage.TabIndex = 1;
+            this.reserveTicketImage.TabStop = false;
+            // 
+            // reserveTicketNameFilm
+            // 
+            this.reserveTicketNameFilm.AutoSize = true;
+            this.reserveTicketNameFilm.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.reserveTicketNameFilm.Location = new System.Drawing.Point(16, 12);
+            this.reserveTicketNameFilm.Name = "reserveTicketNameFilm";
+            this.reserveTicketNameFilm.Size = new System.Drawing.Size(98, 19);
+            this.reserveTicketNameFilm.TabIndex = 0;
+            this.reserveTicketNameFilm.Text = "[Название]";
+            // 
             // buttonClosePanelBuyTicket
             // 
             this.buttonClosePanelBuyTicket.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonClosePanelBuyTicket.Location = new System.Drawing.Point(613, 550);
+            this.buttonClosePanelBuyTicket.Location = new System.Drawing.Point(613, 15);
             this.buttonClosePanelBuyTicket.Name = "buttonClosePanelBuyTicket";
-            this.buttonClosePanelBuyTicket.Size = new System.Drawing.Size(121, 32);
+            this.buttonClosePanelBuyTicket.Size = new System.Drawing.Size(121, 29);
             this.buttonClosePanelBuyTicket.TabIndex = 5;
             this.buttonClosePanelBuyTicket.Text = "Отмена";
             this.buttonClosePanelBuyTicket.Click += new System.EventHandler(this.buttonClosePanelBuyTicket_Click);
@@ -363,7 +527,7 @@
             this.comboBoxSessionList.ItemHeight = 23;
             this.comboBoxSessionList.Location = new System.Drawing.Point(24, 15);
             this.comboBoxSessionList.Name = "comboBoxSessionList";
-            this.comboBoxSessionList.Size = new System.Drawing.Size(703, 29);
+            this.comboBoxSessionList.Size = new System.Drawing.Size(572, 29);
             this.comboBoxSessionList.TabIndex = 4;
             this.comboBoxSessionList.SelectedIndexChanged += new System.EventHandler(this.comboBoxSessionList_SelectedIndexChanged);
             // 
@@ -432,16 +596,16 @@
             this.panelWrapperListPlaces.Controls.Add(this.place_57);
             this.panelWrapperListPlaces.Controls.Add(this.place_58);
             this.panelWrapperListPlaces.Controls.Add(this.place_59);
-            this.panelWrapperListPlaces.Location = new System.Drawing.Point(1, 63);
+            this.panelWrapperListPlaces.Location = new System.Drawing.Point(133, 63);
             this.panelWrapperListPlaces.Name = "panelWrapperListPlaces";
-            this.panelWrapperListPlaces.Size = new System.Drawing.Size(626, 250);
+            this.panelWrapperListPlaces.Size = new System.Drawing.Size(484, 241);
             this.panelWrapperListPlaces.TabIndex = 3;
             this.panelWrapperListPlaces.Visible = false;
             // 
             // label68
             // 
             this.label68.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label68.Location = new System.Drawing.Point(140, 209);
+            this.label68.Location = new System.Drawing.Point(5, 204);
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(474, 28);
             this.label68.TabIndex = 57;
@@ -452,7 +616,7 @@
             // 
             this.label67.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label67.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label67.Location = new System.Drawing.Point(140, 237);
+            this.label67.Location = new System.Drawing.Point(5, 232);
             this.label67.Name = "label67";
             this.label67.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label67.Size = new System.Drawing.Size(474, 3);
@@ -464,7 +628,7 @@
             this.place_17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_17.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_17.Location = new System.Drawing.Point(540, 103);
+            this.place_17.Location = new System.Drawing.Point(405, 98);
             this.place_17.Name = "place_17";
             this.place_17.Size = new System.Drawing.Size(34, 25);
             this.place_17.TabIndex = 55;
@@ -477,7 +641,7 @@
             this.place_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_1.Location = new System.Drawing.Point(500, 165);
+            this.place_1.Location = new System.Drawing.Point(365, 160);
             this.place_1.Name = "place_1";
             this.place_1.Size = new System.Drawing.Size(34, 25);
             this.place_1.TabIndex = 54;
@@ -490,7 +654,7 @@
             this.place_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_2.Location = new System.Drawing.Point(460, 165);
+            this.place_2.Location = new System.Drawing.Point(325, 160);
             this.place_2.Name = "place_2";
             this.place_2.Size = new System.Drawing.Size(34, 25);
             this.place_2.TabIndex = 51;
@@ -503,7 +667,7 @@
             this.place_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_4.Location = new System.Drawing.Point(380, 165);
+            this.place_4.Location = new System.Drawing.Point(245, 160);
             this.place_4.Name = "place_4";
             this.place_4.Size = new System.Drawing.Size(34, 25);
             this.place_4.TabIndex = 52;
@@ -516,7 +680,7 @@
             this.place_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_6.Location = new System.Drawing.Point(300, 165);
+            this.place_6.Location = new System.Drawing.Point(165, 160);
             this.place_6.Name = "place_6";
             this.place_6.Size = new System.Drawing.Size(34, 25);
             this.place_6.TabIndex = 53;
@@ -529,7 +693,7 @@
             this.place_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_3.Location = new System.Drawing.Point(420, 165);
+            this.place_3.Location = new System.Drawing.Point(285, 160);
             this.place_3.Name = "place_3";
             this.place_3.Size = new System.Drawing.Size(34, 25);
             this.place_3.TabIndex = 48;
@@ -542,7 +706,7 @@
             this.place_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_5.Location = new System.Drawing.Point(340, 165);
+            this.place_5.Location = new System.Drawing.Point(205, 160);
             this.place_5.Name = "place_5";
             this.place_5.Size = new System.Drawing.Size(34, 25);
             this.place_5.TabIndex = 49;
@@ -555,7 +719,7 @@
             this.place_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_7.Location = new System.Drawing.Point(260, 165);
+            this.place_7.Location = new System.Drawing.Point(125, 160);
             this.place_7.Name = "place_7";
             this.place_7.Size = new System.Drawing.Size(34, 25);
             this.place_7.TabIndex = 50;
@@ -568,7 +732,7 @@
             this.place_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_8.Location = new System.Drawing.Point(220, 165);
+            this.place_8.Location = new System.Drawing.Point(85, 160);
             this.place_8.Name = "place_8";
             this.place_8.Size = new System.Drawing.Size(34, 25);
             this.place_8.TabIndex = 47;
@@ -581,7 +745,7 @@
             this.place_26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_26.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_26.Location = new System.Drawing.Point(180, 103);
+            this.place_26.Location = new System.Drawing.Point(45, 98);
             this.place_26.Name = "place_26";
             this.place_26.Size = new System.Drawing.Size(34, 25);
             this.place_26.TabIndex = 46;
@@ -594,7 +758,7 @@
             this.place_37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_37.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_37.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_37.Location = new System.Drawing.Point(580, 41);
+            this.place_37.Location = new System.Drawing.Point(445, 36);
             this.place_37.Name = "place_37";
             this.place_37.Size = new System.Drawing.Size(34, 25);
             this.place_37.TabIndex = 45;
@@ -607,7 +771,7 @@
             this.place_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_9.Location = new System.Drawing.Point(500, 135);
+            this.place_9.Location = new System.Drawing.Point(365, 130);
             this.place_9.Name = "place_9";
             this.place_9.Size = new System.Drawing.Size(34, 25);
             this.place_9.TabIndex = 44;
@@ -620,7 +784,7 @@
             this.place_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_10.Location = new System.Drawing.Point(460, 135);
+            this.place_10.Location = new System.Drawing.Point(325, 130);
             this.place_10.Name = "place_10";
             this.place_10.Size = new System.Drawing.Size(34, 25);
             this.place_10.TabIndex = 41;
@@ -633,7 +797,7 @@
             this.place_12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_12.Location = new System.Drawing.Point(380, 135);
+            this.place_12.Location = new System.Drawing.Point(245, 130);
             this.place_12.Name = "place_12";
             this.place_12.Size = new System.Drawing.Size(34, 25);
             this.place_12.TabIndex = 42;
@@ -646,7 +810,7 @@
             this.place_14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_14.Location = new System.Drawing.Point(300, 135);
+            this.place_14.Location = new System.Drawing.Point(165, 130);
             this.place_14.Name = "place_14";
             this.place_14.Size = new System.Drawing.Size(34, 25);
             this.place_14.TabIndex = 43;
@@ -659,7 +823,7 @@
             this.place_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_11.Location = new System.Drawing.Point(420, 135);
+            this.place_11.Location = new System.Drawing.Point(285, 130);
             this.place_11.Name = "place_11";
             this.place_11.Size = new System.Drawing.Size(34, 25);
             this.place_11.TabIndex = 38;
@@ -672,7 +836,7 @@
             this.place_13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_13.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_13.Location = new System.Drawing.Point(340, 135);
+            this.place_13.Location = new System.Drawing.Point(205, 130);
             this.place_13.Name = "place_13";
             this.place_13.Size = new System.Drawing.Size(34, 25);
             this.place_13.TabIndex = 39;
@@ -685,7 +849,7 @@
             this.place_15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_15.Location = new System.Drawing.Point(260, 135);
+            this.place_15.Location = new System.Drawing.Point(125, 130);
             this.place_15.Name = "place_15";
             this.place_15.Size = new System.Drawing.Size(34, 25);
             this.place_15.TabIndex = 40;
@@ -698,7 +862,7 @@
             this.place_16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_16.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_16.Location = new System.Drawing.Point(220, 135);
+            this.place_16.Location = new System.Drawing.Point(85, 130);
             this.place_16.Name = "place_16";
             this.place_16.Size = new System.Drawing.Size(34, 25);
             this.place_16.TabIndex = 37;
@@ -711,7 +875,7 @@
             this.place_48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_48.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_48.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_48.Location = new System.Drawing.Point(140, 41);
+            this.place_48.Location = new System.Drawing.Point(5, 36);
             this.place_48.Name = "place_48";
             this.place_48.Size = new System.Drawing.Size(34, 25);
             this.place_48.TabIndex = 36;
@@ -724,7 +888,7 @@
             this.place_27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_27.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_27.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_27.Location = new System.Drawing.Point(540, 72);
+            this.place_27.Location = new System.Drawing.Point(405, 67);
             this.place_27.Name = "place_27";
             this.place_27.Size = new System.Drawing.Size(34, 25);
             this.place_27.TabIndex = 35;
@@ -737,7 +901,7 @@
             this.place_18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_18.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_18.Location = new System.Drawing.Point(500, 103);
+            this.place_18.Location = new System.Drawing.Point(365, 98);
             this.place_18.Name = "place_18";
             this.place_18.Size = new System.Drawing.Size(34, 25);
             this.place_18.TabIndex = 34;
@@ -750,7 +914,7 @@
             this.place_19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_19.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_19.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_19.Location = new System.Drawing.Point(460, 103);
+            this.place_19.Location = new System.Drawing.Point(325, 98);
             this.place_19.Name = "place_19";
             this.place_19.Size = new System.Drawing.Size(34, 25);
             this.place_19.TabIndex = 33;
@@ -763,7 +927,7 @@
             this.place_21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_21.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_21.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_21.Location = new System.Drawing.Point(380, 103);
+            this.place_21.Location = new System.Drawing.Point(245, 98);
             this.place_21.Name = "place_21";
             this.place_21.Size = new System.Drawing.Size(34, 25);
             this.place_21.TabIndex = 32;
@@ -776,7 +940,7 @@
             this.place_23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_23.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_23.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_23.Location = new System.Drawing.Point(300, 103);
+            this.place_23.Location = new System.Drawing.Point(165, 98);
             this.place_23.Name = "place_23";
             this.place_23.Size = new System.Drawing.Size(34, 25);
             this.place_23.TabIndex = 31;
@@ -789,7 +953,7 @@
             this.place_20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_20.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_20.Location = new System.Drawing.Point(420, 103);
+            this.place_20.Location = new System.Drawing.Point(285, 98);
             this.place_20.Name = "place_20";
             this.place_20.Size = new System.Drawing.Size(34, 25);
             this.place_20.TabIndex = 30;
@@ -802,7 +966,7 @@
             this.place_22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_22.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_22.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_22.Location = new System.Drawing.Point(340, 103);
+            this.place_22.Location = new System.Drawing.Point(205, 98);
             this.place_22.Name = "place_22";
             this.place_22.Size = new System.Drawing.Size(34, 25);
             this.place_22.TabIndex = 29;
@@ -815,7 +979,7 @@
             this.place_24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_24.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_24.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_24.Location = new System.Drawing.Point(260, 103);
+            this.place_24.Location = new System.Drawing.Point(125, 98);
             this.place_24.Name = "place_24";
             this.place_24.Size = new System.Drawing.Size(34, 25);
             this.place_24.TabIndex = 28;
@@ -828,7 +992,7 @@
             this.place_25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_25.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_25.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_25.Location = new System.Drawing.Point(220, 103);
+            this.place_25.Location = new System.Drawing.Point(85, 98);
             this.place_25.Name = "place_25";
             this.place_25.Size = new System.Drawing.Size(34, 25);
             this.place_25.TabIndex = 27;
@@ -841,7 +1005,7 @@
             this.place_36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_36.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_36.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_36.Location = new System.Drawing.Point(180, 72);
+            this.place_36.Location = new System.Drawing.Point(45, 67);
             this.place_36.Name = "place_36";
             this.place_36.Size = new System.Drawing.Size(34, 25);
             this.place_36.TabIndex = 26;
@@ -854,7 +1018,7 @@
             this.place_49.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_49.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_49.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_49.Location = new System.Drawing.Point(580, 10);
+            this.place_49.Location = new System.Drawing.Point(445, 5);
             this.place_49.Name = "place_49";
             this.place_49.Size = new System.Drawing.Size(34, 25);
             this.place_49.TabIndex = 25;
@@ -867,7 +1031,7 @@
             this.place_28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_28.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_28.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_28.Location = new System.Drawing.Point(500, 72);
+            this.place_28.Location = new System.Drawing.Point(365, 67);
             this.place_28.Name = "place_28";
             this.place_28.Size = new System.Drawing.Size(34, 25);
             this.place_28.TabIndex = 24;
@@ -880,7 +1044,7 @@
             this.place_29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_29.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_29.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_29.Location = new System.Drawing.Point(460, 72);
+            this.place_29.Location = new System.Drawing.Point(325, 67);
             this.place_29.Name = "place_29";
             this.place_29.Size = new System.Drawing.Size(34, 25);
             this.place_29.TabIndex = 21;
@@ -893,7 +1057,7 @@
             this.place_31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_31.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_31.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_31.Location = new System.Drawing.Point(380, 72);
+            this.place_31.Location = new System.Drawing.Point(245, 67);
             this.place_31.Name = "place_31";
             this.place_31.Size = new System.Drawing.Size(34, 25);
             this.place_31.TabIndex = 22;
@@ -906,7 +1070,7 @@
             this.place_33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_33.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_33.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_33.Location = new System.Drawing.Point(300, 72);
+            this.place_33.Location = new System.Drawing.Point(165, 67);
             this.place_33.Name = "place_33";
             this.place_33.Size = new System.Drawing.Size(34, 25);
             this.place_33.TabIndex = 23;
@@ -919,7 +1083,7 @@
             this.place_30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_30.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_30.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_30.Location = new System.Drawing.Point(420, 72);
+            this.place_30.Location = new System.Drawing.Point(285, 67);
             this.place_30.Name = "place_30";
             this.place_30.Size = new System.Drawing.Size(34, 25);
             this.place_30.TabIndex = 18;
@@ -932,7 +1096,7 @@
             this.place_32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_32.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_32.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_32.Location = new System.Drawing.Point(340, 72);
+            this.place_32.Location = new System.Drawing.Point(205, 67);
             this.place_32.Name = "place_32";
             this.place_32.Size = new System.Drawing.Size(34, 25);
             this.place_32.TabIndex = 19;
@@ -945,7 +1109,7 @@
             this.place_34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_34.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_34.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_34.Location = new System.Drawing.Point(260, 72);
+            this.place_34.Location = new System.Drawing.Point(125, 67);
             this.place_34.Name = "place_34";
             this.place_34.Size = new System.Drawing.Size(34, 25);
             this.place_34.TabIndex = 20;
@@ -958,7 +1122,7 @@
             this.place_35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_35.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_35.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_35.Location = new System.Drawing.Point(220, 72);
+            this.place_35.Location = new System.Drawing.Point(85, 67);
             this.place_35.Name = "place_35";
             this.place_35.Size = new System.Drawing.Size(34, 25);
             this.place_35.TabIndex = 17;
@@ -971,7 +1135,7 @@
             this.place_60.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_60.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_60.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_60.Location = new System.Drawing.Point(140, 10);
+            this.place_60.Location = new System.Drawing.Point(5, 5);
             this.place_60.Name = "place_60";
             this.place_60.Size = new System.Drawing.Size(34, 25);
             this.place_60.TabIndex = 16;
@@ -984,7 +1148,7 @@
             this.place_38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_38.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_38.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_38.Location = new System.Drawing.Point(540, 41);
+            this.place_38.Location = new System.Drawing.Point(405, 36);
             this.place_38.Name = "place_38";
             this.place_38.Size = new System.Drawing.Size(34, 25);
             this.place_38.TabIndex = 15;
@@ -997,7 +1161,7 @@
             this.place_39.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_39.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_39.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_39.Location = new System.Drawing.Point(500, 41);
+            this.place_39.Location = new System.Drawing.Point(365, 36);
             this.place_39.Name = "place_39";
             this.place_39.Size = new System.Drawing.Size(34, 25);
             this.place_39.TabIndex = 14;
@@ -1010,7 +1174,7 @@
             this.place_40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_40.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_40.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_40.Location = new System.Drawing.Point(460, 41);
+            this.place_40.Location = new System.Drawing.Point(325, 36);
             this.place_40.Name = "place_40";
             this.place_40.Size = new System.Drawing.Size(34, 25);
             this.place_40.TabIndex = 11;
@@ -1023,7 +1187,7 @@
             this.place_42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_42.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_42.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_42.Location = new System.Drawing.Point(380, 41);
+            this.place_42.Location = new System.Drawing.Point(245, 36);
             this.place_42.Name = "place_42";
             this.place_42.Size = new System.Drawing.Size(34, 25);
             this.place_42.TabIndex = 12;
@@ -1036,7 +1200,7 @@
             this.place_44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_44.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_44.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_44.Location = new System.Drawing.Point(301, 41);
+            this.place_44.Location = new System.Drawing.Point(166, 36);
             this.place_44.Name = "place_44";
             this.place_44.Size = new System.Drawing.Size(34, 25);
             this.place_44.TabIndex = 13;
@@ -1049,7 +1213,7 @@
             this.place_41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_41.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_41.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_41.Location = new System.Drawing.Point(420, 41);
+            this.place_41.Location = new System.Drawing.Point(285, 36);
             this.place_41.Name = "place_41";
             this.place_41.Size = new System.Drawing.Size(34, 25);
             this.place_41.TabIndex = 8;
@@ -1062,7 +1226,7 @@
             this.place_43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_43.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_43.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_43.Location = new System.Drawing.Point(340, 41);
+            this.place_43.Location = new System.Drawing.Point(205, 36);
             this.place_43.Name = "place_43";
             this.place_43.Size = new System.Drawing.Size(34, 25);
             this.place_43.TabIndex = 9;
@@ -1075,7 +1239,7 @@
             this.place_45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_45.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_45.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_45.Location = new System.Drawing.Point(261, 41);
+            this.place_45.Location = new System.Drawing.Point(126, 36);
             this.place_45.Name = "place_45";
             this.place_45.Size = new System.Drawing.Size(34, 25);
             this.place_45.TabIndex = 10;
@@ -1088,7 +1252,7 @@
             this.place_46.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_46.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_46.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_46.Location = new System.Drawing.Point(221, 41);
+            this.place_46.Location = new System.Drawing.Point(86, 36);
             this.place_46.Name = "place_46";
             this.place_46.Size = new System.Drawing.Size(34, 25);
             this.place_46.TabIndex = 7;
@@ -1101,7 +1265,7 @@
             this.place_47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_47.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_47.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_47.Location = new System.Drawing.Point(180, 41);
+            this.place_47.Location = new System.Drawing.Point(45, 36);
             this.place_47.Name = "place_47";
             this.place_47.Size = new System.Drawing.Size(34, 25);
             this.place_47.TabIndex = 6;
@@ -1114,7 +1278,7 @@
             this.place_50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_50.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_50.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_50.Location = new System.Drawing.Point(540, 10);
+            this.place_50.Location = new System.Drawing.Point(405, 5);
             this.place_50.Name = "place_50";
             this.place_50.Size = new System.Drawing.Size(34, 25);
             this.place_50.TabIndex = 5;
@@ -1127,7 +1291,7 @@
             this.place_51.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_51.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_51.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_51.Location = new System.Drawing.Point(500, 10);
+            this.place_51.Location = new System.Drawing.Point(365, 5);
             this.place_51.Name = "place_51";
             this.place_51.Size = new System.Drawing.Size(34, 25);
             this.place_51.TabIndex = 4;
@@ -1140,7 +1304,7 @@
             this.place_52.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_52.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_52.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_52.Location = new System.Drawing.Point(460, 10);
+            this.place_52.Location = new System.Drawing.Point(325, 5);
             this.place_52.Name = "place_52";
             this.place_52.Size = new System.Drawing.Size(34, 25);
             this.place_52.TabIndex = 3;
@@ -1153,7 +1317,7 @@
             this.place_54.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_54.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_54.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_54.Location = new System.Drawing.Point(380, 10);
+            this.place_54.Location = new System.Drawing.Point(245, 5);
             this.place_54.Name = "place_54";
             this.place_54.Size = new System.Drawing.Size(34, 25);
             this.place_54.TabIndex = 3;
@@ -1166,7 +1330,7 @@
             this.place_56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_56.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_56.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_56.Location = new System.Drawing.Point(301, 10);
+            this.place_56.Location = new System.Drawing.Point(166, 5);
             this.place_56.Name = "place_56";
             this.place_56.Size = new System.Drawing.Size(34, 25);
             this.place_56.TabIndex = 3;
@@ -1179,7 +1343,7 @@
             this.place_53.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_53.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_53.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_53.Location = new System.Drawing.Point(420, 10);
+            this.place_53.Location = new System.Drawing.Point(285, 5);
             this.place_53.Name = "place_53";
             this.place_53.Size = new System.Drawing.Size(34, 25);
             this.place_53.TabIndex = 2;
@@ -1192,7 +1356,7 @@
             this.place_55.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_55.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_55.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_55.Location = new System.Drawing.Point(340, 10);
+            this.place_55.Location = new System.Drawing.Point(205, 5);
             this.place_55.Name = "place_55";
             this.place_55.Size = new System.Drawing.Size(34, 25);
             this.place_55.TabIndex = 2;
@@ -1205,7 +1369,7 @@
             this.place_57.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_57.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_57.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_57.Location = new System.Drawing.Point(261, 10);
+            this.place_57.Location = new System.Drawing.Point(126, 5);
             this.place_57.Name = "place_57";
             this.place_57.Size = new System.Drawing.Size(34, 25);
             this.place_57.TabIndex = 2;
@@ -1218,7 +1382,7 @@
             this.place_58.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_58.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_58.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_58.Location = new System.Drawing.Point(221, 10);
+            this.place_58.Location = new System.Drawing.Point(86, 5);
             this.place_58.Name = "place_58";
             this.place_58.Size = new System.Drawing.Size(34, 25);
             this.place_58.TabIndex = 1;
@@ -1231,7 +1395,7 @@
             this.place_59.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.place_59.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.place_59.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.place_59.Location = new System.Drawing.Point(180, 10);
+            this.place_59.Location = new System.Drawing.Point(45, 5);
             this.place_59.Name = "place_59";
             this.place_59.Size = new System.Drawing.Size(34, 25);
             this.place_59.TabIndex = 0;
@@ -2046,9 +2210,9 @@
             this.ticketHall.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ticketHall.Location = new System.Drawing.Point(71, 77);
             this.ticketHall.Name = "ticketHall";
-            this.ticketHall.Size = new System.Drawing.Size(90, 16);
+            this.ticketHall.Size = new System.Drawing.Size(60, 16);
             this.ticketHall.TabIndex = 5;
-            this.ticketHall.Text = "[Номер] зал.";
+            this.ticketHall.Text = "[Номер]";
             // 
             // label5
             // 
@@ -2056,9 +2220,9 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(17, 77);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 17);
+            this.label5.Size = new System.Drawing.Size(54, 17);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Сеанс:";
+            this.label5.Text = "Зал №:";
             // 
             // ticketDate
             // 
@@ -2177,6 +2341,17 @@
             this.textBoxUID.TabIndex = 3;
             this.textBoxUID.Tag = "";
             // 
+            // buttonBuyTicket
+            // 
+            this.buttonBuyTicket.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonBuyTicket.Location = new System.Drawing.Point(182, 548);
+            this.buttonBuyTicket.Name = "buttonBuyTicket";
+            this.buttonBuyTicket.Size = new System.Drawing.Size(385, 29);
+            this.buttonBuyTicket.TabIndex = 9;
+            this.buttonBuyTicket.Text = "Купить";
+            this.buttonBuyTicket.Visible = false;
+            this.buttonBuyTicket.Click += new System.EventHandler(this.buttonBuyTicket_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -2198,6 +2373,9 @@
             this.panelMainMenu.ResumeLayout(false);
             this.panelFilms.ResumeLayout(false);
             this.panelBuyTicket.ResumeLayout(false);
+            this.reserveTicketPanel.ResumeLayout(false);
+            this.reserveTicketPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reserveTicketImage)).EndInit();
             this.panelWrapperListPlaces.ResumeLayout(false);
             this.panelViewListFilms.ResumeLayout(false);
             this.panelStatisticsAndReports.ResumeLayout(false);
@@ -2367,6 +2545,20 @@
         private System.Windows.Forms.Label place_58;
         private System.Windows.Forms.Label place_59;
         private MetroFramework.Controls.MetroButton buttonClosePanelBuyTicket;
+        private System.Windows.Forms.Panel reserveTicketPanel;
+        private System.Windows.Forms.Label reserveTicketLength;
+        private System.Windows.Forms.Label reserveTicketAgeLimit;
+        private System.Windows.Forms.Label reserveTicketPrice;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label reserveTicketPlace;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label reserveTicketHall;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label reserveTicketDate;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.PictureBox reserveTicketImage;
+        private System.Windows.Forms.Label reserveTicketNameFilm;
+        private MetroFramework.Controls.MetroButton buttonBuyTicket;
     }
 }
 

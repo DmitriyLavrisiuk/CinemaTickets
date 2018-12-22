@@ -20,7 +20,17 @@ SET @id_session				= (SELECT id_session FROM INSERTED)
 SET @number_place			= (SELECT number_place FROM INSERTED)
 SET @price_ticket_film		= (SELECT film_price_ticket FROM Films WHERE id = (SELECT id_film FROM Sessions_list WHERE id = @id_session))
 SET @hall_places_count		= (SELECT hall_places_count FROM Halls WHERE id = (SELECT id_hall FROM Sessions_list WHERE id = @id_session))
-SET @multiplier				= (SELECT place_multiplier FROM Place_type WHERE id_place = (SELECT id_type FROM Hall_type WHERE id_hall = (SELECT id FROM Halls WHERE id = (SELECT id_hall FROM Sessions_list WHERE id = @id_session)) AND place_from <= @number_place AND place_to >= @number_place))
+SET @multiplier				= (
+			SELECT
+			Place_type.place_multiplier
+		FROM Sessions_list
+		JOIN Films ON Sessions_list.id_film = Films.id
+		JOIN Hall_type ON Sessions_list.id_hall = Hall_type.id_hall
+		JOIN Place_type ON Hall_type.id_type = Place_type.id_place
+		WHERE
+			Sessions_list.id = @id_session
+			AND @number_place BETWEEN Hall_type.place_from and Hall_type.place_to
+	)
 SET @date_session			= (SELECT date_time_session FROM Sessions_list WHERE id = @id_session)
 
 IF (@number_place > @hall_places_count OR @number_place <= 0)

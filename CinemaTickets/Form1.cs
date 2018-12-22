@@ -98,6 +98,7 @@ namespace CinemaTickets
             };
 
             bufferArray = new List<List<object>>();
+            placesType = new List<List<object>>();
 
             listNumberPlaces = new List<Label>()
             {
@@ -482,7 +483,7 @@ namespace CinemaTickets
         {
             ticketNameFilm.Text = name.ToString();
             ticketDate.Text = date.ToString();
-            ticketHall.Text = hall.ToString() + " зал.";
+            ticketHall.Text = hall.ToString();
             ticketPlace.Text = numbePlace.ToString();
             ticketPrice.Text = price.ToString() + " руб.";
             ticketUID.Text = "UID: " + uid.ToString();
@@ -602,7 +603,32 @@ namespace CinemaTickets
         private void buttonSearchFilms_Click(object sender, EventArgs e) => loadFilmsToPanelFilms(0);
         private void buttonSearchFilmsBack_Click(object sender, EventArgs e) => loadFilmsToPanelFilms(-1);
         private void buttonSearchFilmsNext_Click(object sender, EventArgs e) => loadFilmsToPanelFilms(1);
-        private void buttonClosePanelBuyTicket_Click(object sender, EventArgs e) => panelBuyTicket.Visible = false;
+        private void drawReserveTicket(
+            object name,
+            object date,
+            object hall,
+            object numbePlace,
+            object price,
+            object ageLimit,
+            object length,
+            object image,
+            Panel namePanel,
+            short x,
+            short y)
+        {
+            reserveTicketNameFilm.Text = name.ToString();
+            reserveTicketDate.Text = date.ToString();
+            reserveTicketHall.Text = hall.ToString();
+            reserveTicketPlace.Text = numbePlace.ToString();
+            reserveTicketPrice.Text = price.ToString() + " руб.";
+            reserveTicketAgeLimit.Text = ageLimit.ToString() + "+";
+            reserveTicketLength.Text = length.ToString() + "min.";
+            reserveTicketLength.Location = new Point(reserveTicketPanel.Width - reserveTicketLength.Width - 1, reserveTicketPanel.Height - reserveTicketLength.Height - 1);
+            reserveTicketImage.ImageLocation = image.ToString();
+            reserveTicketPanel.Location = new Point(x, y);
+            namePanel.Controls.Add(reserveTicketPanel);
+            reserveTicketPanel.Visible = true;
+        }
         private void listPictureBox_Click(object sender, EventArgs e)
         {
             string id = (sender as PictureBox).ImageLocation.Replace("images/","");
@@ -629,9 +655,6 @@ namespace CinemaTickets
         }
         private void comboBoxSessionList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //"Сеанс #" + bufferArray[(sender as ComboBox).SelectedIndex][0] + 
-            //" Дата: " + bufferArray[(sender as ComboBox).SelectedIndex][1]
-
             activeIndexFromBuffer = (sender as ComboBox).SelectedIndex;
             placesType.Clear();
             placesType = objectDataBase.GetAllTypesPlacesInHall(
@@ -644,12 +667,6 @@ namespace CinemaTickets
 
             foreach (Label element in listNumberPlaces)
             {
-                /*
-                placesType[i][0] - place_name
-                placesType[i][1] - place_multiplier
-                placesType[i][2] - place_from
-                placesType[i][3] - place_to
-                */
                 element.ForeColor = Color.FromArgb(255, 255, 255);
                 element.Enabled = true;
                 element.Cursor = Cursors.Hand;
@@ -679,20 +696,55 @@ namespace CinemaTickets
                         element.Cursor = Cursors.No;
                     }
                 }
-
             }
-
             panelWrapperListPlaces.Visible = true;
         }
         private void listNumberPlaces_Click(object sender, EventArgs e)
         {
             if ((sender as Label).Enabled)
             {
-                MessageBox.Show("Вы можете приобрести билет на данное место: "
-                    + (sender as Label).Text
-                    + " Сеанс: " + bufferArray[activeIndexFromBuffer][2].ToString()
+                List<List<object>> result = objectDataBase.GenerateTicket(
+                    Convert.ToInt32(bufferArray[activeIndexFromBuffer][2]), 
+                    Convert.ToInt32((sender as Label).Text)
                 );
+
+                drawReserveTicket(result[0][0], result[0][1], 
+                    result[0][2], (sender as Label).Text, 
+                    result[0][3], result[0][5], 
+                    result[0][4], result[0][6],
+                    panelBuyTicket, 181, 320
+                );
+
+                buttonBuyTicket.Visible = true;
+                /*
+                result[0] - film_name
+                result[1] - date_time_session
+                result[2] - id_hall
+                result[3] - film_price_ticket * place_multiplier
+                result[4] - film_length_min
+                result[5] - film_age_limit
+                result[6] - film_photo
+                */
             }
+        }
+        private void buttonClosePanelBuyTicket_Click(object sender, EventArgs e)
+        {
+            panelBuyTicket.Visible =
+            reserveTicketPanel.Visible =
+            buttonBuyTicket.Visible = false;
+        }
+        private void buttonBuyTicket_Click(object sender, EventArgs e)
+        {
+            objectDataBase.BuyTicket(
+                Convert.ToInt32(reserveTicketHall.Text),
+                reserveTicketDate.Text,
+                Convert.ToInt32(reserveTicketPlace.Text)
+            );
+
+            MessageBox.Show("Билет приобретен!");
+            panelBuyTicket.Visible =
+            reserveTicketPanel.Visible =
+            buttonBuyTicket.Visible = false;
         }
 
         // Panel StatisticsAndReport
