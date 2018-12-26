@@ -42,8 +42,9 @@ namespace CinemaTickets
             listLabelGenersFilmSearch,
             listLabelProductionCountriesFilmSearch,
             listNumberPlaces;
-        private List<List<object>> bufferArray;
-        private List<List<object>> placesType;
+        private List<List<object>> 
+            bufferArray,
+            placesType;
         private int activeIndexFromBuffer;
 
         public MainForm()
@@ -168,7 +169,7 @@ namespace CinemaTickets
             panelSearch.Controls.Remove(ticketPanel);
 
         }
-        // CallBakc function atfer Form load
+        // Callback function atfer Form load
         private void Form1_Load(object sender, EventArgs e)
         {
             // Set settings
@@ -495,7 +496,6 @@ namespace CinemaTickets
             namePanel.Controls.Add(ticketPanel);
             ticketPanel.Visible = true;
         }
-
         private void searchTicketUID()
         {
             List<object> result = objectDataBase.GetAllInformationAboutTicketByUID(textBoxUID.Text);
@@ -510,7 +510,6 @@ namespace CinemaTickets
                 MessageBox.Show("Билет с таким UID не найден.");
             }
         }
-
         private void returnTicketUID()
         {
             List<object> result = objectDataBase.ReturnTicket(textBoxUID.Text);
@@ -657,6 +656,8 @@ namespace CinemaTickets
         {
             activeIndexFromBuffer = (sender as ComboBox).SelectedIndex;
             placesType.Clear();
+            reserveTicketPanel.Visible =
+            buttonBuyTicket.Visible = false;
             placesType = objectDataBase.GetAllTypesPlacesInHall(
                 Convert.ToInt32(bufferArray[activeIndexFromBuffer][0])
             );
@@ -677,15 +678,18 @@ namespace CinemaTickets
                     buf <= Convert.ToInt32(placesType[0][3]))
                 {
                     element.BackColor = Color.FromArgb(153, 153, 153);
+                    metroToolTip1.SetToolTip(element, placesType[0][0].ToString());
                 }
                 else if (buf >= Convert.ToInt32(placesType[1][2]) &&
                     buf <= Convert.ToInt32(placesType[1][3]))
                 {
                     element.BackColor = Color.FromArgb(142, 69, 173);
+                    metroToolTip1.SetToolTip(element, placesType[1][0].ToString());
                 }
                 else
                 {
                     element.BackColor = Color.FromArgb(231, 69, 50);
+                    metroToolTip1.SetToolTip(element, placesType[2][0].ToString());
                 }
 
                 foreach (object element2 in tickets)
@@ -694,6 +698,7 @@ namespace CinemaTickets
                     {
                         element.Enabled = false;
                         element.Cursor = Cursors.No;
+                        metroToolTip1.SetToolTip(element, "Билет на данное место выкуплен!");
                     }
                 }
             }
@@ -704,27 +709,18 @@ namespace CinemaTickets
             if ((sender as Label).Enabled)
             {
                 List<List<object>> result = objectDataBase.GenerateTicket(
-                    Convert.ToInt32(bufferArray[activeIndexFromBuffer][2]), 
+                    Convert.ToInt32(bufferArray[activeIndexFromBuffer][2]),
                     Convert.ToInt32((sender as Label).Text)
                 );
 
-                drawReserveTicket(result[0][0], result[0][1], 
-                    result[0][2], (sender as Label).Text, 
-                    result[0][3], result[0][5], 
+                drawReserveTicket(result[0][0], result[0][1],
+                    result[0][2], (sender as Label).Text,
+                    result[0][3], result[0][5],
                     result[0][4], result[0][6],
                     panelBuyTicket, 181, 320
                 );
 
                 buttonBuyTicket.Visible = true;
-                /*
-                result[0] - film_name
-                result[1] - date_time_session
-                result[2] - id_hall
-                result[3] - film_price_ticket * place_multiplier
-                result[4] - film_length_min
-                result[5] - film_age_limit
-                result[6] - film_photo
-                */
             }
         }
         private void buttonClosePanelBuyTicket_Click(object sender, EventArgs e)

@@ -146,6 +146,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="CinemaDataSet.xsc">
       <DependentUpon>CinemaDataSet.xsd</DependentUpon>
@@ -173,6 +174,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\images\logo\logo.png" />
     <Content Include="MetroFramework.txt" />
   </ItemGroup>
   <ItemGroup />

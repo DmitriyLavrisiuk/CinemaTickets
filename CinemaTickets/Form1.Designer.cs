@@ -40,6 +40,7 @@
             this.panelFilms = new System.Windows.Forms.Panel();
             this.panelBuyTicket = new System.Windows.Forms.Panel();
             this.reserveTicketPanel = new System.Windows.Forms.Panel();
+            this.buttonBuyTicket = new MetroFramework.Controls.MetroButton();
             this.reserveTicketLength = new System.Windows.Forms.Label();
             this.reserveTicketAgeLimit = new System.Windows.Forms.Label();
             this.reserveTicketPrice = new System.Windows.Forms.Label();
@@ -154,7 +155,6 @@
             this.panelViewSearch = new System.Windows.Forms.Panel();
             this.titlePanelSearch = new MetroFramework.Controls.MetroLabel();
             this.panelMainScreen = new System.Windows.Forms.Panel();
-            this.titlePanelMainScreen = new MetroFramework.Controls.MetroLabel();
             this.panelAdd = new System.Windows.Forms.Panel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -190,7 +190,7 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.titlePanelReturnTickets = new MetroFramework.Controls.MetroLabel();
             this.textBoxUID = new System.Windows.Forms.TextBox();
-            this.buttonBuyTicket = new MetroFramework.Controls.MetroButton();
+            this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
             this.panelMainMenu.SuspendLayout();
             this.panelFilms.SuspendLayout();
             this.panelBuyTicket.SuspendLayout();
@@ -202,7 +202,6 @@
             this.panelSearch.SuspendLayout();
             this.PanelSearchFilters.SuspendLayout();
             this.panelViewSearch.SuspendLayout();
-            this.panelMainScreen.SuspendLayout();
             this.panelAdd.SuspendLayout();
             this.searchTicket.SuspendLayout();
             this.panelReturnTicket.SuspendLayout();
@@ -354,7 +353,6 @@
             // panelBuyTicket
             // 
             this.panelBuyTicket.BackColor = System.Drawing.Color.White;
-            this.panelBuyTicket.Controls.Add(this.buttonBuyTicket);
             this.panelBuyTicket.Controls.Add(this.reserveTicketPanel);
             this.panelBuyTicket.Controls.Add(this.buttonClosePanelBuyTicket);
             this.panelBuyTicket.Controls.Add(this.comboBoxSessionList);
@@ -369,6 +367,7 @@
             // 
             this.reserveTicketPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.reserveTicketPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.reserveTicketPanel.Controls.Add(this.buttonBuyTicket);
             this.reserveTicketPanel.Controls.Add(this.reserveTicketLength);
             this.reserveTicketPanel.Controls.Add(this.reserveTicketAgeLimit);
             this.reserveTicketPanel.Controls.Add(this.reserveTicketPrice);
@@ -381,11 +380,24 @@
             this.reserveTicketPanel.Controls.Add(this.label15);
             this.reserveTicketPanel.Controls.Add(this.reserveTicketImage);
             this.reserveTicketPanel.Controls.Add(this.reserveTicketNameFilm);
-            this.reserveTicketPanel.Location = new System.Drawing.Point(181, 320);
+            this.reserveTicketPanel.Location = new System.Drawing.Point(185, 326);
             this.reserveTicketPanel.Name = "reserveTicketPanel";
             this.reserveTicketPanel.Size = new System.Drawing.Size(385, 200);
             this.reserveTicketPanel.TabIndex = 8;
             this.reserveTicketPanel.Visible = false;
+            // 
+            // buttonBuyTicket
+            // 
+            this.buttonBuyTicket.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonBuyTicket.Location = new System.Drawing.Point(5, 164);
+            this.buttonBuyTicket.Name = "buttonBuyTicket";
+            this.buttonBuyTicket.Size = new System.Drawing.Size(225, 29);
+            this.buttonBuyTicket.Style = MetroFramework.MetroColorStyle.Lime;
+            this.buttonBuyTicket.TabIndex = 9;
+            this.buttonBuyTicket.Text = "Купить";
+            this.buttonBuyTicket.UseMnemonic = false;
+            this.buttonBuyTicket.Visible = false;
+            this.buttonBuyTicket.Click += new System.EventHandler(this.buttonBuyTicket_Click);
             // 
             // reserveTicketLength
             // 
@@ -1141,6 +1153,7 @@
             this.place_60.TabIndex = 16;
             this.place_60.Text = "60";
             this.place_60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroToolTip1.SetToolTip(this.place_60, "ssssssss");
             // 
             // place_38
             // 
@@ -1900,26 +1913,11 @@
             // 
             // panelMainScreen
             // 
-            this.panelMainScreen.Controls.Add(this.titlePanelMainScreen);
+            this.panelMainScreen.BackgroundImage = global::CinemaTickets.Properties.Resources.logo;
             this.panelMainScreen.Location = new System.Drawing.Point(215, 0);
             this.panelMainScreen.Name = "panelMainScreen";
             this.panelMainScreen.Size = new System.Drawing.Size(750, 600);
             this.panelMainScreen.TabIndex = 4;
-            // 
-            // titlePanelMainScreen
-            // 
-            this.titlePanelMainScreen.BackColor = System.Drawing.Color.White;
-            this.titlePanelMainScreen.Cursor = System.Windows.Forms.Cursors.Help;
-            this.titlePanelMainScreen.CustomBackground = true;
-            this.titlePanelMainScreen.CustomForeColor = true;
-            this.titlePanelMainScreen.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.titlePanelMainScreen.ForeColor = System.Drawing.Color.Black;
-            this.titlePanelMainScreen.Location = new System.Drawing.Point(0, 0);
-            this.titlePanelMainScreen.Name = "titlePanelMainScreen";
-            this.titlePanelMainScreen.Size = new System.Drawing.Size(750, 77);
-            this.titlePanelMainScreen.TabIndex = 2;
-            this.titlePanelMainScreen.Text = "CinemaTickets - покупай быстро и четко!";
-            this.titlePanelMainScreen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelAdd
             // 
@@ -2341,16 +2339,11 @@
             this.textBoxUID.TabIndex = 3;
             this.textBoxUID.Tag = "";
             // 
-            // buttonBuyTicket
+            // metroToolTip1
             // 
-            this.buttonBuyTicket.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonBuyTicket.Location = new System.Drawing.Point(182, 548);
-            this.buttonBuyTicket.Name = "buttonBuyTicket";
-            this.buttonBuyTicket.Size = new System.Drawing.Size(385, 29);
-            this.buttonBuyTicket.TabIndex = 9;
-            this.buttonBuyTicket.Text = "Купить";
-            this.buttonBuyTicket.Visible = false;
-            this.buttonBuyTicket.Click += new System.EventHandler(this.buttonBuyTicket_Click);
+            this.metroToolTip1.AutomaticDelay = 250;
+            this.metroToolTip1.Style = MetroFramework.MetroColorStyle.White;
+            this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // MainForm
             // 
@@ -2369,6 +2362,7 @@
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.DropShadow;
             this.Style = MetroFramework.MetroColorStyle.White;
+            this.Text = "CinemaTickets";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelMainMenu.ResumeLayout(false);
             this.panelFilms.ResumeLayout(false);
@@ -2383,7 +2377,6 @@
             this.PanelSearchFilters.ResumeLayout(false);
             this.PanelSearchFilters.PerformLayout();
             this.panelViewSearch.ResumeLayout(false);
-            this.panelMainScreen.ResumeLayout(false);
             this.panelAdd.ResumeLayout(false);
             this.searchTicket.ResumeLayout(false);
             this.searchTicket.PerformLayout();
@@ -2409,7 +2402,6 @@
         private System.Windows.Forms.Panel panelMainScreen;
         private System.Windows.Forms.Panel panelViewListFilms;
         private MetroFramework.Controls.MetroLabel titlePanelStatisticsAndReports;
-        private MetroFramework.Controls.MetroLabel titlePanelMainScreen;
         private System.Windows.Forms.Button menuButtonAdd;
         private System.Windows.Forms.Panel panelAdd;
         private MetroFramework.Controls.MetroButton buttonAddProductionCountries;
@@ -2559,6 +2551,7 @@
         private System.Windows.Forms.PictureBox reserveTicketImage;
         private System.Windows.Forms.Label reserveTicketNameFilm;
         private MetroFramework.Controls.MetroButton buttonBuyTicket;
+        private MetroFramework.Components.MetroToolTip metroToolTip1;
     }
 }
 

@@ -19,9 +19,13 @@ namespace CinemaTickets
 
         private void sessions_listBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.sessions_listBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.cinemaDataSet);
+            try
+            {
+                this.Validate();
+                this.sessions_listBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.cinemaDataSet);
+            }
+            catch(Exception ex){ MessageBox.Show(ex.Message + "\nКонфликт по времени между несколькими сеансами."); }
 
         }
 

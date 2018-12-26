@@ -1,22 +1,22 @@
-﻿
--- Create DB and TABLES
+﻿-- Create DB and TABLES ----------------------------------------
 GO
 :r createDB.sql
 
--- Insert values in TABLES
+-- TRIGERS -----------------------------------------------------
+GO
+:r _trigers/TicketInsertUpdate.sql
+:r _trigers/SessionInsertUpdate.sql
+
+-- Insert values in TABLES -------------------------------------
 GO
 :r insertDB.sql
 
--- TRIGERS
-GO
-:r _trigers/trigers.sql
-
--- FUNCTIONS
+-- FUNCTIONS ---------------------------------------------------
 GO
 :r _functions/functions.sql
 
--- PROCEDURES
-
+-- PROCEDURES --------------------------------------------------
+GO
 -- FIND FILMS
 :r _procedures/FindAllFilms.sql
 :r _procedures/FindFilmsByAllFilters.sql

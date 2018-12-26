@@ -117,12 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="metroToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="labelHelperDescription.Text" xml:space="preserve">
     <value>Возврат билета осуществляется по UID коду билета.
 Для возврата билета укажите UID код, находящийся на билете в поле выше, на который Вы хотите оформить возврат.
 Примечание: Оформление воврата осуществляется не менее чем за 1 час до начала сеанса.</value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>66</value>
+    <value>25</value>
   </metadata>
 </root>
