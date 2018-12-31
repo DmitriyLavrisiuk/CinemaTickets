@@ -258,6 +258,7 @@
             this.ClientSize = new System.Drawing.Size(306, 450);
             this.Controls.Add(this.films_productionDataGridView);
             this.Controls.Add(this.films_productionBindingNavigator);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AddProductionCountriesToFilm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

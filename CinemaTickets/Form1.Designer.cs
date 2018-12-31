@@ -125,7 +125,22 @@
             this.panelViewListFilms = new System.Windows.Forms.Panel();
             this.titlePanelFilms = new MetroFramework.Controls.MetroLabel();
             this.panelStatisticsAndReports = new System.Windows.Forms.Panel();
-            this.titlePanelStatisticsAndReports = new MetroFramework.Controls.MetroLabel();
+            this.buttonExportExcel = new MetroFramework.Controls.MetroButton();
+            this.buttonDiagram4 = new MetroFramework.Controls.MetroButton();
+            this.buttonDiagram3 = new MetroFramework.Controls.MetroButton();
+            this.buttonDiagram2 = new MetroFramework.Controls.MetroButton();
+            this.buttonDiagram1 = new MetroFramework.Controls.MetroButton();
+            this.ViewPanelStatisticsAndReports = new System.Windows.Forms.Panel();
+            this.panelDiagram1 = new System.Windows.Forms.Panel();
+            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
+            this.labelTitlePanelStatisticsAndReports = new MetroFramework.Controls.MetroLabel();
+            this.panelDiagram4 = new System.Windows.Forms.Panel();
+            this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
+            this.panelDiagram3 = new System.Windows.Forms.Panel();
+            this.cartesianDiagram3 = new LiveCharts.WinForms.CartesianChart();
+            this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
+            this.panelDiagram2 = new System.Windows.Forms.Panel();
+            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             this.panelSearch = new System.Windows.Forms.Panel();
             this.PanelSearchFilters = new System.Windows.Forms.Panel();
             this.checkBoxAutoHide = new MetroFramework.Controls.MetroCheckBox();
@@ -191,6 +206,9 @@
             this.titlePanelReturnTickets = new MetroFramework.Controls.MetroLabel();
             this.textBoxUID = new System.Windows.Forms.TextBox();
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
+            this.pieChart1 = new LiveCharts.WinForms.PieChart();
+            this.pieChart4 = new LiveCharts.WinForms.PieChart();
+            this.cartesianDiagram2 = new LiveCharts.WinForms.CartesianChart();
             this.panelMainMenu.SuspendLayout();
             this.panelFilms.SuspendLayout();
             this.panelBuyTicket.SuspendLayout();
@@ -199,6 +217,11 @@
             this.panelWrapperListPlaces.SuspendLayout();
             this.panelViewListFilms.SuspendLayout();
             this.panelStatisticsAndReports.SuspendLayout();
+            this.ViewPanelStatisticsAndReports.SuspendLayout();
+            this.panelDiagram1.SuspendLayout();
+            this.panelDiagram4.SuspendLayout();
+            this.panelDiagram3.SuspendLayout();
+            this.panelDiagram2.SuspendLayout();
             this.panelSearch.SuspendLayout();
             this.PanelSearchFilters.SuspendLayout();
             this.panelViewSearch.SuspendLayout();
@@ -1483,26 +1506,191 @@
             // 
             // panelStatisticsAndReports
             // 
-            this.panelStatisticsAndReports.Controls.Add(this.titlePanelStatisticsAndReports);
+            this.panelStatisticsAndReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.panelStatisticsAndReports.Controls.Add(this.buttonExportExcel);
+            this.panelStatisticsAndReports.Controls.Add(this.buttonDiagram4);
+            this.panelStatisticsAndReports.Controls.Add(this.buttonDiagram3);
+            this.panelStatisticsAndReports.Controls.Add(this.buttonDiagram2);
+            this.panelStatisticsAndReports.Controls.Add(this.buttonDiagram1);
+            this.panelStatisticsAndReports.Controls.Add(this.ViewPanelStatisticsAndReports);
             this.panelStatisticsAndReports.Location = new System.Drawing.Point(215, 0);
             this.panelStatisticsAndReports.Name = "panelStatisticsAndReports";
             this.panelStatisticsAndReports.Size = new System.Drawing.Size(750, 600);
             this.panelStatisticsAndReports.TabIndex = 2;
             // 
-            // titlePanelStatisticsAndReports
+            // buttonExportExcel
             // 
-            this.titlePanelStatisticsAndReports.BackColor = System.Drawing.Color.White;
-            this.titlePanelStatisticsAndReports.Cursor = System.Windows.Forms.Cursors.Help;
-            this.titlePanelStatisticsAndReports.CustomBackground = true;
-            this.titlePanelStatisticsAndReports.CustomForeColor = true;
-            this.titlePanelStatisticsAndReports.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.titlePanelStatisticsAndReports.ForeColor = System.Drawing.Color.Black;
-            this.titlePanelStatisticsAndReports.Location = new System.Drawing.Point(0, 0);
-            this.titlePanelStatisticsAndReports.Name = "titlePanelStatisticsAndReports";
-            this.titlePanelStatisticsAndReports.Size = new System.Drawing.Size(750, 77);
-            this.titlePanelStatisticsAndReports.TabIndex = 2;
-            this.titlePanelStatisticsAndReports.Text = "Статистика и отчеты";
-            this.titlePanelStatisticsAndReports.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonExportExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonExportExcel.Location = new System.Drawing.Point(613, 550);
+            this.buttonExportExcel.Name = "buttonExportExcel";
+            this.buttonExportExcel.Size = new System.Drawing.Size(121, 29);
+            this.buttonExportExcel.TabIndex = 61;
+            this.buttonExportExcel.Text = "Экспорт в MS Excel";
+            this.buttonExportExcel.Click += new System.EventHandler(this.buttonExportExcel_Click);
+            // 
+            // buttonDiagram4
+            // 
+            this.buttonDiagram4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDiagram4.Location = new System.Drawing.Point(408, 550);
+            this.buttonDiagram4.Name = "buttonDiagram4";
+            this.buttonDiagram4.Size = new System.Drawing.Size(199, 29);
+            this.buttonDiagram4.TabIndex = 59;
+            this.buttonDiagram4.Text = "Фильмы по возр. ограничению";
+            this.buttonDiagram4.Click += new System.EventHandler(this.buttonDiagram4_Click);
+            // 
+            // buttonDiagram3
+            // 
+            this.buttonDiagram3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDiagram3.Location = new System.Drawing.Point(279, 550);
+            this.buttonDiagram3.Name = "buttonDiagram3";
+            this.buttonDiagram3.Size = new System.Drawing.Size(124, 29);
+            this.buttonDiagram3.TabIndex = 58;
+            this.buttonDiagram3.Text = "Сеансы по времени";
+            this.buttonDiagram3.Click += new System.EventHandler(this.buttonDiagram3_Click);
+            // 
+            // buttonDiagram2
+            // 
+            this.buttonDiagram2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDiagram2.Location = new System.Drawing.Point(149, 550);
+            this.buttonDiagram2.Name = "buttonDiagram2";
+            this.buttonDiagram2.Size = new System.Drawing.Size(124, 29);
+            this.buttonDiagram2.TabIndex = 57;
+            this.buttonDiagram2.Text = "Фильмы по жанрам";
+            this.buttonDiagram2.Click += new System.EventHandler(this.buttonDiagram2_Click);
+            // 
+            // buttonDiagram1
+            // 
+            this.buttonDiagram1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDiagram1.Location = new System.Drawing.Point(19, 550);
+            this.buttonDiagram1.Name = "buttonDiagram1";
+            this.buttonDiagram1.Size = new System.Drawing.Size(124, 29);
+            this.buttonDiagram1.TabIndex = 55;
+            this.buttonDiagram1.Text = "Фильмы по годам";
+            this.buttonDiagram1.Click += new System.EventHandler(this.buttonDiagram1_Click);
+            // 
+            // ViewPanelStatisticsAndReports
+            // 
+            this.ViewPanelStatisticsAndReports.BackColor = System.Drawing.Color.White;
+            this.ViewPanelStatisticsAndReports.Controls.Add(this.panelDiagram2);
+            this.ViewPanelStatisticsAndReports.Controls.Add(this.panelDiagram1);
+            this.ViewPanelStatisticsAndReports.Controls.Add(this.labelTitlePanelStatisticsAndReports);
+            this.ViewPanelStatisticsAndReports.Controls.Add(this.panelDiagram4);
+            this.ViewPanelStatisticsAndReports.Controls.Add(this.panelDiagram3);
+            this.ViewPanelStatisticsAndReports.Location = new System.Drawing.Point(0, 0);
+            this.ViewPanelStatisticsAndReports.Name = "ViewPanelStatisticsAndReports";
+            this.ViewPanelStatisticsAndReports.Size = new System.Drawing.Size(751, 530);
+            this.ViewPanelStatisticsAndReports.TabIndex = 54;
+            // 
+            // panelDiagram1
+            // 
+            this.panelDiagram1.AutoScroll = true;
+            this.panelDiagram1.BackColor = System.Drawing.Color.White;
+            this.panelDiagram1.Controls.Add(this.pieChart1);
+            this.panelDiagram1.Controls.Add(this.metroLabel13);
+            this.panelDiagram1.Location = new System.Drawing.Point(0, 0);
+            this.panelDiagram1.Name = "panelDiagram1";
+            this.panelDiagram1.Size = new System.Drawing.Size(751, 530);
+            this.panelDiagram1.TabIndex = 55;
+            this.panelDiagram1.Visible = false;
+            // 
+            // metroLabel13
+            // 
+            this.metroLabel13.Cursor = System.Windows.Forms.Cursors.Help;
+            this.metroLabel13.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel13.Location = new System.Drawing.Point(0, 0);
+            this.metroLabel13.Name = "metroLabel13";
+            this.metroLabel13.Size = new System.Drawing.Size(751, 77);
+            this.metroLabel13.TabIndex = 2;
+            this.metroLabel13.Text = "Фильмы по годам";
+            this.metroLabel13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelTitlePanelStatisticsAndReports
+            // 
+            this.labelTitlePanelStatisticsAndReports.Cursor = System.Windows.Forms.Cursors.Help;
+            this.labelTitlePanelStatisticsAndReports.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.labelTitlePanelStatisticsAndReports.Location = new System.Drawing.Point(0, 0);
+            this.labelTitlePanelStatisticsAndReports.Name = "labelTitlePanelStatisticsAndReports";
+            this.labelTitlePanelStatisticsAndReports.Size = new System.Drawing.Size(751, 530);
+            this.labelTitlePanelStatisticsAndReports.TabIndex = 1;
+            this.labelTitlePanelStatisticsAndReports.Text = "Для просмотра содержимого используйте \r\nнавигационную панель ниже.";
+            this.labelTitlePanelStatisticsAndReports.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelDiagram4
+            // 
+            this.panelDiagram4.AutoScroll = true;
+            this.panelDiagram4.BackColor = System.Drawing.Color.White;
+            this.panelDiagram4.Controls.Add(this.pieChart4);
+            this.panelDiagram4.Controls.Add(this.metroLabel16);
+            this.panelDiagram4.Location = new System.Drawing.Point(0, 0);
+            this.panelDiagram4.Name = "panelDiagram4";
+            this.panelDiagram4.Size = new System.Drawing.Size(751, 530);
+            this.panelDiagram4.TabIndex = 58;
+            this.panelDiagram4.Visible = false;
+            // 
+            // metroLabel16
+            // 
+            this.metroLabel16.Cursor = System.Windows.Forms.Cursors.Help;
+            this.metroLabel16.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel16.Location = new System.Drawing.Point(0, 0);
+            this.metroLabel16.Name = "metroLabel16";
+            this.metroLabel16.Size = new System.Drawing.Size(751, 77);
+            this.metroLabel16.TabIndex = 2;
+            this.metroLabel16.Text = "Фильмы по возрастному ограничению";
+            this.metroLabel16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelDiagram3
+            // 
+            this.panelDiagram3.AutoScroll = true;
+            this.panelDiagram3.BackColor = System.Drawing.Color.White;
+            this.panelDiagram3.Controls.Add(this.cartesianDiagram3);
+            this.panelDiagram3.Controls.Add(this.metroLabel15);
+            this.panelDiagram3.Location = new System.Drawing.Point(0, 0);
+            this.panelDiagram3.Name = "panelDiagram3";
+            this.panelDiagram3.Size = new System.Drawing.Size(751, 530);
+            this.panelDiagram3.TabIndex = 57;
+            this.panelDiagram3.Visible = false;
+            // 
+            // cartesianDiagram3
+            // 
+            this.cartesianDiagram3.Location = new System.Drawing.Point(19, 78);
+            this.cartesianDiagram3.Name = "cartesianDiagram3";
+            this.cartesianDiagram3.Size = new System.Drawing.Size(715, 431);
+            this.cartesianDiagram3.TabIndex = 4;
+            this.cartesianDiagram3.Text = "cartesianChart3";
+            // 
+            // metroLabel15
+            // 
+            this.metroLabel15.Cursor = System.Windows.Forms.Cursors.Help;
+            this.metroLabel15.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel15.Location = new System.Drawing.Point(0, 0);
+            this.metroLabel15.Name = "metroLabel15";
+            this.metroLabel15.Size = new System.Drawing.Size(751, 77);
+            this.metroLabel15.TabIndex = 2;
+            this.metroLabel15.Text = "Сеансы по времени";
+            this.metroLabel15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelDiagram2
+            // 
+            this.panelDiagram2.AutoScroll = true;
+            this.panelDiagram2.BackColor = System.Drawing.Color.White;
+            this.panelDiagram2.Controls.Add(this.cartesianDiagram2);
+            this.panelDiagram2.Controls.Add(this.metroLabel14);
+            this.panelDiagram2.Location = new System.Drawing.Point(0, 0);
+            this.panelDiagram2.Name = "panelDiagram2";
+            this.panelDiagram2.Size = new System.Drawing.Size(751, 530);
+            this.panelDiagram2.TabIndex = 56;
+            this.panelDiagram2.Visible = false;
+            // 
+            // metroLabel14
+            // 
+            this.metroLabel14.Cursor = System.Windows.Forms.Cursors.Help;
+            this.metroLabel14.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel14.Location = new System.Drawing.Point(0, 0);
+            this.metroLabel14.Name = "metroLabel14";
+            this.metroLabel14.Size = new System.Drawing.Size(751, 77);
+            this.metroLabel14.TabIndex = 2;
+            this.metroLabel14.Text = "Фильмы по жанрам";
+            this.metroLabel14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelSearch
             // 
@@ -2345,18 +2533,43 @@
             this.metroToolTip1.Style = MetroFramework.MetroColorStyle.White;
             this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
+            // pieChart1
+            // 
+            this.pieChart1.Location = new System.Drawing.Point(19, 78);
+            this.pieChart1.Name = "pieChart1";
+            this.pieChart1.Size = new System.Drawing.Size(715, 431);
+            this.pieChart1.TabIndex = 3;
+            this.pieChart1.Text = "pieChart1";
+            // 
+            // pieChart4
+            // 
+            this.pieChart4.Location = new System.Drawing.Point(19, 78);
+            this.pieChart4.Name = "pieChart4";
+            this.pieChart4.Size = new System.Drawing.Size(715, 431);
+            this.pieChart4.TabIndex = 5;
+            this.pieChart4.Text = "pieChart2";
+            // 
+            // cartesianDiagram2
+            // 
+            this.cartesianDiagram2.Location = new System.Drawing.Point(19, 78);
+            this.cartesianDiagram2.Name = "cartesianDiagram2";
+            this.cartesianDiagram2.Size = new System.Drawing.Size(715, 431);
+            this.cartesianDiagram2.TabIndex = 4;
+            this.cartesianDiagram2.Text = "cartesianChart4";
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(965, 600);
             this.ControlBox = false;
             this.Controls.Add(this.panelMainMenu);
+            this.Controls.Add(this.panelStatisticsAndReports);
             this.Controls.Add(this.panelFilms);
             this.Controls.Add(this.panelAdd);
             this.Controls.Add(this.searchTicket);
             this.Controls.Add(this.panelSearch);
             this.Controls.Add(this.panelMainScreen);
-            this.Controls.Add(this.panelStatisticsAndReports);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Resizable = false;
@@ -2373,6 +2586,11 @@
             this.panelWrapperListPlaces.ResumeLayout(false);
             this.panelViewListFilms.ResumeLayout(false);
             this.panelStatisticsAndReports.ResumeLayout(false);
+            this.ViewPanelStatisticsAndReports.ResumeLayout(false);
+            this.panelDiagram1.ResumeLayout(false);
+            this.panelDiagram4.ResumeLayout(false);
+            this.panelDiagram3.ResumeLayout(false);
+            this.panelDiagram2.ResumeLayout(false);
             this.panelSearch.ResumeLayout(false);
             this.PanelSearchFilters.ResumeLayout(false);
             this.PanelSearchFilters.PerformLayout();
@@ -2401,7 +2619,6 @@
         private System.Windows.Forms.Panel panelSearch;
         private System.Windows.Forms.Panel panelMainScreen;
         private System.Windows.Forms.Panel panelViewListFilms;
-        private MetroFramework.Controls.MetroLabel titlePanelStatisticsAndReports;
         private System.Windows.Forms.Button menuButtonAdd;
         private System.Windows.Forms.Panel panelAdd;
         private MetroFramework.Controls.MetroButton buttonAddProductionCountries;
@@ -2552,6 +2769,25 @@
         private System.Windows.Forms.Label reserveTicketNameFilm;
         private MetroFramework.Controls.MetroButton buttonBuyTicket;
         private MetroFramework.Components.MetroToolTip metroToolTip1;
+        private MetroFramework.Controls.MetroButton buttonDiagram1;
+        private System.Windows.Forms.Panel ViewPanelStatisticsAndReports;
+        private MetroFramework.Controls.MetroButton buttonExportExcel;
+        private MetroFramework.Controls.MetroButton buttonDiagram4;
+        private MetroFramework.Controls.MetroButton buttonDiagram3;
+        private MetroFramework.Controls.MetroButton buttonDiagram2;
+        private System.Windows.Forms.Panel panelDiagram4;
+        private MetroFramework.Controls.MetroLabel metroLabel16;
+        private MetroFramework.Controls.MetroLabel labelTitlePanelStatisticsAndReports;
+        private System.Windows.Forms.Panel panelDiagram3;
+        private MetroFramework.Controls.MetroLabel metroLabel15;
+        private System.Windows.Forms.Panel panelDiagram2;
+        private MetroFramework.Controls.MetroLabel metroLabel14;
+        private System.Windows.Forms.Panel panelDiagram1;
+        private MetroFramework.Controls.MetroLabel metroLabel13;
+        private LiveCharts.WinForms.CartesianChart cartesianDiagram3;
+        private LiveCharts.WinForms.PieChart pieChart1;
+        private LiveCharts.WinForms.PieChart pieChart4;
+        private LiveCharts.WinForms.CartesianChart cartesianDiagram2;
     }
 }
 

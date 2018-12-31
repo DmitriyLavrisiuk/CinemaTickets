@@ -268,6 +268,7 @@
             this.ClientSize = new System.Drawing.Size(439, 450);
             this.Controls.Add(this.sessions_listDataGridView);
             this.Controls.Add(this.sessions_listBindingNavigator);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AddSessions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

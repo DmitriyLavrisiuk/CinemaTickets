@@ -42,3 +42,7 @@ GO
 :r _procedures/GenerateTicket.sql
 -- BUY TICKET
 :r _procedures/BuyTicket.sql
+-- FOR DIAGRAM
+:r _procedures/DiagramFilmYear.sql
+:r _procedures/DiagramAgeLimit.sql
+:r _procedures/DiagramFilmGener.sql

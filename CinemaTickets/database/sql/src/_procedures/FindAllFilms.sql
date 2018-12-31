@@ -1,6 +1,6 @@
 ﻿-- Процедура для отображение всех фильмов
 -- EXAMPLE
--- EXEC FindAllFilms @count_films_on_page = 3, @page_number = 2
+-- EXEC FindAllFilms @count_films_on_page = 10, @page_number = 1
 
 
 GO
@@ -11,8 +11,9 @@ CREATE PROC FindAllFilms
 	@page_number int = 1
 AS
 	DECLARE @countFilms int = (
-		SELECT count(*)
+		SELECT count(DISTINCT (Films.id))
 		FROM Films
+		JOIN Sessions_list ON Films.id = Sessions_list.id_film
 	)
 
 	if(@page_number = 1)
@@ -31,6 +32,8 @@ AS
 		Films.film_length_min,
 		Films.film_photo
 	FROM Films
+	JOIN Sessions_list ON Films.id = Sessions_list.id_film
+	WHERE Films.id = Sessions_list.id_film
 	GROUP BY 
 		Films.id,
 		Films.film_name,
@@ -40,5 +43,3 @@ AS
 	ORDER BY id DESC
 	OFFSET @page_number * @count_films_on_page ROW FETCH NEXT @count_films_on_page ROWS ONLY;
 GO
-
-

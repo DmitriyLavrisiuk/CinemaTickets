@@ -391,6 +391,7 @@
             this.Controls.Add(this.hall_typeDataGridView);
             this.Controls.Add(this.hall_typeBindingNavigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AddHalls";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

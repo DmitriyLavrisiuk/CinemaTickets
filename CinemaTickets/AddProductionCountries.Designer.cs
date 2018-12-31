@@ -249,6 +249,7 @@
             this.ClientSize = new System.Drawing.Size(306, 450);
             this.Controls.Add(this.productionDataGridView);
             this.Controls.Add(this.productionBindingNavigator);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AddProductionCountries";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

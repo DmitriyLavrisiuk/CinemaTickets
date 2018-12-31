@@ -35,7 +35,7 @@ AS
 	END
 
 	SELECT 
-		Count(DISTINCT (Films.id))
+		count(DISTINCT (Films.id))
 	FROM Films
 	JOIN Films_gener ON Films.id = Films_gener.id_film
 	JOIN Gener ON Films_gener.id_gener = Gener.id_gener

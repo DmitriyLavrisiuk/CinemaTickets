@@ -4,22 +4,22 @@ using System.Windows.Forms;
 using MetroFramework.Forms;
 using System.Collections.Generic;
 using dbCinemaTickets;
-using System.ComponentModel;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Text;
-using System.Collections;
-using System.Data.SqlClient;
+using LiveCharts;                   //Core of the library
+using LiveCharts.Wpf;               //The WPF controls
+using LiveCharts.WinForms;          //the WinForm wrappers
 
 namespace CinemaTickets
 {
     public partial class MainForm : MetroForm
     {
+        private Application application;
+        private Microsoft.Office.Interop.Excel.Workbook workBook;
+        private Microsoft.Office.Interop.Excel.Worksheet worksheet;
         // Object for work with CinemaTickets objectDataBase
         private readonly CinemaTickets_functionality objectDataBase;
         // List panel for content 
         private List<Panel> listPanel;
+        private List<Panel> listPanelDiagram;
         // List buttons in left menu
         private List<Button> listButtonInLeftMenu;
         // List settings 
@@ -42,7 +42,7 @@ namespace CinemaTickets
             listLabelGenersFilmSearch,
             listLabelProductionCountriesFilmSearch,
             listNumberPlaces;
-        private List<List<object>> 
+        private List<List<object>>
             bufferArray,
             placesType;
         private int activeIndexFromBuffer;
@@ -96,6 +96,14 @@ namespace CinemaTickets
                 menuButtonAdd,
                 menuButtonExit,
                 menuButtonReturnTickets
+            };
+
+            listPanelDiagram = new List<Panel>()
+            {
+                panelDiagram1,
+                panelDiagram2,
+                panelDiagram3,
+                panelDiagram4
             };
 
             bufferArray = new List<List<object>>();
@@ -167,7 +175,6 @@ namespace CinemaTickets
 
             panelSearch.Controls.Add(ticketPanel);
             panelSearch.Controls.Remove(ticketPanel);
-
         }
         // Callback function atfer Form load
         private void Form1_Load(object sender, EventArgs e)
@@ -228,7 +235,7 @@ namespace CinemaTickets
             }
 
         }
-        // Set visible for panel
+        // Set visible for panel 1
         private void setVisible(Panel e1, Button e2)
         {
             foreach (Panel element in listPanel)
@@ -253,9 +260,8 @@ namespace CinemaTickets
                     element.Controls.Clear();
                 }
             }
-
         }
-        // Set visible for panel
+        // Set visible for panel 2
         private void setVisible(Panel e)
         {
             foreach (Panel element in listPanel)
@@ -266,6 +272,16 @@ namespace CinemaTickets
             foreach (Button element in listButtonInLeftMenu)
             {
                 element.Controls.Clear();
+            }
+
+        }
+        // Set visible for panel 3
+        private void setVisible(Panel e, List<Panel> listPanelToHide)
+        {
+            labelTitlePanelStatisticsAndReports.Visible = false;
+            foreach (Panel element in listPanelToHide)
+            {
+                element.Visible = (element == e) ? true : false;
             }
 
         }
@@ -874,12 +890,17 @@ namespace CinemaTickets
         private void menuButtonReturnTickets_Click(object sender, EventArgs e) => setVisible(searchTicket, menuButtonReturnTickets);
         private void buttonSearchTicketUID_Click(object sender, EventArgs e) => searchTicketUID();
         private void buttonReturnTicketUID_Click(object sender, EventArgs e) => returnTicketUID();
-
         private void labelHelper_MouseHover(object sender, EventArgs e) => toggleHelper(true);
         private void labelHelper_MouseLeave(object sender, EventArgs e) => toggleHelper(false);
 
         // Panel Add new data
         private void menuButtonAdd_Click(object sender, EventArgs e) => setVisible(panelAdd, menuButtonAdd);
+
+        private void buttonExportExcel_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void buttonAddFilm_Click(object sender, EventArgs e)
         {
             AddFilms newForm = new AddFilms();
@@ -914,6 +935,102 @@ namespace CinemaTickets
         {
             AddProductionCountriesToFilm newForm = new AddProductionCountriesToFilm();
             newForm.Show();
+        }
+
+        // Panel statistic and reports
+        private void buttonDiagram1_Click(object sender, EventArgs e)
+        {
+            setVisible(panelDiagram1, listPanelDiagram);
+
+            List<List<object>> result =  objectDataBase.DiagramFilmYear();
+
+            pieChart1.Series = new SeriesCollection();
+
+            pieChart1.LegendLocation = LegendLocation.Top;
+
+            Func<ChartPoint, string> labelPoint = chartPoint =>
+                string.Format("{0} film(s)", chartPoint.Y, chartPoint.Participation);
+
+            foreach (List<object> element in result)
+            {
+                pieChart1.Series.Add(
+                    new PieSeries
+                    {
+                        Title = element[0].ToString() + " год",
+                        Values = new ChartValues<int> { Convert.ToInt32(element[1]) },
+                        DataLabels = true,
+                        LabelPoint = labelPoint
+                    }
+                );
+            }
+        }
+        private void buttonDiagram2_Click(object sender, EventArgs e)
+        {
+            setVisible(panelDiagram2, listPanelDiagram);
+            List<List<object>> result =  objectDataBase.DiagramFilmGener();
+            
+            foreach (List<object> element in result)
+            {
+
+            }
+
+            int a = Convert.ToInt32(result[0][0]);
+
+            ChartValues<int> aaa = new ChartValues<int>() { a };
+
+            cartesianDiagram2.Series = new SeriesCollection() {
+                new StackedColumnSeries
+                {
+                    Values = aaa,
+                    StackMode = StackMode.Values,
+                    DataLabels = true
+                }
+            };
+
+            cartesianDiagram2.AxisX.Add(
+                new Axis
+                {
+                    Title = "Browser",
+                    Labels = new[] { "Chrome", "Mozilla", "Opera", "IE" },
+                    Separator = DefaultAxes.CleanSeparator
+                }
+            );
+
+            cartesianDiagram2.AxisY.Add(
+                new Axis
+                {
+                    Title = "Количество фильмов",
+                    LabelFormatter = value => value.ToString()
+                }
+            );
+        }
+
+        private void buttonDiagram3_Click(object sender, EventArgs e) => setVisible(panelDiagram3, listPanelDiagram);
+        private void buttonDiagram4_Click(object sender, EventArgs e)
+        {
+            setVisible(panelDiagram4, listPanelDiagram);
+
+            List<List<object>> result =  objectDataBase.DiagramAgeLimit();
+
+            pieChart4.Series = new SeriesCollection();
+
+            pieChart4.LegendLocation = LegendLocation.Top;
+
+            Func<ChartPoint, string> labelPoint = chartPoint =>
+                string.Format("{0} film(s)", chartPoint.Y, chartPoint.Participation);
+
+            foreach (List<object> element in result)
+            {
+                pieChart4.Series.Add(
+                    new PieSeries
+                    {
+                        Title = element[0].ToString() + "+",
+                        Values = new ChartValues<int> { Convert.ToInt32(element[1]) },
+                        DataLabels = true,
+                        LabelPoint = labelPoint
+                    }
+                );
+            }
         }
 
         // Button Exit
