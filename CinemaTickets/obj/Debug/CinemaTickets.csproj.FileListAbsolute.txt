@@ -20,3 +20,13 @@ C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.
 C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.AddProductionCountriesToFilm.resources
 C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.AddProductionCountries.resources
 C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.AddHalls.resources
+C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\bin\Debug\LiveCharts.dll
+C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\bin\Debug\LiveCharts.pdb
+C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\bin\Debug\LiveCharts.xml
+C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\dmitr\source\repos\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.csproj.ResolveComReference.cache
