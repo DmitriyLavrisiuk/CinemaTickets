@@ -66,13 +66,29 @@ BEGIN TRY
 
 		/* Sessions_list */
 		INSERT INTO Sessions_list (id_film, id_hall, date_time_session) VALUES
-		(1, 1, '01/01/2019 10:00');
+		(1, 1, '03/02/2019 10:00');
 		INSERT INTO Sessions_list (id_film, id_hall, date_time_session) VALUES
-		(2, 1, '01/01/2019 13:00');
+		(2, 1, '03/02/2019 13:00');
 		INSERT INTO Sessions_list (id_film, id_hall, date_time_session) VALUES
-		(3, 1, '01/01/2019 17:00');
+		(3, 1, '04/02/2019 17:00');
 		INSERT INTO Sessions_list (id_film, id_hall, date_time_session) VALUES
-		(4, 1, '01/01/2019 20:00');
+		(4, 2, '05/02/2019 20:00');
+		INSERT INTO Sessions_list (id_film, id_hall, date_time_session) VALUES
+		(5, 3, '06/02/2019 20:00');
+		INSERT INTO Sessions_list (id_film, id_hall, date_time_session) VALUES
+		(6, 4, '06/02/2019 10:00');
+		INSERT INTO Sessions_list (id_film, id_hall, date_time_session) VALUES
+		(7, 5, '01/01/2019 14:00');
+		INSERT INTO Sessions_list (id_film, id_hall, date_time_session) VALUES
+		(8, 3, '07/02/2019 22:00');
+		INSERT INTO Sessions_list (id_film, id_hall, date_time_session) VALUES
+		(9, 6, '07/02/2019 19:00');
+		INSERT INTO Sessions_list (id_film, id_hall, date_time_session) VALUES
+		(10, 7, '01/01/2019 16:00');
+		INSERT INTO Sessions_list (id_film, id_hall, date_time_session) VALUES
+		(11, 8, '08/02/2019 13:00');
+		INSERT INTO Sessions_list (id_film, id_hall, date_time_session) VALUES
+		(12, 8, '08/02/2019 10:00');
 		PRINT 'INSERT INTO Sessions_list'
 
 		/* Hall_type */

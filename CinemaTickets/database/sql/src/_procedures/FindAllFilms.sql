@@ -14,6 +14,7 @@ AS
 		SELECT count(DISTINCT (Films.id))
 		FROM Films
 		JOIN Sessions_list ON Films.id = Sessions_list.id_film
+		WHERE Sessions_list.date_time_session >= CONVERT (smalldatetime, CURRENT_TIMESTAMP) 
 	)
 
 	if(@page_number = 1)
@@ -34,6 +35,7 @@ AS
 	FROM Films
 	JOIN Sessions_list ON Films.id = Sessions_list.id_film
 	WHERE Films.id = Sessions_list.id_film
+		AND Sessions_list.date_time_session >= CONVERT (smalldatetime, CURRENT_TIMESTAMP) 
 	GROUP BY 
 		Films.id,
 		Films.film_name,

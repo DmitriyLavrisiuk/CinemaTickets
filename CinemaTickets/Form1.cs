@@ -293,7 +293,7 @@ namespace CinemaTickets
                 listPictureBox[i].Location = new Point(x, y);
                 listPictureBox[i].SizeMode = PictureBoxSizeMode.StretchImage;
                 listPictureBox[i].BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                listPictureBox[i].Cursor = System.Windows.Forms.Cursors.Hand;
+                listPictureBox[i].Cursor = Cursors.Hand;
 
                 listLabelFilmName[i].Text = "[Film name]";
                 listLabelFilmName[i].ForeColor = Color.FromArgb(0, 0, 0);
@@ -661,7 +661,7 @@ namespace CinemaTickets
             }
             else
             {
-                MessageBox.Show("Сеансов на данный фильм нет!");
+                MessageBox.Show("К сожалению сеансы на данный фильм отсутствуют!");
             }
         }
         private void comboBoxSessionList_SelectedIndexChanged(object sender, EventArgs e)
@@ -743,16 +743,62 @@ namespace CinemaTickets
         }
         private void buttonBuyTicket_Click(object sender, EventArgs e)
         {
-            objectDataBase.BuyTicket(
+            List<object> result = objectDataBase.BuyTicket(
                 Convert.ToInt32(reserveTicketHall.Text),
                 reserveTicketDate.Text,
                 Convert.ToInt32(reserveTicketPlace.Text)
             );
-
-            MessageBox.Show("Билет приобретен!");
+            
+            MessageBox.Show("Билет успешно приобретен!" +
+                ((checkBoxPrintTicket.Checked)
+                ? "\nЭлектронная версия будет экспортированна Excel файл."
+                : "")
+            );
             panelBuyTicket.Visible =
             reserveTicketPanel.Visible =
             buttonBuyTicket.Visible = false;
+
+            if (checkBoxPrintTicket.Checked)
+            {
+                Microsoft.Office.Interop.Excel.Application ObjExcelTicket = new Microsoft.Office.Interop.Excel.Application();
+                Microsoft.Office.Interop.Excel.Workbook ObjWorkBookTicket;
+                Microsoft.Office.Interop.Excel.Worksheet ObjWorkSheetTicket;
+
+                //Книга
+                ObjWorkBookTicket = ObjExcelTicket.Workbooks.Add(System.Reflection.Missing.Value);
+                //Таблица
+                ObjWorkSheetTicket = (Microsoft.Office.Interop.Excel.Worksheet)ObjWorkBookTicket.Sheets[1];
+                ObjWorkSheetTicket.Name = "Электронный билет";
+                
+                setRangeStyle(ObjWorkSheetTicket, "A1", "B7", true);
+                setRangeStyle(ObjWorkSheetTicket, "A2", "B6", false);
+                ObjWorkSheetTicket.Range["A1"].Font.Bold = true;
+                ObjWorkSheetTicket.Range["A1"].Cells.Interior.Color =
+                ObjWorkSheetTicket.Range["A7"].Cells.Interior.Color = Color.FromArgb(255, 217, 102);
+                ObjWorkSheetTicket.Range["A2", "B6"].Cells.Interior.Color = Color.FromArgb(255, 242, 204);
+
+                ObjWorkSheetTicket.Range["A1", "B1"].Cells.Merge(Type.Missing);
+                ObjWorkSheetTicket.Cells[1, 1] = "Электронный билет";
+                ObjWorkSheetTicket.Cells[2, 1] = "Фильм: ";
+                ObjWorkSheetTicket.Cells[2, 2] = reserveTicketNameFilm.Text;
+                ObjWorkSheetTicket.Cells[3, 1] = "Дата: ";
+                ObjWorkSheetTicket.Cells[3, 2] = result[2].ToString();
+                ObjWorkSheetTicket.Cells[4, 1] = "Зал: ";
+                ObjWorkSheetTicket.Cells[4, 2] = result[0].ToString();
+                ObjWorkSheetTicket.Cells[5, 1] = "Место: ";
+                ObjWorkSheetTicket.Cells[5, 2] = result[1].ToString();
+                ObjWorkSheetTicket.Cells[6, 1] = "Цена билета: ";
+                ObjWorkSheetTicket.Cells[6, 2] = result[3].ToString() + " руб.";
+                ObjWorkSheetTicket.Range["A7", "B7"].Cells.Merge(Type.Missing);
+                ObjWorkSheetTicket.Cells[7, 1] = "UID: " + result[4].ToString();
+                
+                ObjWorkSheetTicket.Columns[1].ColumnWidth = 15;
+                ObjWorkSheetTicket.Columns[2].ColumnWidth = 35;
+
+                ObjExcelTicket.Visible = true;
+                ObjExcelTicket.UserControl = true;
+            }
+            checkBoxPrintTicket.Checked = false;
         }
 
         // Panel StatisticsAndReport
@@ -874,8 +920,8 @@ namespace CinemaTickets
                 ObjWorkSheet.Cells[y, x + 1] = element[1].ToString();
                 y++;
             }
-            ObjWorkSheet.Range["A3", "B" + y.ToString()].Cells.Interior.Color = Color.FromArgb(255, 242, 204);
-            setRangeStyle(ObjWorkSheet, "A3", "B" + y.ToString(), false);
+            ObjWorkSheet.Range["A3", "B" + (y - 1).ToString()].Cells.Interior.Color = Color.FromArgb(255, 242, 204);
+            setRangeStyle(ObjWorkSheet, "A3", "B" + (y - 1).ToString(), false);
 
             ObjWorkSheet.Range["C2", "D2"].Cells.Merge(Type.Missing);
             ObjWorkSheet.Cells[2, 3] = "Фильмы по жанрам";
@@ -890,24 +936,24 @@ namespace CinemaTickets
                 ObjWorkSheet.Cells[y, x + 1] = element[1].ToString();
                 y++;
             }
-            ObjWorkSheet.Range["C3", "D" + y.ToString()].Cells.Interior.Color = Color.FromArgb(221, 235, 247);
-            setRangeStyle(ObjWorkSheet, "C3", "D" + y.ToString(), false);
+            ObjWorkSheet.Range["C3", "D" + (y - 1).ToString()].Cells.Interior.Color = Color.FromArgb(221, 235, 247);
+            setRangeStyle(ObjWorkSheet, "C3", "D" + (y - 1).ToString(), false);
 
             ObjWorkSheet.Range["E2", "F2"].Cells.Merge(Type.Missing);
             ObjWorkSheet.Cells[2, 5] = "Фильмы по возр. ограничение";
             ObjWorkSheet.Cells[3, 5] = "Возраст";
             ObjWorkSheet.Cells[3, 6] = "Кол. фильмов";
-            result = objectDataBase.DiagramFilmGener();
+            result = objectDataBase.DiagramAgeLimit();
             y = 4;
             x = 5;
             foreach (List<object> element in result)
             {
-                ObjWorkSheet.Cells[y, x] = element[0].ToString();
+                ObjWorkSheet.Cells[y, x] = element[0].ToString() + "+";
                 ObjWorkSheet.Cells[y, x + 1] = element[1].ToString();
                 y++;
             }
-            ObjWorkSheet.Range["E3", "F" + y.ToString()].Cells.Interior.Color = Color.FromArgb(226, 239, 218);
-            setRangeStyle(ObjWorkSheet, "E3", "F" + y.ToString(), false);
+            ObjWorkSheet.Range["E3", "F" + (y - 1).ToString()].Cells.Interior.Color = Color.FromArgb(226, 239, 218);
+            setRangeStyle(ObjWorkSheet, "E3", "F" + (y-1).ToString(), false);
             
             for (int i = 1; i <= 6; i++)
             {
@@ -942,6 +988,16 @@ namespace CinemaTickets
                 case -1: settings[3] -= 1; break;
             }
 
+            if(filter_textBoxDescription.Text.Length > 0)
+            {
+                filter_textBoxDescription.Text = "%" + filter_textBoxDescription.Text + "%";
+            }
+
+            if (filter_textBoxSlogan.Text.Length > 0)
+            {
+                filter_textBoxSlogan.Text = "%" + filter_textBoxSlogan.Text + "%";
+            }
+
             List<List<object>> queryRes = objectDataBase.FindFilmsByAllFilters(
                 settings[2],
                 settings[3],
@@ -953,7 +1009,7 @@ namespace CinemaTickets
                 filter_textBoxSlogan.Text,
                 filter_comboBoxGener.SelectedItem.ToString(),
                 filter_comboBoxCountry.SelectedItem.ToString());
-
+            
             for (short i = 0; i < settings[2]; i++)
             {
                 if (i < queryRes.Count - 1)
@@ -1049,10 +1105,14 @@ namespace CinemaTickets
         private void buttonSearchByAllFilters_Click(object sender, EventArgs e) => loadFilmsToPanelSearchFilms(0);
         private void buttonBackPage_Click(object sender, EventArgs e) => loadFilmsToPanelSearchFilms(-1);
         private void buttonNextPage_Click(object sender, EventArgs e) => loadFilmsToPanelSearchFilms(1);
+        private void filter_textBoxDescription_Enter(object sender, EventArgs e) => filter_textBoxDescription.Text = "";
+        private void filter_textBoxSlogan_Enter(object sender, EventArgs e) => filter_textBoxSlogan.Text = "";
 
         // Panel return ticket
         private void menuButtonReturnTickets_Click(object sender, EventArgs e) => setVisible(searchTicket, menuButtonReturnTickets);
         private void buttonSearchTicketUID_Click(object sender, EventArgs e) => searchTicketUID();
+        
+
         private void buttonReturnTicketUID_Click(object sender, EventArgs e) => returnTicketUID();
         private void labelHelper_MouseHover(object sender, EventArgs e) => toggleHelper(true);
         private void labelHelper_MouseLeave(object sender, EventArgs e) => toggleHelper(false);

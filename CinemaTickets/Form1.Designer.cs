@@ -131,6 +131,7 @@
             this.buttonDiagram1 = new MetroFramework.Controls.MetroButton();
             this.ViewPanelStatisticsAndReports = new System.Windows.Forms.Panel();
             this.panelDiagram2 = new System.Windows.Forms.Panel();
+            this.pieChart2 = new LiveCharts.WinForms.PieChart();
             this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             this.panelDiagram1 = new System.Windows.Forms.Panel();
             this.pieChart1 = new LiveCharts.WinForms.PieChart();
@@ -204,7 +205,7 @@
             this.titlePanelReturnTickets = new MetroFramework.Controls.MetroLabel();
             this.textBoxUID = new System.Windows.Forms.TextBox();
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
-            this.pieChart2 = new LiveCharts.WinForms.PieChart();
+            this.checkBoxPrintTicket = new MetroFramework.Controls.MetroCheckBox();
             this.panelMainMenu.SuspendLayout();
             this.panelFilms.SuspendLayout();
             this.panelBuyTicket.SuspendLayout();
@@ -385,6 +386,7 @@
             // 
             this.reserveTicketPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.reserveTicketPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.reserveTicketPanel.Controls.Add(this.checkBoxPrintTicket);
             this.reserveTicketPanel.Controls.Add(this.buttonBuyTicket);
             this.reserveTicketPanel.Controls.Add(this.reserveTicketLength);
             this.reserveTicketPanel.Controls.Add(this.reserveTicketAgeLimit);
@@ -407,9 +409,9 @@
             // buttonBuyTicket
             // 
             this.buttonBuyTicket.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonBuyTicket.Location = new System.Drawing.Point(5, 164);
+            this.buttonBuyTicket.Location = new System.Drawing.Point(3, 164);
             this.buttonBuyTicket.Name = "buttonBuyTicket";
-            this.buttonBuyTicket.Size = new System.Drawing.Size(225, 29);
+            this.buttonBuyTicket.Size = new System.Drawing.Size(183, 32);
             this.buttonBuyTicket.Style = MetroFramework.MetroColorStyle.Lime;
             this.buttonBuyTicket.TabIndex = 9;
             this.buttonBuyTicket.Text = "Купить";
@@ -423,7 +425,7 @@
             this.reserveTicketLength.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(23)))), ((int)(((byte)(79)))));
             this.reserveTicketLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reserveTicketLength.ForeColor = System.Drawing.Color.White;
-            this.reserveTicketLength.Location = new System.Drawing.Point(317, 181);
+            this.reserveTicketLength.Location = new System.Drawing.Point(317, 182);
             this.reserveTicketLength.Name = "reserveTicketLength";
             this.reserveTicketLength.Size = new System.Drawing.Size(68, 16);
             this.reserveTicketLength.TabIndex = 12;
@@ -435,7 +437,7 @@
             this.reserveTicketAgeLimit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(23)))), ((int)(((byte)(79)))));
             this.reserveTicketAgeLimit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reserveTicketAgeLimit.ForeColor = System.Drawing.Color.White;
-            this.reserveTicketAgeLimit.Location = new System.Drawing.Point(237, 2);
+            this.reserveTicketAgeLimit.Location = new System.Drawing.Point(237, 1);
             this.reserveTicketAgeLimit.Name = "reserveTicketAgeLimit";
             this.reserveTicketAgeLimit.Size = new System.Drawing.Size(51, 16);
             this.reserveTicketAgeLimit.TabIndex = 11;
@@ -1576,6 +1578,14 @@
             this.panelDiagram2.TabIndex = 56;
             this.panelDiagram2.Visible = false;
             // 
+            // pieChart2
+            // 
+            this.pieChart2.Location = new System.Drawing.Point(19, 78);
+            this.pieChart2.Name = "pieChart2";
+            this.pieChart2.Size = new System.Drawing.Size(715, 431);
+            this.pieChart2.TabIndex = 3;
+            this.pieChart2.Text = "pieChart2";
+            // 
             // metroLabel14
             // 
             this.metroLabel14.Cursor = System.Windows.Forms.Cursors.Help;
@@ -1959,6 +1969,7 @@
             this.filter_textBoxSlogan.Name = "filter_textBoxSlogan";
             this.filter_textBoxSlogan.Size = new System.Drawing.Size(160, 29);
             this.filter_textBoxSlogan.TabIndex = 43;
+            this.filter_textBoxSlogan.Enter += new System.EventHandler(this.filter_textBoxSlogan_Enter);
             // 
             // metroLabel11
             // 
@@ -1984,6 +1995,7 @@
             this.filter_textBoxDescription.Name = "filter_textBoxDescription";
             this.filter_textBoxDescription.Size = new System.Drawing.Size(161, 29);
             this.filter_textBoxDescription.TabIndex = 44;
+            this.filter_textBoxDescription.Enter += new System.EventHandler(this.filter_textBoxDescription_Enter);
             // 
             // labelCountResults
             // 
@@ -2501,13 +2513,21 @@
             this.metroToolTip1.Style = MetroFramework.MetroColorStyle.White;
             this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
-            // pieChart2
+            // checkBoxPrintTicket
             // 
-            this.pieChart2.Location = new System.Drawing.Point(19, 78);
-            this.pieChart2.Name = "pieChart2";
-            this.pieChart2.Size = new System.Drawing.Size(715, 431);
-            this.pieChart2.TabIndex = 3;
-            this.pieChart2.Text = "pieChart2";
+            this.checkBoxPrintTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.checkBoxPrintTicket.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBoxPrintTicket.CustomBackground = true;
+            this.checkBoxPrintTicket.CustomForeColor = true;
+            this.checkBoxPrintTicket.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.checkBoxPrintTicket.Location = new System.Drawing.Point(192, 164);
+            this.checkBoxPrintTicket.Name = "checkBoxPrintTicket";
+            this.checkBoxPrintTicket.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkBoxPrintTicket.Size = new System.Drawing.Size(40, 32);
+            this.checkBoxPrintTicket.TabIndex = 13;
+            this.checkBoxPrintTicket.Text = "Чек";
+            this.checkBoxPrintTicket.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxPrintTicket.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
@@ -2515,12 +2535,12 @@
             this.ClientSize = new System.Drawing.Size(965, 600);
             this.ControlBox = false;
             this.Controls.Add(this.panelMainMenu);
+            this.Controls.Add(this.panelSearch);
+            this.Controls.Add(this.panelMainScreen);
             this.Controls.Add(this.panelStatisticsAndReports);
             this.Controls.Add(this.panelFilms);
             this.Controls.Add(this.panelAdd);
             this.Controls.Add(this.searchTicket);
-            this.Controls.Add(this.panelSearch);
-            this.Controls.Add(this.panelMainScreen);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
@@ -2735,6 +2755,7 @@
         private LiveCharts.WinForms.PieChart pieChart1;
         private LiveCharts.WinForms.PieChart pieChart4;
         private LiveCharts.WinForms.PieChart pieChart2;
+        private MetroFramework.Controls.MetroCheckBox checkBoxPrintTicket;
     }
 }
 

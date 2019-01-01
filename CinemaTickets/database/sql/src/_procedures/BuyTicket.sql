@@ -20,4 +20,13 @@ AS
 	)
 	INSERT INTO Tickets (id_session, number_place)
 	VALUES (@id_session, @number_place)
+
+	SELECT TOP 1
+		id_session,
+		number_place,
+		date_time_session,
+		price,
+		unique_id_tickets
+	FROM Tickets
+	ORDER BY id DESC
 GO
