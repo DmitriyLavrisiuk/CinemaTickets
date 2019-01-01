@@ -12,9 +12,6 @@ namespace CinemaTickets
 {
     public partial class MainForm : MetroForm
     {
-        private Application application;
-        private Microsoft.Office.Interop.Excel.Workbook workBook;
-        private Microsoft.Office.Interop.Excel.Worksheet worksheet;
         // Object for work with CinemaTickets objectDataBase
         private readonly CinemaTickets_functionality objectDataBase;
         // List panel for content 
@@ -102,7 +99,6 @@ namespace CinemaTickets
             {
                 panelDiagram1,
                 panelDiagram2,
-                panelDiagram3,
                 panelDiagram4
             };
 
@@ -760,7 +756,175 @@ namespace CinemaTickets
         }
 
         // Panel StatisticsAndReport
+        private void buttonDiagram1_Click(object sender, EventArgs e)
+        {
+            setVisible(panelDiagram1, listPanelDiagram);
+
+            List<List<object>> result =  objectDataBase.DiagramFilmYear();
+
+            pieChart1.Series = new SeriesCollection();
+
+            pieChart1.LegendLocation = LegendLocation.Top;
+
+            Func<ChartPoint, string> labelPoint = chartPoint =>
+                string.Format("{0} film(s)", chartPoint.Y, chartPoint.Participation);
+
+            foreach (List<object> element in result)
+            {
+                pieChart1.Series.Add(
+                    new PieSeries
+                    {
+                        Title = element[0].ToString() + " год",
+                        Values = new ChartValues<int> { Convert.ToInt32(element[1]) },
+                        DataLabels = true,
+                        LabelPoint = labelPoint
+                    }
+                );
+            }
+        }
+        private void buttonDiagram2_Click(object sender, EventArgs e)
+        {
+            setVisible(panelDiagram2, listPanelDiagram);
+            List<List<object>> result =  objectDataBase.DiagramFilmGener();
+
+            pieChart2.Series = new SeriesCollection();
+
+            pieChart2.LegendLocation = LegendLocation.Top;
+
+            Func<ChartPoint, string> labelPoint = chartPoint =>
+                string.Format("{0}", chartPoint.Y, chartPoint.Participation);
+
+            foreach (List<object> element in result)
+            {
+                pieChart2.Series.Add(
+                    new PieSeries
+                    {
+                        Title = element[0].ToString(),
+                        Values = new ChartValues<int> { Convert.ToInt32(element[1]) },
+                        DataLabels = true,
+                        LabelPoint = labelPoint
+                    }
+                );
+            }
+
+        }
+        private void buttonDiagram4_Click(object sender, EventArgs e)
+        {
+            setVisible(panelDiagram4, listPanelDiagram);
+
+            List<List<object>> result =  objectDataBase.DiagramAgeLimit();
+
+            pieChart4.Series = new SeriesCollection();
+
+            pieChart4.LegendLocation = LegendLocation.Top;
+
+            Func<ChartPoint, string> labelPoint = chartPoint =>
+                string.Format("{0} film(s)", chartPoint.Y, chartPoint.Participation);
+
+            foreach (List<object> element in result)
+            {
+                pieChart4.Series.Add(
+                    new PieSeries
+                    {
+                        Title = element[0].ToString() + "+",
+                        Values = new ChartValues<int> { Convert.ToInt32(element[1]) },
+                        DataLabels = true,
+                        LabelPoint = labelPoint
+                    }
+                );
+            }
+        }
         private void menuButtonStatisticsAndReport_Click(object sender, EventArgs e) => setVisible(panelStatisticsAndReports, menuButtonStatisticsAndReports);
+        private void buttonExportExcel_Click(object sender, EventArgs e)
+        {
+            List<List<object>> result;
+            int y = 4, x = 1;
+
+            Microsoft.Office.Interop.Excel.Application ObjExcel = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook ObjWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet ObjWorkSheet;
+
+            //Книга
+            ObjWorkBook = ObjExcel.Workbooks.Add(System.Reflection.Missing.Value);
+            //Таблица
+            ObjWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)ObjWorkBook.Sheets[1];
+            ObjWorkSheet.Name = "Статистика и отчеты";
+
+            // Выделяем диапазон ячеек и обединяем
+            ObjWorkSheet.Range["A1", "F1"].Cells.Merge(Type.Missing);
+            ObjWorkSheet.Cells[1, 1] = "CinemaTickets - Статистика и отчеты";
+
+            ObjWorkSheet.Range["A1", "F3"].Font.Bold = true;
+            ObjWorkSheet.Range["A1", "F3"].Cells.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            ObjWorkSheet.Range["A1", "F3"].Cells.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
+            setRangeStyle(ObjWorkSheet, "A1", "F3", true);
+            ObjWorkSheet.Range["A1"].Cells.Interior.Color = Color.FromArgb(255, 255, 255);
+            ObjWorkSheet.Range["A2"].Cells.Interior.Color = Color.FromArgb(255, 217, 102);
+            ObjWorkSheet.Range["C2"].Cells.Interior.Color = Color.FromArgb(142, 169, 219);
+            ObjWorkSheet.Range["E2"].Cells.Interior.Color = Color.FromArgb(169, 208, 142);
+
+            ObjWorkSheet.Range["A2", "B2"].Cells.Merge(Type.Missing);
+            ObjWorkSheet.Cells[2, 1] = "Количество фильмов по годам";
+            ObjWorkSheet.Cells[3, 1] = "Год";
+            ObjWorkSheet.Cells[3, 2] = "Кол. фильмов";
+            result = objectDataBase.DiagramFilmYear();
+            foreach (List<object> element in result)
+            {
+                ObjWorkSheet.Cells[y, x] = element[0].ToString();
+                ObjWorkSheet.Cells[y, x + 1] = element[1].ToString();
+                y++;
+            }
+            ObjWorkSheet.Range["A3", "B" + y.ToString()].Cells.Interior.Color = Color.FromArgb(255, 242, 204);
+            setRangeStyle(ObjWorkSheet, "A3", "B" + y.ToString(), false);
+
+            ObjWorkSheet.Range["C2", "D2"].Cells.Merge(Type.Missing);
+            ObjWorkSheet.Cells[2, 3] = "Фильмы по жанрам";
+            ObjWorkSheet.Cells[3, 3] = "Жанр";
+            ObjWorkSheet.Cells[3, 4] = "Кол. фильмов";
+            result = objectDataBase.DiagramFilmGener();
+            y = 4;
+            x = 3;
+            foreach (List<object> element in result)
+            {
+                ObjWorkSheet.Cells[y, x] = element[0].ToString();
+                ObjWorkSheet.Cells[y, x + 1] = element[1].ToString();
+                y++;
+            }
+            ObjWorkSheet.Range["C3", "D" + y.ToString()].Cells.Interior.Color = Color.FromArgb(221, 235, 247);
+            setRangeStyle(ObjWorkSheet, "C3", "D" + y.ToString(), false);
+
+            ObjWorkSheet.Range["E2", "F2"].Cells.Merge(Type.Missing);
+            ObjWorkSheet.Cells[2, 5] = "Фильмы по возр. ограничение";
+            ObjWorkSheet.Cells[3, 5] = "Возраст";
+            ObjWorkSheet.Cells[3, 6] = "Кол. фильмов";
+            result = objectDataBase.DiagramFilmGener();
+            y = 4;
+            x = 5;
+            foreach (List<object> element in result)
+            {
+                ObjWorkSheet.Cells[y, x] = element[0].ToString();
+                ObjWorkSheet.Cells[y, x + 1] = element[1].ToString();
+                y++;
+            }
+            ObjWorkSheet.Range["E3", "F" + y.ToString()].Cells.Interior.Color = Color.FromArgb(226, 239, 218);
+            setRangeStyle(ObjWorkSheet, "E3", "F" + y.ToString(), false);
+            
+            for (int i = 1; i <= 6; i++)
+            {
+                ObjWorkSheet.Columns[i].ColumnWidth = 20;
+            }
+
+            ObjExcel.Visible = true;
+            ObjExcel.UserControl = true;
+        }
+        private void setRangeStyle(Microsoft.Office.Interop.Excel.Worksheet element, string x, string y, bool textAligmentCenter)
+        {
+            element.Range[x, y].Cells.HorizontalAlignment = (textAligmentCenter)
+                ? Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter
+                : Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
+            element.Range[x, y].Cells.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
+            element.Range[x, y].Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+        }
 
         // Panel Search
         private void menuButtonSearch_Click(object sender, EventArgs e) => setVisible(panelSearch, menuButtonSearch);
@@ -895,12 +1059,6 @@ namespace CinemaTickets
 
         // Panel Add new data
         private void menuButtonAdd_Click(object sender, EventArgs e) => setVisible(panelAdd, menuButtonAdd);
-
-        private void buttonExportExcel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonAddFilm_Click(object sender, EventArgs e)
         {
             AddFilms newForm = new AddFilms();
@@ -935,102 +1093,6 @@ namespace CinemaTickets
         {
             AddProductionCountriesToFilm newForm = new AddProductionCountriesToFilm();
             newForm.Show();
-        }
-
-        // Panel statistic and reports
-        private void buttonDiagram1_Click(object sender, EventArgs e)
-        {
-            setVisible(panelDiagram1, listPanelDiagram);
-
-            List<List<object>> result =  objectDataBase.DiagramFilmYear();
-
-            pieChart1.Series = new SeriesCollection();
-
-            pieChart1.LegendLocation = LegendLocation.Top;
-
-            Func<ChartPoint, string> labelPoint = chartPoint =>
-                string.Format("{0} film(s)", chartPoint.Y, chartPoint.Participation);
-
-            foreach (List<object> element in result)
-            {
-                pieChart1.Series.Add(
-                    new PieSeries
-                    {
-                        Title = element[0].ToString() + " год",
-                        Values = new ChartValues<int> { Convert.ToInt32(element[1]) },
-                        DataLabels = true,
-                        LabelPoint = labelPoint
-                    }
-                );
-            }
-        }
-        private void buttonDiagram2_Click(object sender, EventArgs e)
-        {
-            setVisible(panelDiagram2, listPanelDiagram);
-            List<List<object>> result =  objectDataBase.DiagramFilmGener();
-            
-            foreach (List<object> element in result)
-            {
-
-            }
-
-            int a = Convert.ToInt32(result[0][0]);
-
-            ChartValues<int> aaa = new ChartValues<int>() { a };
-
-            cartesianDiagram2.Series = new SeriesCollection() {
-                new StackedColumnSeries
-                {
-                    Values = aaa,
-                    StackMode = StackMode.Values,
-                    DataLabels = true
-                }
-            };
-
-            cartesianDiagram2.AxisX.Add(
-                new Axis
-                {
-                    Title = "Browser",
-                    Labels = new[] { "Chrome", "Mozilla", "Opera", "IE" },
-                    Separator = DefaultAxes.CleanSeparator
-                }
-            );
-
-            cartesianDiagram2.AxisY.Add(
-                new Axis
-                {
-                    Title = "Количество фильмов",
-                    LabelFormatter = value => value.ToString()
-                }
-            );
-        }
-
-        private void buttonDiagram3_Click(object sender, EventArgs e) => setVisible(panelDiagram3, listPanelDiagram);
-        private void buttonDiagram4_Click(object sender, EventArgs e)
-        {
-            setVisible(panelDiagram4, listPanelDiagram);
-
-            List<List<object>> result =  objectDataBase.DiagramAgeLimit();
-
-            pieChart4.Series = new SeriesCollection();
-
-            pieChart4.LegendLocation = LegendLocation.Top;
-
-            Func<ChartPoint, string> labelPoint = chartPoint =>
-                string.Format("{0} film(s)", chartPoint.Y, chartPoint.Participation);
-
-            foreach (List<object> element in result)
-            {
-                pieChart4.Series.Add(
-                    new PieSeries
-                    {
-                        Title = element[0].ToString() + "+",
-                        Values = new ChartValues<int> { Convert.ToInt32(element[1]) },
-                        DataLabels = true,
-                        LabelPoint = labelPoint
-                    }
-                );
-            }
         }
 
         // Button Exit
