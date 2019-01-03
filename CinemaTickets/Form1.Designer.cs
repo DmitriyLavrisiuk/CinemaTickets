@@ -40,6 +40,7 @@
             this.panelFilms = new System.Windows.Forms.Panel();
             this.panelBuyTicket = new System.Windows.Forms.Panel();
             this.reserveTicketPanel = new System.Windows.Forms.Panel();
+            this.checkBoxPrintTicket = new MetroFramework.Controls.MetroCheckBox();
             this.buttonBuyTicket = new MetroFramework.Controls.MetroButton();
             this.reserveTicketLength = new System.Windows.Forms.Label();
             this.reserveTicketAgeLimit = new System.Windows.Forms.Label();
@@ -205,7 +206,6 @@
             this.titlePanelReturnTickets = new MetroFramework.Controls.MetroLabel();
             this.textBoxUID = new System.Windows.Forms.TextBox();
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
-            this.checkBoxPrintTicket = new MetroFramework.Controls.MetroCheckBox();
             this.panelMainMenu.SuspendLayout();
             this.panelFilms.SuspendLayout();
             this.panelBuyTicket.SuspendLayout();
@@ -405,6 +405,22 @@
             this.reserveTicketPanel.Size = new System.Drawing.Size(385, 200);
             this.reserveTicketPanel.TabIndex = 8;
             this.reserveTicketPanel.Visible = false;
+            // 
+            // checkBoxPrintTicket
+            // 
+            this.checkBoxPrintTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.checkBoxPrintTicket.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBoxPrintTicket.CustomBackground = true;
+            this.checkBoxPrintTicket.CustomForeColor = true;
+            this.checkBoxPrintTicket.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.checkBoxPrintTicket.Location = new System.Drawing.Point(192, 164);
+            this.checkBoxPrintTicket.Name = "checkBoxPrintTicket";
+            this.checkBoxPrintTicket.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkBoxPrintTicket.Size = new System.Drawing.Size(40, 32);
+            this.checkBoxPrintTicket.TabIndex = 13;
+            this.checkBoxPrintTicket.Text = "Чек";
+            this.checkBoxPrintTicket.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxPrintTicket.UseVisualStyleBackColor = false;
             // 
             // buttonBuyTicket
             // 
@@ -2513,34 +2529,18 @@
             this.metroToolTip1.Style = MetroFramework.MetroColorStyle.White;
             this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
-            // checkBoxPrintTicket
-            // 
-            this.checkBoxPrintTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.checkBoxPrintTicket.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBoxPrintTicket.CustomBackground = true;
-            this.checkBoxPrintTicket.CustomForeColor = true;
-            this.checkBoxPrintTicket.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.checkBoxPrintTicket.Location = new System.Drawing.Point(192, 164);
-            this.checkBoxPrintTicket.Name = "checkBoxPrintTicket";
-            this.checkBoxPrintTicket.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxPrintTicket.Size = new System.Drawing.Size(40, 32);
-            this.checkBoxPrintTicket.TabIndex = 13;
-            this.checkBoxPrintTicket.Text = "Чек";
-            this.checkBoxPrintTicket.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBoxPrintTicket.UseVisualStyleBackColor = false;
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(965, 600);
             this.ControlBox = false;
             this.Controls.Add(this.panelMainMenu);
+            this.Controls.Add(this.searchTicket);
             this.Controls.Add(this.panelSearch);
             this.Controls.Add(this.panelMainScreen);
             this.Controls.Add(this.panelStatisticsAndReports);
             this.Controls.Add(this.panelFilms);
             this.Controls.Add(this.panelAdd);
-            this.Controls.Add(this.searchTicket);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";

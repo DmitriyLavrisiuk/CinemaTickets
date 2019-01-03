@@ -7,6 +7,7 @@ using dbCinemaTickets;
 using LiveCharts;                   //Core of the library
 using LiveCharts.Wpf;               //The WPF controls
 using LiveCharts.WinForms;          //the WinForm wrappers
+using System.Diagnostics;
 
 namespace CinemaTickets
 {
@@ -177,6 +178,13 @@ namespace CinemaTickets
         {
             // Set settings
             setSettings();
+        }
+
+        private void helpFile()
+        {
+            Process prc = new Process(); // Объявляем объект
+            prc.StartInfo.FileName = @"Help.chm"; // Полное имя файла, включая путь к файлу, к примеру "C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\devenv.exe", не забудь про собаку "@", что бы в строку слежи можно было записывать
+            prc.Start();
         }
 
         // Set settings
@@ -607,7 +615,7 @@ namespace CinemaTickets
         }
 
         // Panel TitleMainText
-        private void labelTitleMainText_Click(object sender, EventArgs e) => setVisible(panelMainScreen);
+        private void labelTitleMainText_Click(object sender, EventArgs e) => helpFile();
 
         // Panel Films
         private void menuButtonFilms_Click(object sender, EventArgs e) => setVisible(panelFilms, menuButtonFilms);
@@ -748,7 +756,7 @@ namespace CinemaTickets
                 reserveTicketDate.Text,
                 Convert.ToInt32(reserveTicketPlace.Text)
             );
-            
+
             MessageBox.Show("Билет успешно приобретен!" +
                 ((checkBoxPrintTicket.Checked)
                 ? "\nЭлектронная версия будет экспортированна Excel файл."
@@ -769,7 +777,7 @@ namespace CinemaTickets
                 //Таблица
                 ObjWorkSheetTicket = (Microsoft.Office.Interop.Excel.Worksheet)ObjWorkBookTicket.Sheets[1];
                 ObjWorkSheetTicket.Name = "Электронный билет";
-                
+
                 setRangeStyle(ObjWorkSheetTicket, "A1", "B7", true);
                 setRangeStyle(ObjWorkSheetTicket, "A2", "B6", false);
                 ObjWorkSheetTicket.Range["A1"].Font.Bold = true;
@@ -784,14 +792,14 @@ namespace CinemaTickets
                 ObjWorkSheetTicket.Cells[3, 1] = "Дата: ";
                 ObjWorkSheetTicket.Cells[3, 2] = result[2].ToString();
                 ObjWorkSheetTicket.Cells[4, 1] = "Зал: ";
-                ObjWorkSheetTicket.Cells[4, 2] = result[0].ToString();
+                ObjWorkSheetTicket.Cells[4, 2] = reserveTicketHall.Text;
                 ObjWorkSheetTicket.Cells[5, 1] = "Место: ";
                 ObjWorkSheetTicket.Cells[5, 2] = result[1].ToString();
                 ObjWorkSheetTicket.Cells[6, 1] = "Цена билета: ";
                 ObjWorkSheetTicket.Cells[6, 2] = result[3].ToString() + " руб.";
                 ObjWorkSheetTicket.Range["A7", "B7"].Cells.Merge(Type.Missing);
                 ObjWorkSheetTicket.Cells[7, 1] = "UID: " + result[4].ToString();
-                
+
                 ObjWorkSheetTicket.Columns[1].ColumnWidth = 15;
                 ObjWorkSheetTicket.Columns[2].ColumnWidth = 35;
 
@@ -953,8 +961,8 @@ namespace CinemaTickets
                 y++;
             }
             ObjWorkSheet.Range["E3", "F" + (y - 1).ToString()].Cells.Interior.Color = Color.FromArgb(226, 239, 218);
-            setRangeStyle(ObjWorkSheet, "E3", "F" + (y-1).ToString(), false);
-            
+            setRangeStyle(ObjWorkSheet, "E3", "F" + (y - 1).ToString(), false);
+
             for (int i = 1; i <= 6; i++)
             {
                 ObjWorkSheet.Columns[i].ColumnWidth = 20;
@@ -988,7 +996,7 @@ namespace CinemaTickets
                 case -1: settings[3] -= 1; break;
             }
 
-            if(filter_textBoxDescription.Text.Length > 0)
+            if (filter_textBoxDescription.Text.Length > 0)
             {
                 filter_textBoxDescription.Text = "%" + filter_textBoxDescription.Text + "%";
             }
@@ -1009,7 +1017,7 @@ namespace CinemaTickets
                 filter_textBoxSlogan.Text,
                 filter_comboBoxGener.SelectedItem.ToString(),
                 filter_comboBoxCountry.SelectedItem.ToString());
-            
+
             for (short i = 0; i < settings[2]; i++)
             {
                 if (i < queryRes.Count - 1)
@@ -1111,8 +1119,6 @@ namespace CinemaTickets
         // Panel return ticket
         private void menuButtonReturnTickets_Click(object sender, EventArgs e) => setVisible(searchTicket, menuButtonReturnTickets);
         private void buttonSearchTicketUID_Click(object sender, EventArgs e) => searchTicketUID();
-        
-
         private void buttonReturnTicketUID_Click(object sender, EventArgs e) => returnTicketUID();
         private void labelHelper_MouseHover(object sender, EventArgs e) => toggleHelper(true);
         private void labelHelper_MouseLeave(object sender, EventArgs e) => toggleHelper(false);
