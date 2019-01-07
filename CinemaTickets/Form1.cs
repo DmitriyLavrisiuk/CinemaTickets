@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Drawing;
-using System.Windows.Forms;
-using MetroFramework.Forms;
-using System.Collections.Generic;
-using dbCinemaTickets;
-using LiveCharts;                   //Core of the library
-using LiveCharts.Wpf;               //The WPF controls
-using LiveCharts.WinForms;          //the WinForm wrappers
 using System.Diagnostics;
+using System.Windows.Forms;
+using System.Collections.Generic;
+// Other lib
+using MetroFramework.Forms;
+using LiveCharts;
+using LiveCharts.Wpf;
+using dbCinemaTickets;
 
 namespace CinemaTickets
 {
@@ -16,20 +16,19 @@ namespace CinemaTickets
         // Object for work with CinemaTickets objectDataBase
         private readonly CinemaTickets_functionality objectDataBase;
         // List panel for content 
-        private List<Panel> listPanel;
-        private List<Panel> listPanelDiagram;
+        private List<Panel>
+            listPanel,
+            listPanelDiagram;
         // List buttons in left menu
         private List<Button> listButtonInLeftMenu;
-        // List settings 
-        private List<short> settings;
-        // List for films
-        private List<PictureBox> listPictureBox;
-        private List<Label> listLabelFilmName,
-            listLabelAgeLimit,
-            listLabelLengthFilm;
-        // List for films search
-        private List<PictureBox> listPictureBoxFilmsSearch;
+        // List for films and List for films search
+        private List<PictureBox>
+            listPictureBox,
+            listPictureBoxFilmsSearch;
         private List<Label>
+            listLabelFilmName,
+            listLabelAgeLimit,
+            listLabelLengthFilm,
             listLabelNameFilmSearch,
             listLabelYearFilmSearch,
             listLabelAgeLimitFilmSearch,
@@ -40,6 +39,8 @@ namespace CinemaTickets
             listLabelGenersFilmSearch,
             listLabelProductionCountriesFilmSearch,
             listNumberPlaces;
+        // List settings 
+        private List<short> settings;
         private List<List<object>>
             bufferArray,
             placesType;
@@ -53,7 +54,6 @@ namespace CinemaTickets
             listLabelFilmName = new List<Label>();
             listLabelAgeLimit = new List<Label>();
             listLabelLengthFilm = new List<Label>();
-
             listPictureBoxFilmsSearch = new List<PictureBox>();
             listLabelNameFilmSearch = new List<Label>();
             listLabelYearFilmSearch = new List<Label>();
@@ -64,15 +64,16 @@ namespace CinemaTickets
             listLabelSloganFilmSearch = new List<Label>();
             listLabelGenersFilmSearch = new List<Label>();
             listLabelProductionCountriesFilmSearch = new List<Label>();
-            placesType = new List<List<object>>();
 
-            settings = new List<short>() {
+            placesType = new List<List<object>>();
             /*
              * settings[0] - Количество записей на странице "Фильмы"
              * settings[1] - Номер страницы результата запроса "Фильмы"
              * settings[2] - Количество записей на странице "Поиск"
              * settings[3] - Номер страницы результата запроса "Поиск"
              */
+            settings = new List<short>()
+            {
                 8, 1, 2, 1
             };
 
@@ -169,7 +170,6 @@ namespace CinemaTickets
                 place_59,
                 place_60
             };
-
             panelSearch.Controls.Add(ticketPanel);
             panelSearch.Controls.Remove(ticketPanel);
         }
@@ -179,14 +179,12 @@ namespace CinemaTickets
             // Set settings
             setSettings();
         }
-
         private void helpFile()
         {
-            Process prc = new Process(); // Объявляем объект
-            prc.StartInfo.FileName = @"Help.chm"; // Полное имя файла, включая путь к файлу, к примеру "C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\devenv.exe", не забудь про собаку "@", что бы в строку слежи можно было записывать
+            Process prc = new Process();
+            prc.StartInfo.FileName = @"Help.chm";
             prc.Start();
         }
-
         // Set settings
         private void setSettings()
         {
@@ -237,7 +235,6 @@ namespace CinemaTickets
                 element.BackColor = Color.FromArgb(57, 57, 108);
                 element.Font = new Font("Arial", 9, FontStyle.Regular);
             }
-
         }
         // Set visible for panel 1
         private void setVisible(Panel e1, Button e2)
@@ -277,7 +274,6 @@ namespace CinemaTickets
             {
                 element.Controls.Clear();
             }
-
         }
         // Set visible for panel 3
         private void setVisible(Panel e, List<Panel> listPanelToHide)
@@ -287,7 +283,6 @@ namespace CinemaTickets
             {
                 element.Visible = (element == e) ? true : false;
             }
-
         }
         // Set location and style for elements Films
         private void setStyleForElements()
@@ -300,7 +295,8 @@ namespace CinemaTickets
                 listPictureBox[i].Width = 150;
                 listPictureBox[i].Location = new Point(x, y);
                 listPictureBox[i].SizeMode = PictureBoxSizeMode.StretchImage;
-                listPictureBox[i].BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                listPictureBox[i].BorderStyle =
+                    System.Windows.Forms.BorderStyle.FixedSingle;
                 listPictureBox[i].Cursor = Cursors.Hand;
 
                 listLabelFilmName[i].Text = "[Film name]";
@@ -308,7 +304,8 @@ namespace CinemaTickets
                 listLabelFilmName[i].BackColor = Color.FromArgb(1, 0, 0, 0);
                 listLabelFilmName[i].Width = 150;
                 listLabelFilmName[i].Height = 30;
-                listLabelFilmName[i].Font = new Font("Arial", 9, FontStyle.Regular);
+                listLabelFilmName[i].Font = new Font("Arial", 9,
+                    FontStyle.Regular);
                 listLabelFilmName[i].TextAlign = ContentAlignment.MiddleCenter;
                 listLabelFilmName[i].Location = new Point(x, y + 200);
 
@@ -322,15 +319,17 @@ namespace CinemaTickets
                 listLabelAgeLimit[i].Location = new Point(x - 2, y - 2);
 
                 listLabelLengthFilm[i].Text = "124 min.";
-                listLabelLengthFilm[i].ForeColor = Color.FromArgb(255, 255, 255);
+                listLabelLengthFilm[i].ForeColor =
+                    Color.FromArgb(255, 255, 255);
                 listLabelLengthFilm[i].BackColor = Color.FromArgb(236, 23, 79);
                 listLabelLengthFilm[i].Width = 50;
                 listLabelLengthFilm[i].Height = 20;
                 listLabelLengthFilm[i].Font = new Font("Arial", 8);
-                listLabelLengthFilm[i].TextAlign = ContentAlignment.MiddleCenter;
+                listLabelLengthFilm[i].TextAlign =
+                    ContentAlignment.MiddleCenter;
                 listLabelLengthFilm[i].Location = new Point(x +
-                listPictureBox[i].Width - listLabelLengthFilm[i].Width + 2, y +
-                listPictureBox[i].Height - listLabelLengthFilm[i].Height + 2);
+                    listPictureBox[i].Width - listLabelLengthFilm[i].Width + 2, y +
+                    listPictureBox[i].Height - listLabelLengthFilm[i].Height + 2);
 
                 listLabelAgeLimit[i].Visible =
                 listLabelLengthFilm[i].Visible =
@@ -359,7 +358,8 @@ namespace CinemaTickets
                 listLabelPriceFilmSearch[i].Font =
                 listLabelYearFilmSearch[i].Font =
                 listLabelGenersFilmSearch[i].Font =
-                listLabelProductionCountriesFilmSearch[i].Font = new Font("Arial", 8, FontStyle.Regular);
+                listLabelProductionCountriesFilmSearch[i].Font =
+                    new Font("Arial", 8, FontStyle.Regular);
 
                 listLabelNameFilmSearch[i].TextAlign =
                 listLabelSloganFilmSearch[i].TextAlign =
@@ -367,72 +367,101 @@ namespace CinemaTickets
                 listLabelDescriptionFilmSearch[i].TextAlign =
                 listLabelYearFilmSearch[i].TextAlign =
                 listLabelGenersFilmSearch[i].TextAlign =
-                listLabelProductionCountriesFilmSearch[i].TextAlign = ContentAlignment.MiddleLeft;
+                listLabelProductionCountriesFilmSearch[i].TextAlign =
+                    ContentAlignment.MiddleLeft;
 
-                listPictureBoxFilmsSearch[i].BackColor = Color.FromArgb(225, 225, 225);
+                listPictureBoxFilmsSearch[i].BackColor =
+                    Color.FromArgb(225, 225, 225);
                 listPictureBoxFilmsSearch[i].Height = 200;
                 listPictureBoxFilmsSearch[i].Width = 150;
                 listPictureBoxFilmsSearch[i].Location = new Point(x, y);
-                listPictureBoxFilmsSearch[i].SizeMode = PictureBoxSizeMode.StretchImage;
-                listPictureBoxFilmsSearch[i].BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                listPictureBoxFilmsSearch[i].SizeMode =
+                    PictureBoxSizeMode.StretchImage;
+                listPictureBoxFilmsSearch[i].BorderStyle =
+                    System.Windows.Forms.BorderStyle.FixedSingle;
 
                 listLabelAgeLimitFilmSearch[i].Text = "18+";
-                listLabelAgeLimitFilmSearch[i].ForeColor = Color.FromArgb(255, 255, 255);
-                listLabelAgeLimitFilmSearch[i].BackColor = Color.FromArgb(236, 23, 79);
+                listLabelAgeLimitFilmSearch[i].ForeColor =
+                    Color.FromArgb(255, 255, 255);
+                listLabelAgeLimitFilmSearch[i].BackColor =
+                    Color.FromArgb(236, 23, 79);
                 listLabelAgeLimitFilmSearch[i].Width = 35;
                 listLabelAgeLimitFilmSearch[i].Height = 20;
                 listLabelAgeLimitFilmSearch[i].Font = new Font("Arial", 8);
-                listLabelAgeLimitFilmSearch[i].TextAlign = ContentAlignment.MiddleCenter;
+                listLabelAgeLimitFilmSearch[i].TextAlign =
+                    ContentAlignment.MiddleCenter;
                 listLabelAgeLimitFilmSearch[i].Location = new Point(x - 2, y +
-                listPictureBoxFilmsSearch[i].Height - listLabelAgeLimitFilmSearch[i].Height + 2);
+                    listPictureBoxFilmsSearch[i].Height -
+                    listLabelAgeLimitFilmSearch[i].Height + 2);
 
                 listLabelLengthFilmSearch[i].Text = "124 min.";
-                listLabelLengthFilmSearch[i].ForeColor = Color.FromArgb(255, 255, 255);
-                listLabelLengthFilmSearch[i].BackColor = Color.FromArgb(236, 23, 79);
+                listLabelLengthFilmSearch[i].ForeColor =
+                    Color.FromArgb(255, 255, 255);
+                listLabelLengthFilmSearch[i].BackColor =
+                    Color.FromArgb(236, 23, 79);
                 listLabelLengthFilmSearch[i].Width = 50;
                 listLabelLengthFilmSearch[i].Height = 20;
                 listLabelLengthFilmSearch[i].Font = new Font("Arial", 8);
-                listLabelLengthFilmSearch[i].TextAlign = ContentAlignment.MiddleCenter;
+                listLabelLengthFilmSearch[i].TextAlign =
+                    ContentAlignment.MiddleCenter;
                 listLabelLengthFilmSearch[i].Location = new Point(x +
-                listPictureBoxFilmsSearch[i].Width - listLabelLengthFilmSearch[i].Width + 2, y +
-                listPictureBoxFilmsSearch[i].Height - listLabelLengthFilmSearch[i].Height + 2);
+                    listPictureBoxFilmsSearch[i].Width -
+                    listLabelLengthFilmSearch[i].Width + 2, y +
+                    listPictureBoxFilmsSearch[i].Height -
+                    listLabelLengthFilmSearch[i].Height + 2);
 
                 listLabelNameFilmSearch[i].Text = "[Film name]";
                 listLabelNameFilmSearch[i].ForeColor = Color.FromArgb(0, 0, 0);
-                listLabelNameFilmSearch[i].BackColor = Color.FromArgb(1, 0, 0, 0);
+                listLabelNameFilmSearch[i].BackColor =
+                    Color.FromArgb(1, 0, 0, 0);
                 listLabelNameFilmSearch[i].Size = new Size(400, 15);
-                listLabelNameFilmSearch[i].Font = new Font("Arial", 10, FontStyle.Bold);
+                listLabelNameFilmSearch[i].Font =
+                    new Font("Arial", 10, FontStyle.Bold);
                 listLabelNameFilmSearch[i].Location = new Point(x +
-                listPictureBoxFilmsSearch[i].Width + 15, y);
+                    listPictureBoxFilmsSearch[i].Width + 15, y);
 
                 listLabelSloganFilmSearch[i].Size = new Size(400, 13);
                 listLabelSloganFilmSearch[i].Location = new Point(x +
-                listPictureBoxFilmsSearch[i].Width + 15, y + listLabelLengthFilmSearch[i].Height + 8);
+                    listPictureBoxFilmsSearch[i].Width + 15, y +
+                    listLabelLengthFilmSearch[i].Height + 8);
 
                 listLabelYearFilmSearch[i].Size = new Size(400, 13);
                 listLabelYearFilmSearch[i].Location = new Point(x +
-                listPictureBoxFilmsSearch[i].Width + 15, y + listLabelSloganFilmSearch[i].Height + 30);
+                    listPictureBoxFilmsSearch[i].Width + 15, y +
+                    listLabelSloganFilmSearch[i].Height + 30);
 
-                listLabelProductionCountriesFilmSearch[i].Size = new Size(400, 13);
-                listLabelProductionCountriesFilmSearch[i].TextAlign = ContentAlignment.MiddleLeft;
-                listLabelProductionCountriesFilmSearch[i].Location = new Point(x +
-                listPictureBoxFilmsSearch[i].Width + 15, y + listLabelYearFilmSearch[i].Height + 45);
+                listLabelProductionCountriesFilmSearch[i].Size =
+                    new Size(400, 13);
+                listLabelProductionCountriesFilmSearch[i].TextAlign =
+                    ContentAlignment.MiddleLeft;
+                listLabelProductionCountriesFilmSearch[i].Location =
+                    new Point(x + listPictureBoxFilmsSearch[i].Width + 15, y +
+                    listLabelYearFilmSearch[i].Height + 45);
 
                 listLabelGenersFilmSearch[i].Size = new Size(400, 13);
                 listLabelGenersFilmSearch[i].Location = new Point(x +
-                listPictureBoxFilmsSearch[i].Width + 15, y + listLabelProductionCountriesFilmSearch[i].Height + 60);
+                    listPictureBoxFilmsSearch[i].Width + 15, y +
+                    listLabelProductionCountriesFilmSearch[i].Height + 60);
 
-                listLabelPriceFilmSearch[i].ForeColor = Color.FromArgb(0, 0, 0);
-                listLabelPriceFilmSearch[i].BackColor = Color.FromArgb(245, 245, 245);
-                listLabelPriceFilmSearch[i].Size = new Size(listPictureBoxFilmsSearch[i].Width, 30);
-                listLabelPriceFilmSearch[i].Location = new Point(x, y + listPictureBoxFilmsSearch[i].Height);
-                listLabelPriceFilmSearch[i].Font = new Font("Arial", 8, FontStyle.Underline);
-                listLabelPriceFilmSearch[i].TextAlign = ContentAlignment.MiddleCenter;
+                listLabelPriceFilmSearch[i].ForeColor =
+                    Color.FromArgb(0, 0, 0);
+                listLabelPriceFilmSearch[i].BackColor =
+                    Color.FromArgb(245, 245, 245);
+                listLabelPriceFilmSearch[i].Size =
+                    new Size(listPictureBoxFilmsSearch[i].Width, 30);
+                listLabelPriceFilmSearch[i].Location =
+                    new Point(x, y + listPictureBoxFilmsSearch[i].Height);
+                listLabelPriceFilmSearch[i].Font =
+                    new Font("Arial", 8, FontStyle.Underline);
+                listLabelPriceFilmSearch[i].TextAlign =
+                    ContentAlignment.MiddleCenter;
 
                 listLabelDescriptionFilmSearch[i].Size = new Size(500, 150);
-                listLabelDescriptionFilmSearch[i].TextAlign = ContentAlignment.TopLeft;
+                listLabelDescriptionFilmSearch[i].TextAlign =
+                    ContentAlignment.TopLeft;
                 listLabelDescriptionFilmSearch[i].Location = new Point(x +
-                listPictureBoxFilmsSearch[i].Width + 15, y + listLabelGenersFilmSearch[i].Height + 75);
+                listPictureBoxFilmsSearch[i].Width + 15, y +
+                listLabelGenersFilmSearch[i].Height + 75);
 
                 listPictureBoxFilmsSearch[i].Visible =
                 listLabelNameFilmSearch[i].Visible =
@@ -510,7 +539,9 @@ namespace CinemaTickets
             ticketUID.Text = "UID: " + uid.ToString();
             ticketAgeLimit.Text = ageLimit.ToString() + "+";
             ticketLength.Text = length.ToString() + "min.";
-            ticketLength.Location = new Point(ticketPanel.Width - ticketLength.Width - 1, ticketPanel.Height - ticketLength.Height - 1);
+            ticketLength.Location = new Point(ticketPanel.Width -
+                ticketLength.Width - 1, ticketPanel.Height -
+                ticketLength.Height - 1);
             ticketImage.ImageLocation = image.ToString();
             ticketPanel.Location = new Point(x, y);
             namePanel.Controls.Add(ticketPanel);
@@ -518,10 +549,26 @@ namespace CinemaTickets
         }
         private void searchTicketUID()
         {
-            List<object> result = objectDataBase.GetAllInformationAboutTicketByUID(textBoxUID.Text);
+            List<object> result =
+                objectDataBase.GetAllInformationAboutTicketByUID(
+                    textBoxUID.Text
+                );
+
             if (result.Count != 0)
             {
-                drawTicket(result[0], result[1], result[2], result[3], result[4], result[5], result[6], result[7], result[8], panelReturnTicket, 185, 95);
+                drawTicket(
+                    result[0],
+                    result[1],
+                    result[2],
+                    result[3],
+                    result[4],
+                    result[5],
+                    result[6],
+                    result[7],
+                    result[8],
+                    panelReturnTicket,
+                    185,
+                    95);
                 panelReturnTicket.Visible = true;
             }
             else
@@ -534,7 +581,6 @@ namespace CinemaTickets
         {
             List<object> result = objectDataBase.ReturnTicket(textBoxUID.Text);
             MessageBox.Show(result[0].ToString());
-
         }
 
         // Function Panel_Films
@@ -547,7 +593,8 @@ namespace CinemaTickets
                 case -1: settings[1] -= 1; break;
             }
 
-            List<List<object>> queryRes = objectDataBase.FindAllFilms(settings[0], settings[1]);
+            List<List<object>> queryRes =
+                objectDataBase.FindAllFilms(settings[0], settings[1]);
 
             for (short i = 0; i < settings[0]; i++)
             {
@@ -574,13 +621,17 @@ namespace CinemaTickets
 
             if (queryRes.Count - 1 != 0)
             {
-                buttonSearchFilmsBack.Visible = buttonSearchFilmsNext.Visible = labelNumberPage.Visible = true;
+                buttonSearchFilmsBack.Visible =
+                buttonSearchFilmsNext.Visible =
+                labelNumberPage.Visible = true;
                 buttonSearchFilms.Width = 445;
                 titlePanelFilms.Visible = false;
 
-                int buf = (Convert.ToInt32(queryRes[queryRes.Count - 1][0]) / settings[0] == 0)
+                int buf = (Convert.ToInt32(queryRes[queryRes.Count - 1][0]) /
+                    settings[0] == 0)
                     ? 1
-                    : Convert.ToInt32(Math.Ceiling(Convert.ToDouble(queryRes[queryRes.Count - 1][0]) / settings[0]));
+                    : Convert.ToInt32(Math.Ceiling(Convert.ToDouble(
+                        queryRes[queryRes.Count - 1][0]) / settings[0]));
 
                 labelNumberPage.Text = settings[1] + " из " + buf.ToString();
                 if (buf == 1)
@@ -606,22 +657,27 @@ namespace CinemaTickets
             }
             else
             {
-                buttonSearchFilmsBack.Visible = buttonSearchFilmsNext.Visible = labelNumberPage.Visible = false;
+                buttonSearchFilmsBack.Visible = buttonSearchFilmsNext.Visible =
+                    labelNumberPage.Visible = false;
                 buttonSearchFilms.Width = 715;
                 titlePanelFilms.Text = "По вашему запросу ничего не найдено :(";
                 titlePanelFilms.Visible = true;
             }
-
         }
 
         // Panel TitleMainText
-        private void labelTitleMainText_Click(object sender, EventArgs e) => helpFile();
+        private void labelTitleMainText_Click(object sender, EventArgs e)
+            => helpFile();
 
         // Panel Films
-        private void menuButtonFilms_Click(object sender, EventArgs e) => setVisible(panelFilms, menuButtonFilms);
-        private void buttonSearchFilms_Click(object sender, EventArgs e) => loadFilmsToPanelFilms(0);
-        private void buttonSearchFilmsBack_Click(object sender, EventArgs e) => loadFilmsToPanelFilms(-1);
-        private void buttonSearchFilmsNext_Click(object sender, EventArgs e) => loadFilmsToPanelFilms(1);
+        private void menuButtonFilms_Click(object sender, EventArgs e)
+            => setVisible(panelFilms, menuButtonFilms);
+        private void buttonSearchFilms_Click(object sender, EventArgs e)
+            => loadFilmsToPanelFilms(0);
+        private void buttonSearchFilmsBack_Click(object sender, EventArgs e)
+            => loadFilmsToPanelFilms(-1);
+        private void buttonSearchFilmsNext_Click(object sender, EventArgs e)
+            => loadFilmsToPanelFilms(1);
         private void drawReserveTicket(
             object name,
             object date,
@@ -642,7 +698,12 @@ namespace CinemaTickets
             reserveTicketPrice.Text = price.ToString() + " руб.";
             reserveTicketAgeLimit.Text = ageLimit.ToString() + "+";
             reserveTicketLength.Text = length.ToString() + "min.";
-            reserveTicketLength.Location = new Point(reserveTicketPanel.Width - reserveTicketLength.Width - 1, reserveTicketPanel.Height - reserveTicketLength.Height - 1);
+            reserveTicketLength.Location =
+                new Point(
+                    reserveTicketPanel.Width -
+                    reserveTicketLength.Width - 1,
+                    reserveTicketPanel.Height - reserveTicketLength.Height - 1
+                );
             reserveTicketImage.ImageLocation = image.ToString();
             reserveTicketPanel.Location = new Point(x, y);
             namePanel.Controls.Add(reserveTicketPanel);
@@ -653,7 +714,8 @@ namespace CinemaTickets
             string id = (sender as PictureBox).ImageLocation.Replace("images/","");
             id = id.Replace("/logo.jpg", "");
 
-            List<object> result = objectDataBase.FindSessionsFromFilmById(Convert.ToInt32(id));
+            List<object> result =
+                objectDataBase.FindSessionsFromFilmById(Convert.ToInt32(id));
             bufferArray.Clear();
             if (result.Count > 0)
             {
@@ -662,8 +724,17 @@ namespace CinemaTickets
                 comboBoxSessionList.Items.Clear();
                 foreach (List<object> element in result)
                 {
-                    comboBoxSessionList.Items.Add("Зал " + element[0].ToString() + "   |   " + element[1].ToString());
-                    bufferArray.Add(new List<object>() { element[0], element[1], element[2] });
+                    comboBoxSessionList.Items.Add("Зал " +
+                        element[0].ToString() + "   |   " +
+                        element[1].ToString()
+                    );
+                    bufferArray.Add(new List<object>()
+                        {
+                            element[0],
+                            element[1],
+                            element[2]
+                        }
+                    );
                 }
                 comboBoxSessionList.SelectedIndex = 0;
             }
@@ -718,7 +789,8 @@ namespace CinemaTickets
                     {
                         element.Enabled = false;
                         element.Cursor = Cursors.No;
-                        metroToolTip1.SetToolTip(element, "Билет на данное место выкуплен!");
+                        metroToolTip1.SetToolTip(element,
+                            "Билет на данное место выкуплен!");
                     }
                 }
             }
@@ -768,22 +840,27 @@ namespace CinemaTickets
 
             if (checkBoxPrintTicket.Checked)
             {
-                Microsoft.Office.Interop.Excel.Application ObjExcelTicket = new Microsoft.Office.Interop.Excel.Application();
+                Microsoft.Office.Interop.Excel.Application ObjExcelTicket =
+                    new Microsoft.Office.Interop.Excel.Application();
                 Microsoft.Office.Interop.Excel.Workbook ObjWorkBookTicket;
                 Microsoft.Office.Interop.Excel.Worksheet ObjWorkSheetTicket;
 
                 //Книга
-                ObjWorkBookTicket = ObjExcelTicket.Workbooks.Add(System.Reflection.Missing.Value);
+                ObjWorkBookTicket =
+                    ObjExcelTicket.Workbooks.Add(System.Reflection.Missing.Value);
                 //Таблица
-                ObjWorkSheetTicket = (Microsoft.Office.Interop.Excel.Worksheet)ObjWorkBookTicket.Sheets[1];
+                ObjWorkSheetTicket =
+                    (Microsoft.Office.Interop.Excel.Worksheet)ObjWorkBookTicket.Sheets[1];
                 ObjWorkSheetTicket.Name = "Электронный билет";
 
                 setRangeStyle(ObjWorkSheetTicket, "A1", "B7", true);
                 setRangeStyle(ObjWorkSheetTicket, "A2", "B6", false);
                 ObjWorkSheetTicket.Range["A1"].Font.Bold = true;
                 ObjWorkSheetTicket.Range["A1"].Cells.Interior.Color =
-                ObjWorkSheetTicket.Range["A7"].Cells.Interior.Color = Color.FromArgb(255, 217, 102);
-                ObjWorkSheetTicket.Range["A2", "B6"].Cells.Interior.Color = Color.FromArgb(255, 242, 204);
+                ObjWorkSheetTicket.Range["A7"].Cells.Interior.Color =
+                Color.FromArgb(255, 217, 102);
+                ObjWorkSheetTicket.Range["A2", "B6"].Cells.Interior.Color =
+                    Color.FromArgb(255, 242, 204);
 
                 ObjWorkSheetTicket.Range["A1", "B1"].Cells.Merge(Type.Missing);
                 ObjWorkSheetTicket.Cells[1, 1] = "Электронный билет";
@@ -813,13 +890,9 @@ namespace CinemaTickets
         private void buttonDiagram1_Click(object sender, EventArgs e)
         {
             setVisible(panelDiagram1, listPanelDiagram);
-
             List<List<object>> result =  objectDataBase.DiagramFilmYear();
-
             pieChart1.Series = new SeriesCollection();
-
             pieChart1.LegendLocation = LegendLocation.Top;
-
             Func<ChartPoint, string> labelPoint = chartPoint =>
                 string.Format("{0} film(s)", chartPoint.Y, chartPoint.Participation);
 
@@ -840,11 +913,8 @@ namespace CinemaTickets
         {
             setVisible(panelDiagram2, listPanelDiagram);
             List<List<object>> result =  objectDataBase.DiagramFilmGener();
-
             pieChart2.Series = new SeriesCollection();
-
             pieChart2.LegendLocation = LegendLocation.Top;
-
             Func<ChartPoint, string> labelPoint = chartPoint =>
                 string.Format("{0}", chartPoint.Y, chartPoint.Participation);
 
@@ -865,13 +935,9 @@ namespace CinemaTickets
         private void buttonDiagram4_Click(object sender, EventArgs e)
         {
             setVisible(panelDiagram4, listPanelDiagram);
-
             List<List<object>> result =  objectDataBase.DiagramAgeLimit();
-
             pieChart4.Series = new SeriesCollection();
-
             pieChart4.LegendLocation = LegendLocation.Top;
-
             Func<ChartPoint, string> labelPoint = chartPoint =>
                 string.Format("{0} film(s)", chartPoint.Y, chartPoint.Participation);
 
@@ -888,20 +954,21 @@ namespace CinemaTickets
                 );
             }
         }
-        private void menuButtonStatisticsAndReport_Click(object sender, EventArgs e) => setVisible(panelStatisticsAndReports, menuButtonStatisticsAndReports);
         private void buttonExportExcel_Click(object sender, EventArgs e)
         {
             List<List<object>> result;
             int y = 4, x = 1;
 
-            Microsoft.Office.Interop.Excel.Application ObjExcel = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Application ObjExcel =
+                new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook ObjWorkBook;
             Microsoft.Office.Interop.Excel.Worksheet ObjWorkSheet;
 
             //Книга
             ObjWorkBook = ObjExcel.Workbooks.Add(System.Reflection.Missing.Value);
             //Таблица
-            ObjWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)ObjWorkBook.Sheets[1];
+            ObjWorkSheet =
+                (Microsoft.Office.Interop.Excel.Worksheet)ObjWorkBook.Sheets[1];
             ObjWorkSheet.Name = "Статистика и отчеты";
 
             // Выделяем диапазон ячеек и обединяем
@@ -909,13 +976,19 @@ namespace CinemaTickets
             ObjWorkSheet.Cells[1, 1] = "CinemaTickets - Статистика и отчеты";
 
             ObjWorkSheet.Range["A1", "F3"].Font.Bold = true;
-            ObjWorkSheet.Range["A1", "F3"].Cells.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
-            ObjWorkSheet.Range["A1", "F3"].Cells.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
+            ObjWorkSheet.Range["A1", "F3"].Cells.HorizontalAlignment =
+                Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            ObjWorkSheet.Range["A1", "F3"].Cells.VerticalAlignment =
+                Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
             setRangeStyle(ObjWorkSheet, "A1", "F3", true);
-            ObjWorkSheet.Range["A1"].Cells.Interior.Color = Color.FromArgb(255, 255, 255);
-            ObjWorkSheet.Range["A2"].Cells.Interior.Color = Color.FromArgb(255, 217, 102);
-            ObjWorkSheet.Range["C2"].Cells.Interior.Color = Color.FromArgb(142, 169, 219);
-            ObjWorkSheet.Range["E2"].Cells.Interior.Color = Color.FromArgb(169, 208, 142);
+            ObjWorkSheet.Range["A1"].Cells.Interior.Color =
+                Color.FromArgb(255, 255, 255);
+            ObjWorkSheet.Range["A2"].Cells.Interior.Color =
+                Color.FromArgb(255, 217, 102);
+            ObjWorkSheet.Range["C2"].Cells.Interior.Color =
+                Color.FromArgb(142, 169, 219);
+            ObjWorkSheet.Range["E2"].Cells.Interior.Color =
+                Color.FromArgb(169, 208, 142);
 
             ObjWorkSheet.Range["A2", "B2"].Cells.Merge(Type.Missing);
             ObjWorkSheet.Cells[2, 1] = "Количество фильмов по годам";
@@ -928,7 +1001,8 @@ namespace CinemaTickets
                 ObjWorkSheet.Cells[y, x + 1] = element[1].ToString();
                 y++;
             }
-            ObjWorkSheet.Range["A3", "B" + (y - 1).ToString()].Cells.Interior.Color = Color.FromArgb(255, 242, 204);
+            ObjWorkSheet.Range["A3", "B" + (y - 1).ToString()].Cells.Interior.Color =
+                Color.FromArgb(255, 242, 204);
             setRangeStyle(ObjWorkSheet, "A3", "B" + (y - 1).ToString(), false);
 
             ObjWorkSheet.Range["C2", "D2"].Cells.Merge(Type.Missing);
@@ -944,7 +1018,8 @@ namespace CinemaTickets
                 ObjWorkSheet.Cells[y, x + 1] = element[1].ToString();
                 y++;
             }
-            ObjWorkSheet.Range["C3", "D" + (y - 1).ToString()].Cells.Interior.Color = Color.FromArgb(221, 235, 247);
+            ObjWorkSheet.Range["C3", "D" + (y - 1).ToString()].Cells.Interior.Color =
+                Color.FromArgb(221, 235, 247);
             setRangeStyle(ObjWorkSheet, "C3", "D" + (y - 1).ToString(), false);
 
             ObjWorkSheet.Range["E2", "F2"].Cells.Merge(Type.Missing);
@@ -960,7 +1035,8 @@ namespace CinemaTickets
                 ObjWorkSheet.Cells[y, x + 1] = element[1].ToString();
                 y++;
             }
-            ObjWorkSheet.Range["E3", "F" + (y - 1).ToString()].Cells.Interior.Color = Color.FromArgb(226, 239, 218);
+            ObjWorkSheet.Range["E3", "F" + (y - 1).ToString()].Cells.Interior.Color =
+                Color.FromArgb(226, 239, 218);
             setRangeStyle(ObjWorkSheet, "E3", "F" + (y - 1).ToString(), false);
 
             for (int i = 1; i <= 6; i++)
@@ -971,19 +1047,31 @@ namespace CinemaTickets
             ObjExcel.Visible = true;
             ObjExcel.UserControl = true;
         }
-        private void setRangeStyle(Microsoft.Office.Interop.Excel.Worksheet element, string x, string y, bool textAligmentCenter)
+        private void setRangeStyle(
+            Microsoft.Office.Interop.Excel.Worksheet element,
+            string x,
+            string y,
+            bool textAligmentCenter
+        )
         {
             element.Range[x, y].Cells.HorizontalAlignment = (textAligmentCenter)
                 ? Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter
                 : Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
-            element.Range[x, y].Cells.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
-            element.Range[x, y].Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+            element.Range[x, y].Cells.VerticalAlignment =
+                Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
+            element.Range[x, y].Borders.LineStyle =
+                Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
         }
+        private void menuButtonStatisticsAndReport_Click(object sender, EventArgs e)
+            => setVisible(panelStatisticsAndReports, menuButtonStatisticsAndReports);
 
         // Panel Search
-        private void menuButtonSearch_Click(object sender, EventArgs e) => setVisible(panelSearch, menuButtonSearch);
-        private void buttonShowFilters_Click(object sender, EventArgs e) => PanelSearchFilters.Visible = true;
-        private void filter_labelClose_Click(object sender, EventArgs e) => PanelSearchFilters.Visible = false;
+        private void menuButtonSearch_Click(object sender, EventArgs e)
+            => setVisible(panelSearch, menuButtonSearch);
+        private void buttonShowFilters_Click(object sender, EventArgs e)
+            => PanelSearchFilters.Visible = true;
+        private void filter_labelClose_Click(object sender, EventArgs e)
+            => PanelSearchFilters.Visible = false;
         private void loadFilmsToPanelSearchFilms(short pageAct)
         {
             switch (pageAct)
@@ -998,7 +1086,8 @@ namespace CinemaTickets
 
             if (filter_textBoxDescription.Text.Length > 0)
             {
-                filter_textBoxDescription.Text = "%" + filter_textBoxDescription.Text + "%";
+                filter_textBoxDescription.Text = "%" +
+                    filter_textBoxDescription.Text + "%";
             }
 
             if (filter_textBoxSlogan.Text.Length > 0)
@@ -1023,15 +1112,24 @@ namespace CinemaTickets
                 if (i < queryRes.Count - 1)
                 {
                     listLabelNameFilmSearch[i].Text = queryRes[i][1].ToString();
-                    listLabelAgeLimitFilmSearch[i].Text = queryRes[i][3].ToString() + "+";
-                    listLabelLengthFilmSearch[i].Text = queryRes[i][4].ToString() + " min.";
-                    listPictureBoxFilmsSearch[i].ImageLocation = queryRes[i][6].ToString();
-                    listLabelYearFilmSearch[i].Text = "Год: " + queryRes[i][2].ToString();
-                    listLabelPriceFilmSearch[i].Text = "Цена: от " + queryRes[i][5].ToString() + " рублей.";
-                    listLabelSloganFilmSearch[i].Text = "Слоган: " + queryRes[i][8].ToString();
-                    listLabelDescriptionFilmSearch[i].Text = "Описание: " + queryRes[i][7].ToString();
-                    listLabelProductionCountriesFilmSearch[i].Text = "Производство: " + queryRes[i][9].ToString();
-                    listLabelGenersFilmSearch[i].Text = "Жанр: " + queryRes[i][10].ToString();
+                    listLabelAgeLimitFilmSearch[i].Text =
+                        queryRes[i][3].ToString() + "+";
+                    listLabelLengthFilmSearch[i].Text =
+                        queryRes[i][4].ToString() + " min.";
+                    listPictureBoxFilmsSearch[i].ImageLocation =
+                        queryRes[i][6].ToString();
+                    listLabelYearFilmSearch[i].Text =
+                        "Год: " + queryRes[i][2].ToString();
+                    listLabelPriceFilmSearch[i].Text =
+                        "Цена: от " + queryRes[i][5].ToString() + " рублей.";
+                    listLabelSloganFilmSearch[i].Text =
+                        "Слоган: " + queryRes[i][8].ToString();
+                    listLabelDescriptionFilmSearch[i].Text =
+                        "Описание: " + queryRes[i][7].ToString();
+                    listLabelProductionCountriesFilmSearch[i].Text =
+                        "Производство: " + queryRes[i][9].ToString();
+                    listLabelGenersFilmSearch[i].Text =
+                        "Жанр: " + queryRes[i][10].ToString();
 
                     listPictureBoxFilmsSearch[i].Visible =
                     listLabelNameFilmSearch[i].Visible =
@@ -1068,12 +1166,15 @@ namespace CinemaTickets
                 buttonShowFilters.Width = 85;
                 titlePanelSearch.Visible = false;
 
-                int buf = (Convert.ToInt32(queryRes[queryRes.Count - 1][0]) / settings[2] == 0)
+                int buf = (Convert.ToInt32(queryRes[queryRes.Count - 1][0]) /
+                    settings[2] == 0)
                     ? 1
-                    : Convert.ToInt32(Math.Ceiling(Convert.ToDouble(queryRes[queryRes.Count - 1][0]) / settings[2]));
+                    : Convert.ToInt32(Math.Ceiling(Convert.ToDouble(
+                        queryRes[queryRes.Count - 1][0]) / settings[2]));
 
                 buttonSearchByAllFilters.Width = 493;
-                labelCountResults.Text = "Фильмов найденно: " + queryRes[queryRes.Count - 1][0];
+                labelCountResults.Text = "Фильмов найденно: " +
+                    queryRes[queryRes.Count - 1][0];
                 labelPageNumber.Text = settings[3] + " из " + buf.ToString();
 
                 if (buf == 1)
@@ -1110,21 +1211,32 @@ namespace CinemaTickets
             }
 
         }
-        private void buttonSearchByAllFilters_Click(object sender, EventArgs e) => loadFilmsToPanelSearchFilms(0);
-        private void buttonBackPage_Click(object sender, EventArgs e) => loadFilmsToPanelSearchFilms(-1);
-        private void buttonNextPage_Click(object sender, EventArgs e) => loadFilmsToPanelSearchFilms(1);
-        private void filter_textBoxDescription_Enter(object sender, EventArgs e) => filter_textBoxDescription.Text = "";
-        private void filter_textBoxSlogan_Enter(object sender, EventArgs e) => filter_textBoxSlogan.Text = "";
+        private void buttonSearchByAllFilters_Click(object sender, EventArgs e)
+            => loadFilmsToPanelSearchFilms(0);
+        private void buttonBackPage_Click(object sender, EventArgs e)
+            => loadFilmsToPanelSearchFilms(-1);
+        private void buttonNextPage_Click(object sender, EventArgs e)
+            => loadFilmsToPanelSearchFilms(1);
+        private void filter_textBoxDescription_Enter(object sender, EventArgs e)
+            => filter_textBoxDescription.Text = "";
+        private void filter_textBoxSlogan_Enter(object sender, EventArgs e)
+            => filter_textBoxSlogan.Text = "";
 
         // Panel return ticket
-        private void menuButtonReturnTickets_Click(object sender, EventArgs e) => setVisible(searchTicket, menuButtonReturnTickets);
-        private void buttonSearchTicketUID_Click(object sender, EventArgs e) => searchTicketUID();
-        private void buttonReturnTicketUID_Click(object sender, EventArgs e) => returnTicketUID();
-        private void labelHelper_MouseHover(object sender, EventArgs e) => toggleHelper(true);
-        private void labelHelper_MouseLeave(object sender, EventArgs e) => toggleHelper(false);
+        private void menuButtonReturnTickets_Click(object sender, EventArgs e)
+            => setVisible(searchTicket, menuButtonReturnTickets);
+        private void buttonSearchTicketUID_Click(object sender, EventArgs e)
+            => searchTicketUID();
+        private void buttonReturnTicketUID_Click(object sender, EventArgs e)
+            => returnTicketUID();
+        private void labelHelper_MouseHover(object sender, EventArgs e)
+            => toggleHelper(true);
+        private void labelHelper_MouseLeave(object sender, EventArgs e)
+            => toggleHelper(false);
 
         // Panel Add new data
-        private void menuButtonAdd_Click(object sender, EventArgs e) => setVisible(panelAdd, menuButtonAdd);
+        private void menuButtonAdd_Click(object sender, EventArgs e)
+            => setVisible(panelAdd, menuButtonAdd);
         private void buttonAddFilm_Click(object sender, EventArgs e)
         {
             AddFilms newForm = new AddFilms();
@@ -1163,7 +1275,5 @@ namespace CinemaTickets
 
         // Button Exit
         private void menuButton_Exit_Click(object sender, EventArgs e) => Close();
-
     }
-
 }
